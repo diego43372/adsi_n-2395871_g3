@@ -30,11 +30,33 @@
 		<!-- Título Nosotros -->
 		<div class="borde titulo"></div>
 		<!-- Sección Nosotros -->
-		<section class="borde nosotros"></section>
+		<section class="nosotros">
+			<div class="nos-fila">
+				<div class="borde nos-col-ext"></div>
+				<div class="borde nos-col-cnt"></div>
+				<div class="borde nos-col-ext"></div>
+			</div>
+			<div class="borde nos-fila">
+				<div class="borde nos-col-ext"></div>
+				<div class="borde nos-col-cnt"></div>
+				<div class="borde nos-col-ext"></div>
+			</div>
+			<div class="borde nos-fila">
+				<div class="borde nos-col-ext"></div>
+				<div class="borde nos-col-cnt"></div>
+				<div class="borde nos-col-ext"></div>
+			</div>
+		</section>
 		<!-- Título Contáctenos -->
 		<div class="borde titulo"></div>
 		<!-- Sección Contáctenos -->
-		<section class="borde contactenos"></section>
+		<section class="contactenos">
+			<div class="borde cont-col"></div>
+			<div class="cont-col">
+				<div class="borde cont-fila-arr"></div>
+				<div class="borde cont-fila-abj"></div>
+			</div>
+		</section>
 		<!-- Pie de Página -->
 		<footer class="borde"></footer>		
 	</div>

@@ -64,10 +64,38 @@ section{
 }
 /* Sección Nosotros */
 .nosotros{}
+.nos-fila{
+	width: 100%;
+	height: 33.33%;
+}
+.nos-col-ext{
+	width: 40%;
+	height: 100%;
+	float: left;
+}
+.nos-col-cnt{
+	width: 20%;
+	height: 100%;
+	float: left;
+}
 /* Sección Contáctenos */
 .contactenos{}
 /* Pie de Página */
+.cont-col{
+	width: 50%;
+	height: 100%;
+	float: left;
+}
+.cont-fila-arr{
+	width: 100%;
+	height: 65%;
+}
+.cont-fila-abj{
+	width: 100%;
+	height: 35%;
+}
 footer{
 	width: 100%;
-	height: 50px;	
+	height: 50px;
+	background: #055E73;
 }
