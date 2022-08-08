@@ -7,17 +7,17 @@
 .borde{
 	border: 1px solid gray;
 }
-.color-blanco{
-	background: #fff;
-}
-.color-gris-claro{
-	background: #aaa;
+.color-negro{
+	background: #000;
 }
 .color-gris-oscuro{
 	background: #777;
 }
-.color-negro{
-	background: #000;
+.color-gris-claro{
+	background: #aaa;
+}
+.color-blanco{
+	background: #fff;
 }
 /* Contenedor */
 .contenedor{
