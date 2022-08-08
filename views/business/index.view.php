@@ -7,58 +7,58 @@
 	<link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-	<div class="contenedor">
+	<div class="contenedor borde">
 		<!-- Navegador -->
 		<nav>
 			<!-- Logo -->
-			<div class="logo"></div>
+			<div class="logo color-negro"></div>
 			<!-- menu -->
-			<div class="menu"></div>
+			<div class="menu color-gris-claro"></div>
 			<!-- ingreso -->
-			<div class="ingreso"></div>
+			<div class="ingreso color-gris-oscuro"></div>
 		</nav>
 		<!-- Encabezado -->
-		<header class="borde"></header>
+		<header class="color-blanco"></header>
 		<!-- Título Portafolio -->
-		<div class="borde titulo"></div>
+		<div class="titulo"></div>
 		<!-- Sección Portafolio -->
 		<section class="portafolio">
-			<div class="borde port-col"></div>
-			<div class="borde port-col"></div>
-			<div class="borde port-col"></div>
+			<div class="port-col color-gris-oscuro"></div>
+			<div class="port-col"></div>
+			<div class="port-col color-gris-claro"></div>
 		</section>
 		<!-- Título Nosotros -->
-		<div class="borde titulo"></div>
+		<div class="titulo"></div>
 		<!-- Sección Nosotros -->
 		<section class="nosotros">
 			<div class="nos-fila">
-				<div class="borde nos-col-ext"></div>
-				<div class="borde nos-col-cnt"></div>
-				<div class="borde nos-col-ext"></div>
+				<div class="nos-col-ext color-gris-claro"></div>
+				<div class="nos-col-cnt color-gris-oscuro"></div>
+				<div class="nos-col-ext color-gris-claro"></div>
 			</div>
-			<div class="borde nos-fila">
-				<div class="borde nos-col-ext"></div>
-				<div class="borde nos-col-cnt"></div>
-				<div class="borde nos-col-ext"></div>
+			<div class="nos-fila">
+				<div class="nos-col-ext color-gris-oscuro"></div>
+				<div class="nos-col-cnt color-blanco"></div>
+				<div class="nos-col-ext color-gris-oscuro"></div>
 			</div>
-			<div class="borde nos-fila">
-				<div class="borde nos-col-ext"></div>
-				<div class="borde nos-col-cnt"></div>
-				<div class="borde nos-col-ext"></div>
+			<div class="nos-fila">
+				<div class="nos-col-ext color-gris-claro"></div>
+				<div class="nos-col-cnt color-gris-oscuro"></div>
+				<div class="nos-col-ext color-gris-claro"></div>
 			</div>
 		</section>
 		<!-- Título Contáctenos -->
-		<div class="borde titulo"></div>
+		<div class="titulo"></div>
 		<!-- Sección Contáctenos -->
 		<section class="contactenos">
-			<div class="borde cont-col"></div>
+			<div class="cont-col color-gris-oscuro"></div>
 			<div class="cont-col">
-				<div class="borde cont-fila-arr"></div>
-				<div class="borde cont-fila-abj"></div>
+				<div class="cont-fila-arr"></div>
+				<div class="cont-fila-abj color-gris-claro"></div>
 			</div>
 		</section>
 		<!-- Pie de Página -->
-		<footer class="borde"></footer>		
+		<footer class="color-negro"></footer>		
 	</div>
 </body>
 </html>
