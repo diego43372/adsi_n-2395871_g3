@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Empresa</title>
-	<link rel="stylesheet" href="assets/css/styles.css">
+	<link rel="stylesheet" href="assets/css/styles-mod-cajas.css">
 </head>
 <body>
 	<div class="contenedor borde">
@@ -24,7 +24,7 @@
 		<!-- Sección Portafolio -->
 		<section class="portafolio">
 			<div class="port-col color-gris-oscuro"></div>
-			<div class="port-col"></div>
+			<div class="port-col color-blanco"></div>
 			<div class="port-col color-gris-claro"></div>
 		</section>
 		<!-- Título Nosotros -->
@@ -53,7 +53,7 @@
 		<section class="contactenos">
 			<div class="cont-col color-gris-oscuro"></div>
 			<div class="cont-col">
-				<div class="cont-fila-arr"></div>
+				<div class="cont-fila-arr color-blanco"></div>
 				<div class="cont-fila-abj color-gris-claro"></div>
 			</div>
 		</section>

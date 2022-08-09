@@ -1,0 +1,55 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+/* Clases Especiales */
+.borde{
+	border: 1px solid gray;
+}
+.color-negro{
+	background: #000;
+}
+.color-gris-oscuro{
+	background: #777;
+}
+.color-gris-claro{
+	background: #aaa;
+}
+.color-blanco{
+	background: #fff;
+}
+/* Contenedor */
+.contenedor{}
+/* Titulos */
+.titulo{}
+/* Navegador */
+nav{}
+/* logo */
+.logo{}
+/* menu */
+.menu{}
+/* ingreso */
+.ingreso{}
+/* Encabezado y secciones */
+header, section{}
+/* Encabezado */
+header{}
+/* Secciones */
+section{}
+/* Sección Portafolio */
+.portafolio{}
+.port-col{}
+.port-col-cnt{}
+/* Sección Nosotros */
+.nosotros{}
+.nos-fila{}
+.nos-col-ext{}
+.nos-col-cnt{}
+/* Sección Contáctenos */
+.contactenos{}
+/* Pie de Página */
+.cont-col{}
+.cont-fila-arr{}
+.cont-fila-abj{}
+footer{}
