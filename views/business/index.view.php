@@ -9,7 +9,7 @@
 <body>
 	<div class="contenedor borde">
 		<!-- Navegador -->
-		<nav>
+		<nav class="">
 			<!-- Logo -->
 			<div class="logo color-negro"></div>
 			<!-- menu -->
@@ -20,7 +20,7 @@
 		<!-- Encabezado -->
 		<header class="color-blanco"></header>
 		<!-- Título Portafolio -->
-		<div class="titulo"></div>
+		<div class="titulo color-negro"></div>
 		<!-- Sección Portafolio -->
 		<section class="portafolio">
 			<div class="port-col color-gris-oscuro"></div>
@@ -28,7 +28,7 @@
 			<div class="port-col color-gris-claro"></div>
 		</section>
 		<!-- Título Nosotros -->
-		<div class="titulo"></div>
+		<div class="titulo color-negro"></div>
 		<!-- Sección Nosotros -->
 		<section class="nosotros">
 			<div class="nos-fila">
@@ -48,7 +48,7 @@
 			</div>
 		</section>
 		<!-- Título Contáctenos -->
-		<div class="titulo"></div>
+		<div class="titulo color-negro"></div>
 		<!-- Sección Contáctenos -->
 		<section class="contactenos">
 			<div class="cont-col color-gris-oscuro"></div>
