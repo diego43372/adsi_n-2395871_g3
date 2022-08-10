@@ -33,21 +33,18 @@
 /* Navegador */
 nav{
 	width: 100%;
-	height: 50px;	
+	height: 70px;	
 }
-/* logo */
 .logo{
 	width: 20%;
 	height: 100%;
 	float: left;
 }
-/* menu */
 .menu{
 	width: 65%;
 	height: 100%;
 	float: left;
 }
-/* ingreso */
 .ingreso{
 	width: 15%;
 	height: 100%;
@@ -56,26 +53,25 @@ nav{
 /* Encabezado y secciones */
 header, section{
 	width: 100%;
-	height: 700px;
+	height: 750px;
 }
-/* Encabezado */
-header{}
-/* Secciones */
-section{}
 /* Sección Portafolio */
-.portafolio{}
-.port-col{
+.port-col-izq,
+.port-col-cnt,
+.port-col-der{
 	width: 33.33%;
 	height: 100%;	
 	float: left;
 }
 /* Sección Nosotros */
-.nosotros{}
-.nos-fila{
+.nos-fila-arr, 
+.nos-fila-cnt, 
+.nos-fila-abj{
 	width: 100%;
 	height: 33.33%;
 }
-.nos-col-ext{
+.nos-col-izq, 
+.nos-col-der{
 	width: 40%;
 	height: 100%;
 	float: left;
@@ -86,8 +82,6 @@ section{}
 	float: left;
 }
 /* Sección Contáctenos */
-.contactenos{}
-/* Pie de Página */
 .cont-col{
 	width: 50%;
 	height: 100%;
@@ -101,7 +95,129 @@ section{}
 	width: 100%;
 	height: 35%;
 }
+/* Pie de Página */
 footer{
 	width: 100%;
 	height: 50px;
+}
+/* Diseño Adaptativo (Responsive Design) */
+/* Tablet */
+@media (max-width: 992px) {
+	/* Navegador */
+	nav{		
+		height: 210px;	
+	}
+	.logo{
+		width: 100%;
+		height: 140px;		
+	}
+	.menu{
+		width: 80%;
+		height: 70px;		
+	}
+	.ingreso{
+		width: 20%;
+		height: 70px;
+	}	
+	/* Sección Portafolio */	
+	.port-col-izq{
+		width: 100%;		
+		height: 50%;
+	}
+	.port-col-cnt, 
+	.port-col-der{
+		width: 50%;
+		height: 50%;	
+		float: left;
+	}	
+	/* Sección Nosotros */	
+	.nos-fila-arr .nos-col-der,
+	.nos-fila-cnt .nos-col-izq,
+	.nos-fila-abj .nos-col-der{
+		display: none;
+	}
+	.nos-col-izq, 
+	.nos-col-der{
+		width: 70%;
+	}	
+	.nos-col-cnt{
+		width: 30%;
+		background: #fff;
+	}
+	/* Sección Contáctenos */	
+	.cont-col{
+		width: 100%;
+		height: 50%;
+	}
+	.cont-fila-arr{
+		width: 65%;
+		height: 100%;
+		float: left;
+	}
+	.cont-fila-abj{
+		width: 35%;
+		height: 100%;
+		float: left;
+	}		
+}
+/* Celular */
+@media (max-width: 768px) {
+	.titulo{
+		clear: both;
+	}	
+	/* Navegador */
+	nav{
+		height: 280px;
+	}
+	.menu, .ingreso{
+		width: 100%;
+	}	
+	.port-col-izq, 
+	.port-col-der, 
+	.port-col-cnt{
+		width: 100%;
+		height: 33.33%;	
+	}		
+	/* Sección Nosotros */
+	.nosotros{
+		height: 1500px;
+	}
+	.nos-fila-arr .nos-col-izq,
+	.nos-fila-abj .nos-col-izq{
+		display: none;
+	}
+	.nos-fila-arr .nos-col-der,
+	.nos-fila-abj .nos-col-der{
+		display: block;
+	}
+	.nos-col-izq,
+	.nos-col-cnt,
+	.nos-col-der{
+		width: 100%;		
+	}
+	.nos-col-izq, 
+	.nos-col-der,
+	.nos-col-cnt{
+		height: 50%;
+	}	
+	/* Sección Contáctenos */
+	.contactenos{
+		height: 1500px;
+	}
+	.cont-col{
+		width: 100%;
+		height: 50%;
+	}
+	.cont-fila-arr{
+		width: 100%;
+		height: 65%;
+	}
+	.cont-fila-abj{
+		width: 100%;
+		height: 35%;
+	}
+	/* Pie de Página */
+	footer{
+		clear: both;
+	}
 }
