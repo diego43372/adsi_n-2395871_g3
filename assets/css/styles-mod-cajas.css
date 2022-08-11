@@ -103,6 +103,10 @@ footer{
 /* Diseño Adaptativo (Responsive Design) */
 /* Tablet */
 @media (max-width: 992px) {
+	/* Contenedor */
+	.contenedor{
+		width: 100%;		
+	}
 	/* Navegador */
 	nav{		
 		height: 210px;	
