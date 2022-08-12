@@ -21,9 +21,30 @@
 		<!-- Sección Portafolio -->
 		<div class="titulo color-negro"></div>
 		<section class="portafolio">
-			<div class="port-col-izq color-gris-oscuro"></div>
-			<div class="port-col-cnt color-blanco"></div>
-			<div class="port-col-der color-gris-claro"></div>
+			<div class="port-col-izq color-gris-oscuro">
+				<div class="borde subtitulo"></div>
+				<div class="borde imagen">
+					<img src="assets/img/imagen-card.jpg" alt="">
+				</div>
+				<div class="borde parrafo"></div>
+				<div class="borde ver"></div>
+			</div>
+			<div class="port-col-cnt color-blanco">
+				<div class="borde subtitulo"></div>
+				<div class="borde imagen">
+					<img src="assets/img/imagen-card.jpg" alt="">
+				</div>
+				<div class="borde parrafo"></div>
+				<div class="borde ver"></div>
+			</div>
+			<div class="port-col-der color-gris-claro">
+				<div class="borde subtitulo"></div>
+				<div class="borde imagen">
+					<img src="assets/img/imagen-card.jpg" alt="">
+				</div>
+				<div class="borde parrafo"></div>
+				<div class="borde ver"></div>
+			</div>
 		</section>		
 		<!-- Sección Nosotros -->
 		<div class="titulo color-negro"></div>

@@ -72,7 +72,24 @@ section{
 .port-col-der{
 	flex: 1 0 0;
 	display: flex;
-	flex-flow: column wrap;	
+	flex-flow: column nowrap;	
+	padding: 15px;	
+}
+.portafolio .subtitulo{	
+	height: 60px;
+}
+.portafolio .imagen{
+	flex: 1.5;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	padding: 15px;
+}
+.portafolio .parrafo{
+	flex: 3;
+}
+.portafolio .ver{
+	height: 60px;	
 }
 /* Sección Nosotros */
 .nosotros{	
