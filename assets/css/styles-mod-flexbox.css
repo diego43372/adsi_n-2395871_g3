@@ -179,6 +179,9 @@ footer{
 	.menu, 
 	.ingreso{
 		flex: auto;
+	}
+	header{
+		height: 250px;
 	}		
 	/* Sección Portafolio */	
 	.port-col-izq{
