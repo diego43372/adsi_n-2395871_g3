@@ -45,7 +45,7 @@ nav{
 	background: #eee;	
 }
 .logo img{
-	flex-basis: 80%;
+	width: 100%;
 }
 .menu{
 	background: #EF8814;
