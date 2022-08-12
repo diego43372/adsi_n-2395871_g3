@@ -35,25 +35,25 @@
 }
 /* Navegador */
 nav{
-	height: 50px;
 	display: flex;
-	flex-flow: row wrap;	
+	flex-flow: row wrap;
+	height: 50px;
 }
 .logo{
-	background: #eee;	
 	flex: 0 0 25%;
 	display: flex;
+	background: #eee;	
 }
 .logo img{
-	width: 100%;
+	flex-basis: 100%;
 }
 .menu{
 	background: #EF8814;
 	flex: 0 0 60%;
 }
 .ingreso{
-	background: #343A40;
 	flex: 0 0 15%;
+	background: #343A40;
 }
 /* Encabezado y secciones */
 header, section{
@@ -143,8 +143,7 @@ footer{
 	.port-col-cnt,
 	.port-col-der{
 		flex: 0 0 50%;
-	}
-	.imagen img{}
+	}	
 	/* Sección Nosotros */	
 	.nos-fila-arr .nos-col-der,
 	.nos-fila-cnt .nos-col-izq,
