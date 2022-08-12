@@ -181,7 +181,7 @@ footer{
 		flex-flow: column wrap;		
 		height: auto;
 	}	
-	.menu, .ingreso{		
+	.ingreso, .menu, .ingreso{		
 		flex: auto;
 	}	
 	/* Sección Portafolio */	

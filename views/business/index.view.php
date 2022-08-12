@@ -11,7 +11,7 @@
 		<!-- Navegador -->
 		<nav class="">			
 			<div class="logo">
-				<!-- <img src="assets/img/logo-empresa.png" alt=""> -->
+				<img src="assets/img/logo-empresa.png" alt="">
 			</div>			
 			<div class="menu"></div>			
 			<div class="ingreso"></div>
