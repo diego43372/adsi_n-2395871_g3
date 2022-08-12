@@ -179,6 +179,7 @@ footer{
 	/* Navegador */
 	nav{		
 		flex-flow: column wrap;
+		width: auto;
 		height: auto;
 	}	
 	.menu, .ingreso{		
