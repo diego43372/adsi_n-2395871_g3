@@ -178,7 +178,7 @@ footer{
 @media (max-width: 768px) {
 	/* Navegador */
 	nav{
-		height: 200px;
+		height: auto;
 	}	
 	.menu, .ingreso{		
 		flex: 0 0 100%;
