@@ -179,9 +179,9 @@ footer{
 	/* Navegador */
 	nav{		
 		flex-flow: column wrap;		
-		height: auto;
-	}	
-	.ingreso, .menu, .ingreso{		
+		height: 200px;
+	}
+	.logo, .menu, .ingreso{		
 		flex: auto;
 	}	
 	/* Sección Portafolio */	
