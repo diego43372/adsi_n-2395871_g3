@@ -151,9 +151,12 @@ footer{
 		flex: 30%;
 		background: #fff;
 	}
-	/* Sección Contáctenos */	
+	/* Sección Contáctenos */
+	.contactenos{
+		flex-flow: column wrap;
+	}	
 	.cont-col{
-		flex: 100%;		
+		flex: auto;
 		flex-flow: row wrap;
 	}
 	.cont-fila-arr{
@@ -206,18 +209,9 @@ footer{
 	.nos-fila-arr .nos-col-cnt{
 		order: 1;
 	}
-	/* Sección Contáctenos */
-	.contactenos{
-		height: 1500px;
-	}
+	/* Sección Contáctenos */	
 	.cont-col{
-		flex: 100%;		
+		flex: auto;		
 		flex-flow: column wrap;
-	}
-	.cont-fila-arr{
-		flex: 65%;
-	}
-	.cont-fila-abj{
-		flex: 35%;
 	}
 }
