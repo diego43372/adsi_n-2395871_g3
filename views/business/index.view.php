@@ -9,13 +9,12 @@
 <body>
 	<div class="contenedor borde">
 		<!-- Navegador -->
-		<nav class="">
-			<!-- Logo -->
-			<div class="logo color-negro"></div>
-			<!-- menu -->
-			<div class="menu color-gris-claro"></div>
-			<!-- ingreso -->
-			<div class="ingreso color-gris-oscuro"></div>
+		<nav class="">			
+			<div class="logo color-gris-claro">
+				<img src="assets/img/logo-empresa.png" alt="Logo" title="Logo">
+			</div>			
+			<div class="menu"></div>			
+			<div class="ingreso"></div>
 		</nav>
 		<!-- Encabezado -->
 		<header class="color-blanco"></header>		

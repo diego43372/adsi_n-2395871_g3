@@ -30,6 +30,7 @@
 /* Titulos */
 .titulo{	
 	height: 70px;
+	background: #343A40;
 }
 /* Navegador */
 nav{
@@ -39,12 +40,19 @@ nav{
 }
 .logo{
 	flex: 20%;
+	display: flex;
+}
+.logo img{
+	width: 100%;
+	flex: 1;
 }
 .menu{
 	flex: 65%;
+	background: #EF8814;
 }
 .ingreso{
 	flex: 15%;
+	background: #343A40;
 }
 /* Encabezado y secciones */
 header, section{
