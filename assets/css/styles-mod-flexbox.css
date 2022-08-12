@@ -209,9 +209,12 @@ footer{
 	.nos-fila-arr .nos-col-cnt{
 		order: 1;
 	}
-	/* Sección Contáctenos */	
+	/* Sección Contáctenos */
+	.contactenos{
+		height: 1500px;
+	}
 	.cont-col{
 		flex: auto;		
-		flex-flow: column wrap;
+		flex-flow: column wrap;		
 	}
 }
