@@ -9,77 +9,39 @@
 <body>
 	<div class="contenedor borde">
 		<!-- Navegador -->
-		<nav class="">			
-			<div class="logo">
-				<img src="assets/img/logo-empresa.png" alt="">
-			</div>			
-			<div class="menu"></div>			
-			<div class="ingreso"></div>
+		<nav class="">
+			<!-- Logo -->
+			<div class="logo color-negro"></div>
+			<!-- menu -->
+			<div class="menu color-gris-claro"></div>
+			<!-- ingreso -->
+			<div class="ingreso color-gris-oscuro"></div>
 		</nav>
 		<!-- Encabezado -->
 		<header class="color-blanco"></header>		
 		<!-- Sección Portafolio -->
 		<div class="titulo color-negro"></div>
 		<section class="portafolio">
-			<div class="port-col-izq color-gris-oscuro">
-				<div class="borde subtitulo"></div>
-				<div class="borde imagen">
-					<img src="assets/img/imagen-card.jpg" alt="">
-				</div>
-				<div class="borde parrafo"></div>
-				<div class="borde ver"></div>
-			</div>
-			<div class="port-col-cnt color-blanco">
-				<div class="borde subtitulo"></div>
-				<div class="borde imagen">
-					<img src="assets/img/imagen-card.jpg" alt="">
-				</div>
-				<div class="borde parrafo"></div>
-				<div class="borde ver"></div>
-			</div>
-			<div class="port-col-der color-gris-claro">
-				<div class="borde subtitulo"></div>
-				<div class="borde imagen">
-					<img src="assets/img/imagen-card.jpg" alt="">
-				</div>
-				<div class="borde parrafo"></div>
-				<div class="borde ver"></div>
-			</div>
+			<div class="port-col-izq color-gris-oscuro"></div>
+			<div class="port-col-cnt color-blanco"></div>
+			<div class="port-col-der color-gris-claro"></div>
 		</section>		
 		<!-- Sección Nosotros -->
 		<div class="titulo color-negro"></div>
 		<section class="nosotros">
 			<div class="nos-fila-arr">
-				<div class="nos-col-izq color-gris-claro">
-					<div class="borde parrafo"></div>
-				</div>
-				<div class="nos-col-cnt color-gris-oscuro">
-					<div class="borde imagen">
-						<img src="assets/img/imagen-card.jpg" alt="">
-					</div>
-				</div>
+				<div class="nos-col-izq color-gris-claro"></div>
+				<div class="nos-col-cnt color-gris-oscuro"></div>
 				<div class="nos-col-der color-gris-claro"></div>
 			</div>
 			<div class="nos-fila-cnt">
 				<div class="nos-col-izq color-gris-oscuro"></div>
-				<div class="nos-col-cnt color-blanco">
-					<div class="borde imagen">
-						<img src="assets/img/imagen-card.jpg" alt="">
-					</div>
-				</div>
-				<div class="nos-col-der color-gris-oscuro">
-					<div class="borde parrafo"></div>
-				</div>
+				<div class="nos-col-cnt color-blanco"></div>
+				<div class="nos-col-der color-gris-oscuro"></div>
 			</div>
 			<div class="nos-fila-abj">
-				<div class="nos-col-izq color-gris-claro">
-					<div class="borde parrafo"></div>
-				</div>
-				<div class="nos-col-cnt color-gris-oscuro">
-					<div class="borde imagen">
-						<img src="assets/img/imagen-card.jpg" alt="">
-					</div>
-				</div>
+				<div class="nos-col-izq color-gris-claro"></div>
+				<div class="nos-col-cnt color-gris-oscuro"></div>
 				<div class="nos-col-der color-gris-claro"></div>
 			</div>
 		</section>		
@@ -95,6 +57,5 @@
 		<!-- Pie de Página -->
 		<footer class="color-negro"></footer>		
 	</div>
-	<script src="assets/js/scripts.js"></script>
 </body>
 </html>
