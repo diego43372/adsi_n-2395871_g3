@@ -178,8 +178,7 @@ footer{
 @media (max-width: 768px) {
 	/* Navegador */
 	nav{		
-		flex-flow: column wrap;
-		width: auto;
+		flex-flow: column wrap;		
 		height: auto;
 	}	
 	.menu, .ingreso{		
