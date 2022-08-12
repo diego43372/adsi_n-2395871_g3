@@ -175,9 +175,8 @@ footer{
 	/* Navegador */
 	nav{
 		height: 280px;
-	}
-	.menu, .ingreso{
-		height: 70px;
+	}	
+	.menu, .ingreso{		
 		flex: 0 0 100%;
 	}	
 	/* Sección Portafolio */	
