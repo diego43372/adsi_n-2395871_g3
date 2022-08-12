@@ -73,22 +73,30 @@ section{
 	flex: 1 0 0;
 	display: flex;
 	flex-flow: column nowrap;	
-	padding: 15px;	
+	padding: 10px;	
 }
-.portafolio .subtitulo{	
+.portafolio .subtitulo{
+	border-radius: 5px 5px 0 0;	
 	height: 60px;
 }
 .portafolio .imagen{
-	flex: 1.5;
+	flex: 1;
 	display: flex;
 	justify-content: center;
-	align-content: center;
+	align-items: center;
 	padding: 15px;
+} 
+.portafolio .imagen img{
+	max-width: 200px;
+	width: 50%;
+	height: auto;
+	border-radius: 50%;
 }
 .portafolio .parrafo{
-	flex: 3;
+	flex: 2;
 }
 .portafolio .ver{
+	border-radius: 0 0 5px 5px;	
 	height: 60px;	
 }
 /* Sección Nosotros */
@@ -164,7 +172,10 @@ footer{
 	.port-col-cnt,
 	.port-col-der{
 		flex: 0 0 50%;
-	}	
+	}
+	.portafolio .imagen img{
+		max-width: 80px;
+	}
 	/* Sección Nosotros */	
 	.nos-fila-arr .nos-col-der,
 	.nos-fila-cnt .nos-col-izq,
@@ -201,14 +212,16 @@ footer{
 	.ingreso, .menu, .ingreso{		
 		flex: auto;
 	}	
-	/* Sección Portafolio */	
-	.port-col-izq{
-		flex: 0 0 100%;
-	} 
+	/* Sección Portafolio */
+	.portafolio{
+		height: auto;
+		flex-flow: column wrap;
+	}	 
+	.port-col-izq,
 	.port-col-cnt,
 	.port-col-der{
-		flex: 0 0 100%;
-	}
+		flex: auto;
+	}	 
 	/* Sección Nosotros */
 	.nosotros{
 		height: 1500px;
