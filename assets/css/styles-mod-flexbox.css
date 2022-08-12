@@ -45,7 +45,7 @@ nav{
 	display: flex;
 }
 .logo img{
-	width: 100%;
+	/*width: 100%;*/
 }
 .menu{
 	background: #EF8814;
@@ -128,7 +128,7 @@ footer{
 		flex: 0 0 100%;
 	}
 	.logo img{
-		/*width: auto;*/
+		flex: 1;
 	}	
 	.menu, .ingreso{
 		height: 70px;		
