@@ -77,14 +77,14 @@ section{
 }
 .portafolio .subtitulo{
 	border-radius: 5px 5px 0 0;	
-	height: 60px;
+	height: 50px;
 }
 .portafolio .imagen{
 	flex: 1;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding: 15px;
+	padding: 10px;
 } 
 .portafolio .imagen img{
 	max-width: 200px;
@@ -97,7 +97,7 @@ section{
 }
 .portafolio .ver{
 	border-radius: 0 0 5px 5px;	
-	height: 60px;	
+	height: 50px;	
 }
 /* Sección Nosotros */
 .nosotros{	
@@ -116,6 +116,13 @@ section{
 }
 .nos-col-cnt{
 	flex: 1 0 0;
+	display: flex;
+}
+.nos-col-cnt img{
+	max-width: 200px;
+	width: 50%;
+	height: auto;
+	border-radius: 50%;
 }
 /* Sección Contáctenos */
 .contactenos{
