@@ -165,7 +165,10 @@ footer{
 	header, section{
 		height: 750px;
 	}
-	/* Sección Portafolio */	
+	/* Sección Portafolio */
+	.portafolio{
+		height: auto;
+	}	
 	.port-col-izq{
 		flex: 0 0 100%;
 	} 
@@ -213,8 +216,7 @@ footer{
 		flex: auto;
 	}	
 	/* Sección Portafolio */
-	.portafolio{
-		height: auto;
+	.portafolio{		
 		flex-flow: column wrap;
 	}	 
 	.port-col-izq,
