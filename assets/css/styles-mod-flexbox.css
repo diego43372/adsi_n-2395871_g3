@@ -136,6 +136,10 @@ footer{
 	.ingreso{		
 		flex: 0 0 20%;		
 	}
+	/* Encabezado y secciones */
+	header, section{
+		height: 750px;
+	}
 	/* Sección Portafolio */	
 	.port-col-izq{
 		flex: 0 0 100%;
