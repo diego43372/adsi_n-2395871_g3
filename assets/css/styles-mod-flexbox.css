@@ -128,7 +128,7 @@ footer{
 		flex: 0 0 100%;
 	}
 	.logo img{
-		width: auto;
+		/*width: auto;*/
 	}	
 	.menu, .ingreso{
 		height: 70px;		
