@@ -5,7 +5,7 @@
 }
 /* Clases Especiales */
 .borde{
-	border: 1px solid gray;
+	border: 1px solid #ddd;
 }
 .color-negro{
 	background: #000;
@@ -22,34 +22,44 @@
 /* Contenedor */
 .contenedor{
 	width: 95%;
-	margin: auto;
 	max-width: 1280px;
+	margin: auto;
+	border-top: 0;
 	display: flex;
 	flex-flow: column wrap;
 }
 /* Titulos */
 .titulo{	
 	height: 70px;
+	background: #343A40;
 }
 /* Navegador */
 nav{
-	height: 70px;
+	height: 50px;
 	display: flex;
 	flex-flow: row wrap;	
 }
 .logo{
-	flex: 0 0 20%;
+	background: #eee;	
+	flex: 0 0 25%;
+	display: flex;
+}
+.logo img{
+	width: 100%;
 }
 .menu{
-	flex: 0 0 65%;
+	background: #EF8814;
+	flex: 0 0 60%;
 }
 .ingreso{
+	background: #343A40;
 	flex: 0 0 15%;
 }
 /* Encabezado y secciones */
 header, section{
-	height: 750px;
+	height: 85vh;
 }
+header{}
 section{
 	display: flex;
 }
@@ -61,6 +71,8 @@ section{
 .port-col-cnt,
 .port-col-der{
 	flex: 1 0 0;
+	display: flex;
+	flex-flow: column wrap;	
 }
 /* Sección Nosotros */
 .nosotros{	
@@ -115,13 +127,17 @@ footer{
 		height: 140px;
 		flex: 0 0 100%;
 	}
+	.logo img{
+		width: auto;
+	}	
+	.menu, .ingreso{
+		height: 70px;		
+	}
 	.menu{
-		height: 70px;
 		flex: 0 0 80%;
 	}
-	.ingreso{
-		height: 70px;
-		flex: 0 0 20%;
+	.ingreso{		
+		flex: 0 0 20%;		
 	}
 	/* Sección Portafolio */	
 	.port-col-izq{
@@ -131,6 +147,7 @@ footer{
 	.port-col-der{
 		flex: 0 0 50%;
 	}
+	.imagen img{}
 	/* Sección Nosotros */	
 	.nos-fila-arr .nos-col-der,
 	.nos-fila-cnt .nos-col-izq,
