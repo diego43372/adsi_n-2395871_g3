@@ -177,11 +177,12 @@ footer{
 /* Celular */
 @media (max-width: 768px) {
 	/* Navegador */
-	nav{
+	nav{		
+		flex-flow: column wrap;
 		height: auto;
 	}	
 	.menu, .ingreso{		
-		flex: 0 0 100%;
+		flex: auto;
 	}	
 	/* Sección Portafolio */	
 	.port-col-izq{
