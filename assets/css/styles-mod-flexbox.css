@@ -43,8 +43,7 @@ nav{
 	display: flex;
 }
 .logo img{
-	width: 100%;
-	flex: 1;
+	width: 100%;	
 }
 .menu{
 	flex: 65%;
@@ -117,12 +116,12 @@ footer{
 	}
 	/* Navegador */
 	nav{
-		height: 100px;
+		height: 150px;
 	}
 	.logo{
-		height: 50px;
-		flex: 100%;
-	}
+		flex: auto;
+		height: 100px;		
+	}	
 	.menu, 
 	.ingreso{
 		height: 50px;
@@ -188,6 +187,9 @@ footer{
 	.ingreso{
 		flex: auto;
 	}
+	.logo{
+		height: 50px;
+	}
 	header{
 		height: 250px;
 	}		
@@ -222,7 +224,7 @@ footer{
 	}
 	/* Sección Contáctenos */
 	.contactenos{
-		height: 1500px;
+		height: 1250px;
 	}
 	.cont-col{
 		flex: auto;		
