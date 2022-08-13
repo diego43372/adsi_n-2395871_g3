@@ -25,7 +25,7 @@
 	margin: auto;
 	max-width: 1280px;
 	display: flex;
-	flex-flow: column wrap;
+	flex-flow: column wrap;	
 }
 /* Titulos */
 .titulo{	
@@ -33,7 +33,7 @@
 	background: #343A40;
 }
 /* Navegador */
-nav{
+nav{	
 	height: 50px;
 	display: flex;
 	flex-flow: row wrap;	
@@ -56,6 +56,11 @@ nav{
 /* Encabezado y secciones */
 header, section{
 	height: 85vh;
+}
+header{
+	background-image: url('../img/header.jpg');
+	background-size: 100% 100%;
+	/*background-attachment: fixed;*/
 }
 section{
 	display: flex;
@@ -116,6 +121,8 @@ footer{
 	}
 	/* Navegador */
 	nav{
+		width: 100%;
+		max-width: auto;
 		height: 150px;
 	}
 	.logo{

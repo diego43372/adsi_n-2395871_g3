@@ -4,10 +4,11 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Empresa</title>
+	<link rel="shortcut icon" href="assets/img/imagen-card.jpg">
 	<link rel="stylesheet" href="assets/css/styles-mod-flexbox.css">
 </head>
 <body>
-	<div class="contenedor borde">
+	<div class="contenedor">
 		<!-- Navegador -->
 		<nav class="">			
 			<div class="logo color-gris-claro">
@@ -17,16 +18,16 @@
 			<div class="ingreso"></div>
 		</nav>
 		<!-- Encabezado -->
-		<header class="color-blanco"></header>		
+		<header></header>		
 		<!-- Sección Portafolio -->
-		<div class="titulo color-negro"></div>
+		<div class="titulo"></div>
 		<section class="portafolio">
 			<div class="port-col-izq color-gris-oscuro"></div>
 			<div class="port-col-cnt color-blanco"></div>
 			<div class="port-col-der color-gris-claro"></div>
 		</section>		
 		<!-- Sección Nosotros -->
-		<div class="titulo color-negro"></div>
+		<div class="titulo"></div>
 		<section class="nosotros">
 			<div class="nos-fila-arr">
 				<div class="nos-col-izq color-gris-claro"></div>
@@ -45,7 +46,7 @@
 			</div>
 		</section>		
 		<!-- Sección Contáctenos -->
-		<div class="titulo color-negro"></div>
+		<div class="titulo"></div>
 		<section class="contactenos">
 			<div class="cont-col color-gris-oscuro"></div>
 			<div class="cont-col">
