@@ -61,14 +61,18 @@
 					<div class="borde ver"></div>
 				</div>
 				<div class="nos-col-cnt color-gris-oscuro">
-					<div class="borde imagen"></div>
+					<div class="borde imagen">
+						<img src="assets/img/imagen-card.jpg" alt="Imagen Card" title="Imagen Card">
+					</div>
 				</div>
 				<div class="nos-col-der color-gris-claro"></div>
 			</div>
 			<div class="nos-fila-cnt">
 				<div class="nos-col-izq color-gris-oscuro"></div>
 				<div class="nos-col-cnt color-blanco">
-					<div class="borde imagen"></div>
+					<div class="borde imagen">
+						<img src="assets/img/imagen-card.jpg" alt="Imagen Card" title="Imagen Card">
+					</div>
 				</div>
 				<div class="nos-col-der color-gris-oscuro">
 					<div class="borde subtitulo"></div>
@@ -83,7 +87,9 @@
 					<div class="borde ver"></div>
 				</div>
 				<div class="nos-col-cnt color-gris-oscuro">
-					<div class="borde imagen"></div>
+					<div class="borde imagen">
+						<img src="assets/img/imagen-card.jpg" alt="Imagen Card" title="Imagen Card">
+					</div>
 				</div>
 				<div class="nos-col-der color-gris-claro"></div>
 			</div>

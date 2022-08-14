@@ -130,6 +130,9 @@ header{
 .nosotros .parrafo{
 	flex: 1;
 }
+.nosotros img{
+	width: 150px;
+}
 /* Contáctenos */
 .contactenos{
 	flex-flow: row wrap;
@@ -222,6 +225,9 @@ Diseño Adaptativo */
 		flex: 50%;
 	}
 	/* Nosotros */
+	.nosotros{
+		height: 100%;
+	}
 	.nos-fila-arr .nos-col-der,
 	.nos-fila-cnt .nos-col-izq,
 	.nos-fila-abj .nos-col-der{
