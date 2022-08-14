@@ -32,7 +32,18 @@ body{
 /* Títulos */
 .titulo{
 	height: 70px;
-	background: #6D8C7B;	
+	background: #6D8C7B;
+	display: flex;
+	padding: 10px;
+}
+.titulo h1{
+	flex: 1;
+}
+.subtitulo, .ver{
+	flex: 0 0 40px;
+}
+.imagen{
+	flex: 1;
 }
 /* Navegador, Encabezado, 
 Secciones y Pie de Página*/
@@ -71,6 +82,12 @@ header{}
 .port-col-cnt,
 .port-col-der{
 	flex: 1;
+	display: flex;
+	flex-flow: column wrap;
+	padding: 10px;
+}
+.portafolio .parrafo{
+	flex: 2;
 }
 /* Nosotros */
 .nos-fila-arr,
@@ -78,13 +95,22 @@ header{}
 .nos-fila-abj{
 	flex: 1;
 	display: flex;
-	flex-flow: row wrap;
+	flex-flow: row wrap;	
 }
 .nos-col-izq,
 .nos-col-der{
 	flex: 2;
+	padding: 10px;
+	display: flex;
+	flex-flow: column wrap;
 }
 .nos-col-cnt{
+	flex: 1;
+	padding: 10px;
+	display: flex;
+	flex-flow: column wrap;
+}
+.nosotros .parrafo{
 	flex: 1;
 }
 /* Contáctenos */
@@ -94,21 +120,47 @@ header{}
 .cont-col-izq,
 .cont-col-der{
 	flex: 1;
+	display: flex;
+	flex-flow: column wrap;
+}
+.cont-col-izq{
+	padding: 10px;
 }
 .cont-col-der{
+	display: flex;	
+}
+.cont-fila-arr,
+.cont-fila-abj{
+	padding: 10px;
 	display: flex;
-	flex-flow: column wrap;	
 }
 .cont-fila-arr{
-	flex: 65%;
+	flex: 65%;	
 }
 .cont-fila-abj{
 	flex: 35%;
+	display: flex;
+	flex-flow: column wrap;
+}
+.contactenos form,
+.contactenos iframe{
+	flex: 1;
+}
+.contactenos .parrafo{
+	flex: 2;
+}
+.contactenos .social-media{
+	flex: 1;
 }
 /* Pie de página */
 footer{
 	height: 70px;
 	background: #455959;
+	display: flex;
+	padding: 10px;
+}
+footer .parrafo{
+	flex: 1;
 }
 
 /* Responsive Design: Diseño Adaptativo */
