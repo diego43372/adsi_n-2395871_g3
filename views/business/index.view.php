@@ -34,13 +34,17 @@
 			</div>
 			<div class="port-col-cnt color-blanco">
 				<div class="borde subtitulo"></div>
-				<div class="borde imagen"></div>
+				<div class="borde imagen">
+					<img src="assets/img/imagen-card.jpg" alt="Imagen Card" title="Imagen Card">
+				</div>
 				<div class="borde parrafo"></div>
 				<div class="borde ver"></div>
 			</div>
 			<div class="port-col-der color-gris-claro">
 				<div class="borde subtitulo"></div>
-				<div class="borde imagen"></div>
+				<div class="borde imagen">
+					<img src="assets/img/imagen-card.jpg" alt="Imagen Card" title="Imagen Card">
+				</div>
 				<div class="borde parrafo"></div>
 				<div class="borde ver"></div>
 			</div>

@@ -36,13 +36,18 @@ body{
 	display: flex;
 	padding: 10px;
 }
-.titulo h1, .imagen{
-	flex: 1;
-	display: flex;
-	flex-flow: column wrap;
+.titulo h1{
+	flex: 1;	
 }
 .subtitulo, .ver{
 	flex: 0 0 40px;
+}
+.imagen{
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
 }
 /* Navegador, Encabezado, 
 Secciones y Pie de Página*/
@@ -85,7 +90,7 @@ header{
 }
 /* Portafolio */
 .portafolio{
-	flex-flow: row wrap;
+	flex-flow: row wrap;	
 }
 .port-col-izq,
 .port-col-cnt,
@@ -97,8 +102,7 @@ header{
 }
 .portafolio img{
 	width: 200px;
-	height: auto;
-	flex: 1;
+	/*height: auto;	*/
 }
 .portafolio .parrafo{
 	flex: 2;
@@ -207,9 +211,12 @@ Diseño Adaptativo */
 	header, section{
 		height: 750px;
 	}
-	/* Portafolio */	
+	/* Portafolio */
+	.portafolio{		
+		height: 100%;
+	}		
 	.port-col-izq{
-		flex: 100%;
+		flex: 100%;		
 	}
 	.port-col-cnt,
 	.port-col-der{
