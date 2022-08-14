@@ -57,6 +57,11 @@ nav{
 	flex: 20%;
 	background: #FFF;
 	border-bottom: 1px solid #ccc;
+	display: flex;
+}
+.logo img{
+	width: 100%;
+	flex: 1;
 }
 .menu{
 	flex: 65%;

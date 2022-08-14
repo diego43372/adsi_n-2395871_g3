@@ -11,7 +11,9 @@
 	<div class="borde contenedor">
 		<!-- Navegador -->
 		<nav>
-			<div class="logo"></div>
+			<div class="logo">
+				<img src="assets/img/logo-empresa.png" alt="Logo" title="Logo">
+			</div>
 			<div class="menu"></div>
 			<div class="ingreso"></div>
 		</nav>
