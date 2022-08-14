@@ -4,29 +4,27 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Empresa</title>
-	<link rel="shortcut icon" href="assets/img/imagen-card.jpg">
 	<link rel="stylesheet" href="assets/css/styles-mod-flexbox.css">
 </head>
 <body>
-	<div class="contenedor">
+	<!-- Contenedor -->
+	<div class="borde contenedor">
 		<!-- Navegador -->
-		<nav class="">			
-			<div class="logo color-gris-claro">
-				<img src="assets/img/logo-empresa.png" alt="Logo" title="Logo">
-			</div>			
-			<div class="menu"></div>			
+		<nav>
+			<div class="logo"></div>
+			<div class="menu"></div>
 			<div class="ingreso"></div>
 		</nav>
 		<!-- Encabezado -->
-		<header></header>		
-		<!-- Sección Portafolio -->
+		<header class="color-blanco"></header>
+		<!-- Portafolio -->
 		<div class="titulo"></div>
 		<section class="portafolio">
 			<div class="port-col-izq color-gris-oscuro"></div>
 			<div class="port-col-cnt color-blanco"></div>
 			<div class="port-col-der color-gris-claro"></div>
-		</section>		
-		<!-- Sección Nosotros -->
+		</section>
+		<!-- Nosotros -->
 		<div class="titulo"></div>
 		<section class="nosotros">
 			<div class="nos-fila-arr">
@@ -44,18 +42,19 @@
 				<div class="nos-col-cnt color-gris-oscuro"></div>
 				<div class="nos-col-der color-gris-claro"></div>
 			</div>
-		</section>		
-		<!-- Sección Contáctenos -->
+		</section>
+		<!-- Contáctenos -->
 		<div class="titulo"></div>
 		<section class="contactenos">
-			<div class="cont-col color-gris-oscuro"></div>
-			<div class="cont-col">
+			<div class="cont-col-izq color-gris-oscuro"></div>
+			<div class="cont-col-der">
 				<div class="cont-fila-arr color-blanco"></div>
 				<div class="cont-fila-abj color-gris-claro"></div>
 			</div>
 		</section>
-		<!-- Pie de Página -->
-		<footer class="color-negro"></footer>		
+		<!-- Pie de página -->
+		<footer></footer>
 	</div>
+	<script src="assets/js/scripts.js"></script>
 </body>
 </html>

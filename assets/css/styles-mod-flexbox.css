@@ -1,11 +1,15 @@
+/* Escritorio y Portatil */
 *{
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
-/* Clases Especiales */
+body{
+	background: #ddd;
+}
+/* Clases especiales */
 .borde{
-	border: 1px solid #ddd;
+	border: 1px solid #ccc;	
 }
 .color-negro{
 	background: #000;
@@ -21,63 +25,54 @@
 }
 /* Contenedor */
 .contenedor{
+	max-width: 1280px;
 	width: 95%;
 	margin: auto;
-	max-width: 1280px;
-	display: flex;
-	flex-flow: column wrap;	
 }
-/* Titulos */
-.titulo{	
+/* Títulos */
+.titulo{
 	height: 70px;
-	background: #343A40;
+	background: #6D8C7B;	
+}
+/* Navegador, Encabezado, 
+Secciones y Pie de Página*/
+nav, header, section, footer{
+	display: flex;
+	flex-flow: column wrap;
 }
 /* Navegador */
 nav{	
 	height: 50px;
-	display: flex;
-	flex-flow: row wrap;	
+	flex-flow: row wrap;
 }
 .logo{
 	flex: 20%;
-	display: flex;
-}
-.logo img{
-	width: 100%;	
+	background: #F2EDD5;
 }
 .menu{
 	flex: 65%;
-	background: #EF8814;
+	background: #A6BF9F;
 }
 .ingreso{
 	flex: 15%;
-	background: #343A40;
+	background: #8C6D51;
 }
-/* Encabezado y secciones */
+/* Encabezado y Secciones */
 header, section{
-	height: 85vh;
+	height: 750px;	
 }
-header{
-	background-image: url('../img/header.jpg');
-	background-size: 100% 100%;
-	/*background-attachment: fixed;*/
-}
-section{
-	display: flex;
-}
-/* Sección Portafolio */
+/* Encabezado */
+header{}
+/* Portafolio */
 .portafolio{
 	flex-flow: row wrap;
 }
-.port-col-izq, 
+.port-col-izq,
 .port-col-cnt,
 .port-col-der{
 	flex: 1;
 }
-/* Sección Nosotros */
-.nosotros{	
-	flex-flow: column wrap;
-}
+/* Nosotros */
 .nos-fila-arr,
 .nos-fila-cnt,
 .nos-fila-abj{
@@ -92,15 +87,17 @@ section{
 .nos-col-cnt{
 	flex: 1;
 }
-/* Sección Contáctenos */
+/* Contáctenos */
 .contactenos{
-	display: flex;
 	flex-flow: row wrap;
 }
-.cont-col{
+.cont-col-izq,
+.cont-col-der{
 	flex: 1;
+}
+.cont-col-der{
 	display: flex;
-	flex-flow: column wrap;
+	flex-flow: column wrap;	
 }
 .cont-fila-arr{
 	flex: 65%;
@@ -108,133 +105,107 @@ section{
 .cont-fila-abj{
 	flex: 35%;
 }
-/* Pie de Página */
+/* Pie de página */
 footer{
 	height: 70px;
+	background: #455959;
 }
-/* Diseño Adaptativo (Responsive Design) */
-/* Tablet */
+
+/* Responsive Design: Diseño Adaptativo */
+
+/* Tabletas */
 @media (max-width: 992px) {
 	/* Contenedor */
 	.contenedor{
-		width: 100%;		
-	}
+		width: 100%;
+	} 
 	/* Navegador */
 	nav{
-		width: 100%;
-		max-width: auto;
-		height: 150px;
+		height: 150px;		
 	}
-	.logo{
-		flex: auto;
-		height: 100px;		
-	}	
-	.menu, 
-	.ingreso{
-		height: 50px;
+	.logo{		
+		height: 100px;
+		flex: 100%;
+	}
+	.menu, .ingreso{
+		height: 50px;		
 	}
 	.menu{
 		flex: 80%;
 	}
-	.ingreso{		
+	.ingreso{
 		flex: 20%;
 	}
-	/* Secciones */
-	section{
-		height: 750px;
-	}
-	/* Sección Portafolio */	
+	/* Portafolio */	
 	.port-col-izq{
 		flex: 100%;
-	} 
+	}
 	.port-col-cnt,
 	.port-col-der{
 		flex: 50%;
 	}
-	/* Sección Nosotros */	
+	/* Nosotros */
 	.nos-fila-arr .nos-col-der,
 	.nos-fila-cnt .nos-col-izq,
 	.nos-fila-abj .nos-col-der{
 		display: none;
 	}
-	.nos-col-izq, 
+	.nos-col-izq,
 	.nos-col-der{
-		flex: 70%;
-	}	
-	.nos-col-cnt{
-		flex: 30%;
-		background: #fff;
-	}
-	/* Sección Contáctenos */
-	.contactenos{
-		flex-flow: column wrap;
-	}	
-	.cont-col{
-		flex: auto;
-		flex-flow: row wrap;
-	}
-	.cont-fila-arr{
 		flex: 65%;
 	}
-	.cont-fila-abj{
+	.nos-col-cnt{
 		flex: 35%;
+		background: #FFF;
 	}
-}
-/* Celular */
-@media (max-width: 768px) {
-	nav, header, section{
+	/* Contáctenos */
+	.contactenos{
 		flex-flow: column wrap;
 	}
+}
+/* Celulares */
+@media (max-width: 768px) {	
 	/* Navegador */
 	nav{
 		height: auto;
+		flex-flow: column wrap;
 	}
-	.logo,
-	.menu, 
-	.ingreso{
+	.logo, .menu, .ingreso{
+		height: 50px;
 		flex: auto;
 	}
-	.logo{
-		height: 50px;
-	}
-	header{
-		height: 250px;
-	}		
-	/* Sección Portafolio */	
-	.port-col-izq{
-		flex: 100%;
-	} 
+	/* Portafolio */
+	.portafolio{
+		flex-flow: column wrap;
+	}	
+	.port-col-izq,
 	.port-col-cnt,
-	.port-col-der{
-		flex: 100%;
+	.port-col-der{		
+		flex: auto;
 	}
-	/* Sección Nosotros */
+	/* Nosotros */
 	.nosotros{
 		height: 1500px;
-	}
+	}		
 	.nos-fila-arr,
 	.nos-fila-cnt,
 	.nos-fila-abj{
 		flex-flow: column wrap;
 	}
-	.nos-col-izq, 
+	.nos-col-izq,
 	.nos-col-cnt,
-	.nos-col-der{	
+	.nos-col-der{
 		flex: auto;
 	}
-	.nos-fila-arr .nos-col-izq,
-	.nos-fila-abj .nos-col-izq{
+	.nos-col-izq,
+	.nos-col-der{
 		order: 2;
 	}
-	.nos-fila-arr .nos-col-cnt{
+	.nos-col-cnt{
 		order: 1;
 	}
-	/* Sección Contáctenos */
+	/* Contáctenos */
 	.contactenos{
 		height: 1250px;
-	}
-	.cont-col{
-		flex: auto;		
-		flex-flow: column wrap;		
 	}
 }
