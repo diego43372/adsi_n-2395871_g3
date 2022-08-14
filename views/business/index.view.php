@@ -16,7 +16,7 @@
 			<div class="ingreso"></div>
 		</nav>
 		<!-- Encabezado -->
-		<header class="color-blanco"></header>
+		<header></header>
 		<!-- Portafolio -->
 		<div class="titulo">
 			<h1 class="borde"></h1>

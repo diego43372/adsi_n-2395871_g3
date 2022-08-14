@@ -32,7 +32,7 @@ body{
 /* Títulos */
 .titulo{
 	height: 70px;
-	background: #6D8C7B;
+	background: #343A40;
 	display: flex;
 	padding: 10px;
 }
@@ -55,22 +55,25 @@ nav{
 }
 .logo{
 	flex: 20%;
-	background: #F2EDD5;
+	background: #FFF;
+	border-bottom: 1px solid #ccc;
 }
 .menu{
 	flex: 65%;
-	background: #A6BF9F;
+	background: #EF8814;
 }
 .ingreso{
 	flex: 15%;
-	background: #8C6D51;
+	background: #343A40;
 }
 /* Encabezado y Secciones */
 header, section{
 	height: 85vh;	
 }
 /* Encabezado */
-header{}
+header{
+	background: #FFF;
+}
 /* Portafolio */
 .portafolio{
 	flex-flow: row wrap;
@@ -152,7 +155,7 @@ header{}
 /* Pie de página */
 footer{
 	height: 70px;
-	background: #455959;
+	background: #000;
 	display: flex;
 	padding: 10px;
 }
