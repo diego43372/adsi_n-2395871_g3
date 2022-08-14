@@ -59,7 +59,7 @@ nav{
 }
 /* Encabezado y Secciones */
 header, section{
-	height: 750px;	
+	height: 85vh;	
 }
 /* Encabezado */
 header{}
@@ -135,6 +135,10 @@ footer{
 	}
 	.ingreso{
 		flex: 20%;
+	}
+	/* Encabezado y Secciones */
+	header, section{
+		height: 750px;
 	}
 	/* Portafolio */	
 	.port-col-izq{
