@@ -101,8 +101,7 @@ header{
 	padding: 10px;
 }
 .portafolio img{
-	width: 200px;
-	height: 200px;
+	width: 150px;	
 }
 .portafolio .parrafo{
 	flex: 2;
