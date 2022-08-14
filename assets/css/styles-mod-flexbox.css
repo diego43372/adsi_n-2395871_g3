@@ -49,6 +49,9 @@ body{
 	align-items: center;
 	padding: 10px;
 }
+.imagen img{
+	width: 150px;
+}
 /* Navegador, Encabezado, 
 Secciones y Pie de Página*/
 nav, header, section, footer{
@@ -100,9 +103,6 @@ header{
 	flex-flow: column wrap;
 	padding: 10px;
 }
-.portafolio img{
-	width: 150px;	
-}
 .portafolio .parrafo{
 	flex: 2;
 }
@@ -129,9 +129,6 @@ header{
 }
 .nosotros .parrafo{
 	flex: 1;
-}
-.nosotros img{
-	width: 150px;
 }
 /* Contáctenos */
 .contactenos{
