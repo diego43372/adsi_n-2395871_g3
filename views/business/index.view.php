@@ -22,11 +22,13 @@
 		<header></header>
 		<!-- Portafolio -->
 		<div class="titulo">
-			<h1 class="borde"></h1>
+			<h1 class="borde">Título</h1>
 		</div>
 		<section class="portafolio">
 			<div class="port-col-izq color-gris-oscuro">
-				<div class="borde subtitulo"></div>
+				<div class="borde subtitulo">
+					<h2>Subtitulo</h2>
+				</div>
 				<div class="borde imagen">
 					<img src="assets/img/imagen-card.jpg" alt="Imagen Card" title="Imagen Card">
 				</div>
@@ -34,7 +36,9 @@
 				<div class="borde ver"></div>
 			</div>
 			<div class="port-col-cnt color-blanco">
-				<div class="borde subtitulo"></div>
+				<div class="borde subtitulo">
+					<h2>Subtitulo</h2>
+				</div>
 				<div class="borde imagen">
 					<img src="assets/img/imagen-card.jpg" alt="Imagen Card" title="Imagen Card">
 				</div>
@@ -42,7 +46,9 @@
 				<div class="borde ver"></div>
 			</div>
 			<div class="port-col-der color-gris-claro">
-				<div class="borde subtitulo"></div>
+				<div class="borde subtitulo">
+					<h2>Subtitulo</h2>
+				</div>
 				<div class="borde imagen">
 					<img src="assets/img/imagen-card.jpg" alt="Imagen Card" title="Imagen Card">
 				</div>
@@ -52,12 +58,14 @@
 		</section>
 		<!-- Nosotros -->
 		<div class="titulo">
-			<h1 class="borde"></h1>
+			<h1 class="borde">Título</h1>
 		</div>
 		<section class="nosotros">
 			<div class="nos-fila-arr">
 				<div class="nos-col-izq color-gris-claro">
-					<div class="borde subtitulo"></div>
+					<div class="borde subtitulo">
+						<h2>Subtitulo</h2>
+					</div>
 					<div class="borde parrafo"></div>
 					<div class="borde ver"></div>
 				</div>
@@ -76,14 +84,18 @@
 					</div>
 				</div>
 				<div class="nos-col-der color-gris-oscuro">
-					<div class="borde subtitulo"></div>
+					<div class="borde subtitulo">
+						<h2>Subtitulo</h2>
+					</div>
 					<div class="borde parrafo"></div>
 					<div class="borde ver"></div>
 				</div>
 			</div>
 			<div class="nos-fila-abj">
 				<div class="nos-col-izq color-gris-claro">
-					<div class="borde subtitulo"></div>
+					<div class="borde subtitulo">
+						<h2>Subtitulo</h2>
+					</div>
 					<div class="borde parrafo"></div>
 					<div class="borde ver"></div>
 				</div>
@@ -97,7 +109,7 @@
 		</section>
 		<!-- Contáctenos -->
 		<div class="titulo">
-			<h1 class="borde"></h1>
+			<h1 class="borde">Título</h1>
 		</div>
 		<section class="contactenos">
 			<div class="cont-col-izq color-gris-oscuro">

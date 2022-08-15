@@ -34,13 +34,24 @@ body{
 	height: 70px;
 	background: #343A40;
 	display: flex;
+	align-items: center;
+	color: #FFF;
 	padding: 10px;
 }
 .titulo h1{
-	flex: 1;	
+	flex: 1;
+	text-align: center;
 }
 .subtitulo, .ver{
 	flex: 0 0 40px;
+}
+.subtitulo{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.ver{
+
 }
 .imagen{
 	flex: 1;
@@ -226,7 +237,7 @@ Diseño Adaptativo */
 	.port-col-cnt,
 	.port-col-der{
 		flex: 50%;
-	}
+	}	
 	/* Nosotros */
 	.nosotros{
 		height: 100%;
@@ -235,6 +246,13 @@ Diseño Adaptativo */
 	.nos-fila-cnt .nos-col-izq,
 	.nos-fila-abj .nos-col-der{
 		display: none;
+	}
+	.nos-fila-arr .nos-col-izq .subtitulo,
+	.nos-fila-abj .nos-col-izq .subtitulo{
+		justify-content: flex-end;
+	}	
+	.nos-fila-cnt .nos-col-der .subtitulo{
+		justify-content: flex-start;
 	}
 	.nos-col-izq,
 	.nos-col-der{
@@ -289,11 +307,16 @@ Diseño Adaptativo */
 	}
 	.nos-col-izq,
 	.nos-col-der{
-		order: 2;
+		order: 2;	
+	}
+	.nos-fila-arr .nos-col-izq .subtitulo,
+	.nos-fila-cnt .nos-col-der .subtitulo,
+	.nos-fila-abj .nos-col-izq .subtitulo{
+		justify-content: center;
 	}
 	.nos-col-cnt{
 		order: 1;
-	}
+	}		
 	/* Contáctenos */
 	.contactenos{
 		height: 1250px;
