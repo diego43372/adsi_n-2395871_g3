@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Empresa</title>
+	<link rel="shortcut icon" href="assets/img/imagen-card.jpg">
 	<link rel="stylesheet" href="assets/css/styles-mod-flexbox.css">
 </head>
 <body>
