@@ -260,6 +260,10 @@ Diseño Adaptativo */
 		height: 50px;
 		flex: auto;
 	}
+	/* Encabezado */
+	header{
+		height: 50vh;
+	}
 	/* Portafolio */
 	.portafolio{
 		flex-flow: column wrap;
