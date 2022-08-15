@@ -89,7 +89,9 @@ header, section{
 }
 /* Encabezado */
 header{
-	background: #FFF;
+	background-image: url('../../assets/img/header.jpg');
+	background-size: 100% 100%;
+	background-attachment: fixed;
 }
 /* Portafolio */
 .portafolio{
@@ -206,8 +208,12 @@ Diseño Adaptativo */
 	.ingreso{
 		flex: 20%;
 	}
+	/* Encabezado */
+	header{
+		background-attachment: initial;
+	}
 	/* Encabezado y Secciones */
-	header, section{
+	section{
 		height: 750px;
 	}
 	/* Portafolio */
