@@ -92,7 +92,7 @@ nav{
 .ingreso{
 	flex: 15%;
 	height: 100%;
-	background: #343A40;
+	background: #000;
 }
 /* Encabezado y Secciones */
 header, section{
