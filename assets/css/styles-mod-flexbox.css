@@ -43,7 +43,7 @@ body{
 	text-align: center;
 }
 .subtitulo, .ver{
-	flex: 0 0 40px;
+	flex: 0 0 40px;	
 }
 .subtitulo{
 	display: flex;
@@ -53,7 +53,6 @@ body{
 .subtitulo h2{
 	text-align: center;
 }
-.ver{}
 .imagen{
 	flex: 1;
 	display: flex;
@@ -97,8 +96,8 @@ nav{
 	background: #343A40;
 }
 /* Encabezado y Secciones */
-header, section{
-	height: 85vh;	
+header, section{	
+	min-height: 85vh;	
 }
 /* Encabezado */
 header{
@@ -113,14 +112,19 @@ header{
 .port-col-izq,
 .port-col-cnt,
 .port-col-der{
-	flex: 1;
+	flex: 1;	
 	display: flex;
-	flex-flow: column wrap;
+	flex-flow: column wrap;	
 	padding: 10px;
 }
-.portafolio .parrafo{
-	flex: 2;
+.portafolio .imagen{
+	flex: 0 0 200px;
 }
+.portafolio .parrafo{
+	flex: 1;
+	padding: 10px;
+}
+.portafolio .parrafo p{}
 /* Nosotros */
 .nos-fila-arr,
 .nos-fila-cnt,
@@ -150,7 +154,7 @@ header{
 	flex-flow: column wrap;
 }
 .nosotros .parrafo{
-	flex: 1;
+	flex: 1;	
 }
 /* Contáctenos */
 .contactenos{
@@ -227,14 +231,15 @@ Diseño Adaptativo */
 	}
 	.ingreso{
 		flex: 20%;
-	}
-	/* Encabezado */
-	header{
+	}	
+	/* Encabezado */	
+	header{		
+		min-height: 70vh;		
 		background-attachment: initial;
 	}
 	/* Encabezado y Secciones */
-	section{
-		height: 750px;
+	section{		
+		min-height: 750px;		
 	}
 	/* Portafolio */
 	.portafolio{		
@@ -283,6 +288,8 @@ Diseño Adaptativo */
 	/* Encabezado */
 	header{
 		height: 30vh;
+		min-height: 30vh;
+		max-height: auto;
 	}
 	/* Portafolio */
 	.portafolio{
