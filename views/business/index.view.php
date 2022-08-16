@@ -22,7 +22,7 @@
 		<header></header>
 		<!-- Portafolio -->
 		<div class="titulo">
-			<h1 class="borde">Título</h1>
+			<h1>Título</h1>
 		</div>
 		<section class="portafolio">
 			<div class="port-col-izq color-gris-oscuro">
@@ -64,7 +64,7 @@
 		</section>
 		<!-- Nosotros -->
 		<div class="titulo">
-			<h1 class="borde">Título</h1>
+			<h1>Título</h1>
 		</div>
 		<section class="nosotros">
 			<div class="nos-fila-arr">
@@ -121,7 +121,7 @@
 		</section>
 		<!-- Contáctenos -->
 		<div class="titulo">
-			<h1 class="borde">Título</h1>
+			<h1>Título</h1>
 		</div>
 		<section class="contactenos">
 			<div class="cont-col-izq color-gris-oscuro">
@@ -132,7 +132,12 @@
 					<iframe class="borde"></iframe>
 				</div>
 				<div class="cont-fila-abj color-gris-claro">
-					<div class="borde parrafo"></div>
+					<div class="borde parrafo">
+						<p>Dirección: Calle XX Nº XX - XX</p>
+						<p>Teléfonos: 601 (XXX XX XX) / (XXX XX XX)</p>
+						<p>Celulares: 310 (XXX XX XX) / 315 (XXX XX XX)</p>
+						<p>Bogotá D.C.</p>
+					</div>
 					<div class="borde social-media"></div>
 				</div>
 			</div>
