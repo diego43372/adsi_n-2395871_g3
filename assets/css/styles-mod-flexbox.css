@@ -34,10 +34,10 @@ body{
 	padding: 10px;
 }
 .titulo h1{
-	flex: 1;
+	/*flex: 1;
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: center;*/
 }
 /* Subtítulos */
 .subtitulo{
@@ -81,8 +81,7 @@ body{
 	flex: 1;
 	display: flex;
 	justify-content: center;
-	align-items: flex-start;	
-	text-align: justify;
+	align-items: flex-start;
 }
 /* Social Media */
 .social-media{
@@ -90,7 +89,7 @@ body{
 }
 /* Enlace Ver */
 .ver{
-	flex: 0 0 40px;	
+	flex: 0 0 50px;	
 }
 /* Contenedor */
 .contenedor{
@@ -103,6 +102,7 @@ Secciones y Pie de Página*/
 nav, header, section, footer{
 	display: flex;
 	flex-flow: column wrap;
+	background: #FFF;
 }
 /* Navegador */
 nav{	
@@ -204,12 +204,14 @@ header{
 .cont-fila-abj{
 	padding: 10px;
 	display: flex;
+	flex-flow: row wrap;
 }
 .cont-fila-arr{
 	flex: 65%;	
 }
 .cont-fila-abj{
-	flex: 35%;	
+	flex: 35%;
+	display: flex;	
 	flex-flow: column wrap;	
 }
 /* Párrafos */
@@ -258,7 +260,7 @@ Diseño Adaptativo */
 	}
 	.ingreso{
 		flex: 20%;
-	}	
+	}
 	/* Encabezado */	
 	header{		
 		min-height: 70vh;		
@@ -278,7 +280,7 @@ Diseño Adaptativo */
 	.port-col-cnt,
 	.port-col-der{
 		flex: 50%;
-	}	
+	}
 	/* Nosotros */
 	.nosotros{
 		height: 100%;
@@ -295,15 +297,21 @@ Diseño Adaptativo */
 	.nos-col-cnt{
 		flex: 35%;
 		background: #FFF;
-	}	
+	}
 	/* Contáctenos */
-	.contactenos{
+	.contactenos{		
 		flex-flow: column wrap;
+	}
+	.cont-fila-arr{
+		flex: 65%;	
+	}
+	.cont-fila-abj{
+		flex: 35%;	
+		flex-flow: column wrap;	
 	}
 }
 /* Celulares */
-@media (max-width: 768px) {	
-	}
+@media (max-width: 768px) {		
 	/* Navegador */
 	nav{
 		height: auto;
@@ -360,6 +368,9 @@ Diseño Adaptativo */
 		justify-content: center;
 	}
 	/* Subtítulos y Párrafos */
+	.portafolio .parrafo p{		
+		text-align: center;
+	}
 	.nos-col-izq .subtitulo h2,
 	.nos-col-izq .parrafo p,	
 	.nos-col-der .subtitulo h2,	
@@ -369,12 +380,13 @@ Diseño Adaptativo */
 	}
 	/* Contáctenos */
 	.contactenos{
-		min-height: 1000px;
+		min-height: 1250px;
 	}
 	.cont-col-izq{
 		flex: 0 0 650px;
 	}
 	.cont-col-der{
 		flex: 1;
-	}	
+	}
+	
 }

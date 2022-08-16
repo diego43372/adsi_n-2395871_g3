@@ -12,9 +12,7 @@
 	<div class="borde contenedor">
 		<!-- Navegador -->
 		<nav>
-			<div class="logo">
-				<img src="assets/img/logo-empresa.png" alt="Logo" title="Logo">
-			</div>
+			<div class="logo"></div>
 			<div class="menu"></div>
 			<div class="ingreso"></div>
 		</nav>
@@ -30,10 +28,10 @@
 					<h2>Subtítulo</h2>
 				</div>
 				<div class="borde imagen">
-					<img src="assets/img/imagen-card.jpg" alt="Imagen Card" title="Imagen Card">
+					<img src="assets/img/imagen-card.jpg" alt="Logo" title="Logo">
 				</div>
 				<div class="borde parrafo">
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde voluptatem quod minus veritatis cumque iusto sint officia quidem amet suscipit repellat ullam impedit laboriosam, obcaecati fuga tenetur et a est mollitia, id cupiditate sapiente nihil. Neque accusantium repellendus quia quidem ut praesentium iure at quod magnam? Ullam, odio architecto. Tempore, facere, deleniti. Aperiam odio esse facere nisi saepe voluptatibus, necessitatibus qui enim fugiat, quam consequuntur ullam rem velit iure temporibus dicta blanditiis. Eaque itaque, esse in tempore quam exercitationem inventore ducimus excepturi nihil accusamus eligendi ratione unde dolore laborum reiciendis tempora nam voluptates fugiat facilis! Eligendi, dolores! Fugit, numquam, corporis.</p>
+					<p>Lorem ipsum dolor sit, amet consectetur adipisicing, elit. Odio veritatis debitis cumque velit, laboriosam voluptatum blanditiis, magnam quam, accusamus voluptatem reiciendis molestias explicabo voluptatibus ut totam molestiae, quidem. Laborum ullam inventore harum libero officia nesciunt necessitatibus dicta sequi expedita, quia debitis aut saepe, magnam maiores obcaecati, maxime repellendus dolorem cumque ipsa temporibus corporis. Facilis ex laborum veritatis quasi omnis, molestiae aperiam, accusamus corporis illum quibusdam recusandae magni blanditiis quisquam ipsam libero at! Voluptates molestiae impedit maxime culpa officia quo quaerat sed, architecto nihil doloremque nam distinctio totam, facilis. Ratione minima blanditiis aliquam nesciunt, fugiat atque recusandae, eveniet dolor! Illo, assumenda.</p>
 				</div>
 				<div class="borde ver"></div>
 			</div>
@@ -42,10 +40,10 @@
 					<h2>Subtítulo</h2>
 				</div>
 				<div class="borde imagen">
-					<img src="assets/img/imagen-card.jpg" alt="Imagen Card" title="Imagen Card">
+					<img src="assets/img/imagen-card.jpg" alt="Logo" title="Logo">
 				</div>
 				<div class="borde parrafo">
-					<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt neque, dicta labore iure vel, quas sunt esse harum eius, pariatur mollitia incidunt asperiores quos amet corrupti et! Facere dolore non tenetur, impedit nostrum earum nobis deserunt consectetur, aspernatur repudiandae quis perferendis nihil inventore reprehenderit? Incidunt, eligendi, dolore! Officiis adipisci sed, minus quos sequi molestiae laudantium quis perferendis aliquam iure facere animi a, cupiditate? Tenetur dolorem eveniet nisi nostrum molestiae, vel repudiandae reiciendis rem accusantium rerum illo fuga quos facere incidunt facilis dolor quo voluptates esse eligendi hic dolores. Maiores eum, nam! Omnis quo natus voluptatibus distinctio ducimus similique! Error, facere.</p>
+					<p>Lorem ipsum dolor sit, amet consectetur adipisicing, elit. Odio veritatis debitis cumque velit, laboriosam voluptatum blanditiis, magnam quam, accusamus voluptatem reiciendis molestias explicabo voluptatibus ut totam molestiae, quidem. Laborum ullam inventore harum libero officia nesciunt necessitatibus dicta sequi expedita, quia debitis aut saepe, magnam maiores obcaecati, maxime repellendus dolorem cumque ipsa temporibus corporis. Facilis ex laborum veritatis quasi omnis, molestiae aperiam, accusamus corporis illum quibusdam recusandae magni blanditiis quisquam ipsam libero at! Voluptates molestiae impedit maxime culpa officia quo quaerat sed, architecto nihil doloremque nam distinctio totam, facilis. Ratione minima blanditiis aliquam nesciunt, fugiat atque recusandae, eveniet dolor! Illo, assumenda.</p>
 				</div>
 				<div class="borde ver"></div>
 			</div>
@@ -54,10 +52,10 @@
 					<h2>Subtítulo</h2>
 				</div>
 				<div class="borde imagen">
-					<img src="assets/img/imagen-card.jpg" alt="Imagen Card" title="Imagen Card">
+					<img src="assets/img/imagen-card.jpg" alt="Logo" title="Logo">
 				</div>
 				<div class="borde parrafo">
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quibusdam minus vitae vero eum quam nobis consequatur quo voluptatibus iure? Tempore unde dolorem dignissimos ipsam aut iure earum quos in non nesciunt ad explicabo aperiam nemo eos impedit, reprehenderit quibusdam officia. Aperiam voluptates dicta maiores accusantium voluptatum excepturi dolores, esse velit numquam nesciunt maxime officiis vel. Vero quam aliquam ullam molestias tempora sit unde, nulla quo delectus exercitationem ea consequuntur reiciendis odit minus officiis, provident ratione? Amet, cumque, nesciunt atque possimus totam asperiores rem accusantium commodi soluta ratione neque necessitatibus quia dolores harum sit reprehenderit minima consequuntur, culpa dolorem animi.</p>
+					<p>Lorem ipsum dolor sit, amet consectetur adipisicing, elit. Odio veritatis debitis cumque velit, laboriosam voluptatum blanditiis, magnam quam, accusamus voluptatem reiciendis molestias explicabo voluptatibus ut totam molestiae, quidem. Laborum ullam inventore harum libero officia nesciunt necessitatibus dicta sequi expedita, quia debitis aut saepe, magnam maiores obcaecati, maxime repellendus dolorem cumque ipsa temporibus corporis. Facilis ex laborum veritatis quasi omnis, molestiae aperiam, accusamus corporis illum quibusdam recusandae magni blanditiis quisquam ipsam libero at! Voluptates molestiae impedit maxime culpa officia quo quaerat sed, architecto nihil doloremque nam distinctio totam, facilis. Ratione minima blanditiis aliquam nesciunt, fugiat atque recusandae, eveniet dolor! Illo, assumenda.</p>
 				</div>
 				<div class="borde ver"></div>
 			</div>
@@ -71,15 +69,15 @@
 				<div class="nos-col-izq color-gris-claro">
 					<div class="borde subtitulo">
 						<h2>Subtítulo</h2>
-					</div>
+					</div>					
 					<div class="borde parrafo">
-						<p>Lorem, ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, in, facilis nostrum ex vero eveniet quae neque officiis, exercitationem minus veritatis! Odit necessitatibus corporis dolores quas vitae, ipsam tempora eos possimus. Recusandae, commodi dolorem excepturi maxime provident quam, temporibus culpa blanditiis nesciunt, voluptatibus itaque accusantium, cupiditate ipsum consequuntur suscipit alias?</p>
+						Lorem ipsum, dolor sit amet consectetur adipisicing, elit. Eaque qui, incidunt eum modi voluptatum quae ducimus quo perferendis minus tempora fugit aperiam sequi commodi exercitationem doloremque a temporibus, reiciendis ipsam pariatur dolores molestias, distinctio! Modi dolorem deleniti ea vero numquam eius recusandae maiores eaque obcaecati dolore ipsam voluptatibus animi, odio?
 					</div>
 					<div class="borde ver"></div>
 				</div>
 				<div class="nos-col-cnt color-gris-oscuro">
-					<div class="borde imagen">
-						<img src="assets/img/imagen-card.jpg" alt="Imagen Card" title="Imagen Card">
+					<div class="imagen">
+						<img src="assets/img/imagen-card.jpg" alt="">
 					</div>
 				</div>
 				<div class="nos-col-der color-gris-claro"></div>
@@ -87,16 +85,16 @@
 			<div class="nos-fila-cnt">
 				<div class="nos-col-izq color-gris-oscuro"></div>
 				<div class="nos-col-cnt color-blanco">
-					<div class="borde imagen">
-						<img src="assets/img/imagen-card.jpg" alt="Imagen Card" title="Imagen Card">
+					<div class="imagen">
+						<img src="assets/img/imagen-card.jpg" alt="">
 					</div>
 				</div>
 				<div class="nos-col-der color-gris-oscuro">
 					<div class="borde subtitulo">
 						<h2>Subtítulo</h2>
-					</div>
+					</div>					
 					<div class="borde parrafo">
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum nihil odio, voluptas aliquam eligendi omnis ducimus ab labore inventore? Atque nobis quidem ea officiis, nulla expedita obcaecati distinctio? Tempora ipsa, nemo voluptas dolorum optio hic deleniti ullam, inventore nulla eveniet molestias cum id, laboriosam. Dolores ea perferendis in impedit, possimus?</p>
+						Lorem ipsum, dolor sit amet consectetur adipisicing, elit. Eaque qui, incidunt eum modi voluptatum quae ducimus quo perferendis minus tempora fugit aperiam sequi commodi exercitationem doloremque a temporibus, reiciendis ipsam pariatur dolores molestias, distinctio! Modi dolorem deleniti ea vero numquam eius recusandae maiores eaque obcaecati dolore ipsam voluptatibus animi, odio?
 					</div>
 					<div class="borde ver"></div>
 				</div>
@@ -105,15 +103,15 @@
 				<div class="nos-col-izq color-gris-claro">
 					<div class="borde subtitulo">
 						<h2>Subtítulo</h2>
-					</div>
+					</div>					
 					<div class="borde parrafo">
-						<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit accusantium exercitationem harum consequatur eligendi vel quibusdam veniam ipsa ullam reprehenderit. Asperiores culpa laboriosam provident perferendis, ipsam cumque sapiente vel, quibusdam vero, debitis qui! Ullam autem ratione illum modi nam officia fuga, et repudiandae odit? Molestias, enim, eligendi. Corrupti eaque, molestiae!</p>
+						Lorem ipsum, dolor sit amet consectetur adipisicing, elit. Eaque qui, incidunt eum modi voluptatum quae ducimus quo perferendis minus tempora fugit aperiam sequi commodi exercitationem doloremque a temporibus, reiciendis ipsam pariatur dolores molestias, distinctio! Modi dolorem deleniti ea vero numquam eius recusandae maiores eaque obcaecati dolore ipsam voluptatibus animi, odio?
 					</div>
 					<div class="borde ver"></div>
 				</div>
 				<div class="nos-col-cnt color-gris-oscuro">
-					<div class="borde imagen">
-						<img src="assets/img/imagen-card.jpg" alt="Imagen Card" title="Imagen Card">
+					<div class="imagen">
+						<img src="assets/img/imagen-card.jpg" alt="">
 					</div>
 				</div>
 				<div class="nos-col-der color-gris-claro"></div>
@@ -124,28 +122,22 @@
 			<h1>Título</h1>
 		</div>
 		<section class="contactenos">
-			<div class="cont-col-izq color-gris-oscuro">
-				<form class="borde"></form>
-			</div>
+			<div class="cont-col-izq color-gris-oscuro"></div>
 			<div class="cont-col-der">
-				<div class="cont-fila-arr color-blanco">
-					<iframe class="borde"></iframe>
-				</div>
-				<div class="cont-fila-abj color-gris-claro">
+				<div class="borde cont-fila-arr color-blanco"></div>
+				<div class="borde cont-fila-abj color-gris-claro">
 					<div class="borde parrafo">
-						<p>Dirección: Calle XX Nº XX - XX</p>
-						<p>Teléfonos: 601 (XXX XX XX) / (XXX XX XX)</p>
-						<p>Celulares: 310 (XXX XX XX) / 315 (XXX XX XX)</p>
-						<p>Bogotá D.C.</p>
+						<p class="borde">Dirección: Calle XX Nº XX - XX. Barrio XXXXXX</p>
+						<p class="borde">Teléfonos: 601 (XXX-XX-XX) / (XXX-XX-XX)</p>
+						<p class="borde">Celulares: 310 (XXX-XX-XX) / 315 (XXX-XX-XX)</p>
+						<p class="borde">Bogotá D.C.</p>
 					</div>
 					<div class="borde social-media"></div>
 				</div>
 			</div>
 		</section>
 		<!-- Pie de página -->
-		<footer>
-			<div class="borde parrafo"></div>
-		</footer>
+		<footer></footer>
 	</div>
 	<script src="assets/js/scripts.js"></script>
 </body>
