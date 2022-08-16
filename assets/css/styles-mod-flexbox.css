@@ -124,7 +124,6 @@ header{
 .portafolio .imagen{
 	flex: 0 0 200px;
 }
-.portafolio .parrafo p{}
 /* Nosotros */
 .nos-fila-arr,
 .nos-fila-cnt,
@@ -308,6 +307,10 @@ Diseño Adaptativo */
 	.nos-fila-cnt,
 	.nos-fila-abj{
 		flex-flow: column wrap;
+	}
+	.nos-col-cnt{
+		/*flex: 0.5;*/
+		height: 22px;
 	}
 	.nos-col-izq,
 	.nos-col-cnt,
