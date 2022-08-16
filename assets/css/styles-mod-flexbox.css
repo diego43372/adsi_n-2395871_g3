@@ -62,7 +62,8 @@ body{
 	padding: 10px;
 }
 .imagen img{
-	width: 150px;
+	width: 100%;
+	max-width: 150px;	
 }
 /* Navegador, Encabezado, 
 Secciones y Pie de Página*/
@@ -161,7 +162,7 @@ header{
 	display: flex;
 	flex-flow: column wrap;
 }
-.cont-col-izq{
+.cont-col-izq{	
 	padding: 10px;
 }
 .cont-col-der{
@@ -266,7 +267,7 @@ Diseño Adaptativo */
 	/* Contáctenos */
 	.contactenos{
 		flex-flow: column wrap;
-	}
+	}	
 }
 /* Celulares */
 @media (max-width: 768px) {	
