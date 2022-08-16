@@ -43,6 +43,7 @@ body{
 	flex: 1;
 	text-align: center;
 }
+/* Subtítulos */
 .subtitulo, .ver{
 	flex: 0 0 40px;	
 }
@@ -51,6 +52,7 @@ body{
 	justify-content: center;
 	align-items: center;	
 }
+/* Imágenes */
 .imagen{
 	flex: 1;
 	display: flex;
@@ -62,12 +64,14 @@ body{
 	max-width: 150px;
 	min-width: 50px;
 }
+/* Párrafos */
 .parrafo{
 	flex: 1;
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;	
 	padding: 10px;
+	text-align: justify;
 }
 /* Navegador, Encabezado, 
 Secciones y Pie de Página*/
@@ -157,6 +161,9 @@ header{
 }
 .nos-col-izq .parrafo{
 	text-align: right;
+}
+.nos-col-der .parrafo{
+	text-align: left;
 }
 /* Contáctenos */
 .contactenos{
@@ -274,6 +281,11 @@ Diseño Adaptativo */
 }
 /* Celulares */
 @media (max-width: 768px) {	
+	/* Parrafos */
+	.portafolio .parrafo,
+	.nosotros .parrafo{
+		text-align: center;
+	}
 	/* Navegador */
 	nav{
 		height: auto;
