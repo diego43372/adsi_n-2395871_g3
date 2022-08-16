@@ -61,9 +61,9 @@ body{
 	align-items: center;
 	padding: 10px;
 }
-.imagen img{
-	width: 100%;
-	max-width: 150px;	
+.imagen img{	
+	max-width: 150px;
+	min-width: 50px;
 }
 /* Navegador, Encabezado, 
 Secciones y Pie de Página*/
