@@ -64,6 +64,10 @@ body{
 	max-width: 150px;
 	min-width: 50px;
 }
+.parrafo{
+	flex: 1;
+	padding: 10px;
+}
 /* Navegador, Encabezado, 
 Secciones y Pie de Página*/
 nav, header, section, footer{
@@ -119,10 +123,6 @@ header{
 }
 .portafolio .imagen{
 	flex: 0 0 200px;
-}
-.portafolio .parrafo{
-	flex: 1;
-	padding: 10px;
 }
 .portafolio .parrafo p{}
 /* Nosotros */
