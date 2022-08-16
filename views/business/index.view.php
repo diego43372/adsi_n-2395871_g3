@@ -72,7 +72,9 @@
 					<div class="borde subtitulo">
 						<h2>Subtítulo</h2>
 					</div>
-					<div class="borde parrafo"></div>
+					<div class="borde parrafo">
+						<p>Lorem, ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, in, facilis nostrum ex vero eveniet quae neque officiis, exercitationem minus veritatis! Odit necessitatibus corporis dolores quas vitae, ipsam tempora eos possimus. Recusandae, commodi dolorem excepturi maxime provident quam, temporibus culpa blanditiis nesciunt, voluptatibus itaque accusantium, cupiditate ipsum consequuntur suscipit alias?</p>
+					</div>
 					<div class="borde ver"></div>
 				</div>
 				<div class="nos-col-cnt color-gris-oscuro">
@@ -93,7 +95,9 @@
 					<div class="borde subtitulo">
 						<h2>Subtítulo</h2>
 					</div>
-					<div class="borde parrafo"></div>
+					<div class="borde parrafo">
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum nihil odio, voluptas aliquam eligendi omnis ducimus ab labore inventore? Atque nobis quidem ea officiis, nulla expedita obcaecati distinctio? Tempora ipsa, nemo voluptas dolorum optio hic deleniti ullam, inventore nulla eveniet molestias cum id, laboriosam. Dolores ea perferendis in impedit, possimus?</p>
+					</div>
 					<div class="borde ver"></div>
 				</div>
 			</div>
@@ -102,7 +106,9 @@
 					<div class="borde subtitulo">
 						<h2>Subtítulo</h2>
 					</div>
-					<div class="borde parrafo"></div>
+					<div class="borde parrafo">
+						<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit accusantium exercitationem harum consequatur eligendi vel quibusdam veniam ipsa ullam reprehenderit. Asperiores culpa laboriosam provident perferendis, ipsam cumque sapiente vel, quibusdam vero, debitis qui! Ullam autem ratione illum modi nam officia fuga, et repudiandae odit? Molestias, enim, eligendi. Corrupti eaque, molestiae!</p>
+					</div>
 					<div class="borde ver"></div>
 				</div>
 				<div class="nos-col-cnt color-gris-oscuro">

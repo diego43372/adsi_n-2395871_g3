@@ -34,6 +34,7 @@ body{
 	height: 70px;
 	background: #343A40;
 	display: flex;
+	justify-content: center;
 	align-items: center;
 	color: #FFF;
 	padding: 10px;
@@ -48,10 +49,7 @@ body{
 .subtitulo{
 	display: flex;
 	justify-content: center;
-	align-items: center;
-}
-.subtitulo h2{
-	text-align: center;
+	align-items: center;	
 }
 .imagen{
 	flex: 1;
@@ -66,6 +64,9 @@ body{
 }
 .parrafo{
 	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;	
 	padding: 10px;
 }
 /* Navegador, Encabezado, 
@@ -132,32 +133,34 @@ header{
 	display: flex;
 	flex-flow: row wrap;	
 }
-.nos-fila-arr .nos-col-izq .subtitulo,
-.nos-fila-abj .nos-col-izq .subtitulo{
+.nos-col-izq .subtitulo{
 	justify-content: flex-end;
-}	
-.nos-fila-cnt .nos-col-der .subtitulo{
+	padding-right: 10px;
+}
+.nos-col-der .subtitulo{
 	justify-content: flex-start;
+	padding-left: 10px;
+}
+.nos-col-izq,
+.nos-col-cnt,
+.nos-col-der{
+	padding: 10px;
+	display: flex;
+	flex-flow: column wrap;
 }
 .nos-col-izq,
 .nos-col-der{
 	flex: 2;
-	padding: 10px;
-	display: flex;
-	flex-flow: column wrap;
 }
 .nos-col-cnt{
-	flex: 1;
-	padding: 10px;
-	display: flex;
-	flex-flow: column wrap;
-}
-.nosotros .parrafo{
 	flex: 1;	
+}
+.nos-col-izq .parrafo{
+	text-align: right;
 }
 /* Contáctenos */
 .contactenos{
-	flex-flow: row wrap;
+	flex-flow: row wrap;	
 }
 .cont-col-izq,
 .cont-col-der{
@@ -165,11 +168,8 @@ header{
 	display: flex;
 	flex-flow: column wrap;
 }
-.cont-col-izq{	
+.cont-col-izq{		
 	padding: 10px;
-}
-.cont-col-der{
-	display: flex;	
 }
 .cont-fila-arr,
 .cont-fila-abj{
@@ -180,8 +180,7 @@ header{
 	flex: 65%;	
 }
 .cont-fila-abj{
-	flex: 35%;
-	display: flex;
+	flex: 35%;	
 	flex-flow: column wrap;
 }
 .contactenos form,
@@ -267,11 +266,11 @@ Diseño Adaptativo */
 	.nos-col-cnt{
 		flex: 35%;
 		background: #FFF;
-	}
+	}	
 	/* Contáctenos */
 	.contactenos{
 		flex-flow: column wrap;
-	}	
+	}
 }
 /* Celulares */
 @media (max-width: 768px) {	
@@ -301,16 +300,15 @@ Diseño Adaptativo */
 	}
 	/* Nosotros */
 	.nosotros{
-		height: 1500px;
+		min-height: 1500px;
 	}		
 	.nos-fila-arr,
 	.nos-fila-cnt,
 	.nos-fila-abj{
 		flex-flow: column wrap;
 	}
-	.nos-col-cnt{
-		/*flex: 0.5;*/
-		height: 22px;
+	.nos-col-cnt{		
+		height: 200px;
 	}
 	.nos-col-izq,
 	.nos-col-cnt,
@@ -323,15 +321,16 @@ Diseño Adaptativo */
 	}		
 	.nos-col-cnt{
 		order: 1;
-	}.nos-fila-arr .nos-col-izq .subtitulo,
-		.nos-fila-abj .nos-col-izq .subtitulo{
-			justify-content: center;
-		}	
-		.nos-fila-cnt .nos-col-der .subtitulo{
-			justify-content: center;
-		}
+	}
+	.nos-fila-arr .nos-col-izq .subtitulo,
+	.nos-fila-abj .nos-col-izq .subtitulo{
+		justify-content: center;
+	}	
+	.nos-fila-cnt .nos-col-der .subtitulo{
+		justify-content: center;
+	}
 	/* Contáctenos */
 	.contactenos{
-		height: 1250px;
+		min-height: 1250px;
 	}
 }
