@@ -343,6 +343,13 @@ Diseño Adaptativo */
 	}
 	/* Contáctenos */
 	.contactenos{
-		min-height: 1500px;
+		min-height: 1250px;
 	}
+	.cont-col-izq{
+		flex: 0 0 750px;
+	}
+	.cont-col-der{
+		flex: 1;
+	}
+
 }
