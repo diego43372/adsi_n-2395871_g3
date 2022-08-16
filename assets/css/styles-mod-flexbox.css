@@ -343,10 +343,10 @@ Diseño Adaptativo */
 	}
 	/* Contáctenos */
 	.contactenos{
-		min-height: 1250px;
+		min-height: 1000px;
 	}
 	.cont-col-izq{
-		flex: 0 0 750px;
+		flex: 0 0 500px;
 	}
 	.cont-col-der{
 		flex: 1;
