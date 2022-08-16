@@ -346,7 +346,7 @@ Diseño Adaptativo */
 		min-height: 1000px;
 	}
 	.cont-col-izq{
-		flex: 0 0 500px;
+		flex: 0 0 600px;
 	}
 	.cont-col-der{
 		flex: 1;
