@@ -9,7 +9,7 @@
 </head>
 <body>
 	<!-- Contenedor -->
-	<div class="borde contenedor">
+	<div class="contenedor">
 		<!-- Navegador -->
 		<nav>
 			<div class="logo">

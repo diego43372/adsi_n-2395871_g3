@@ -1,8 +1,12 @@
+/* Fuentes: Roboto y Yanone*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap');
 /* Escritorio y Portatil */
 *{
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
 }
 body{
 	background: #ddd;
@@ -83,6 +87,7 @@ body{
 	justify-content: center;
 	align-items: flex-start;
 	text-align: justify;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 /* Social Media */
 .social-media{
@@ -104,6 +109,7 @@ nav, header, section, footer{
 	display: flex;
 	flex-flow: column wrap;
 	background: #FFF;
+	height: 100%;
 }
 /* Navegador */
 nav{	
@@ -302,6 +308,7 @@ Diseño Adaptativo */
 	/* Contáctenos */
 	.contactenos{		
 		flex-flow: column wrap;
+		height: 1000px;
 	}
 	.cont-fila-arr{
 		flex: 65%;	
@@ -388,6 +395,5 @@ Diseño Adaptativo */
 	}
 	.cont-col-der{
 		flex: 1;
-	}
-	
+	}	
 }
