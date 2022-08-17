@@ -12,7 +12,9 @@
 	<div class="borde contenedor">
 		<!-- Navegador -->
 		<nav>
-			<div class="logo"></div>
+			<div class="logo">
+				<img src="assets/img/logo-empresa.png" alt="">
+			</div>
 			<div class="menu"></div>
 			<div class="ingreso"></div>
 		</nav>
@@ -71,7 +73,7 @@
 						<h2>Subtítulo</h2>
 					</div>					
 					<div class="borde parrafo">
-						Lorem ipsum, dolor sit amet consectetur adipisicing, elit. Eaque qui, incidunt eum modi voluptatum quae ducimus quo perferendis minus tempora fugit aperiam sequi commodi exercitationem doloremque a temporibus, reiciendis ipsam pariatur dolores molestias, distinctio! Modi dolorem deleniti ea vero numquam eius recusandae maiores eaque obcaecati dolore ipsam voluptatibus animi, odio?
+						<p>Lorem ipsum, dolor sit amet consectetur adipisicing, elit. Eaque qui, incidunt eum modi voluptatum quae ducimus quo perferendis minus tempora fugit aperiam sequi commodi exercitationem doloremque a temporibus, reiciendis ipsam pariatur dolores molestias, distinctio! Modi dolorem deleniti ea vero numquam eius recusandae maiores eaque obcaecati dolore ipsam voluptatibus animi, odio?</p>
 					</div>
 					<div class="borde ver"></div>
 				</div>
@@ -94,7 +96,7 @@
 						<h2>Subtítulo</h2>
 					</div>					
 					<div class="borde parrafo">
-						Lorem ipsum, dolor sit amet consectetur adipisicing, elit. Eaque qui, incidunt eum modi voluptatum quae ducimus quo perferendis minus tempora fugit aperiam sequi commodi exercitationem doloremque a temporibus, reiciendis ipsam pariatur dolores molestias, distinctio! Modi dolorem deleniti ea vero numquam eius recusandae maiores eaque obcaecati dolore ipsam voluptatibus animi, odio?
+						<p>Lorem ipsum, dolor sit amet consectetur adipisicing, elit. Eaque qui, incidunt eum modi voluptatum quae ducimus quo perferendis minus tempora fugit aperiam sequi commodi exercitationem doloremque a temporibus, reiciendis ipsam pariatur dolores molestias, distinctio! Modi dolorem deleniti ea vero numquam eius recusandae maiores eaque obcaecati dolore ipsam voluptatibus animi, odio?</p>
 					</div>
 					<div class="borde ver"></div>
 				</div>
@@ -105,7 +107,7 @@
 						<h2>Subtítulo</h2>
 					</div>					
 					<div class="borde parrafo">
-						Lorem ipsum, dolor sit amet consectetur adipisicing, elit. Eaque qui, incidunt eum modi voluptatum quae ducimus quo perferendis minus tempora fugit aperiam sequi commodi exercitationem doloremque a temporibus, reiciendis ipsam pariatur dolores molestias, distinctio! Modi dolorem deleniti ea vero numquam eius recusandae maiores eaque obcaecati dolore ipsam voluptatibus animi, odio?
+						<p>Lorem ipsum, dolor sit amet consectetur adipisicing, elit. Eaque qui, incidunt eum modi voluptatum quae ducimus quo perferendis minus tempora fugit aperiam sequi commodi exercitationem doloremque a temporibus, reiciendis ipsam pariatur dolores molestias, distinctio! Modi dolorem deleniti ea vero numquam eius recusandae maiores eaque obcaecati dolore ipsam voluptatibus animi, odio?</p>
 					</div>
 					<div class="borde ver"></div>
 				</div>
