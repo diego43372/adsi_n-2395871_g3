@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Empresa</title>
 	<link rel="shortcut icon" href="assets/img/imagen-card.jpg">
+	<link rel="stylesheet" href="assets/css/all.css">
 	<link rel="stylesheet" href="assets/css/styles-mod-flexbox.css">
 </head>
 <body>
@@ -134,7 +135,13 @@
 						<p class="borde">Celulares: 310 (XXX-XX-XX) / 315 (XXX-XX-XX)</p>
 						<p class="borde">Bogotá D.C.</p>
 					</div>
-					<div class="borde social-media"></div>
+					<div class="borde social-media">
+						<div class="borde"><i class="fa-brands fa-square-whatsapp"></i></div>
+						<div class="borde"><i class="fa-brands fa-square-facebook"></i></div>
+						<div class="borde"><i class="fa-brands fa-square-instagram"></i></div>
+						<div class="borde"><i class="fa-brands fa-square-twitter"></i></div>
+						<div class="borde"><i class="fa-brands fa-square-youtube"></i></div>
+					</div>
 				</div>
 			</div>
 		</section>

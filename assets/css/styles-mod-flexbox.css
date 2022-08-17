@@ -91,7 +91,17 @@ body{
 }
 /* Social Media */
 .social-media{
+	flex: 0.4;
+	display: flex;
+	flex-flow: row wrap;
+	padding: 10px;
+}
+.social-media div{
 	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 4em;	
 }
 /* Enlace Ver */
 .ver{
@@ -196,13 +206,13 @@ header{
 }
 /* Contáctenos */
 .contactenos{
-	flex-flow: row wrap;	
+	flex-flow: row wrap;
 }
 .cont-col-izq,
 .cont-col-der{
 	flex: 1;
 	display: flex;
-	flex-flow: column wrap;
+	flex-flow: column wrap;	
 }
 .cont-col-izq{		
 	padding: 10px;
@@ -211,15 +221,15 @@ header{
 .cont-fila-abj{
 	padding: 10px;
 	display: flex;
-	flex-flow: row wrap;
+	flex-flow: column nowrap;	
 }
 .cont-fila-arr{
-	flex: 65%;	
+	flex: 0 0 65%;	
 }
 .cont-fila-abj{
-	flex: 35%;
+	flex: 0 0 35%;
 	display: flex;	
-	flex-flow: column wrap;	
+	flex-flow: column wrap;		
 }
 /* Párrafos */
 .contactenos p{
@@ -305,10 +315,10 @@ Diseño Adaptativo */
 		height: 1000px;
 	}
 	.cont-fila-arr{
-		flex: 65%;	
+		flex: 0 0 350px;	
 	}
 	.cont-fila-abj{
-		flex: 35%;	
+		flex: auto;	
 		flex-flow: column wrap;	
 	}
 }
