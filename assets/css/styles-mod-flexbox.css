@@ -93,7 +93,7 @@ body{
 .social-media{
 	flex: 0.4;
 	display: flex;
-	flex-flow: row wrap;
+	flex-flow: row nowrap;
 	padding: 10px;
 }
 .social-media div{
@@ -138,13 +138,35 @@ nav{
 }
 .menu{
 	flex: 65%;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-end;	
 	height: 100%;
 	background: #EF8814;
 }
+.menu .m-home,
+.menu .m-portafolio,
+.menu .m-nosotros,
+.menu .m-contactenos{
+	flex: 0 0 18%;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	padding: 10px;
+}
 .ingreso{
 	flex: 15%;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: flex-end;
 	height: 100%;
+	padding: 10px;
 	background: #343A40;
+}
+.ingreso .m-ingreso{
+	display: flex;	
+	color: #DDD;
 }
 /* Encabezado y Secciones */
 header, section{	
@@ -243,13 +265,17 @@ header{
 }
 /* Pie de página */
 footer{
-	height: 70px;
+	min-height: 70px;
 	background: #000;
 	display: flex;
 	padding: 10px;
 }
 footer .parrafo{
 	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #DDD;
 }
 
 /* Responsive Design: 
@@ -274,6 +300,7 @@ Diseño Adaptativo */
 	}
 	.menu{
 		flex: 80%;
+		justify-content: center;
 	}
 	.ingreso{
 		flex: 20%;
@@ -332,6 +359,16 @@ Diseño Adaptativo */
 	.logo, .menu, .ingreso{
 		height: 50px;
 		flex: auto;
+	}
+	.menu .m-home,
+	.menu .m-portafolio,
+	.menu .m-nosotros,
+	.menu .m-contactenos{
+		flex: auto;		
+		align-items: center;		
+	}
+	.ingreso{
+		align-items: center;
 	}
 	/* Encabezado */
 	header{

@@ -16,14 +16,20 @@
 			<div class="logo">
 				<img src="assets/img/logo-empresa.png" alt="">
 			</div>
-			<div class="menu"></div>
-			<div class="ingreso"></div>
+			<div class="menu">
+				<div class="borde m-home">Inicio</div>
+				<div class="borde m-portafolio">Portafolio</div>
+				<div class="borde m-nosotros">Nosotros</div>
+				<div class="borde m-contactenos">Contáctenos</div>
+			</div>
+			<div class="ingreso">
+				<div class="m-ingreso">Iniciar Sesión</div>
+			</div>
 		</nav>
 		<!-- Encabezado -->
 		<header></header>
 		<!-- Portafolio -->
-		<div class="titulo">
-			<h1>Título</h1>
+		<div class="titulo"><h1>Título</h1>
 		</div>
 		<section class="portafolio">
 			<div class="port-col-izq color-gris-oscuro">
@@ -64,8 +70,7 @@
 			</div>
 		</section>
 		<!-- Nosotros -->
-		<div class="titulo">
-			<h1>Título</h1>
+		<div class="titulo"><h1>Título</h1>
 		</div>
 		<section class="nosotros">
 			<div class="nos-fila-arr">
@@ -121,8 +126,7 @@
 			</div>
 		</section>
 		<!-- Contáctenos -->
-		<div class="titulo">
-			<h1>Título</h1>
+		<div class="titulo"><h1>Título</h1>
 		</div>
 		<section class="contactenos">
 			<div class="cont-col-izq color-gris-oscuro"></div>
@@ -146,7 +150,13 @@
 			</div>
 		</section>
 		<!-- Pie de página -->
-		<footer></footer>
+		<footer>
+			<div class="parrafo">
+				<p>Todos los Derechos Reservados a:</p>
+				<p>Instructor E. Albeiro Ramos V. © 2022</p>
+				<p>earamos42@misena.edu.co / profealbeiro2020@gmail.com</p>
+			</div>
+		</footer>
 	</div>
 	<script src="assets/js/scripts.js"></script>
 </body>
