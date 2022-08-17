@@ -277,10 +277,7 @@ Diseño Adaptativo */
 	section{		
 		min-height: 750px;		
 	}
-	/* Portafolio */
-	.portafolio{		
-		height: 100%;
-	}		
+	/* Portafolio */			
 	.port-col-izq{
 		flex: 100%;		
 	}
@@ -288,10 +285,7 @@ Diseño Adaptativo */
 	.port-col-der{
 		flex: 50%;
 	}
-	/* Nosotros */
-	.nosotros{
-		height: 100%;
-	}
+	/* Nosotros */	
 	.nos-fila-arr .nos-col-der,
 	.nos-fila-cnt .nos-col-izq,
 	.nos-fila-abj .nos-col-der{
