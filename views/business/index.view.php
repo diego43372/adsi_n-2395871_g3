@@ -23,7 +23,7 @@
 				<div class="borde m-contactenos"><a href="">Contáctenos</a></div>
 			</div>
 			<div class="ingreso">
-				<div class="m-ingreso"><a href="">Iniciar Sesión</a></div>
+				<div class="borde m-ingreso"><a href="">Iniciar Sesión</a></div>
 			</div>
 		</nav>
 		<!-- Encabezado -->

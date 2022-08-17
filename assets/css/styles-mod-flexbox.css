@@ -181,11 +181,9 @@ nav{
 }
 .ingreso .m-ingreso{
 	flex: 1;
-	display: flex;
-	justify-content: center;
+	display: flex;	
 }
-.ingreso a{
-	justify-content: center;
+.ingreso a{	
 	color: #DDD;	
 }
 /* Encabezado y Secciones */
@@ -386,10 +384,7 @@ Diseño Adaptativo */
 	.menu .m-contactenos{
 		flex: auto;		
 		align-items: center;		
-	}
-	.ingreso{
-		align-items: center;
-	}
+	}	
 	/* Encabezado */
 	header{
 		height: 30vh;
