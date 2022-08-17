@@ -373,8 +373,7 @@ Diseño Adaptativo */
 	}
 	/* Contáctenos */
 	.contactenos{		
-		flex-flow: column wrap;
-		/*height: 1000px;*/
+		flex-flow: column wrap;		
 	}
 	.cont-fila-arr{
 		flex: 0 0 350px;	
@@ -461,10 +460,10 @@ Diseño Adaptativo */
 	}
 	/* Contáctenos */
 	.contactenos{
-		min-height: 1250px;
+		min-height: 750px;
 	}
 	.cont-col-izq{
-		flex: 0 0 650px;
+		flex: 0 0 500px;
 	}
 	.cont-col-der{
 		flex: 1;
