@@ -17,19 +17,20 @@
 				<img src="assets/img/logo-empresa.png" alt="">
 			</div>
 			<div class="menu">
-				<div class="borde m-home"><a href="">Inicio</a></div>
-				<div class="borde m-portafolio"><a href="">portafolio</a></div>
-				<div class="borde m-nosotros"><a href="">Nosotros</a></div>
-				<div class="borde m-contactenos"><a href="">Contáctenos</a></div>
+				<div class="borde m-home"><a href="#">Inicio</a></div>
+				<div class="borde m-portafolio"><a href="#portafolio">portafolio</a></div>
+				<div class="borde m-nosotros"><a href="#nosotros">Nosotros</a></div>
+				<div class="borde m-contactenos"><a href="#contactenos">Contáctenos</a></div>
 			</div>
 			<div class="ingreso">
 				<div class="borde m-ingreso"><a href="">Iniciar Sesión</a></div>
 			</div>
-		</nav>
+		</nav>		
 		<!-- Encabezado -->
 		<header></header>
 		<!-- Portafolio -->
-		<div class="titulo"><h1>Título</h1>
+		<div id="portafolio" class="tope"></div>
+		<div class="titulo"><h1>Portafolio</h1>
 		</div>
 		<section class="portafolio">
 			<div class="port-col-izq color-gris-oscuro">
@@ -70,7 +71,8 @@
 			</div>
 		</section>
 		<!-- Nosotros -->
-		<div class="titulo"><h1>Título</h1>
+		<div id="nosotros" class="tope"></div>
+		<div class="titulo"><h1>Nosotros</h1>
 		</div>
 		<section class="nosotros">
 			<div class="nos-fila-arr">
@@ -126,7 +128,8 @@
 			</div>
 		</section>
 		<!-- Contáctenos -->
-		<div class="titulo"><h1>Título</h1>
+		<div id="contactenos" class="tope"></div>
+		<div class="titulo"><h1>Contáctenos</h1>
 		</div>
 		<section class="contactenos">
 			<div class="cont-col-izq color-gris-oscuro"></div>

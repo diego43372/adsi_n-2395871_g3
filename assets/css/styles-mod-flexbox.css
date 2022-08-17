@@ -8,6 +8,9 @@
 	box-sizing: border-box;
 	font-family: 'Roboto', sans-serif;
 }
+html{
+	scroll-behavior: smooth;
+}
 body{
 	background: #ddd;
 }
@@ -27,21 +30,26 @@ body{
 .color-blanco{
 	background: #fff;
 }
+.tope{	
+	position: relative;
+	top: -49px;	
+}
 /* Títulos */
 .titulo{
-	height: 70px;
+	min-height: 70px;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
 	background: #343A40;
+	color: #FFF;	
+}
+.titulo h1{
+	flex: 1;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	color: #FFF;
 	padding: 10px;
-}
-.titulo h1{
-	/*flex: 1;
-	display: flex;
-	justify-content: center;
-	align-items: center;*/
 }
 /* Subtítulos */
 .subtitulo{
@@ -123,8 +131,11 @@ nav, header, section, footer{
 }
 /* Navegador */
 nav{	
+	flex-flow: row wrap;	
 	height: 50px;
-	flex-flow: row wrap;
+	position: sticky;
+	top: 0;
+	z-index: 100;
 }
 .logo{
 	flex: 20%;
@@ -177,7 +188,7 @@ nav{
 	flex: 15%;
 	display: flex;	
 	height: 100%;	
-	background: #343A40;
+	background: #000;
 }
 .ingreso .m-ingreso{
 	flex: 1;
@@ -246,7 +257,7 @@ header{
 }
 /* Contáctenos */
 .contactenos{
-	flex-flow: row wrap;
+	flex-flow: row wrap;	
 }
 .cont-col-izq,
 .cont-col-der{
@@ -286,7 +297,7 @@ footer{
 	min-height: 70px;
 	background: #000;
 	display: flex;
-	padding: 10px;
+	padding: 10px;	
 }
 footer .parrafo{
 	flex: 1;
@@ -300,14 +311,15 @@ footer .parrafo{
 Diseño Adaptativo */
 
 /* Tabletas */
-@media (max-width: 992px) {	
+@media (max-width: 992px) {		
 	/* Contenedor */
 	.contenedor{
 		width: 100%;
 	} 
 	/* Navegador */
-	nav{
-		height: 150px;		
+	nav{		
+		height: 150px;
+		width: 100%;
 	}
 	.logo{		
 		height: 100px;
@@ -357,7 +369,7 @@ Diseño Adaptativo */
 	/* Contáctenos */
 	.contactenos{		
 		flex-flow: column wrap;
-		height: 1000px;
+		/*height: 1000px;*/
 	}
 	.cont-fila-arr{
 		flex: 0 0 350px;	
