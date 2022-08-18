@@ -18,7 +18,7 @@
 			</div>
 			<div class="menu">
 				<div class="borde m-home"><a href="#">Inicio</a></div>
-				<div class="borde m-portafolio"><a href="#portafolio">portafolio</a></div>
+				<div class="borde m-portafolio"><a href="#portafolio">Portafolio</a></div>
 				<div class="borde m-nosotros"><a href="#nosotros">Nosotros</a></div>
 				<div class="borde m-contactenos"><a href="#contactenos">Contáctenos</a></div>
 			</div>
