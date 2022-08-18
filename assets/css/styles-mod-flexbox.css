@@ -447,7 +447,7 @@ Diseño Adaptativo */
 	}
 	/* Contáctenos */
 	.contactenos{
-		/*height: 1000px;		*/
+		height: 900px;		
 	}
 	.cont-col-der{
 		flex-flow: column nowrap;
