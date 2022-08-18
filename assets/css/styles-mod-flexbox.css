@@ -100,7 +100,7 @@ body{
 }
 /* Social Media */
 .social-media{
-	flex: 0.4;
+	flex: 1;
 	display: flex;
 	flex-flow: row nowrap;
 	padding: 10px;
@@ -110,7 +110,7 @@ body{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-size: 4em;	
+	font-size: 3em;	
 }
 /* Enlace Ver */
 .ver{
@@ -273,6 +273,15 @@ header{
 }
 .cont-fila-abj{
 	flex: 0 0 35%;
+	display: flex;
+	flex-flow: column nowrap;	
+}
+.contactenos .parrafo{		
+	flex: none;
+	height: 60%;	
+}
+.contactenos .parrafo p{
+	flex: none;	
 }
 /* Pie de página */
 footer{
@@ -280,13 +289,13 @@ footer{
 	background: #000;	
 	padding: 10px;	
 }
-/*footer .parrafo{
+footer .parrafo{
 	flex: 1;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	color: #DDD;
-}*/
+}
 
 /* Responsive Design: 
 Diseño Adaptativo */
@@ -451,12 +460,10 @@ Diseño Adaptativo */
 	}
 	.cont-col-der{
 		flex-flow: column nowrap;
-	}
-	.cont-fila-arr{
-		flex: 0 0 60%;
-	}
-	.cont-fila-abj{
-		flex: 0 0 40%;		
+	}	
+	/* Social Media */
+	.contactenos .social-media div{		
+		font-size: 2em;
 	}
 		
 }
