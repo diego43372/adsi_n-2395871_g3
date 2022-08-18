@@ -278,6 +278,11 @@ header{
 }
 .cont-fila-arr{
 	flex: 0 0 65%;
+	display: flex;
+}
+.cont-fila-arr iframe{
+	flex: 1;	
+	border: 0;
 }
 .cont-fila-abj{
 	flex: 0 0 35%;
