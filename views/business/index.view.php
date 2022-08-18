@@ -143,11 +143,21 @@
 						<p class="borde">Bogotá D.C.</p>
 					</div>
 					<div class="borde social-media">
-						<div class="borde"><i class="fa-brands fa-square-whatsapp"></i></div>
-						<div class="borde"><i class="fa-brands fa-square-facebook"></i></div>
-						<div class="borde"><i class="fa-brands fa-square-instagram"></i></div>
-						<div class="borde"><i class="fa-brands fa-square-twitter"></i></div>
-						<div class="borde"><i class="fa-brands fa-square-youtube"></i></div>
+						<div class="borde">
+							<a href="https://web.whatsapp.com/" target="_blank"><i class="fa-brands fa-square-whatsapp"></i></a>
+						</div>
+						<div class="borde">
+							<a href="https://es-la.facebook.com/" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
+						</div>
+						<div class="borde">
+							<a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
+						</div>
+						<div class="borde">
+							<a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-square-twitter"></i></a>
+						</div>
+						<div class="borde">
+							<a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-square-youtube"></i></a>
+						</div>
 					</div>
 				</div>
 			</div>

@@ -110,8 +110,16 @@ body{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-size: 3em;	
+	font-size: 2.5em;	
 }
+.social-media div a{
+	text-decoration: none;
+	color: #000;
+}
+.social-media div a:hover{	
+	color: #FFF;
+}
+
 /* Enlace Ver */
 .ver{
 	flex: 0 0 50px;	
