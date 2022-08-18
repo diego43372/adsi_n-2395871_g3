@@ -294,7 +294,8 @@ header{
 	height: 60%;	
 }
 .contactenos .parrafo p{
-	flex: none;	
+	flex: none;
+	text-align: center;
 }
 /* Pie de página */
 footer{

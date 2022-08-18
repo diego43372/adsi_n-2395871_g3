@@ -139,9 +139,9 @@
 				</div>
 				<div class="cont-fila-abj color-gris-claro">
 					<div class="borde parrafo">
-						<p class="borde">Dirección: Calle XX Nº XX - XX. Barrio XXXXXX</p>
-						<p class="borde">Teléfonos: 601 (XXX-XX-XX) / (XXX-XX-XX)</p>
-						<p class="borde">Celulares: 310 (XXX-XX-XX) / 315 (XXX-XX-XX)</p>
+						<p class="borde">SENA : CENTRO DE ELECTRICIDAD, ELECTRÓNICA Y TELECOMUNICACIONES-Regional Distrito Capital</p>
+						<p class="borde">Dirección: Cra 30 No. 17-91 Sur</p>
+						<p class="borde">Teléfonos: 601 (3430111) /  018000 910270</p>
 						<p class="borde">Bogotá D.C.</p>
 					</div>
 					<div class="borde social-media">
