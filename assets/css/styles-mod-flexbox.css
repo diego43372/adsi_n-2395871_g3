@@ -461,10 +461,9 @@ Diseño Adaptativo */
 	.cont-col-izq,
 	.cont-col-der{
 		flex: auto;
-		height: 40%;
+		height: 50%;
 	}
-	.cont-col-der{
-		height: 60%;
+	.cont-col-der{		
 		flex-flow: column nowrap;
 	}
 	/* Social Media */
