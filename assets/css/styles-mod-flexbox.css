@@ -360,14 +360,14 @@ Diseño Adaptativo */
 	.contactenos{
 		height: 750px;
 		flex-flow: column wrap;
-	}
+	}	
 	.cont-col-izq,
 	.cont-col-der{
 		flex: auto;
+		height: 60%;
 	}
-	.cont-col-izq,
 	.cont-col-der{
-		height: 50%;
+		height: 40%;
 	}
 	.cont-col-der{
 		flex-flow: row nowrap;
@@ -458,9 +458,15 @@ Diseño Adaptativo */
 	.contactenos{
 		height: 850px;
 	}
+	.cont-col-izq,
 	.cont-col-der{
+		flex: auto;
+		height: 40%;
+	}
+	.cont-col-der{
+		height: 60%;
 		flex-flow: column nowrap;
-	}	
+	}
 	/* Social Media */
 	.contactenos .social-media div{		
 		font-size: 2em;
