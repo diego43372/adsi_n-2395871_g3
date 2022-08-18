@@ -365,11 +365,11 @@ Diseño Adaptativo */
 	.cont-col-der{
 		flex: auto;
 	}
-	.cont-col-izq{
-		height: 60%;
+	.cont-col-izq,
+	.cont-col-der{
+		height: 50%;
 	}
-	.cont-col-der{		
-		height: 40%;
+	.cont-col-der{
 		flex-flow: row nowrap;
 	}
 	.cont-fila-arr{
@@ -456,7 +456,7 @@ Diseño Adaptativo */
 	}
 	/* Contáctenos */
 	.contactenos{
-		height: 900px;		
+		height: 850px;
 	}
 	.cont-col-der{
 		flex-flow: column nowrap;
