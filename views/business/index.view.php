@@ -150,26 +150,26 @@
 					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.9878629548625!2d-74.11429368585394!3d4.596196543836134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f992f88e2ce0b%3A0x5f759f81a7557781!2sSENA%20-%20Complejo%20sur!5e0!3m2!1ses-419!2sco!4v1660858647712!5m2!1ses-419!2sco"></iframe>
 				</div>
 				<div class="cont-fila-abj color-gris-claro">
-					<div class="borde parrafo">
-						<p class="borde">SENA : CENTRO DE ELECTRICIDAD, ELECTRÓNICA Y TELECOMUNICACIONES-Regional Distrito Capital</p>
-						<p class="borde">Dirección: Cra 30 No. 17-91 Sur</p>
-						<p class="borde">Teléfonos: 601 (3430111) /  018000 910270</p>
-						<p class="borde">Bogotá D.C.</p>
+					<div class="parrafo">
+						<p>SENA : CENTRO DE ELECTRICIDAD, ELECTRÓNICA Y TELECOMUNICACIONES-Regional Distrito Capital</p>
+						<p>Dirección: Cra 30 No. 17-91 Sur</p>
+						<p>Teléfonos: 601 (3430111) /  018000 910270</p>
+						<p>Bogotá D.C.</p>
 					</div>
-					<div class="borde social-media">
-						<div class="borde">
+					<div class="social-media">
+						<div>
 							<a href="https://web.whatsapp.com/" target="_blank"><i class="fa-brands fa-square-whatsapp"></i></a>
 						</div>
-						<div class="borde">
+						<div>
 							<a href="https://es-la.facebook.com/" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
 						</div>
-						<div class="borde">
+						<div>
 							<a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
 						</div>
-						<div class="borde">
+						<div>
 							<a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-square-twitter"></i></a>
 						</div>
-						<div class="borde">
+						<div>
 							<a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-square-youtube"></i></a>
 						</div>
 					</div>

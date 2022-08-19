@@ -107,13 +107,14 @@ body{
 	display: flex;
 	flex-flow: row nowrap;
 	padding: 10px;
+	border-top: 1px solid #ccc;	;
 }
 .social-media div{
 	flex: 1;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-size: 2.5em;	
+	font-size: 3.5em;
 }
 .social-media div a{
 	text-decoration: none;
@@ -426,7 +427,7 @@ Diseño Adaptativo */
 	}
 	.cont-fila-abj{
 		flex: 1;
-	}
+	}	
 }
 /* Celulares */
 @media (max-width: 768px) {		
@@ -521,9 +522,4 @@ Diseño Adaptativo */
 		height: 45%;			
 		flex-flow: column nowrap;
 	}
-	/* Social Media */
-	.contactenos .social-media div{		
-		font-size: 3em;
-	}
-		
 }
