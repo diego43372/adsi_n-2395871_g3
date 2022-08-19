@@ -147,6 +147,10 @@ body{
 .ver a:hover{
 	background: rgba(30, 30, 30, 0.5);
 }
+/* Otras Páginas */
+.paginas{
+	min-height: 72vh;
+}
 /* Contenedor */
 .contenedor{
 	max-width: 1280px;
@@ -232,7 +236,7 @@ nav{
 }
 /* Encabezado y Secciones */
 header, section{	
-	min-height: 85vh;	
+	min-height: 83.5vh;	
 }
 /* Encabezado */
 header{
@@ -351,6 +355,10 @@ Diseño Adaptativo */
 	/* Tope: Navegación */
 	.tope{
 		top: -149px;	
+	}
+	/* Otras Páginas */
+	.paginas{
+		min-height: 58vh;
 	}
 	/* Contenedor */
 	.contenedor{
