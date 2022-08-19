@@ -17,13 +17,13 @@
 				<img src="assets/img/logo-empresa.png" alt="">
 			</div>
 			<div class="menu">
-				<div class="borde m-home"><a href="#">Inicio</a></div>
-				<div class="borde m-portafolio"><a href="#portafolio">Portafolio</a></div>
-				<div class="borde m-nosotros"><a href="#nosotros">Nosotros</a></div>
-				<div class="borde m-contactenos"><a href="#contactenos">Contáctenos</a></div>
+				<div class="m-home"><a href="#">Inicio</a></div>
+				<div class="m-portafolio"><a href="#portafolio">Portafolio</a></div>
+				<div class="m-nosotros"><a href="#nosotros">Nosotros</a></div>
+				<div class="m-contactenos"><a href="#contactenos">Contáctenos</a></div>
 			</div>
 			<div class="ingreso">
-				<div class="borde m-ingreso"><a href="">Iniciar Sesión</a></div>
+				<div class="m-ingreso"><a href="">Iniciar Sesión</a></div>
 			</div>
 		</nav>		
 		<!-- Encabezado -->

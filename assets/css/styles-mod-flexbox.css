@@ -189,7 +189,7 @@ nav{
 .menu .m-portafolio,
 .menu .m-nosotros,
 .menu .m-contactenos{
-	flex: 0 0 18%;
+	flex: 0 0 15%;
 	display: flex;
 }
 .menu a,
