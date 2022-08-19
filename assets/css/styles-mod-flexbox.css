@@ -122,10 +122,24 @@ body{
 .social-media div a:hover{	
 	color: #FFF;
 }
-
 /* Enlace Ver */
 .ver{
-	flex: 0 0 50px;	
+	flex: 0 0 50px;
+	display: flex;	
+	flex-flow: row nowrap;
+	justify-content: center;
+	padding: 5px;
+}
+.ver a{
+	flex: 0 0 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	font-size: 1.3em;
+	color: #EEE;
+	background: #2A5159;
+	border-radius: 4px;
 }
 /* Contenedor */
 .contenedor{
@@ -432,6 +446,12 @@ Diseño Adaptativo */
 	.port-col-der{		
 		flex: auto;
 	}
+	.portafolio a{
+		flex: 0 0 100%;		
+	}
+	.portafolio .parrafo p{		
+		text-align: center;
+	}	
 	/* Nosotros */
 	.nosotros{
 		min-height: 1500px;
@@ -462,11 +482,7 @@ Diseño Adaptativo */
 	}	
 	.nos-fila-cnt .nos-col-der .subtitulo{
 		justify-content: center;
-	}
-	/* Subtítulos y Párrafos */
-	.portafolio .parrafo p{		
-		text-align: center;
-	}
+	}	
 	.nos-col-izq .subtitulo h2,
 	.nos-col-izq .parrafo p,	
 	.nos-col-der .subtitulo h2,	

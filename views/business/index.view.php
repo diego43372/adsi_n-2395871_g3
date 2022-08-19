@@ -43,7 +43,9 @@
 				<div class="borde parrafo">
 					<p>Lorem ipsum dolor sit, amet consectetur adipisicing, elit. Odio veritatis debitis cumque velit, laboriosam voluptatum blanditiis, magnam quam, accusamus voluptatem reiciendis molestias explicabo voluptatibus ut totam molestiae, quidem. Laborum ullam inventore harum libero officia nesciunt necessitatibus dicta sequi expedita, quia debitis aut saepe, magnam maiores obcaecati, maxime repellendus dolorem cumque ipsa temporibus corporis. Facilis ex laborum veritatis quasi omnis, molestiae aperiam, accusamus corporis illum quibusdam recusandae magni blanditiis quisquam ipsam libero at! Voluptates molestiae impedit maxime culpa officia quo quaerat sed, architecto nihil doloremque nam distinctio totam, facilis. Ratione minima blanditiis aliquam nesciunt, fugiat atque recusandae, eveniet dolor! Illo, assumenda.</p>
 				</div>
-				<div class="borde ver"></div>
+				<div class="borde ver">
+					<a href="">Ver...</a>
+				</div>
 			</div>
 			<div class="port-col-cnt color-blanco">
 				<div class="borde subtitulo">
@@ -55,7 +57,9 @@
 				<div class="borde parrafo">
 					<p>Lorem ipsum dolor sit, amet consectetur adipisicing, elit. Odio veritatis debitis cumque velit, laboriosam voluptatum blanditiis, magnam quam, accusamus voluptatem reiciendis molestias explicabo voluptatibus ut totam molestiae, quidem. Laborum ullam inventore harum libero officia nesciunt necessitatibus dicta sequi expedita, quia debitis aut saepe, magnam maiores obcaecati, maxime repellendus dolorem cumque ipsa temporibus corporis. Facilis ex laborum veritatis quasi omnis, molestiae aperiam, accusamus corporis illum quibusdam recusandae magni blanditiis quisquam ipsam libero at! Voluptates molestiae impedit maxime culpa officia quo quaerat sed, architecto nihil doloremque nam distinctio totam, facilis. Ratione minima blanditiis aliquam nesciunt, fugiat atque recusandae, eveniet dolor! Illo, assumenda.</p>
 				</div>
-				<div class="borde ver"></div>
+				<div class="borde ver">
+					<a href="">Ver...</a>
+				</div>
 			</div>
 			<div class="port-col-der color-gris-claro">
 				<div class="borde subtitulo">
@@ -67,7 +71,9 @@
 				<div class="borde parrafo">
 					<p>Lorem ipsum dolor sit, amet consectetur adipisicing, elit. Odio veritatis debitis cumque velit, laboriosam voluptatum blanditiis, magnam quam, accusamus voluptatem reiciendis molestias explicabo voluptatibus ut totam molestiae, quidem. Laborum ullam inventore harum libero officia nesciunt necessitatibus dicta sequi expedita, quia debitis aut saepe, magnam maiores obcaecati, maxime repellendus dolorem cumque ipsa temporibus corporis. Facilis ex laborum veritatis quasi omnis, molestiae aperiam, accusamus corporis illum quibusdam recusandae magni blanditiis quisquam ipsam libero at! Voluptates molestiae impedit maxime culpa officia quo quaerat sed, architecto nihil doloremque nam distinctio totam, facilis. Ratione minima blanditiis aliquam nesciunt, fugiat atque recusandae, eveniet dolor! Illo, assumenda.</p>
 				</div>
-				<div class="borde ver"></div>
+				<div class="borde ver">
+					<a href="">Ver...</a>
+				</div>
 			</div>
 		</section>
 		<!-- Nosotros -->
