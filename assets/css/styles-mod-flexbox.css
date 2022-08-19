@@ -151,6 +151,20 @@ body{
 .paginas{
 	min-height: 72vh;
 }
+/* Migas de Pan */
+.migas{
+	display: flex;
+	flex-flow: row nowrap;
+	/*justify-content: flex-start;*/
+	align-items: center;
+	padding: 10px;
+}
+.migas a,
+.migas P{
+	text-decoration: none;
+	color: #EEE;
+	font-size: 1.2em;
+}
 /* Contenedor */
 .contenedor{
 	max-width: 1280px;
