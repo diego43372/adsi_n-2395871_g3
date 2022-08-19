@@ -61,6 +61,7 @@ body{
 	padding: 10px;
 	font-family: 'Roboto', sans-serif;
 	font-size: 0.8em;
+	border-radius: 4px 4px 0 0;
 }
 .subtitulo h2{
 	flex: 1;
@@ -130,6 +131,7 @@ body{
 	flex-flow: row nowrap;
 	justify-content: center;
 	padding: 5px;
+	border-radius: 0 0 4px 4px;
 }
 .ver a{
 	flex: 0 0 50%;

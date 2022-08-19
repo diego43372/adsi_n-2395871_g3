@@ -41,7 +41,7 @@
 					<img src="assets/img/imagen-card.jpg" alt="Logo" title="Logo">
 				</div>
 				<div class="borde parrafo">
-					<p>Lorem ipsum dolor sit, amet consectetur adipisicing, elit. Odio veritatis debitis cumque velit, laboriosam voluptatum blanditiis, magnam quam, accusamus voluptatem reiciendis molestias explicabo voluptatibus ut totam molestiae, quidem. Laborum ullam inventore harum libero officia nesciunt necessitatibus dicta sequi expedita, quia debitis aut saepe, magnam maiores obcaecati, maxime repellendus dolorem cumque ipsa temporibus corporis. Facilis ex laborum veritatis quasi omnis, molestiae aperiam, accusamus corporis illum quibusdam recusandae magni blanditiis quisquam ipsam libero at! Voluptates molestiae impedit maxime culpa officia quo quaerat sed, architecto nihil doloremque nam distinctio totam, facilis. Ratione minima blanditiis aliquam nesciunt, fugiat atque recusandae, eveniet dolor! Illo, assumenda.</p>
+					<p>Lorem ipsum, dolor sit amet consectetur adipisicing, elit. Eaque qui, incidunt eum modi voluptatum quae ducimus quo perferendis minus tempora fugit aperiam sequi commodi exercitationem doloremque a temporibus, reiciendis ipsam pariatur dolores molestias, distinctio! Modi dolorem deleniti ea vero numquam eius recusandae maiores eaque obcaecati dolore ipsam voluptatibus animi, odio?</p>
 				</div>
 				<div class="borde ver">
 					<a href="">Ver más...</a>
@@ -55,7 +55,7 @@
 					<img src="assets/img/imagen-card.jpg" alt="Logo" title="Logo">
 				</div>
 				<div class="borde parrafo">
-					<p>Lorem ipsum dolor sit, amet consectetur adipisicing, elit. Odio veritatis debitis cumque velit, laboriosam voluptatum blanditiis, magnam quam, accusamus voluptatem reiciendis molestias explicabo voluptatibus ut totam molestiae, quidem. Laborum ullam inventore harum libero officia nesciunt necessitatibus dicta sequi expedita, quia debitis aut saepe, magnam maiores obcaecati, maxime repellendus dolorem cumque ipsa temporibus corporis. Facilis ex laborum veritatis quasi omnis, molestiae aperiam, accusamus corporis illum quibusdam recusandae magni blanditiis quisquam ipsam libero at! Voluptates molestiae impedit maxime culpa officia quo quaerat sed, architecto nihil doloremque nam distinctio totam, facilis. Ratione minima blanditiis aliquam nesciunt, fugiat atque recusandae, eveniet dolor! Illo, assumenda.</p>
+					<p>Lorem ipsum, dolor sit amet consectetur adipisicing, elit. Eaque qui, incidunt eum modi voluptatum quae ducimus quo perferendis minus tempora fugit aperiam sequi commodi exercitationem doloremque a temporibus, reiciendis ipsam pariatur dolores molestias, distinctio! Modi dolorem deleniti ea vero numquam eius recusandae maiores eaque obcaecati dolore ipsam voluptatibus animi, odio?</p>
 				</div>
 				<div class="borde ver">
 					<a href="">Ver más...</a>
@@ -69,7 +69,7 @@
 					<img src="assets/img/imagen-card.jpg" alt="Logo" title="Logo">
 				</div>
 				<div class="borde parrafo">
-					<p>Lorem ipsum dolor sit, amet consectetur adipisicing, elit. Odio veritatis debitis cumque velit, laboriosam voluptatum blanditiis, magnam quam, accusamus voluptatem reiciendis molestias explicabo voluptatibus ut totam molestiae, quidem. Laborum ullam inventore harum libero officia nesciunt necessitatibus dicta sequi expedita, quia debitis aut saepe, magnam maiores obcaecati, maxime repellendus dolorem cumque ipsa temporibus corporis. Facilis ex laborum veritatis quasi omnis, molestiae aperiam, accusamus corporis illum quibusdam recusandae magni blanditiis quisquam ipsam libero at! Voluptates molestiae impedit maxime culpa officia quo quaerat sed, architecto nihil doloremque nam distinctio totam, facilis. Ratione minima blanditiis aliquam nesciunt, fugiat atque recusandae, eveniet dolor! Illo, assumenda.</p>
+					<p>Lorem ipsum, dolor sit amet consectetur adipisicing, elit. Eaque qui, incidunt eum modi voluptatum quae ducimus quo perferendis minus tempora fugit aperiam sequi commodi exercitationem doloremque a temporibus, reiciendis ipsam pariatur dolores molestias, distinctio! Modi dolorem deleniti ea vero numquam eius recusandae maiores eaque obcaecati dolore ipsam voluptatibus animi, odio?</p>
 				</div>
 				<div class="borde ver">
 					<a href="">Ver más...</a>
