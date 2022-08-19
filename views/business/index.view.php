@@ -35,7 +35,7 @@
 		<section class="portafolio">
 			<div class="port-col-izq color-gris-oscuro">
 				<div class="borde subtitulo">
-					<h2>Subtítulo</h2>
+					<h2>Programas</h2>
 				</div>
 				<div class="borde imagen">
 					<img src="assets/img/imagen-card.jpg" alt="Logo" title="Logo">
@@ -49,7 +49,7 @@
 			</div>
 			<div class="port-col-cnt color-blanco">
 				<div class="borde subtitulo">
-					<h2>Subtítulo</h2>
+					<h2>Servicios</h2>
 				</div>
 				<div class="borde imagen">
 					<img src="assets/img/imagen-card.jpg" alt="Logo" title="Logo">
@@ -63,7 +63,7 @@
 			</div>
 			<div class="port-col-der color-gris-claro">
 				<div class="borde subtitulo">
-					<h2>Subtítulo</h2>
+					<h2>Directorio</h2>
 				</div>
 				<div class="borde imagen">
 					<img src="assets/img/imagen-card.jpg" alt="Logo" title="Logo">
@@ -84,7 +84,7 @@
 			<div class="nos-fila-arr">
 				<div class="nos-col-izq color-gris-claro">
 					<div class="borde subtitulo">
-						<h2>Subtítulo</h2>
+						<h2>Entidad</h2>
 					</div>					
 					<div class="borde parrafo">
 						<p>Lorem ipsum, dolor sit amet consectetur adipisicing, elit. Eaque qui, incidunt eum modi voluptatum quae ducimus quo perferendis minus tempora fugit aperiam sequi commodi exercitationem doloremque a temporibus, reiciendis ipsam pariatur dolores molestias, distinctio! Modi dolorem deleniti ea vero numquam eius recusandae maiores eaque obcaecati dolore ipsam voluptatibus animi, odio?</p>
@@ -109,7 +109,7 @@
 				</div>
 				<div class="nos-col-der color-gris-oscuro">
 					<div class="borde subtitulo">
-						<h2>Subtítulo</h2>
+						<h2>Organigrama</h2>
 					</div>					
 					<div class="borde parrafo">
 						<p>Lorem ipsum, dolor sit amet consectetur adipisicing, elit. Eaque qui, incidunt eum modi voluptatum quae ducimus quo perferendis minus tempora fugit aperiam sequi commodi exercitationem doloremque a temporibus, reiciendis ipsam pariatur dolores molestias, distinctio! Modi dolorem deleniti ea vero numquam eius recusandae maiores eaque obcaecati dolore ipsam voluptatibus animi, odio?</p>
@@ -122,7 +122,7 @@
 			<div class="nos-fila-abj">
 				<div class="nos-col-izq color-gris-claro">
 					<div class="borde subtitulo">
-						<h2>Subtítulo</h2>
+						<h2>Bibliotecas</h2>
 					</div>					
 					<div class="borde parrafo">
 						<p>Lorem ipsum, dolor sit amet consectetur adipisicing, elit. Eaque qui, incidunt eum modi voluptatum quae ducimus quo perferendis minus tempora fugit aperiam sequi commodi exercitationem doloremque a temporibus, reiciendis ipsam pariatur dolores molestias, distinctio! Modi dolorem deleniti ea vero numquam eius recusandae maiores eaque obcaecati dolore ipsam voluptatibus animi, odio?</p>
