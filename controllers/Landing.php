@@ -16,5 +16,25 @@
 			require_once 'views/business/services.view.php';
 			require_once 'views/roles/business/footer.php';	
 		}
+		public function directory(){
+			require_once 'views/roles/business/header.php';
+			require_once 'views/business/directory.view.php';
+			require_once 'views/roles/business/footer.php';	
+		}
+		public function entity(){
+			require_once 'views/roles/business/header.php';
+			require_once 'views/business/entity.view.php';
+			require_once 'views/roles/business/footer.php';	
+		}
+		public function organization(){
+			require_once 'views/roles/business/header.php';
+			require_once 'views/business/organization.view.php';
+			require_once 'views/roles/business/footer.php';	
+		}
+		public function library(){
+			require_once 'views/roles/business/header.php';
+			require_once 'views/business/library.view.php';
+			require_once 'views/roles/business/footer.php';	
+		}
 	}
 ?>

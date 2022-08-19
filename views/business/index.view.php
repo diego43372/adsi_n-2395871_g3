@@ -44,7 +44,7 @@
 					<p>Lorem ipsum, dolor sit amet consectetur adipisicing, elit. Eaque qui, incidunt eum modi voluptatum quae ducimus quo perferendis minus tempora fugit aperiam sequi commodi exercitationem doloremque a temporibus, reiciendis ipsam pariatur dolores molestias, distinctio! Modi dolorem deleniti ea vero numquam eius recusandae maiores eaque obcaecati dolore ipsam voluptatibus animi, odio?</p>
 				</div>
 				<div class="borde ver">
-					<a href="">Ver más...</a>
+					<a href="?c=Landing&a=directory">Ver más...</a>
 				</div>
 			</div>
 		</section>
@@ -62,7 +62,7 @@
 						<p>Lorem ipsum, dolor sit amet consectetur adipisicing, elit. Eaque qui, incidunt eum modi voluptatum quae ducimus quo perferendis minus tempora fugit aperiam sequi commodi exercitationem doloremque a temporibus, reiciendis ipsam pariatur dolores molestias, distinctio! Modi dolorem deleniti ea vero numquam eius recusandae maiores eaque obcaecati dolore ipsam voluptatibus animi, odio?</p>
 					</div>
 					<div class="borde ver">
-						<a href="">Ver más...</a>
+						<a href="?c=Landing&a=entity">Ver más...</a>
 					</div>
 				</div>
 				<div class="nos-col-cnt color-gris-oscuro">
@@ -87,7 +87,7 @@
 						<p>Lorem ipsum, dolor sit amet consectetur adipisicing, elit. Eaque qui, incidunt eum modi voluptatum quae ducimus quo perferendis minus tempora fugit aperiam sequi commodi exercitationem doloremque a temporibus, reiciendis ipsam pariatur dolores molestias, distinctio! Modi dolorem deleniti ea vero numquam eius recusandae maiores eaque obcaecati dolore ipsam voluptatibus animi, odio?</p>
 					</div>
 					<div class="borde ver">
-						<a href="">Ver más...</a>
+						<a href="?c=Landing&a=organization">Ver más...</a>
 					</div>
 				</div>
 			</div>
@@ -100,7 +100,7 @@
 						<p>Lorem ipsum, dolor sit amet consectetur adipisicing, elit. Eaque qui, incidunt eum modi voluptatum quae ducimus quo perferendis minus tempora fugit aperiam sequi commodi exercitationem doloremque a temporibus, reiciendis ipsam pariatur dolores molestias, distinctio! Modi dolorem deleniti ea vero numquam eius recusandae maiores eaque obcaecati dolore ipsam voluptatibus animi, odio?</p>
 					</div>
 					<div class="borde ver">
-						<a href="">Ver más...</a>
+						<a href="?c=Landing&a=library">Ver más...</a>
 					</div>
 				</div>
 				<div class="nos-col-cnt color-gris-oscuro">
