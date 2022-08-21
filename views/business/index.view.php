@@ -7,7 +7,7 @@
 		<section class="portafolio">
 			<div class="port-col-izq color-gris-oscuro">
 				<div class="borde subtitulo">
-					<h2>Programas</h2>
+					<h2>Tablas</h2>
 				</div>
 				<div class="borde imagen">
 					<img src="assets/img/imagen-card.jpg" alt="Logo" title="Logo">
@@ -16,12 +16,12 @@
 					<p>Lorem ipsum, dolor sit amet consectetur adipisicing, elit. Eaque qui, incidunt eum modi voluptatum quae ducimus quo perferendis minus tempora fugit aperiam sequi commodi exercitationem doloremque a temporibus, reiciendis ipsam pariatur dolores molestias, distinctio! Modi dolorem deleniti ea vero numquam eius recusandae maiores eaque obcaecati dolore ipsam voluptatibus animi, odio?</p>
 				</div>
 				<div class="borde ver">
-					<a href="?c=Landing&a=programs">Ver más...</a>
+					<a href="?c=Landing&a=tables">Ver más...</a>
 				</div>
 			</div>
 			<div class="port-col-cnt color-blanco">
 				<div class="borde subtitulo">
-					<h2>Servicios</h2>
+					<h2>Alertas</h2>
 				</div>
 				<div class="borde imagen">
 					<img src="assets/img/imagen-card.jpg" alt="Logo" title="Logo">
@@ -30,12 +30,12 @@
 					<p>Lorem ipsum, dolor sit amet consectetur adipisicing, elit. Eaque qui, incidunt eum modi voluptatum quae ducimus quo perferendis minus tempora fugit aperiam sequi commodi exercitationem doloremque a temporibus, reiciendis ipsam pariatur dolores molestias, distinctio! Modi dolorem deleniti ea vero numquam eius recusandae maiores eaque obcaecati dolore ipsam voluptatibus animi, odio?</p>
 				</div>
 				<div class="borde ver">
-					<a href="?c=Landing&a=services">Ver más...</a>
+					<a href="?c=Landing&a=sweetAlert">Ver más...</a>
 				</div>
 			</div>
 			<div class="port-col-der color-gris-claro">
 				<div class="borde subtitulo">
-					<h2>Directorio</h2>
+					<h2>Filtros</h2>
 				</div>
 				<div class="borde imagen">
 					<img src="assets/img/imagen-card.jpg" alt="Logo" title="Logo">
@@ -44,7 +44,7 @@
 					<p>Lorem ipsum, dolor sit amet consectetur adipisicing, elit. Eaque qui, incidunt eum modi voluptatum quae ducimus quo perferendis minus tempora fugit aperiam sequi commodi exercitationem doloremque a temporibus, reiciendis ipsam pariatur dolores molestias, distinctio! Modi dolorem deleniti ea vero numquam eius recusandae maiores eaque obcaecati dolore ipsam voluptatibus animi, odio?</p>
 				</div>
 				<div class="borde ver">
-					<a href="?c=Landing&a=directory">Ver más...</a>
+					<a href="?c=Landing&a=dataTables">Ver más...</a>
 				</div>
 			</div>
 		</section>
@@ -56,13 +56,13 @@
 			<div class="nos-fila-arr">
 				<div class="nos-col-izq color-gris-claro">
 					<div class="borde subtitulo">
-						<h2>Entidad</h2>
+						<h2>Reportes Impresos</h2>
 					</div>					
 					<div class="borde parrafo">
 						<p>Lorem ipsum, dolor sit amet consectetur adipisicing, elit. Eaque qui, incidunt eum modi voluptatum quae ducimus quo perferendis minus tempora fugit aperiam sequi commodi exercitationem doloremque a temporibus, reiciendis ipsam pariatur dolores molestias, distinctio! Modi dolorem deleniti ea vero numquam eius recusandae maiores eaque obcaecati dolore ipsam voluptatibus animi, odio?</p>
 					</div>
 					<div class="borde ver">
-						<a href="?c=Landing&a=entity">Ver más...</a>
+						<a href="?c=Landing&a=byteScout">Ver más...</a>
 					</div>
 				</div>
 				<div class="nos-col-cnt color-gris-oscuro">
@@ -81,26 +81,26 @@
 				</div>
 				<div class="nos-col-der color-gris-oscuro">
 					<div class="borde subtitulo">
-						<h2>Organigrama</h2>
+						<h2>Reportes Gráficos</h2>
 					</div>					
 					<div class="borde parrafo">
 						<p>Lorem ipsum, dolor sit amet consectetur adipisicing, elit. Eaque qui, incidunt eum modi voluptatum quae ducimus quo perferendis minus tempora fugit aperiam sequi commodi exercitationem doloremque a temporibus, reiciendis ipsam pariatur dolores molestias, distinctio! Modi dolorem deleniti ea vero numquam eius recusandae maiores eaque obcaecati dolore ipsam voluptatibus animi, odio?</p>
 					</div>
 					<div class="borde ver">
-						<a href="?c=Landing&a=organization">Ver más...</a>
+						<a href="?c=Landing&a=canvas">Ver más...</a>
 					</div>
 				</div>
 			</div>
 			<div class="nos-fila-abj">
 				<div class="nos-col-izq color-gris-claro">
 					<div class="borde subtitulo">
-						<h2>Bibliotecas</h2>
+						<h2>Calendario</h2>
 					</div>					
 					<div class="borde parrafo">
 						<p>Lorem ipsum, dolor sit amet consectetur adipisicing, elit. Eaque qui, incidunt eum modi voluptatum quae ducimus quo perferendis minus tempora fugit aperiam sequi commodi exercitationem doloremque a temporibus, reiciendis ipsam pariatur dolores molestias, distinctio! Modi dolorem deleniti ea vero numquam eius recusandae maiores eaque obcaecati dolore ipsam voluptatibus animi, odio?</p>
 					</div>
 					<div class="borde ver">
-						<a href="?c=Landing&a=library">Ver más...</a>
+						<a href="?c=Landing&a=fullCalendar">Ver más...</a>
 					</div>
 				</div>
 				<div class="nos-col-cnt color-gris-oscuro">

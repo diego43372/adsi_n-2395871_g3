@@ -5,35 +5,35 @@
 			require_once 'views/roles/business/header.php';
 			require_once 'views/business/index.view.php';
 			require_once 'views/roles/business/footer.php';
-		}
-		public function programs(){
+		}		
+		public function tables(){
 			require_once 'views/roles/business/header.php';
-			require_once 'views/business/programs.view.php';
+			require_once 'views/business/tables.view.php';
 			require_once 'views/roles/business/footer.php';	
 		}
-		public function services(){
+		public function sweetAlert(){
 			require_once 'views/roles/business/header.php';
-			require_once 'views/business/services.view.php';
+			require_once 'views/business/alerts.view.php';
 			require_once 'views/roles/business/footer.php';	
 		}
-		public function directory(){
+		public function dataTables(){
 			require_once 'views/roles/business/header.php';
-			require_once 'views/business/directory.view.php';
+			require_once 'views/business/dataTables.view.php';
 			require_once 'views/roles/business/footer.php';	
 		}
-		public function entity(){
+		public function byteScout(){
 			require_once 'views/roles/business/header.php';
-			require_once 'views/business/entity.view.php';
+			require_once 'views/business/byteScout.view.php';
 			require_once 'views/roles/business/footer.php';	
 		}
-		public function organization(){
+		public function canvas(){
 			require_once 'views/roles/business/header.php';
-			require_once 'views/business/organization.view.php';
+			require_once 'views/business/canvas.view.php';
 			require_once 'views/roles/business/footer.php';	
 		}
-		public function library(){
+		public function fullCalendar(){
 			require_once 'views/roles/business/header.php';
-			require_once 'views/business/library.view.php';
+			require_once 'views/business/fullCalendar.view.php';
 			require_once 'views/roles/business/footer.php';	
 		}
 	}
