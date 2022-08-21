@@ -149,6 +149,21 @@ body{
 .ver a:hover{
 	background: rgba(30, 30, 30, 0.5);
 }
+/* Formularios */
+.form{
+	flex: 1;
+	display: flex;
+	flex-flow: column wrap;
+}
+.form .form-cuerpo{
+	flex: 1;
+	display: flex;	
+}
+.form input[type="submit"],
+.form input[type="reset"]{
+	flex: 1;
+	cursor: pointer;
+}
 /* Otras Páginas */
 .paginas{
 	min-height: 72vh;
@@ -321,6 +336,11 @@ header{
 .cont-col-izq,
 .cont-col-der{
 	flex: 1;
+}
+.cont-col-izq{
+	display: flex;
+	flex-flow: column wrap;
+	padding: 10px;
 }
 .cont-col-der{
 	display: flex;
