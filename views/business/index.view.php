@@ -123,7 +123,7 @@
 					</div>
 					<div class="borde form-cuerpo color-blanco">
 						<div class="form-control">
-							<label for="nombres">Nombre</label>
+							<label for="nombres">Nombres</label>
 							<input type="text" id="nombres" placeholder="Nombres">
 						</div>
 						<div class="form-control">
@@ -133,6 +133,14 @@
 						<div class="form-control">
 							<label for="correo">Correo</label>
 							<input type="email" id="correo" placeholder="Correo">
+						</div>
+						<div class="form-control">
+							<label for="asunto">Asunto</label>
+							<input type="text" id="asunto" placeholder="Asunto">
+						</div>
+						<div class="form-control textarea">
+							<label for="mensaje">Mensaje</label>							
+							 <textarea id="mensaje" placeholder="Mensaje"></textarea>
 						</div>
 					</div>
 					<div class="form-pie">
