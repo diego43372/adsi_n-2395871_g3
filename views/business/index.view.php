@@ -117,14 +117,25 @@
 		</div>
 		<section class="contactenos">
 			<div class="cont-col-izq color-gris-oscuro">
-				<form class="borde form" action="" method="">
-					<div class="subtitulo">
+				<form class="form" action="" method="">
+					<div class="form-subtitulo">
 						<h2>Formulario de Contacto</h2>
 					</div>
-					<div class="form-cuerpo">
-						
+					<div class="borde form-cuerpo color-blanco">
+						<div class="form-control">
+							<label for="nombres">Nombre</label>
+							<input type="text" id="nombres" placeholder="Nombres">
+						</div>
+						<div class="form-control">
+							<label for="apellidos">Apellidos</label>
+							<input type="text" id="apellidos" placeholder="Apellidos">
+						</div>
+						<div class="form-control">
+							<label for="correo">Correo</label>
+							<input type="email" id="correo" placeholder="Correo">
+						</div>
 					</div>
-					<div class="ver">
+					<div class="form-pie">
 						<input type="reset" value="Cancelar">
 						<input type="submit" value="Enviar">
 					</div>
