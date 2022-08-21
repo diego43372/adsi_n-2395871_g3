@@ -200,6 +200,7 @@ body{
 	justify-content: flex-start;
 	align-items: center;	
 	padding: 5px;
+	font-family: 'Roboto', sans-serif;
 }
 .textarea{
 	flex: auto !important;		
@@ -631,6 +632,9 @@ Diseño Adaptativo */
 	.cont-col-der{
 		flex: auto;
 		height: 55%;
+	}
+	.form .form-cuerpo label{
+		display: none;
 	}	
 	.cont-col-der{
 		height: 45%;			
