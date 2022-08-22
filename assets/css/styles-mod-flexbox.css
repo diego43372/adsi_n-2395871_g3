@@ -59,16 +59,9 @@ body{
 	justify-content: center;
 	align-items: center;
 	padding: 10px;
-	font-family: 'Roboto', sans-serif;
-	font-size: 0.8em;
+	font-family: 'Roboto', sans-serif;	
 	border-radius: 4px 4px 0 0;
 	background: #CCC;
-}
-.subtitulo h2{
-	flex: 1;
-	display: flex;
-	justify-content: center;
-	text-align: center;
 }
 /* Imágenes */
 .imagen{
@@ -91,17 +84,11 @@ body{
 	flex: 1;
 	display: flex;
 	flex-flow: column wrap;
-	justify-content: center;	
+	justify-content: flex-start;
+	text-align: justify;	
 	padding: 10px;
 	font-family: 'Roboto', sans-serif;
 	font-size: 0.9em;
-}
-.parrafo p{
-	flex: 1;
-	display: flex;
-	justify-content: center;
-	align-items: flex-start;
-	text-align: justify;	
 }
 /* Social Media */
 .social-media{
@@ -368,13 +355,17 @@ header{
 	flex: 1;	
 }
 /* Subtítulos y Párrafos */
-.nos-col-izq .subtitulo h2,
-.nos-col-izq .parrafo p{
+.nos-col-izq .subtitulo{
+	justify-content: flex-end;
+}
+.nos-col-izq .parrafo{
 	justify-content: right;	
 	text-align: right;
 }
-.nos-col-der .subtitulo h2,
-.nos-col-der .parrafo p{
+.nos-col-der .subtitulo{
+	justify-content: flex-start;
+}
+.nos-col-der .parrafo{
 	justify-content: left;
 	text-align: left;
 }
@@ -557,16 +548,12 @@ Diseño Adaptativo */
 	/* Portafolio */
 	.portafolio{
 		flex-flow: column wrap;
-	}	
-	.port-col-izq,
-	.port-col-cnt,
-	.port-col-der{		
-		flex: auto;
 	}
 	.portafolio a{
 		flex: 0 0 100%;		
 	}
-	.portafolio .parrafo p{		
+	.portafolio .parrafo{
+		align-items: center;		
 		text-align: center;
 	}	
 	/* Nosotros */
@@ -599,12 +586,12 @@ Diseño Adaptativo */
 	}	
 	.nos-fila-cnt .nos-col-der .subtitulo{
 		justify-content: center;
-	}	
-	.nos-col-izq .subtitulo h2,
-	.nos-col-izq .parrafo p,	
-	.nos-col-der .subtitulo h2,	
-	.nos-col-der .parrafo p{	
+	}
+	/* Párrafos */	
+	.nos-col-izq .parrafo,
+	.nos-col-der .parrafo{
 		justify-content: center;	
+		align-content: center;	
 		text-align: center;
 	}
 	.nosotros a{
