@@ -202,7 +202,7 @@ body{
 	width: 60%;	
 }
 .form-login .form-subtitulo{
-	border-radius: 0 4px 0 0;
+	border-radius: 0;
 }
 .form-login .enlace-olvido,
 .form-login .enlace-registro{
@@ -212,14 +212,14 @@ body{
 	justify-content: center;
 	padding: 10px;
 	text-decoration: none;
-	color: #EEE;
+	color: #FFF;
+	font-weight: bold;
 }
 .form-login .enlace-registro{	
-	width: 20%;
-	justify-content: center;
+	justify-content: flex-end;
 	border-bottom: 1px solid #EEE;
 	border-radius: 4px 4px 0 0;
-	background: #CCC;
+	background: #EEE;
 	color: #2A5159;
 }
 /* Migas de Pan */
@@ -629,11 +629,7 @@ Diseño Adaptativo */
 		flex: 0 0 100%;
 		width: 100%;
 	}
-	.form-login .form-subtitulo{
-		border-radius: 0;
-	}	
-	.form-login .enlace-registro{	
-		width: 100%;
-		
+	.form-login .enlace-registro{
+		justify-content: center;
 	}
 }
