@@ -197,7 +197,9 @@ body{
 	font-family: 'Roboto', sans-serif;
 }
 /* Formulario de inicio */
-.form-login{
+.form-login,
+.form-register,
+.form-forgot{
 	flex: 0 0 100%;
 	width: 60%;	
 }

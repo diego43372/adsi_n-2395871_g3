@@ -18,7 +18,7 @@
 		}
 		public function forgot(){
 			require_once 'views/roles/business/header.php';
-			require_once 'views/business/forget.view.php';
+			require_once 'views/business/forgot.view.php';
 			require_once 'views/roles/business/footer.php';
 		}		
 		public function tables(){
