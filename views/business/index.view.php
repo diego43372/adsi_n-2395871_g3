@@ -121,27 +121,28 @@
 					<div class="form-subtitulo">
 						<h2>Formulario de Contacto</h2>
 					</div>
-					<div class="borde form-cuerpo color-blanco">
+					<div class="form-cuerpo color-blanco">
 						<div class="form-control">
-							<label for="nombres">Nombres</label>
-							<input type="text" id="nombres" placeholder="Nombres">
+							<label class="label" for="nombres">Nombres</label>
+							<input class="input" type="text" id="nombres" placeholder="Nombres">
 						</div>
 						<div class="form-control">
-							<label for="apellidos">Apellidos</label>
-							<input type="text" id="apellidos" placeholder="Apellidos">
+							<label class="label" for="apellidos">Apellidos</label>
+							<input class="input" type="text" id="apellidos" placeholder="Apellidos">
+						</div>
+											
+						<div class="form-control">
+							<label class="label" for="correo">Correo</label>
+							<input class="input" type="email" id="correo" placeholder="Correo">
 						</div>
 						<div class="form-control">
-							<label for="correo">Correo</label>
-							<input type="email" id="correo" placeholder="Correo">
-						</div>
-						<div class="form-control">
-							<label for="asunto">Asunto</label>
-							<input type="text" id="asunto" placeholder="Asunto">
+							<label class="label" for="asunto">Asunto</label>
+							<input class="input" type="text" id="asunto" placeholder="Asunto">
 						</div>
 						<div class="form-control textarea">
-							<label for="mensaje">Mensaje</label>							
-							 <textarea id="mensaje" placeholder="Mensaje"></textarea>
-						</div>
+							<label class="label" for="mensaje">Mensaje</label>
+							<textarea class="textarea" id="mensaje" placeholder="Mensaje"></textarea>
+						</div> 
 					</div>
 					<div class="form-pie">
 						<input type="reset" value="Cancelar">

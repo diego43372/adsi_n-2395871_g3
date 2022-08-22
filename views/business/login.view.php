@@ -5,8 +5,4 @@
 			<p> &nbsp / &nbsp</p>
 			<a href="?c=Landing&a=login">Iniciar Sesión</a>
 		</div>
-		<section class="paginas">
-			<div class="parrafo">
-				<p>Formulario para Iniciar Sesión</p>
-			</div>
-		</section>
+		<section class="paginas color-gris-claro"></section>

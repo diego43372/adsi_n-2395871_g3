@@ -158,7 +158,6 @@ body{
 	height: 100%;
 }
 .form .form-subtitulo{
-	flex: 0 0 50px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -172,7 +171,7 @@ body{
 	flex: 1;
 	display: flex;
 	justify-content: center;
-	text-align: center;
+	text-align: center;	
 }
 .form .form-cuerpo{
 	flex: 1;
@@ -180,43 +179,28 @@ body{
 	flex-flow: column wrap;
 	padding: 10px;
 }
-.form-cuerpo .form-control{
-	flex: 1;
+.form-cuerpo .form-control{	
 	display: flex;
-	flex-flow: row wrap;
-	flex: 0 0 30px;
-	padding: 5px;	
+	padding: 5px;
 }
-.form-control label{
+.form-cuerpo .label{	
 	flex: 1;
 	display: flex;
 	justify-content: flex-end;
-	align-items: center;
+	margin-right: 10px;
 	padding: 5px;
 }
-.form-control input{
-	flex: 2;
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;	
-	padding: 5px;
-	font-family: 'Roboto', sans-serif;
-}
-.textarea{
-	flex: auto !important;		
-}
-.textarea label{
-	align-items: flex-start;
-}
-.textarea textarea{
-	flex: 2;
-	height: 100%;
-	resize: none;
+.form-cuerpo .input,
+.form-cuerpo .textarea{
+	flex: 2;	
 	display: flex;	
 	padding: 5px;
-	font-family: 'Roboto', sans-serif;
+	font-size: 1em;
 }
-
+.form-cuerpo .textarea{		
+	resize: none;
+	font-family: 'Roboto', sans-serif;	
+}
 .form .form-pie{
 	flex: 0 0 50px;
 	display: flex;	
@@ -236,6 +220,8 @@ body{
 /* Otras Páginas */
 .paginas{
 	min-height: 72vh;
+	padding: 10px;
+	display: flex;
 }
 /* Migas de Pan */
 .migas{
