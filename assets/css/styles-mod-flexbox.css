@@ -241,18 +241,9 @@ body{
 	color: #2A5159;
 }
 /* Tablas */
-.table-scroll{
-	display: flex;
-	max-width: 360px;
-	height: 60vh;
-	overflow-y: hidden;
- 	overflow-x: scroll;
- 	white-space: nowrap;
-}
-.table{
-	flex: 1;
-	display: flex;	
-	white-space: nowrap;
+.table-scroll{}
+.table{	
+	width: 100%;	
 	border-collapse: collapse;
 }
 .table td, th{
@@ -665,5 +656,20 @@ Diseño Adaptativo */
 	}
 	.form-login .enlace-registro{
 		justify-content: center;
+	}
+	/* Tablas */
+	.table-scroll{
+		display: flex;
+		max-width: 360px;
+		height: 45vh;
+		overflow-y: hidden;
+	 	overflow-x: scroll;
+	 	white-space: nowrap;
+	}
+	.table{
+		flex: 1;
+		display: flex;	
+		white-space: nowrap;
+		border-collapse: collapse;
 	}
 }
