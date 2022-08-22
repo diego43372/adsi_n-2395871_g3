@@ -241,8 +241,14 @@ body{
 	color: #2A5159;
 }
 /* Tablas */
+.table-scroll{
+	width: 768px;
+	overflow-y: hidden;
+ 	overflow-x: scroll;
+}
 .table{		
 	/*display: flex;	*/
+	white-space: nowrap;
 	border-collapse: collapse;
 }
 .table td, th{
