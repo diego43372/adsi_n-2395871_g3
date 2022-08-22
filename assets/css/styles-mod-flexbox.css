@@ -242,12 +242,16 @@ body{
 }
 /* Tablas */
 .table-scroll{
-	width: 768px;
+	display: flex;
+	max-width: 400px;
+	height: 100px;
 	overflow-y: hidden;
  	overflow-x: scroll;
+ 	white-space: nowrap;
 }
-.table{		
-	/*display: flex;	*/
+.table{
+	flex: 1;
+	display: flex;	
 	white-space: nowrap;
 	border-collapse: collapse;
 }
