@@ -6,7 +6,5 @@
 			<a href="?c=Landing&a=fullCalendar">Calendario</a>
 		</div>
 		<section class="paginas">
-			<div class="parrafo">
-				<p>Plugin para incorporar un Calendario con JS: FullCalendar</p>
-			</div>
+			<p class="parrafo">Plugin para incorporar un Calendario con JS: FullCalendar</p>
 		</section>

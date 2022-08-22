@@ -6,7 +6,5 @@
 			<a href="?c=Landing&a=dataTables">Filtros</a>
 		</div>
 		<section class="paginas">
-			<div class="parrafo">
-				<p>Plugin para Filtros en Tablas con JS: DataTables</p>
-			</div>
+			<p class="parrafo">Plugin para Filtros en Tablas con JS: DataTables</p>
 		</section>

@@ -5,8 +5,6 @@
 			<p> &nbsp / &nbsp</p>
 			<a href="?c=Landing&a=entity">Reportes Impresos</a>
 		</div>
-		<section class="paginas">
-			<div class="parrafo">
-				<p>Plugin para Reportes Impresos con JS: ByteScout</p>
-			</div>
+		<section class="paginas">			
+			<p class="parrafo">Plugin para Reportes Impresos con JS: ByteScout</p>
 		</section>

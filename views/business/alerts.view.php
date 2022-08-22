@@ -6,7 +6,5 @@
 			<a href="?c=Landing&a=sweetAlert">Alertas</a>
 		</div>
 		<section class="paginas">
-			<div class="parrafo">
-				<p>Plugin para Alertas con JS: SweetAlert</p>
-			</div>
+			<p class="parrafo">Plugin para Alertas con JS: SweetAlert</p>
 		</section>
