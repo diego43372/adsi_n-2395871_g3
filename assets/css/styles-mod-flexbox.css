@@ -24,6 +24,8 @@ body{
 	padding: 10px;
 	display: flex;
 	flex-flow: column wrap;
+}
+.paginas.forms{
 	align-items: center;
 	justify-content: center;
 }
@@ -136,6 +138,20 @@ body{
 .ver a:hover{
 	background: rgba(30, 30, 30, 0.5);
 }
+/* Migas de Pan */
+.migas{
+	display: flex;
+	flex-flow: row nowrap;
+	/*justify-content: flex-start;*/
+	align-items: center;
+	padding: 10px;
+}
+.migas a,
+.migas P{
+	text-decoration: none;
+	color: #EEE;
+	font-size: 1.2em;
+}
 /* Formularios */
 .form{
 	flex: 1;
@@ -224,19 +240,23 @@ body{
 	background: #EEE;
 	color: #2A5159;
 }
-/* Migas de Pan */
-.migas{
-	display: flex;
-	flex-flow: row nowrap;
-	/*justify-content: flex-start;*/
-	align-items: center;
-	padding: 10px;
+/* Tablas */
+.table{		
+	/*display: flex;	*/
+	border-collapse: collapse;
 }
-.migas a,
-.migas P{
-	text-decoration: none;
-	color: #EEE;
-	font-size: 1.2em;
+.table td, th{
+  border: 1px solid #DDD;
+  text-align: left;
+  padding: 8px;
+  text-align: center;
+}
+.table th{
+	background: #000;
+	color: #FFF;
+}
+.table tr:nth-child(even) {
+  background-color: #DDD;
 }
 /* Contenedor */
 .contenedor{

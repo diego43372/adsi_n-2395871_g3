@@ -5,7 +5,7 @@
 			<p> &nbsp / &nbsp</p>
 			<a href="?c=Landing&a=login">Iniciar Sesión</a>
 		</div>
-		<section class="paginas color-gris-claro">			
+		<section class="paginas forms color-gris-claro">			
 			<form class="form form-login" action="" method="">				
 				<a class="enlace-registro" href="?c=Landing&a=register">Registro</a>
 				<h2 class="form-subtitulo">Iniciar Sesión</h2>

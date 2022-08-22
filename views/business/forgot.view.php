@@ -5,7 +5,7 @@
 			<p> &nbsp / &nbsp</p>
 			<a href="?c=Landing&a=forgot">Olvido de Contraseña</a>
 		</div>
-		<section class="paginas color-gris-oscuro">
+		<section class="paginas forms color-gris-oscuro">
 			<form class="form form-forgot" action="" method="">
 				<h2 class="form-subtitulo">Olvido de Contraseña</h2>
 				<div class="form-cuerpo color-blanco">
