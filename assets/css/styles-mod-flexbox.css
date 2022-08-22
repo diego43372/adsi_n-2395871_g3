@@ -243,7 +243,7 @@ body{
 /* Tablas */
 .table-scroll{
 	display: flex;
-	max-width: 380px;
+	max-width: 360px;
 	height: 60vh;
 	overflow-y: hidden;
  	overflow-x: scroll;
