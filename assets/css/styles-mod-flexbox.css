@@ -45,13 +45,6 @@ body{
 	background: #343A40;
 	color: #FFF;	
 }
-.titulo h1{
-	flex: 1;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding: 10px;
-}
 /* Subtítulos */
 .subtitulo{
 	flex: 0 0 50px;
@@ -67,17 +60,14 @@ body{
 .imagen{
 	flex: 1;
 	display: flex;
+	flex-flow: row wrap;
 	justify-content: center;
 	align-items: center;
 	padding: 10px;
 }
-.imagen img{
-	flex: 1;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	max-width: 150px;
-	min-width: 50px;	
+.imagen img{	
+	max-width: 150px;	
+	min-width: 5px;	
 }
 /* Párrafos */
 .parrafo{

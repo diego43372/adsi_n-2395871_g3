@@ -2,14 +2,13 @@
 		<header></header>
 		<!-- Portafolio -->
 		<div id="portafolio" class="tope"></div>
-		<div class="titulo"><h1>Portafolio</h1>
-		</div>
+		<h1 class="titulo">Portafolio</h1>
 		<section class="portafolio">
 			<div class="port-col-izq color-gris-oscuro">
 				<h2 class="borde subtitulo">Tablas</h2>
 				<div class="borde imagen">
 					<img src="assets/img/imagen-card.jpg" alt="Logo" title="Logo">
-				</div>
+				</div>				
 				<p class="borde parrafo">Lorem ipsum, dolor sit amet consectetur adipisicing, elit. Eaque qui, incidunt eum modi voluptatum quae ducimus quo perferendis minus tempora fugit aperiam sequi commodi exercitationem doloremque a temporibus, reiciendis ipsam pariatur dolores molestias, distinctio! Modi dolorem deleniti ea vero numquam eius recusandae maiores eaque obcaecati dolore ipsam voluptatibus animi, odio?</p>				
 				<div class="borde ver">
 					<a href="?c=Landing&a=tables">Ver más...</a>
@@ -38,7 +37,7 @@
 		</section>
 		<!-- Nosotros -->
 		<div id="nosotros" class="tope"></div>
-		<div class="titulo"><h1>Nosotros</h1></div>
+		<h1 class="titulo">Nosotros</h1>
 		<section class="nosotros">
 			<div class="nos-fila-arr">
 				<div class="nos-col-izq color-gris-claro">
@@ -88,8 +87,7 @@
 		</section>
 		<!-- Contáctenos -->
 		<div id="contactenos" class="tope"></div>
-		<div class="titulo"><h1>Contáctenos</h1>
-		</div>
+		<h1 class="titulo">Contáctenos</h1>
 		<section class="contactenos">
 			<div class="cont-col-izq color-gris-oscuro">
 				<form class="form" action="" method="">
