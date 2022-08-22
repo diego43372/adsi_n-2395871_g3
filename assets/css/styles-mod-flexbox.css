@@ -14,10 +14,25 @@ body{
 	background: #ddd;
 	font-family: 'Yanone Kaffeesatz', sans-serif;
 }
-/* Clases especiales */
+/* Borde */
 .borde{
 	border: 1px solid #ccc;	
 }
+/* Otras Páginas */
+.paginas{
+	min-height: 72vh;
+	padding: 10px;
+	display: flex;
+	flex-flow: column wrap;
+	align-items: center;
+	justify-content: center;
+}
+/* Tope: Navegación */
+.tope{	
+	position: relative;
+	top: -49px;	
+}
+/* Colores básicos */
 .color-negro{
 	background: #000;
 }
@@ -29,11 +44,6 @@ body{
 }
 .color-blanco{
 	background: #fff;
-}
-/* Tope: Navegación */
-.tope{	
-	position: relative;
-	top: -49px;	
 }
 /* Títulos */
 .titulo{
@@ -130,25 +140,17 @@ body{
 .form{
 	flex: 1;
 	display: flex;
-	flex-flow: column wrap;
-	font-family: 'Roboto', sans-serif;
-	height: 100%;
+	flex-flow: column wrap;	
+	font-family: 'Roboto', sans-serif;	
 }
 .form .form-subtitulo{
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	padding: 10px;
-	font-family: 'Roboto', sans-serif;
-	font-size: 0.8em;
+	font-family: 'Roboto', sans-serif;	
 	border-radius: 4px 4px 0 0;
 	background: #CCC;
-}
-.form .form-sutitulo h2{
-	flex: 1;
-	display: flex;
-	justify-content: center;
-	text-align: center;	
 }
 .form .form-cuerpo{
 	flex: 1;
@@ -194,11 +196,31 @@ body{
 	font-weight: bold;
 	font-family: 'Roboto', sans-serif;
 }
-/* Otras Páginas */
-.paginas{
-	min-height: 72vh;
-	padding: 10px;
+/* Formulario de inicio */
+.form-login{
+	flex: 0 0 100%;
+	width: 60%;	
+}
+.form-login .form-subtitulo{
+	border-radius: 0 4px 0 0;
+}
+.form-login .enlace-olvido,
+.form-login .enlace-registro{
+	flex: 1;
 	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	padding: 10px;
+	text-decoration: none;
+	color: #EEE;
+}
+.form-login .enlace-registro{	
+	width: 20%;
+	justify-content: center;
+	border-bottom: 1px solid #EEE;
+	border-radius: 4px 4px 0 0;
+	background: #CCC;
+	color: #2A5159;
 }
 /* Migas de Pan */
 .migas{
@@ -602,5 +624,16 @@ Diseño Adaptativo */
 	.cont-col-der{
 		height: 45%;			
 		flex-flow: column nowrap;
+	}
+	.form-login{
+		flex: 0 0 100%;
+		width: 100%;
+	}
+	.form-login .form-subtitulo{
+		border-radius: 0;
+	}	
+	.form-login .enlace-registro{	
+		width: 100%;
+		
 	}
 }

@@ -91,9 +91,7 @@
 		<section class="contactenos">
 			<div class="cont-col-izq color-gris-oscuro">
 				<form class="form" action="" method="">
-					<div class="form-subtitulo">
-						<h2>Formulario de Contacto</h2>
-					</div>
+					<h2 class="form-subtitulo">Formulario de Contacto</h2>
 					<div class="form-cuerpo color-blanco">
 						<div class="form-control">
 							<label class="label" for="nombres">Nombres</label>
@@ -102,8 +100,7 @@
 						<div class="form-control">
 							<label class="label" for="apellidos">Apellidos</label>
 							<input class="input" type="text" id="apellidos" placeholder="Apellidos">
-						</div>
-											
+						</div>											
 						<div class="form-control">
 							<label class="label" for="correo">Correo</label>
 							<input class="input" type="email" id="correo" placeholder="Correo">
