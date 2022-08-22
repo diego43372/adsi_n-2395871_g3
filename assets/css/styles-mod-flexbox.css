@@ -627,9 +627,11 @@ Diseño Adaptativo */
 		height: 45%;			
 		flex-flow: column nowrap;
 	}
-	.form-login{
+	.form-login,
+	.form-register,
+	.form-forgot{
 		flex: 0 0 100%;
-		width: 100%;
+		width: 100%;	
 	}
 	.form-login .enlace-registro{
 		justify-content: center;
