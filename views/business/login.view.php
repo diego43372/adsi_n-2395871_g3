@@ -7,7 +7,7 @@
 		</div>
 		<section class="paginas color-gris-claro">			
 			<form class="form form-login" action="" method="">				
-				<a class="enlace-registro" href="">Registro</a>
+				<a class="enlace-registro" href="?c=Landing&a=register">Registro</a>
 				<h2 class="form-subtitulo">Iniciar Sesión</h2>
 				<div class="form-cuerpo color-blanco">
 					<div class="form-control">
@@ -23,6 +23,6 @@
 					<input type="reset" value="Cancelar">
 					<input type="submit" value="Enviar">
 				</div>				
-				<a class="enlace-olvido" href="">¿Olvidó su Contraseña?</a>
+				<a class="enlace-olvido" href="?c=Landing&a=forgot">¿Olvidó su Contraseña?</a>
 			</form>
 		</section>

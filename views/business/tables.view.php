@@ -6,7 +6,5 @@
 			<a href="?c=Landing&a=tables">Tablas</a>
 		</div>
 		<section class="paginas">
-			<div class="parrafo">
-				<p>Tablas en Html</p>
-			</div>
+			<p class="parrafo">Tablas en Html</p>
 		</section>

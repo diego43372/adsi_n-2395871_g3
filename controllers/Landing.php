@@ -10,6 +10,16 @@
 			require_once 'views/roles/business/header.php';
 			require_once 'views/business/login.view.php';
 			require_once 'views/roles/business/footer.php';
+		}
+		public function register(){
+			require_once 'views/roles/business/header.php';
+			require_once 'views/business/register.view.php';
+			require_once 'views/roles/business/footer.php';
+		}
+		public function forgot(){
+			require_once 'views/roles/business/header.php';
+			require_once 'views/business/forget.view.php';
+			require_once 'views/roles/business/footer.php';
 		}		
 		public function tables(){
 			require_once 'views/roles/business/header.php';
