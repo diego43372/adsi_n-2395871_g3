@@ -1,9 +1,9 @@
 		<div class="tope"></div>
 		<div class="titulo"><h1>Registro</h1></div>
 		<div class="migas color-gris-oscuro">
-			<a href="?c=Landing&a=login">Iniciar Sesión</a>
+			<a href="?c=Login">Iniciar Sesión</a>
 			<p> &nbsp / &nbsp</p>
-			<a href="?c=Landing&a=register">Registro</a>
+			<a href="?c=Login&a=register">Registro</a>
 		</div>
 		<section class="paginas forms color-gris-oscuro">
 			<form class="form form-register" action="" method="">

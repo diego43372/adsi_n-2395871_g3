@@ -233,8 +233,7 @@ body{
 	color: #FFF;
 	font-weight: bold;
 }
-.form-login .enlace-registro{	
-	justify-content: flex-end;
+.form-login .enlace-registro{		
 	border-bottom: 1px solid #EEE;
 	border-radius: 4px 4px 0 0;
 	background: #EEE;
