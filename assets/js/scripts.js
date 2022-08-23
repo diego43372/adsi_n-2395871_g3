@@ -1,3 +1,13 @@
+// Cancelar
+const botones = document.querySelectorAll(".cancelar");
+const cancelar = function (evento) {
+	window.location = '?c=Login';
+}
+// Se reccorre botones, ya que es un arreglo
+botones.forEach(boton => {	
+	boton.addEventListener("click", cancelar);	
+});
+
 // Iniciar Sesión
 form  = document.getElementById('form-login');
 form.addEventListener('submit', function (event) {
