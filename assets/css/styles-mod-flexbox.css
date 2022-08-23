@@ -660,7 +660,8 @@ Diseño Adaptativo */
 	/* Tablas */
 	.table-scroll{
 		display: flex;
-		max-width: 360px;
+		width: 100%;
+		min-width: 360px;
 		height: 45vh;
 		overflow-y: hidden;
 	 	overflow-x: scroll;
