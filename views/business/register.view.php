@@ -31,7 +31,7 @@
 					</div>
 				</div>
 				<div class="form-pie">
-					<input class="cancelar" type="reset" value="Cancelar">
+					<input class="cancelar" type="button" value="Cancelar">
 					<input type="submit" value="Enviar">
 				</div>
 			</form>

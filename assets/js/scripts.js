@@ -1,13 +1,19 @@
-// Cancelar
-const botones = document.querySelectorAll(".cancelar");
+// Vuelve al Formulario de Inicio de Sesión
 const cancelar = function (evento) {
 	window.location = '?c=Login';
 }
-// Se reccorre botones, ya que es un arreglo
-botones.forEach(boton => {	
-	boton.addEventListener("click", cancelar);	
+const cancelados = document.querySelectorAll(".cancelar");
+cancelados.forEach(boton => {	
+	boton.addEventListener("click", cancelar);
 });
-
+// Vuelve al Formulario de Inicio de Sesión
+const volver = function (evento) {
+	window.location = '?';
+}
+const regresar = document.querySelectorAll(".volver");
+regresar.forEach(boton => {	
+	boton.addEventListener("click", volver);
+});
 // Iniciar Sesión
 form  = document.getElementById('form-login');
 form.addEventListener('submit', function (event) {
