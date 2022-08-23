@@ -6,17 +6,17 @@
 			<a href="?c=Landing&a=login">Iniciar Sesión</a>
 		</div>
 		<section class="paginas forms color-gris-claro">			
-			<form class="form form-login" action="" method="">				
+			<form class="form form-login" id="form-login" action="?c=Login&a=routeSesion" method="POST">
 				<a class="enlace-registro" href="?c=Landing&a=register">Registro</a>
 				<h2 class="form-subtitulo">Iniciar Sesión</h2>
 				<div class="form-cuerpo color-blanco">
 					<div class="form-control">
 						<label class="label" for="correo">Correo</label>
-						<input class="input" type="email" id="correo" placeholder="Correo Usuario">
+						<input class="input" type="email" name="correo" id="correo" placeholder="Correo Usuario">
 					</div>
 					<div class="form-control">
 						<label class="label" for="pass">Contraseña</label>
-						<input class="input" type="password" id="pass" placeholder="Contraseña: 5 a 8 caracteres">
+						<input class="input" type="password" name="pass" id="pass" placeholder="Contraseña: 5 a 8 caracteres">
 					</div>
 				</div>
 				<div class="form-pie">

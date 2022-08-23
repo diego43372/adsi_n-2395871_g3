@@ -23,6 +23,6 @@
 				<div class="m-contactenos"><a href="?c=Landing&#contactenos">Contáctenos</a></div>
 			</div>
 			<div class="ingreso">
-				<div class="m-ingreso"><a href="?c=Landing&a=login">Iniciar Sesión</a></div>
+				<div class="m-ingreso"><a href="?c=Login">Iniciar Sesión</a></div>
 			</div>
 		</nav>
