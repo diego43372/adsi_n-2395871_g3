@@ -206,7 +206,7 @@ body{
 	background: #CCC;
 }
 .form input[type="submit"],
-.form input[type="button"]{
+.form input[type="reset"]{
 	flex: 1;
 	cursor: pointer;	
 	font-weight: bold;

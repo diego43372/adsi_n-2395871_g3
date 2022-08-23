@@ -20,7 +20,7 @@
 					</div>
 				</div>
 				<div class="form-pie">
-					<input class="volver" type="button" value="Cancelar">
+					<input class="volver" type="reset" value="Cancelar">
 					<input type="submit" value="Enviar">
 				</div>				
 				<a class="enlace-olvido" href="?c=Login&a=forgot">¿Olvidó su Contraseña?</a>
