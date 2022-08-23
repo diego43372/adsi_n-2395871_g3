@@ -12,8 +12,8 @@
 		<nav>
 			<h1>Sistema de Información</h1>
 			<h4>Panel de Control: Administrador</h4>
+			<a href="?c=Logout">Cerrar Sesión</a>
 		</nav>		
-		<a href="?c=Logout">Cerrar Sesión</a>
 		<!-- Sección Principal -->
 		<section>
 			<!-- Panel Lateral: Módulos -->
