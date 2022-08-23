@@ -8,7 +8,7 @@ cancelados.forEach(boton => {
 });
 // Vuelve a la Página de la Empresa
 const volver = function (evento) {
-	window.location = '?';
+	window.location = '?c=Landing&#';
 }
 const regresar = document.querySelectorAll(".volver");
 regresar.forEach(boton => {	
