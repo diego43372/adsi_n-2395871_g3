@@ -6,7 +6,7 @@ const cancelados = document.querySelectorAll(".cancelar");
 cancelados.forEach(boton => {	
 	boton.addEventListener("click", cancelar);
 });
-// Vuelve al Formulario de Inicio de Sesión
+// Vuelve a la Página de la Empresa
 const volver = function (evento) {
 	window.location = '?';
 }

@@ -115,7 +115,7 @@
 						</div> 
 					</div>
 					<div class="form-pie">
-						<input type="reset" value="Cancelar">
+						<input class="volver" type="button" value="Cancelar">
 						<input type="submit" value="Enviar">
 					</div>
 				</form>
