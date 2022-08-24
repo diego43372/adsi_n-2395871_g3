@@ -153,6 +153,39 @@ body{
 	font-size: 1.2em;
 }
 /* Formularios */
+form input:focus{
+	outline: none;
+}
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+textarea:invalid{
+	border: 1px solid #999;	
+}
+form input[type="text"]:focus:required:invalid,
+form input[type="email"]:focus:required:invalid,
+form input[type="password"]:focus:required:invalid,
+textarea:focus:invalid{
+	border: 1px solid red;
+}
+form input[type="text"]:focus:required:valid,
+form input[type="email"]:focus:required:valid,
+form input[type="password"]:focus:required:valid,
+textarea:focus:valid{
+	border: 1px solid green;
+}
+form input[type="text"]:required:invalid,
+form input[type="email"]:required:invalid,
+form input[type="password"]:required:invalid,
+textarea:invalid{
+	border: 1px solid #999;	
+}
+form input[type="text"]:required:valid,
+form input[type="email"]:required:valid,
+form input[type="password"]:required:valid,
+textarea:required:valid{
+	border: 1px solid green;
+}
 .form{
 	flex: 1;
 	display: flex;
@@ -191,6 +224,7 @@ body{
 	display: flex;	
 	padding: 5px;
 	font-size: 1em;
+	border-radius: 4px;
 }
 .form-cuerpo .textarea{		
 	resize: none;
