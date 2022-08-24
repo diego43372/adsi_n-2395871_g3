@@ -90,7 +90,7 @@
 		<h1 class="titulo">Contáctenos</h1>
 		<section class="contactenos">
 			<div class="cont-col-izq color-gris-oscuro">
-				<form class="form" action="" method="">
+				<form class="form" action="" method="get">
 					<h2 class="form-subtitulo">Formulario de Contacto</h2>
 					<div class="form-cuerpo color-blanco">
 						<div class="form-control">
