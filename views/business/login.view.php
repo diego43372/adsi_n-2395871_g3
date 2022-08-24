@@ -16,8 +16,8 @@
 					</div>
 					<div class="form-control">
 						<label class="label" for="pass">Contraseña</label>
-						<input class="input" type="password" name="pass" id="pass" placeholder="Contraseña: 5 a 8 caracteres" pattern="[A-Za-z0-9]{5,8}" maxlength="8" title="Entre 5 y 8 caracteres" required>
-					</div>
+						<input class="input" type="password" name="pass" id="pass" placeholder="Contraseña: 5 a 8 caracteres" pattern="[A-Za-z0-9]{5,8}" title="Entre 5 y 8 caracteres" required>
+					</div><!-- maxlength="8" -->
 				</div>
 				<div class="form-pie">
 					<input class="volver" type="reset" value="Cancelar">
