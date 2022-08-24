@@ -90,7 +90,7 @@
 		<h1 class="titulo">Contáctenos</h1>
 		<section class="contactenos">
 			<div class="cont-col-izq color-gris-oscuro">
-				<form class="form" id="form-contact" action="?c=Landing" method="post">
+				<form class="form" id="form-contact" action="?c=Landing&#contactenos" method="post">
 					<h2 class="form-subtitulo">Formulario de Contacto</h2>
 					<div class="form-cuerpo color-blanco">
 						<div class="form-control">
@@ -99,42 +99,25 @@
 						</div>
 						<div class="form-control">
 							<label class="label" for="apellidos">Apellidos</label>
-							<input class="input" type="text" id="apellidos" placeholder="Apellidos" pattern="[ a-zA-ZáéíóúÁÉÍÓÚäëïöüÄËÏÖÜàèìòùÀÈÌÒÙ]{2,50}" title="Ingrese Apellido(s) Válido(s)" required>
+							<input class="input" type="text" id="apellidos" placeholder="Apellidos" pattern="[ a-zA-ZáéíóúÁÉÍÓÚäëïöüÄËÏÖÜàèìòùÀÈÌÒÙñÑ]{2,50}" title="Ingrese Apellido(s) Válido(s)" required>
 						</div>
-						<div class="form-control">
-							<label class="label" for="correo-cont">Correo</label>
-							<input class="input" type="email" id="correo-cont" placeholder="Correo">
-						</div>
-						<div class="form-control">
-							<label class="label" for="asunto">Asunto</label>
-							<input class="input" type="text" id="asunto" placeholder="Asunto">
-						</div>
-						<div class="form-control textarea">
-							<label class="label" for="mensaje">Mensaje</label>
-							<textarea class="textarea" id="mensaje" placeholder="Mensaje"></textarea>
-						</div> 
-					</div>
-					<div class="form-pie">
-						<input type="reset" id="cancelar-contac" value="Cancelar">
-						<input type="submit" id="submit-contac" value="Enviar">
-					</div>
-						<!-- <div class="form-control">
+						 <div class="form-control">
 							<label class="label" for="correo-cont">Correo</label>
 							<input class="input" type="email" id="correo-cont" placeholder="Correo" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,5}" title="Ingrese un Correo Válido" required>
 						</div>
 						<div class="form-control">
 							<label class="label" for="asunto">Asunto</label>
-							<input class="input" type="text" id="asunto" placeholder="Asunto" pattern="[ a-zA-Z0-9_áéíóúÁÉÍÓÚäëïöüÄËÏÖÜàèìòùÀÈÌÒÙ]{2,50}" title="Ingrese un Asunto Válido" required>
+							<input class="input" type="text" id="asunto" placeholder="Asunto" pattern="[ a-zA-ZáéíóúÁÉÍÓÚäëïöüÄËÏÖÜàèìòùÀÈÌÒÙñÑ]{2,50}" title="Ingrese un Asunto Válido" required>
 						</div>
 						<div class="form-control textarea">
 							<label class="label" for="mensaje">Mensaje</label>
-							<textarea class="textarea" id="mensaje" placeholder="Mensaje" pattern="[ a-zA-Z0-9_áéíóúÁÉÍÓÚäëïöüÄËÏÖÜàèìòùÀÈÌÒÙ]{2,300}" title="Ingrese Máximo 300 Caracteres" required></textarea>
+							<textarea class="textarea" id="mensaje" placeholder="Mensaje" pattern="[ a-zA-Z0-9_áéíóúÁÉÍÓÚäëïöüÄËÏÖÜàèìòùÀÈÌÒÙñÑ]" minlength="50" maxlength="300" title="Ingrese Máximo 300 Caracteres" required></textarea>
 						</div> 
 					</div>
 					<div class="form-pie">
 						<input type="reset" id="cancelar-contac" value="Cancelar">
 						<input type="submit" id="submit-contac" value="Enviar">
-					</div> -->
+					</div>						
 				</form>
 			</div>
 			<div class="cont-col-der">

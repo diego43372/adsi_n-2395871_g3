@@ -24,9 +24,7 @@ function validarContac(){
 	// Expresión Regular de correo electrónico
 	let patron_correo = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
 	// Expresión Regular de Texto
-	let patron_texto = /^[ a-zA-ZáéíóúÁÉÍÓÚäëïöüÄËÏÖÜàèìòùÀÈÌÒÙñÑ]+$/;
-	// Expresión Regular de Asunto
-	let patron_asunto = /^[ a-zA-Z0-9_áéíóúÁÉÍÓÚäëïöüÄËÏÖÜàèìòùÀÈÌÒÙñÑ]+$/;
+	let patron_texto = /^[ a-zA-ZáéíóúÁÉÍÓÚäëïöüÄËÏÖÜàèìòùÀÈÌÒÙñÑ]+$/;	
 	// Validación de nombres
 	if (nombres === "") {
 		alert("Verifique el campo Nombres\n" + 
@@ -71,17 +69,49 @@ function validarContac(){
 			"El Correo NO puede estar vacío");
 		document.getElementById('correo-cont').focus();
 		event.preventDefault();
-	} else if (!patron_correo.test(correo)) {
+	} 
+	else if (!patron_correo.test(correo)) {
 		alert("Verifique el Correo\n" + 
 			"NO es un correo electrónico válido");
 		document.getElementById('correo-cont').focus();
 		event.preventDefault();	
-	} else {
+	}	 	
+	// Validación Asunto
+	else if (asunto === "") {
+		alert("Verifique el campo Asunto\n" + 
+			"El Asunto NO puede estar vacío");
+		document.getElementById('asunto').focus();
+		event.preventDefault();
+	} 	
+	else if (!patron_texto.test(asunto)) {
+		alert("Verifique el Asunto\n" + 
+			"El Asunto NO puede contener números o caracteres especiales");
+		document.getElementById('asunto').focus();
+		event.preventDefault();	
+	}
+	else if (asunto.length < 2 || asunto.length > 50) {
+		alert("Verifique el campo Asunto\n" + 
+			"El Asunto debe contener entre 2 y 50 caracteres");
+		document.getElementById('asunto').focus();
+		event.preventDefault();
+	}
+	// Validación Mensaje	
+	else if (mensaje === "") {
+		alert("Verifique el campo Mensaje\n" + 
+			"El Mensaje NO puede estar vacío");
+		document.getElementById('mensaje').focus();
+		event.preventDefault();
+	}
+	else if (mensaje.length < 50 || mensaje.length > 300) {
+		alert("Verifique el campo Mensaje\n" + 
+			"El Mensaje debe contener entre 50 y 300 caracteres");
+		document.getElementById('mensaje').focus();
+		event.preventDefault();
+	}
+	else {
 		alert("!Felicitaciones!\n" + 
-			"El Mensaje se ha enviado satisfactoriamente");		
-	} 
-	
-
+			"El Mensaje se ha enviado satisfactoriamente");
+	}
 }
 // Formulario de Contacto: Cancelar
 function cancelarContac(){
