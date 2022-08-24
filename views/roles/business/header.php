@@ -10,7 +10,7 @@
 </head>
 <body>
 	<!-- Contenedor -->
-	<div class="contenedor">
+	<div class="contenedor" id="contenedor">
 		<!-- Navegador -->
 		<nav>
 			<div class="logo">
