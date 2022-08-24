@@ -6,33 +6,33 @@
 			<a href="?c=Login&a=register">Registro</a>
 		</div>
 		<section class="paginas forms color-gris-oscuro">
-			<form class="form form-register" action="" method="">
+			<form class="form form-register" action="?c=Login" method="post">
 				<h2 class="form-subtitulo">Registro</h2>
 				<div class="form-cuerpo color-blanco">					
 					<div class="form-control">
-						<label class="label" for="nombres">Nombres</label>
-						<input class="input" type="text" id="nombres" placeholder="Nombres">
+						<label class="label" for="nombres-reg">Nombres</label>
+						<input class="input" type="text" id="nombres-reg" placeholder="Nombres" pattern="[ a-zA-ZáéíóúÁÉÍÓÚäëïöüÄËÏÖÜàèìòùÀÈÌÒÙñÑ]{2,50}" title="Ingrese Nombre(s) Válido(s)" required>
 					</div>
 					<div class="form-control">
-						<label class="label" for="apellidos">Apellidos</label>
-						<input class="input" type="text" id="apellidos" placeholder="Apellidos">
+						<label class="label" for="apellidos-reg">Apellidos</label>
+						<input class="input" type="text" id="apellidos-reg" placeholder="Apellidos" pattern="[ a-zA-ZáéíóúÁÉÍÓÚäëïöüÄËÏÖÜàèìòùÀÈÌÒÙñÑ]{2,50}" title="Ingrese Apellido(s) Válido(s)" required>
 					</div>
 					<div class="form-control">
-						<label class="label" for="correo">Correo</label>
-						<input class="input" type="email" id="correo" placeholder="Correo Usuario">
+						<label class="label" for="correo-reg">Correo</label>
+						<input class="input" type="email" id="correo-reg" placeholder="Correo Usuario" placeholder="Correo Usuario" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,5}" title="Ingrese un correo válido" required>
 					</div>
 					<div class="form-control">
-						<label class="label" for="pass">Contraseña</label>
-						<input class="input" type="password" id="pass" placeholder="Contraseña: 5 a 8 caracteres">
+						<label class="label" for="pass-reg">Contraseña</label>
+						<input class="input" type="password" id="pass-reg" placeholder="Contraseña: 5 a 8 caracteres" placeholder="Contraseña: 5 a 8 caracteres" pattern="[A-Za-z0-9]{5,8}" title="Entre 5 y 8 caracteres" required>
 					</div>
 					<div class="form-control">
-						<label class="label" for="pass">Confirmación</label>
-						<input class="input" type="password" id="pass" placeholder="Contraseña: 5 a 8 caracteres">
+						<label class="label" for="conf-pass-reg">Confirmación</label>
+						<input class="input" type="password" id="conf-pass-reg" placeholder="Contraseña: 5 a 8 caracteres" placeholder="Contraseña: 5 a 8 caracteres" pattern="[A-Za-z0-9]{5,8}" title="Entre 5 y 8 caracteres" required>
 					</div>
 				</div>
 				<div class="form-pie">
-					<input class="cancelar" type="reset" value="Cancelar">
-					<input type="submit" value="Enviar">
+					<input type="reset" id="cancelar-register" value="Cancelar">
+					<input type="submit" id="submit-register" value="Enviar">
 				</div>
 			</form>
 		</section>

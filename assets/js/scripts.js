@@ -10,7 +10,11 @@ hacerClic.addEventListener('click', function (event){
 		validarLogin();
 	} else if (id === "cancelar-login") {
 		cancelarLogin();
-	}	
+	} else if (id === "submit-register") {
+		validarRegister();
+	}  else if (id === "cancelar-register") {
+		cancelarRegister();
+	}
 });
 
 // Formulario de Contacto: Validar Datos y Enviar
@@ -118,6 +122,115 @@ function cancelarContac(){
 	alert("Se canceló el Envío del Mensaje\n" + 
 		"No se ha guardado ningún dato");
 	window.location = '?c=Landing&#contactenos';
+}
+function validarRegister(){
+	// Captura de Datos
+	nombres = document.getElementById('nombres-reg').value;
+	apellidos = document.getElementById('apellidos-reg').value;
+	correo = document.getElementById('correo-reg').value;
+	pass = document.getElementById('pass-reg').value;
+	confirm = document.getElementById('conf-pass-reg').value;
+	// Expresión Regular de correo electrónico
+	let patron_correo = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+	// Expresión Regular de Texto
+	let patron_texto = /^[ a-zA-ZáéíóúÁÉÍÓÚäëïöüÄËÏÖÜàèìòùÀÈÌÒÙñÑ]+$/;	
+	// Validación de nombres
+	if (nombres === "") {
+		alert("Verifique el campo Nombres\n" + 
+			"Los Nombres NO pueden estar vacíos");
+		document.getElementById('nombres-reg').focus();
+		event.preventDefault();
+	} 
+	else if (!patron_texto.test(nombres)){
+		alert("Verifique el campo Nombres\n" + 
+			"Los Nombres NO pueden contener números o caracteres especiales");
+		document.getElementById('nombres-reg').focus();
+		event.preventDefault();
+	} 
+	else if (nombres.length < 2 || nombres.length > 50) {
+		alert("Verifique el campo Nombres\n" + 
+			"Los Nombres deben contener entre 2 y 50 caracteres");
+		document.getElementById('nombres-reg').focus();
+		event.preventDefault();
+	} 
+	// Validación de Apellidos
+	else if (apellidos === "") {
+		alert("Verifique el campo Apellidos\n" + 
+			"Los Apellidos NO pueden estar vacíos");
+		document.getElementById('apellidos-reg').focus();
+		event.preventDefault();
+	} 
+	else if (!patron_texto.test(apellidos)){
+		alert("Verifique el campo Apellidos\n" + 
+			"Los Apellidos NO pueden contener números o caracteres especiales");
+		document.getElementById('apellidos-reg').focus();
+		event.preventDefault();
+	} 
+	else if (apellidos.length < 2 || apellidos.length > 50) {
+		alert("Verifique el campo Apelllidos\n" + 
+			"Los Apelllidos deben contener entre 2 y 50 caracteres");
+		document.getElementById('apellidos-reg').focus();
+		event.preventDefault();
+	} 
+	// Validación de Correo
+	else if (correo === "") {
+		alert("Verifique el campo Correo\n" + 
+			"El Correo NO puede estar vacío");
+		document.getElementById('correo-reg').focus();
+		event.preventDefault();
+	} 
+	else if (!patron_correo.test(correo)) {
+		alert("Verifique el Correo\n" + 
+			"NO es un correo electrónico válido");
+		document.getElementById('correo-reg').focus();
+		event.preventDefault();	
+	}
+	// Validación de contraseña
+	else if (pass === "") {
+		alert("Verifique la Contraseña\n" + 
+			"La Contraseña NO puede estar vacía");
+		document.getElementById('pass-reg').focus();
+		event.preventDefault();	
+	}
+	else if (pass.length < 5 || pass.length > 8) {
+		alert("Verifique la Contraseña\n" + 
+			"La Contraseña debe tener entre 5 y 8 caracteres");
+		document.getElementById('pass-reg').focus();
+		event.preventDefault();			
+	}
+	// Validación de confirmación
+	else if (confirm === "") {
+		alert("Verifique la Confirmación de Contraseña\n" + 
+			"La Confirmación de Contraseña NO puede estar vacía");
+		document.getElementById('conf-pass-reg').focus();
+		event.preventDefault();	
+	}
+	else if (confirm.length < 5 || confirm.length > 8) {
+		alert("Verifique la Confirmañción de Contraseña\n" + 
+			"La Confirmañción de Contraseña debe tener entre 5 y 8 caracteres");
+		document.getElementById('conf-pass-reg').focus();
+		event.preventDefault();			
+	}
+	// Comprobación de igualdad entre contraseñas
+	else if (pass !== confirm) {
+		alert("Verifique la Contraseña y la Confirmación\n" + 
+			"La Contraseña y la Confirmañción debe tener ser iguales");
+		document.getElementById('pass-reg').value = "";
+		document.getElementById('conf-pass-reg').value = "";
+		document.getElementById('pass-reg').focus();
+		event.preventDefault();			
+	}
+	else {
+		alert("!Felicitaciones!\n" + 
+			"El Usuario se ha registrado satisfactoriamente\n" + 
+			"El Administrador se contactará con Usted por su correo electrónico");		
+	}
+}
+// Formulario de Registro: Cancelar
+function cancelarRegister(){
+	alert("Se canceló el Registro\n" + 
+		"No se ha guardado ningún dato");
+	window.location = '?c=Login';
 }
 // Formulario de Inicio de Sesión: Validar Datos y Enviar
 function validarLogin(){
