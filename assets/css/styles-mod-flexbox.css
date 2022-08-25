@@ -310,7 +310,6 @@ textarea:required:valid{
 	text-decoration: none;
 	padding: 8px;
 	border-radius: 4px;		
-	margin-right: 5px;
 }
 .table .tabla-acciones .tabla-edit{
 	color: #EEE;
@@ -319,6 +318,7 @@ textarea:required:valid{
 .table .tabla-acciones .tabla-delete{
 	color: #EEE;
 	background: #D34826;
+	margin-left: 5px;
 }
 /* Mensajes de Alerta: SweetAlert */
 .sweet-alert{
@@ -765,9 +765,9 @@ Diseño Adaptativo */
 		width: 100%;
 		min-width: 360px;
 		height: 45vh;
-		overflow-y: hidden;
+		overflow-y: scroll;
 	 	overflow-x: scroll;
-	 	white-space: nowrap;
+	 	/*white-space: nowrap;*/
 	}
 	.table{
 		flex: 1;

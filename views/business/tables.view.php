@@ -58,6 +58,84 @@
 								<a class="tabla-delete" href="#"><i class="fas fa-trash-alt"></i></a>
 							</td>
 						</tr>
+						<tr>
+							<td>Empleado</td>
+							<td>EMP-789</td>
+							<td>Victor Rogelio</td>
+							<td>Carranza Rincón</td>
+							<td>1005987896</td>
+							<td>victor@empleado.com</td>					
+							<td>Inactivo</td>
+							<td class="tabla-acciones">
+								<a class="tabla-edit" href="#"><i class="fas fa-edit"></i></a>
+								<a class="tabla-delete" href="#"><i class="fas fa-trash-alt"></i></a>
+							</td>
+						</tr>
+						<tr>
+							<td>Empleado</td>
+							<td>EMP-789</td>
+							<td>Victor Rogelio</td>
+							<td>Carranza Rincón</td>
+							<td>1005987896</td>
+							<td>victor@empleado.com</td>					
+							<td>Inactivo</td>
+							<td class="tabla-acciones">
+								<a class="tabla-edit" href="#"><i class="fas fa-edit"></i></a>
+								<a class="tabla-delete" href="#"><i class="fas fa-trash-alt"></i></a>
+							</td>
+						</tr>
+						<tr>
+							<td>Empleado</td>
+							<td>EMP-789</td>
+							<td>Victor Rogelio</td>
+							<td>Carranza Rincón</td>
+							<td>1005987896</td>
+							<td>victor@empleado.com</td>					
+							<td>Inactivo</td>
+							<td class="tabla-acciones">
+								<a class="tabla-edit" href="#"><i class="fas fa-edit"></i></a>
+								<a class="tabla-delete" href="#"><i class="fas fa-trash-alt"></i></a>
+							</td>
+						</tr>
+						<tr>
+							<td>Empleado</td>
+							<td>EMP-789</td>
+							<td>Victor Rogelio</td>
+							<td>Carranza Rincón</td>
+							<td>1005987896</td>
+							<td>victor@empleado.com</td>					
+							<td>Inactivo</td>
+							<td class="tabla-acciones">
+								<a class="tabla-edit" href="#"><i class="fas fa-edit"></i></a>
+								<a class="tabla-delete" href="#"><i class="fas fa-trash-alt"></i></a>
+							</td>
+						</tr>
+						<tr>
+							<td>Empleado</td>
+							<td>EMP-789</td>
+							<td>Victor Rogelio</td>
+							<td>Carranza Rincón</td>
+							<td>1005987896</td>
+							<td>victor@empleado.com</td>					
+							<td>Inactivo</td>
+							<td class="tabla-acciones">
+								<a class="tabla-edit" href="#"><i class="fas fa-edit"></i></a>
+								<a class="tabla-delete" href="#"><i class="fas fa-trash-alt"></i></a>
+							</td>
+						</tr>
+						<tr>
+							<td>Empleado</td>
+							<td>EMP-789</td>
+							<td>Victor Rogelio</td>
+							<td>Carranza Rincón</td>
+							<td>1005987896</td>
+							<td>victor@empleado.com</td>					
+							<td>Inactivo</td>
+							<td class="tabla-acciones">
+								<a class="tabla-edit" href="#"><i class="fas fa-edit"></i></a>
+								<a class="tabla-delete" href="#"><i class="fas fa-trash-alt"></i></a>
+							</td>
+						</tr>
 					</table>
 			</div>
 		</section>
