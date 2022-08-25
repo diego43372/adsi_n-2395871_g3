@@ -704,7 +704,7 @@ Diseño Adaptativo */
 	}
 	/* Filtros */		
 	.table-data-tables td, th{
-	  text-align: left!important;  
+	  text-align: left!important;	  
 	}
 }
 /* Celulares */
@@ -823,6 +823,9 @@ Diseño Adaptativo */
 		flex-flow: column wrap;	
 		white-space: nowrap;
 		border-collapse: collapse;		
+	}
+	#table-data-tables{
+		margin-top: 10px;
 	}	
 	/* Alertas */
 	.sweet-alert{		
