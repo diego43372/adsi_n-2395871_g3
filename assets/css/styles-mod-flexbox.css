@@ -356,6 +356,15 @@ textarea:required:valid{
 	padding: 8px!important;
 	border-radius: 4px!important;		
 }
+.table-data-tables a::before{
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;	
+	align-items: center;	
+	text-decoration: none;
+	padding: 8px!important;
+	border-radius: 4px!important;		
+}
 .table-data-tables .tabla-acciones .tabla-edit{
 	color: #EEE!important;
 	background: #2A5159!important;
