@@ -495,7 +495,7 @@ function validarLogin(){
 		event.preventDefault();
 		swal({
 			title: "Datos Incorrectos!",
-			text: "No ha superado la validación Fron-End: HTML, CSS y JS",
+			text: "No ha superado la validación Front-End: HTML, CSS y JS",
 			icon: "success",
 			button: "Aceptar",
 		})
