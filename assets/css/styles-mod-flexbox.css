@@ -29,6 +29,9 @@ body{
 	align-items: center;
 	justify-content: center;
 }
+.paginas .parrafo{
+	text-align: center;
+}
 /* Tope: Navegación */
 .tope{	
 	position: relative;
@@ -36,23 +39,29 @@ body{
 }
 /* Mensajes de Alerta: SweetAlert */
 .sweet-alert{
-	flex: 30;
+	flex: 1;
 	display: flex;
 	flex-flow: row wrap;
-	justify-content: center;	
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+	border: 1px solid #CCC;
+	border-radius: 0 0 4px 4px;
+	/*border-left: 1px solid #CCC;
+	border-right: 1px solid #CCC;*/
 }
 .sweet-alert div{
 	flex: 1;
 	display: flex;
 	flex-flow: column wrap;
 	justify-content: center;
-	align-items: center;
-	align-items: center;
+	align-items: center;	
 }
-.sweet-alert a{
+.sweet-alert a{		
 	display: flex;
 	flex-flow: row wrap;
-	justify-content: center;
+	justify-content: center;	
+	align-items: center;
 	border: 1px solid #CCC;
 	text-decoration: none;
 	padding: 20px;
@@ -70,9 +79,6 @@ body{
 	flex: 1;
 	display: flex;	
 	color: #EEE;
-}
-.sweet-alert .parrafo{
-	text-align: center;
 }
 /* Colores básicos */
 .color-negro{
@@ -745,5 +751,9 @@ Diseño Adaptativo */
 		display: flex;	
 		white-space: nowrap;
 		border-collapse: collapse;
+	}
+	/* Alertas */
+	.sweet-alert{		
+		align-items: stretch;
 	}
 }

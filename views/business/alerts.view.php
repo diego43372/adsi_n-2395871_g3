@@ -6,7 +6,7 @@
 			<a href="?c=Landing&a=sweetAlert">Alertas</a>
 		</div>
 		<section class="paginas">
-			<p class="parrafo">Plugin para Alertas con JS: SweetAlert</p>
+			<h2 class="subtitulo">Plugin para Alertas con JS: SweetAlert</h2>
 			<div class="sweet-alert">
 				<div class="mensajeCorrecto">
 					<a href="#" id="mensajeCorrecto">Enviar</a>
