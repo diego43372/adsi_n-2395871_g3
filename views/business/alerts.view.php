@@ -10,15 +10,15 @@
 			<div class="sweet-alert">
 				<div class="mensajeCorrecto">
 					<a href="#" id="mensajeCorrecto">Enviar</a>
-					<p class="parrafo">Mensaje Correcto</p>
+					<p class="parrafo">Mensaje: Correcto</p>
 				</div>
 				<div class="mensajeIncorrecto">
 					<a href="#" id="mensajeIncorrecto">Enviar</a>
-					<p class="parrafo">Mensaje Incorrecto</p>
+					<p class="parrafo">Mensaje: Incorrecto</p>
 				</div>
 				<div class="mensajeAdvertencia">
 					<a href="#" id="mensajeAdvertencia"><i class="fas fa-trash-alt"></i></a>
-					<p class="parrafo">Mensaje de Advertencia</p>
+					<p class="parrafo">Mensaje: Advertencia</p>
 				</div>
 			</div>
 		</section>
