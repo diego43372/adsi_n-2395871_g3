@@ -40,8 +40,8 @@ function validarContac(){
 			button: "Aceptar",
 		})
 		.then((value) => {
-			event.preventDefault();
 			document.getElementById('nombres').focus();
+			event.preventDefault();
 		});
 	} 
 	else if (!patron_texto.test(nombres)){
@@ -52,8 +52,8 @@ function validarContac(){
 			button: "Aceptar",
 		})
 		.then((value) => {
-			event.preventDefault();
 			document.getElementById('nombres').focus();
+			event.preventDefault();
 		});		
 	} 
 	else if (nombres.length < 2 || nombres.length > 50) {
