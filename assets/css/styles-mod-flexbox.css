@@ -279,25 +279,15 @@ textarea:required:valid{
 	color: #2A5159;
 }
 /* Tablas */
-.tables{
-	flex: 1;
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: center;
-	align-items: center;
-	padding: 10px;
-	border: 1px solid #CCC;
-	border-radius: 0 0 4px 4px;
-}
 .table{	
 	width: 100%;	
 	border-collapse: collapse;
 }
-.table td, th{
+.table td, th{	
   border: 1px solid #DDD;
   text-align: left;
-  padding: 8px;
-  text-align: center;
+  padding: 6px;
+  text-align: center;  
 }
 .table th{
 	background: #000;
@@ -305,6 +295,30 @@ textarea:required:valid{
 }
 .table tr:nth-child(even) {
   background-color: #DDD;
+}
+.table .tabla-acciones{
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+}
+.table .tabla-acciones a{
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;	
+	align-items: center;	
+	text-decoration: none;
+	padding: 8px;
+	border-radius: 4px;		
+	margin-right: 5px;
+}
+.table .tabla-acciones .tabla-edit{
+	color: #EEE;
+	background: #2A5159;
+}
+.table .tabla-acciones .tabla-delete{
+	color: #EEE;
+	background: #D34826;
 }
 /* Mensajes de Alerta: SweetAlert */
 .sweet-alert{
@@ -338,9 +352,9 @@ textarea:required:valid{
 }
 .sweet-alert .mensajeCorrecto a,
 .sweet-alert .mensajeIncorrecto a{
-	background: #EFEFEF;
-	color: #333;
-	width: 200px;
+	color: #EEE;
+	background: #2A5159;
+	width: 180px;
 }
 .sweet-alert a i{
 	flex: 1;

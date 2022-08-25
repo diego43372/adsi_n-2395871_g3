@@ -7,7 +7,7 @@
 		</div>
 		<section class="paginas">
 			<h3 class="subtitulo">Tablas en HTML y CSS</h3>
-			<div class="Tables table-scroll">				
+			<div class="table-scroll">				
 					<table class="table">
 						<tr>
 							<th>Rol</th>
@@ -27,9 +27,9 @@
 							<td>1000987654</td>
 							<td>profealbeiro2020@gmail.com</td>					
 							<td>Activo</td>
-							<td>
-								<a href="#"><i class="fas fa-edit"></i></a>
-								<a href="#"><i class="fas fa-trash-alt"></i></a>
+							<td class="tabla-acciones">
+								<a class="tabla-edit" href="#"><i class="fas fa-edit"></i></a>
+								<a class="tabla-delete" href="#"><i class="fas fa-trash-alt"></i></a>
 							</td>
 						</tr>
 						<tr>
@@ -40,9 +40,9 @@
 							<td>1001565465</td>
 							<td>rosa@cliente.com</td>					
 							<td>Activo</td>
-							<td>
-								<a href="#"><i class="fas fa-edit"></i></a>
-								<a href="#"><i class="fas fa-trash-alt"></i></a>
+							<td class="tabla-acciones">
+								<a class="tabla-edit" href="#"><i class="fas fa-edit"></i></a>
+								<a class="tabla-delete" href="#"><i class="fas fa-trash-alt"></i></a>
 							</td>
 						</tr>
 						<tr>
@@ -53,9 +53,9 @@
 							<td>1005987896</td>
 							<td>victor@empleado.com</td>					
 							<td>Inactivo</td>
-							<td>
-								<a href="#"><i class="fas fa-edit"></i></a>
-								<a href="#"><i class="fas fa-trash-alt"></i></a>
+							<td class="tabla-acciones">
+								<a class="tabla-edit" href="#"><i class="fas fa-edit"></i></a>
+								<a class="tabla-delete" href="#"><i class="fas fa-trash-alt"></i></a>
 							</td>
 						</tr>
 					</table>
