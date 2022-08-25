@@ -38,49 +38,6 @@ body{
 	position: relative;
 	top: -49px;	
 }
-/* Mensajes de Alerta: SweetAlert */
-.sweet-alert{
-	flex: 1;
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: center;
-	align-items: center;
-	padding: 10px;
-	border: 1px solid #CCC;
-	border-radius: 0 0 4px 4px;
-	/*border-left: 1px solid #CCC;
-	border-right: 1px solid #CCC;*/
-}
-.sweet-alert div{
-	flex: 1;
-	display: flex;
-	flex-flow: column wrap;
-	justify-content: center;
-	align-items: center;	
-}
-.sweet-alert a{		
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: center;	
-	align-items: center;
-	border: 1px solid #CCC;
-	text-decoration: none;
-	padding: 20px;
-	border-radius: 4px;
-	font-size: 1.5em;	
-	background: #D34826;
-}
-.sweet-alert .mensajeCorrecto a,
-.sweet-alert .mensajeIncorrecto a{
-	background: #EFEFEF;
-	color: #333;
-	width: 200px;
-}
-.sweet-alert a i{
-	flex: 1;
-	display: flex;	
-	color: #EEE;
-}
 /* Colores básicos */
 .color-negro{
 	background: #000;
@@ -322,6 +279,16 @@ textarea:required:valid{
 	color: #2A5159;
 }
 /* Tablas */
+.tables{
+	flex: 1;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+	border: 1px solid #CCC;
+	border-radius: 0 0 4px 4px;
+}
 .table{	
 	width: 100%;	
 	border-collapse: collapse;
@@ -338,6 +305,47 @@ textarea:required:valid{
 }
 .table tr:nth-child(even) {
   background-color: #DDD;
+}
+/* Mensajes de Alerta: SweetAlert */
+.sweet-alert{
+	flex: 1;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+	border: 1px solid #CCC;
+	border-radius: 0 0 4px 4px;
+}
+.sweet-alert div{
+	flex: 1;
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	align-items: center;	
+}
+.sweet-alert a{		
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;	
+	align-items: center;
+	border: 1px solid #CCC;
+	text-decoration: none;
+	padding: 20px;
+	border-radius: 4px;
+	font-size: 1.5em;	
+	background: #D34826;
+}
+.sweet-alert .mensajeCorrecto a,
+.sweet-alert .mensajeIncorrecto a{
+	background: #EFEFEF;
+	color: #333;
+	width: 200px;
+}
+.sweet-alert a i{
+	flex: 1;
+	display: flex;	
+	color: #EEE;
 }
 /* Contenedor */
 .contenedor{
