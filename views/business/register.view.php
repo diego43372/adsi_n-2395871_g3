@@ -6,7 +6,7 @@
 			<a href="?c=Login&a=register">Registro</a>
 		</div>
 		<section class="paginas forms color-gris-oscuro">
-			<form class="form form-register" action="?c=Login" method="post">
+			<form class="form form-register" id="formRegister" action="?c=Login" method="post" name="formRegister">
 				<h2 class="form-subtitulo">Registro</h2>
 				<div class="form-cuerpo color-blanco">					
 					<div class="form-control">

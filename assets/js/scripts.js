@@ -222,10 +222,17 @@ function validarRegister(){
 		document.getElementById('pass-reg').focus();
 		event.preventDefault();			
 	}
-	else {
-		alert("!Felicitaciones!\n" + 
-			"El Usuario se ha registrado satisfactoriamente\n" + 
-			"El Administrador se contactará con Usted por su correo electrónico");		
+	else {		
+		event.preventDefault();
+		swal({
+			title: "Usuario Creado correctamente!",
+			text: "Consulte la lista de usuarios registrados",
+			icon: "success",
+			button: "Aceptar",
+		})
+		.then((value) => {
+			document.formRegister.submit();
+		});
 	}
 }
 // Formulario de Registro: Cancelar
