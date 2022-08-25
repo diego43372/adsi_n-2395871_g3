@@ -71,6 +71,9 @@ body{
 	display: flex;	
 	color: #EEE;
 }
+.sweet-alert .parrafo{
+	text-align: center;
+}
 /* Colores básicos */
 .color-negro{
 	background: #000;
