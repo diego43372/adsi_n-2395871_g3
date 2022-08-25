@@ -7,4 +7,9 @@
 		</div>
 		<section class="paginas">
 			<p class="parrafo">Plugin para Alertas con JS: SweetAlert</p>
+			<div class="sweet-alert">
+				<a href="#" id="mensajeCorrecto">Hola</a>
+				<a href="#" id="mensajeIncorrecto">Hola</a>
+				<a href="#" id="mensajeAdvertencia">Hola</a>
+			</div>
 		</section>

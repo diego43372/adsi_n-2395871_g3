@@ -34,6 +34,20 @@ body{
 	position: relative;
 	top: -49px;	
 }
+/* Mensajes de Alerta: SweetAlert */
+.sweet-alert{
+	flex: 30;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+}
+.sweet-alert a{
+	flex: 1;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+}
+
 /* Colores básicos */
 .color-negro{
 	background: #000;

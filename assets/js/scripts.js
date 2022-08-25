@@ -1,21 +1,56 @@
 hacerClic = document.getElementById("contenedor");
 hacerClic.addEventListener('click', function (event){
-	id = event.target.getAttribute("id");	
-	if (id === "submit-contac") {
+	id = event.target.getAttribute("id");
+	// Mensaje: Correcto
+	if (id === "mensajeCorrecto") {
+		event.preventDefault();
+		swal({
+			title: "Es Correcto!",
+			text: "Los Datos se han enviado a la Base de Datos",
+			icon: "success",
+			button: "Aceptar",
+		})
+	}
+	// Mensaje: Incorrecto
+	else if (id === "mensajeIncorrecto") {
+		event.preventDefault();
+		swal({
+			title: "Es Incorrecto!",
+			text: "Revise los campos del Formulario",
+			icon: "error",
+			button: "Aceptar",
+		})	
+	}
+	// Validar Contacto
+	else if (id === "submit-contac") {
 		validarContac();	
-	} else if (id === "cancelar-contac") {
+	} 
+	// Cancelar Envío Contacto
+	else if (id === "cancelar-contac") {
 		cancelarContac();	
-	} else if (id === "submit-login") {
+	} 
+	// Validar Login
+	else if (id === "submit-login") {
 		validarLogin();
-	} else if (id === "cancelar-login") {
+	} 
+	// Cancelar Envío Login
+	else if (id === "cancelar-login") {
 		cancelarLogin();
-	} else if (id === "submit-register") {
+	} 
+	// Validar Registro
+	else if (id === "submit-register") {
 		validarRegister();
-	}  else if (id === "cancelar-register") {
+	}  
+	// Cancelar Envío Registro
+	else if (id === "cancelar-register") {
 		cancelarRegister();
-	} else if (id === "submit-olvido") {
+	} 
+	// Validar Olvido de Contraseña
+	else if (id === "submit-olvido") {
 		validarOlvido();
-	}  else if (id === "cancelar-olvido") {
+	}  
+	// Cancelar Olvido de Contraseña
+	else if (id === "cancelar-olvido") {
 		cancelarOlvido();
 	}
 });
@@ -37,7 +72,7 @@ function validarContac(){
 		swal({
 			title: "Verifique el campo Nombres",
 			text: "Los Nombres NO pueden estar vacíos",
-			icon: "success",
+			icon: "error",
 			button: "Aceptar",
 		})
 		.then((value) => {
@@ -49,7 +84,7 @@ function validarContac(){
 		swal({
 			title: "Verifique el campo Nombres",
 			text: "Los Nombres NO pueden contener números o caracteres especiales",
-			icon: "success",
+			icon: "error",
 			button: "Aceptar",
 		})
 		.then((value) => {
@@ -61,7 +96,7 @@ function validarContac(){
 		swal({
 			title: "Verifique el campo Nombres",
 			text: "Los Nombres deben contener entre 2 y 50 caracteres",
-			icon: "success",
+			icon: "error",
 			button: "Aceptar",
 		})
 		.then((value) => {
@@ -74,7 +109,7 @@ function validarContac(){
 		swal({
 			title: "Verifique el campo Apellidos",
 			text: "Los Apellidos NO pueden estar vacíos",
-			icon: "success",
+			icon: "error",
 			button: "Aceptar",
 		})
 		.then((value) => {			
@@ -86,7 +121,7 @@ function validarContac(){
 		swal({
 			title: "Verifique el campo Apellidos",
 			text: "Los Apellidos NO pueden contener números o caracteres especiales",
-			icon: "success",
+			icon: "error",
 			button: "Aceptar",
 		})
 		.then((value) => {			
@@ -98,7 +133,7 @@ function validarContac(){
 		swal({
 			title: "Verifique el campo Apellidos",
 			text: "Los Apelllidos deben contener entre 2 y 50 caracteres",
-			icon: "success",
+			icon: "error",
 			button: "Aceptar",
 		})
 		.then((value) => {			
@@ -111,7 +146,7 @@ function validarContac(){
 		swal({
 			title: "Verifique el campo Correo",
 			text: "El Correo NO puede estar vacío",
-			icon: "success",
+			icon: "error",
 			button: "Aceptar",
 		})
 		.then((value) => {			
@@ -123,7 +158,7 @@ function validarContac(){
 		swal({
 			title: "Verifique el campo Correo",
 			text: "El Correo NO es un correo electrónico válido",
-			icon: "success",
+			icon: "error",
 			button: "Aceptar",
 		})
 		.then((value) => {			
@@ -136,7 +171,7 @@ function validarContac(){
 		swal({
 			title: "Verifique el campo Asunto",
 			text: "El Asunto NO puede estar vacío",
-			icon: "success",
+			icon: "error",
 			button: "Aceptar",
 		})
 		.then((value) => {			
@@ -148,7 +183,7 @@ function validarContac(){
 		swal({
 			title: "Verifique el campo Asunto",
 			text: "El Asunto NO puede contener números o caracteres especiales",
-			icon: "success",
+			icon: "error",
 			button: "Aceptar",
 		})
 		.then((value) => {			
@@ -160,7 +195,7 @@ function validarContac(){
 		swal({
 			title: "Verifique el campo Asunto",
 			text: "El Asunto debe contener entre 2 y 50 caracteres",
-			icon: "success",
+			icon: "error",
 			button: "Aceptar",
 		})
 		.then((value) => {			
@@ -173,7 +208,7 @@ function validarContac(){
 		swal({
 			title: "Verifique el campo Mensaje",
 			text: "El Mensaje NO puede estar vacío",
-			icon: "success",
+			icon: "error",
 			button: "Aceptar",
 		})
 		.then((value) => {			
@@ -185,13 +220,14 @@ function validarContac(){
 		swal({
 			title: "Verifique el campo Mensaje",
 			text: "El Mensaje debe contener entre 50 y 300 caracteres",
-			icon: "success",
+			icon: "error",
 			button: "Aceptar",
 		})
 		.then((value) => {			
 			document.getElementById('mensaje').focus();
 		});		
 	}
+	// Se envía el mensaje
 	else {
 		event.preventDefault();
 		swal({
@@ -236,7 +272,7 @@ function validarRegister(){
 		swal({
 			title: "Verifique el campo Nombres",
 			text: "Los Nombres NO pueden estar vacíos",
-			icon: "success",
+			icon: "error",
 			button: "Aceptar",
 		})
 		.then((value) => {			
@@ -248,7 +284,7 @@ function validarRegister(){
 		swal({
 			title: "Verifique el campo Nombres",
 			text: "Los Nombres NO pueden contener números o caracteres especiales",
-			icon: "success",
+			icon: "error",
 			button: "Aceptar",
 		})
 		.then((value) => {			
@@ -260,7 +296,7 @@ function validarRegister(){
 		swal({
 			title: "Verifique el campo Nombres",
 			text: "Los Nombres deben contener entre 2 y 50 caracteres",
-			icon: "success",
+			icon: "error",
 			button: "Aceptar",
 		})
 		.then((value) => {			
@@ -273,7 +309,7 @@ function validarRegister(){
 		swal({
 			title: "Verifique el campo Apellidos",
 			text: "Los Apellidos NO pueden estar vacíos",
-			icon: "success",
+			icon: "error",
 			button: "Aceptar",
 		})
 		.then((value) => {			
@@ -285,7 +321,7 @@ function validarRegister(){
 		swal({
 			title: "Verifique el campo Apellidos",
 			text: "Los Apellidos NO pueden contener números o caracteres especiales",
-			icon: "success",
+			icon: "error",
 			button: "Aceptar",
 		})
 		.then((value) => {			
@@ -297,7 +333,7 @@ function validarRegister(){
 		swal({
 			title: "Verifique el campo Apellidos",
 			text: "Los Apelllidos deben contener entre 2 y 50 caracteres",
-			icon: "success",
+			icon: "error",
 			button: "Aceptar",
 		})
 		.then((value) => {			
@@ -310,7 +346,7 @@ function validarRegister(){
 		swal({
 			title: "Verifique el campo Correo",
 			text: "El Correo NO puede estar vacío",
-			icon: "success",
+			icon: "error",
 			button: "Aceptar",
 		})
 		.then((value) => {			
@@ -322,7 +358,7 @@ function validarRegister(){
 		swal({
 			title: "Verifique el campo Correo",
 			text: "El Correo NO es un correo electrónico válido",
-			icon: "success",
+			icon: "error",
 			button: "Aceptar",
 		})
 		.then((value) => {			
@@ -335,7 +371,7 @@ function validarRegister(){
 		swal({
 			title: "Verifique el campo Contraseña",
 			text: "La Contraseña NO puede estar vacía",
-			icon: "success",
+			icon: "error",
 			button: "Aceptar",
 		})
 		.then((value) => {			
@@ -347,7 +383,7 @@ function validarRegister(){
 		swal({
 			title: "Verifique el campo Contraseña",
 			text: "La Contraseña debe tener entre 5 y 8 caracteres",
-			icon: "success",
+			icon: "error",
 			button: "Aceptar",
 		})
 		.then((value) => {			
@@ -360,7 +396,7 @@ function validarRegister(){
 		swal({
 			title: "Verifique el campo Confirmación Contraseña",
 			text: "La Confirmación de Contraseña NO puede estar vacía",
-			icon: "success",
+			icon: "error",
 			button: "Aceptar",
 		})
 		.then((value) => {			
@@ -372,7 +408,7 @@ function validarRegister(){
 		swal({
 			title: "Verifique el campo Confirmación Contraseña",
 			text: "La Confirmañción de Contraseña debe tener entre 5 y 8 caracteres",
-			icon: "success",
+			icon: "error",
 			button: "Aceptar",
 		})
 		.then((value) => {			
@@ -385,7 +421,7 @@ function validarRegister(){
 		swal({
 			title: "Verifique los campos Contraseña y Confirmación",
 			text: "La Contraseña y la Confirmación debe ser iguales",
-			icon: "success",
+			icon: "error",
 			button: "Aceptar",
 		})
 		.then((value) => {
@@ -394,6 +430,7 @@ function validarRegister(){
 			document.getElementById('pass-reg').focus();			
 		});		
 	}
+	// Se crea el Usuario
 	else {		
 		event.preventDefault();
 		swal({
@@ -434,7 +471,7 @@ function validarLogin(){
 		swal({
 			title: "Verifique el campo Correo",
 			text: "El Correo NO puede estar vacío",
-			icon: "success",
+			icon: "error",
 			button: "Aceptar",
 		})
 		.then((value) => {			
@@ -445,7 +482,7 @@ function validarLogin(){
 		swal({
 			title: "Verifique el campo Correo",
 			text: "El Correo NO es un correo electrónico válido",
-			icon: "success",
+			icon: "error",
 			button: "Aceptar",
 		})
 		.then((value) => {			
@@ -458,7 +495,7 @@ function validarLogin(){
 		swal({
 			title: "Verifique el campo Contraseña",
 			text: "La Contraseña NO puede estar vacía",
-			icon: "success",
+			icon: "error",
 			button: "Aceptar",
 		})
 		.then((value) => {			
@@ -470,7 +507,7 @@ function validarLogin(){
 		swal({
 			title: "Verifique el campo Contraseña",
 			text: "La Contraseña debe tener entre 5 y 8 caracteres",
-			icon: "success",
+			icon: "error",
 			button: "Aceptar",
 		})
 		.then((value) => {			
@@ -496,7 +533,7 @@ function validarLogin(){
 		swal({
 			title: "Datos Incorrectos!",
 			text: "No ha superado la validación Front-End: HTML, CSS y JS",
-			icon: "success",
+			icon: "error",
 			button: "Aceptar",
 		})
 		.then((value) => {			
@@ -532,7 +569,7 @@ function validarOlvido(){
 		swal({
 			title: "Verifique el campo Correo",
 			text: "El Correo NO puede estar vacío",
-			icon: "success",
+			icon: "error",
 			button: "Aceptar",
 		})
 		.then((value) => {			
@@ -544,14 +581,14 @@ function validarOlvido(){
 		swal({
 			title: "Verifique el campo Correo",
 			text: "El Correo NO es un correo electrónico válido",
-			icon: "success",
+			icon: "error",
 			button: "Aceptar",
 		})
 		.then((value) => {			
 			document.getElementById('correo-olv').focus();
 		});		
 	}	
-	// 
+	// La contraseña se ha restaurado
 	else {
 		event.preventDefault();
 		swal({
