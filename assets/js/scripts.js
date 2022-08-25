@@ -32,17 +32,29 @@ function validarContac(){
 	// Expresión Regular de Texto
 	let patron_texto = /^[ a-zA-ZáéíóúÁÉÍÓÚäëïöüÄËÏÖÜàèìòùÀÈÌÒÙñÑ]+$/;	
 	// Validación de nombres
-	if (nombres === "") {
-		alert("Verifique el campo Nombres\n" + 
-			"Los Nombres NO pueden estar vacíos");
-		document.getElementById('nombres').focus();
-		event.preventDefault();
+	if (nombres === "") {		
+		swal({
+			title: "Verifique el campo Nombres",
+			text: "Los Nombres NO pueden estar vacíos",
+			icon: "success",
+			button: "Aceptar",
+		})
+		.then((value) => {
+			event.preventDefault();
+			document.getElementById('nombres').focus();
+		});
 	} 
 	else if (!patron_texto.test(nombres)){
-		alert("Verifique el campo Nombres\n" + 
-			"Los Nombres NO pueden contener números o caracteres especiales");
-		document.getElementById('nombres').focus();
-		event.preventDefault();
+		swal({
+			title: "Verifique el campo Nombres",
+			text: "Los Nombres NO pueden contener números o caracteres especiales",
+			icon: "success",
+			button: "Aceptar",
+		})
+		.then((value) => {
+			event.preventDefault();
+			document.getElementById('nombres').focus();
+		});		
 	} 
 	else if (nombres.length < 2 || nombres.length > 50) {
 		alert("Verifique el campo Nombres\n" + 
