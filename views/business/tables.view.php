@@ -8,7 +8,7 @@
 		<section class="paginas">
 			<h3 class="subtitulo">Tablas en HTML y CSS</h3>
 			<div class="table-scroll">				
-					<table class="table">
+					<table class="table">						
 						<tr>
 							<th>Rol</th>
 							<th>Id</th>
