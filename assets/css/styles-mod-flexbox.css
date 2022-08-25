@@ -39,15 +39,38 @@ body{
 	flex: 30;
 	display: flex;
 	flex-flow: row wrap;
+	justify-content: center;	
+}
+.sweet-alert div{
+	flex: 1;
+	display: flex;
+	flex-flow: column wrap;
 	justify-content: center;
+	align-items: center;
+	align-items: center;
 }
 .sweet-alert a{
-	flex: 1;
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
+	border: 1px solid #CCC;
+	text-decoration: none;
+	padding: 20px;
+	border-radius: 4px;
+	font-size: 1.5em;	
+	background: #D34826;
 }
-
+.sweet-alert .mensajeCorrecto a,
+.sweet-alert .mensajeIncorrecto a{
+	background: #EFEFEF;
+	color: #333;
+	width: 200px;	
+}
+.sweet-alert a i{
+	flex: 1;
+	display: flex;	
+	color: #EEE;
+}
 /* Colores básicos */
 .color-negro{
 	background: #000;

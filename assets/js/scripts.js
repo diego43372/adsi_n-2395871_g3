@@ -21,6 +21,26 @@ hacerClic.addEventListener('click', function (event){
 			button: "Aceptar",
 		})	
 	}
+	// Mensaje: Advertencia
+	else if (id === "mensajeAdvertencia") {
+		swal({
+            title: "Está seguro de eliminar el registro",
+            text: "Si elimina el registro, ya no podrá ser recuperado de la memoria!",
+            icon: "warning",
+            buttons: [true, "Aceptar"],
+            dangerMode: true,
+        })
+        .then((willDelete) => {            
+            if (willDelete) {
+                swal("El registro ha sido eliminado!", {
+                    icon: "success",
+                });                
+                tabla.deleteRow(i);
+            } else {
+                swal("El registro se ha convervado");
+            }
+        });
+	}
 	// Validar Contacto
 	else if (id === "submit-contac") {
 		validarContac();	
