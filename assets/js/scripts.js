@@ -115,15 +115,31 @@ function validarContac(){
 		event.preventDefault();
 	}
 	else {
-		alert("!Felicitaciones!\n" + 
-			"El Mensaje se ha enviado satisfactoriamente");
+		event.preventDefault();
+		swal({
+			title: "Mensaje Enviado!",
+			text: "El mensaje enviado correctamente, en 24 horas el Administrador se comunicará con Usted por medio de su Correo Electrónico",
+			icon: "success",
+			button: "Aceptar",
+		})
+		.then((value) => {
+			document.formContact.submit();
+		});		
 	}
 }
 // Formulario de Contacto: Cancelar
 function cancelarContac(){
-	alert("Se canceló el Envío del Mensaje\n" + 
-		"No se ha guardado ningún dato");
-	window.location = '?c=Landing&#contactenos';
+	event.preventDefault();
+	swal({
+		title: "Cancelación de Mensaje!",
+		text: "No se ha guardado ningún dato",
+		icon: "error",
+		button: "Aceptar",
+	})
+	.then((value) => {
+		document.formContact.reset();
+		window.location = '?c=Landing&#contactenos';
+	});	
 }
 function validarRegister(){
 	// Captura de Datos
@@ -226,7 +242,7 @@ function validarRegister(){
 		event.preventDefault();
 		swal({
 			title: "Usuario Creado correctamente!",
-			text: "Consulte la lista de usuarios registrados",
+			text: "El Administrador se comunicará con Usted por medio de su Correo Electrónico",
 			icon: "success",
 			button: "Aceptar",
 		})
@@ -237,9 +253,17 @@ function validarRegister(){
 }
 // Formulario de Registro: Cancelar
 function cancelarRegister(){
-	alert("Se canceló el Registro\n" + 
-		"No se ha guardado ningún dato");
-	window.location = '?c=Login';
+	event.preventDefault();
+	swal({
+		title: "Se canceló el Registro!",
+		text: "No se ha guardado ningún dato",
+		icon: "error",
+		button: "Aceptar",
+	})
+	.then((value) => {
+		document.formRegister.reset();
+		window.location = '?c=Login';		
+	});
 }
 // Formulario de Inicio de Sesión: Validar Datos y Enviar
 function validarLogin(){
@@ -275,8 +299,16 @@ function validarLogin(){
 	}
 	// Validación de Datos (Se sugiere hacerlo por AJAX o NodeJS)
 	else if (correo == "admin@correo.com" && pass == 12345) {
-		alert("Datos correctos:\n" + "Superó la validación Front-End: HTML, CSS y JS.\n" + 
-			"Ahora falta la validación Back-End.");
+		event.preventDefault();
+		swal({
+			title: "Datos Correctos!",
+			text: "Superó la validación Front-End: HTML, CSS y JS. Ahora falta la validación Back-End",
+			icon: "success",
+			button: "Aceptar",
+		})
+		.then((value) => {
+			document.formLogin.submit();
+		});		
 	} 
 	// Si no coinciden con los Datos
 	else {
@@ -290,9 +322,17 @@ function validarLogin(){
 }
 // Formulario de Inicio de Sesión: Cancelar
 function cancelarLogin(){
-	alert("Se canceló el Inicio de Sesión\n" + 
-		"No se ha guardado ningún dato");
-	window.location = '?c=Landing&#';
+	event.preventDefault();
+	swal({
+		title: "Se canceló el Inicio de Sesión!",
+		text: "No se ha guardado ningún dato",
+		icon: "error",
+		button: "Aceptar",
+	})
+	.then((value) => {
+		document.formLogin.reset();
+		window.location = '?c=Landing&#';
+	});
 }
 // Formulario de Olvido Contraseña: Validar Datos y Enviar
 function validarOlvido(){
@@ -315,14 +355,29 @@ function validarOlvido(){
 	}	
 	// 
 	else {
-		alert("Contraseña Restaurada\n" + 
-			"La contraseña ha sido restaurada satisfactoriamente\n" + 
-			"Revise su correo electrónico y siga los pasos");		
+		event.preventDefault();
+		swal({
+			title: "Contraseña Restaurada!",
+			text: "La contraseña ha sido restaurada. Revise su correo electrónico y siga los pasos sugeridos",
+			icon: "success",
+			button: "Aceptar",
+		})
+		.then((value) => {
+			document.formForgot.submit();
+		});
 	}
 }
 // Formulario de Olvido Contraseña: Cancelar
 function cancelarOlvido(){
-	alert("Se canceló la Recuperación de Contraseña\n" + 
-		"No se ha guardado ningún dato");
-	window.location = '?c=Login';
+	event.preventDefault();
+	swal({
+		title: "Se canceló la Recuperación de Contraseña!",
+		text: "No se ha guardado ningún dato",
+		icon: "error",
+		button: "Aceptar",
+	})
+	.then((value) => {
+		document.formForgot.reset();
+		window.location = '?c=Login';
+	});
 }

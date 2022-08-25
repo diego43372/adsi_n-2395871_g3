@@ -6,7 +6,7 @@
 			<a href="?c=Login&a=forgot">Olvido de Contraseña</a>
 		</div>
 		<section class="paginas forms color-gris-oscuro">
-			<form class="form form-forgot" action="?c=Login" method="post">
+			<form class="form form-forgot" action="?c=Login" method="post" name="formForgot">
 				<h2 class="form-subtitulo">Olvido de Contraseña</h2>
 				<div class="form-cuerpo color-blanco">
 					<div class="form-control">
