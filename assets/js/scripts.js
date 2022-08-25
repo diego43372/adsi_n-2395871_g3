@@ -1,7 +1,6 @@
 hacerClic = document.getElementById("contenedor");
 hacerClic.addEventListener('click', function (event){
-	id = event.target.getAttribute("id");
-	// Formulario de Contacto
+	id = event.target.getAttribute("id");	
 	if (id === "submit-contac") {
 		validarContac();	
 	} else if (id === "cancelar-contac") {
@@ -14,9 +13,12 @@ hacerClic.addEventListener('click', function (event){
 		validarRegister();
 	}  else if (id === "cancelar-register") {
 		cancelarRegister();
+	} else if (id === "submit-olvido") {
+		validarOlvido();
+	}  else if (id === "cancelar-olvido") {
+		cancelarOlvido();
 	}
 });
-
 // Formulario de Contacto: Validar Datos y Enviar
 function validarContac(){
 	// Captura de Datos
@@ -284,4 +286,36 @@ function cancelarLogin(){
 	alert("Se canceló el Inicio de Sesión\n" + 
 		"No se ha guardado ningún dato");
 	window.location = '?c=Landing&#';
+}
+// Formulario de Olvido Contraseña: Validar Datos y Enviar
+function validarOlvido(){
+	// Captura de Datos		
+	correo = document.getElementById('correo-olv').value;	
+	// Expresión Regular de correo electrónico
+	let patron_correo = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+	// Validación de Correo
+	if (correo === "") {
+		alert("Verifique el campo Correo\n" + 
+			"El Correo NO puede estar vacío");
+		document.getElementById('correo-olv').focus();
+		event.preventDefault();
+	} 
+	else if (!patron_correo.test(correo)) {
+		alert("Verifique el Correo\n" + 
+			"NO es un correo electrónico válido");
+		document.getElementById('correo-reg').focus();
+		event.preventDefault();	
+	}	
+	// 
+	else {
+		alert("Contraseña Restaurada\n" + 
+			"La contraseña ha sido restaurada satisfactoriamente\n" + 
+			"Revise su correo electrónico y siga los pasos");		
+	}
+}
+// Formulario de Olvido Contraseña: Cancelar
+function cancelarOlvido(){
+	alert("Se canceló la Recuperación de Contraseña\n" + 
+		"No se ha guardado ningún dato");
+	window.location = '?c=Login';
 }
