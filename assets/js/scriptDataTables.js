@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('#table-data-tables').DataTable( {
+    var table = $('#table-data-tables').DataTable( {
         dom: 'Bfrtip',
         buttons: [
             'copy',
@@ -16,6 +16,10 @@ $(document).ready(function() {
                 }
             }
         ],
-        select: true
+        select: true,
+        rowReorder: {
+            selector: 'td:nth-child(2)'
+        },
+        responsive: true        
     } );
 } );

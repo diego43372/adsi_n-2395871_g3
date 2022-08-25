@@ -10,8 +10,8 @@
 			<div class="table-scroll">				
 				<table class="table">
 					<tr>
-						<th>Rol</th>
 						<th>Id</th>
+						<th>Rol</th>
 						<th>Nombres</th>
 						<th>Apellidos</th>
 						<th>Nº Documento</th>
@@ -20,8 +20,8 @@
 						<th>Acciones</th>
 					</tr>
 					<tr>
-						<td>Admin</td>
 						<td>ADM-123</td>
+						<td>Admin</td>
 						<td>E. Albeiro</td>
 						<td>Ramos V.</td>
 						<td>1000987654</td>
@@ -33,8 +33,8 @@
 						</td>
 					</tr>
 					<tr>
-						<td>Cliente</td>
 						<td>CLT-456</td>
+						<td>Cliente</td>
 						<td>Rosa María</td>
 						<td>Godines Salazar</td>
 						<td>1001565465</td>
@@ -46,8 +46,8 @@
 						</td>
 					</tr>
 					<tr>
-						<td>Empleado</td>
 						<td>EMP-789</td>
+						<td>Empleado</td>
 						<td>Victor Rogelio</td>
 						<td>Carranza Rincón</td>
 						<td>1005987896</td>
@@ -59,8 +59,8 @@
 						</td>
 					</tr>
 					<tr>
-						<td>Estudiante</td>
 						<td>EST-1234</td>
+						<td>Estudiante</td>
 						<td>Pepito</td>
 						<td>Perez</td>
 						<td>1101325355</td>
@@ -72,8 +72,8 @@
 						</td>
 					</tr>
 					<tr>
-						<td>Profesor</td>
 						<td>PRF-568</td>
+						<td>Profesor</td>
 						<td>José</td>
 						<td>Paternina Soto</td>
 						<td>7354256</td>
@@ -85,8 +85,8 @@
 						</td>
 					</tr>
 					<tr>
-						<td>Proveedor</td>
 						<td>PRV-896</td>
+						<td>Proveedor</td>
 						<td>María</td>
 						<td>Auxiliadora</td>
 						<td>4035923</td>
@@ -98,8 +98,8 @@
 						</td>
 					</tr>
 					<tr>
-						<td>Contable</td>
 						<td>CNT-689</td>
+						<td>Contable</td>
 						<td>Heidy Sofía</td>
 						<td>González Espinosa</td>
 						<td>10078968921</td>
@@ -111,8 +111,8 @@
 						</td>
 					</tr>
 					<tr>
-						<td>Rector</td>
 						<td>RCT-852</td>
+						<td>Rector</td>
 						<td>Amaranta</td>
 						<td>Perea Sigún</td>
 						<td>98546213</td>
@@ -124,8 +124,8 @@
 						</td>
 					</tr>
 					<tr>
-						<td>Recursos Humanos</td>
 						<td>RHM-133</td>
+						<td>Recursos Humanos</td>
 						<td>Camila </td>
 						<td>Arriaga Beltrán</td>
 						<td>1000564683</td>

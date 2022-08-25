@@ -322,7 +322,48 @@ textarea:required:valid{
 }
 /* Filtros */
 .data-tables{
-	padding-top: 10px;
+	padding: 10px;
+}
+.table-data-tables{	
+	padding: 10px;
+	border: 1px solid #CCC;
+}
+.table-data-tables td, th{	
+  border: 1px solid #DDD;
+  text-align: left;
+  padding: 6px;
+  text-align: center!important;  
+}
+.table-data-tables th{
+	background: #000;
+	color: #FFF;
+}
+.table-data-tables tr:nth-child(even) {
+  background-color: #DDD;
+}
+.table-data-tables .tabla-acciones{
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+}
+.table-data-tables .tabla-acciones a{
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;	
+	align-items: center;	
+	text-decoration: none;
+	padding: 8px!important;
+	border-radius: 4px!important;		
+}
+.table-data-tables .tabla-acciones .tabla-edit{
+	color: #EEE!important;
+	background: #2A5159!important;
+}
+.table-data-tables .tabla-acciones .tabla-delete{
+	color: #EEE!important;
+	background: #D34826!important;
+	margin-left: 5px!important;
 }
 /* Mensajes de Alerta: SweetAlert */
 .sweet-alert{
@@ -660,7 +701,11 @@ Diseño Adaptativo */
 	}
 	.cont-fila-abj{
 		flex: 1;
-	}	
+	}
+	/* Filtros */		
+	.table-data-tables td, th{
+	  text-align: left!important;  
+	}
 }
 /* Celulares */
 @media (max-width: 768px) {		
@@ -774,10 +819,11 @@ Diseño Adaptativo */
 	}
 	.table{
 		flex: 1;
-		display: flex;	
+		display: flex;
+		flex-flow: column wrap;	
 		white-space: nowrap;
 		border-collapse: collapse;		
-	}		
+	}	
 	/* Alertas */
 	.sweet-alert{		
 		align-items: stretch;
