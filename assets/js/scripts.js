@@ -57,80 +57,146 @@ function validarContac(){
 		});		
 	} 
 	else if (nombres.length < 2 || nombres.length > 50) {
-		alert("Verifique el campo Nombres\n" + 
-			"Los Nombres deben contener entre 2 y 50 caracteres");
-		document.getElementById('nombres').focus();
-		event.preventDefault();
+		swal({
+			title: "Verifique el campo Nombres",
+			text: "Los Nombres deben contener entre 2 y 50 caracteres",
+			icon: "success",
+			button: "Aceptar",
+		})
+		.then((value) => {
+			document.getElementById('nombres').focus();
+			event.preventDefault();
+		});
 	} 
 	// Validación de Apellidos
 	else if (apellidos === "") {
-		alert("Verifique el campo Apellidos\n" + 
-			"Los Apellidos NO pueden estar vacíos");
-		document.getElementById('apellidos').focus();
-		event.preventDefault();
+		swal({
+			title: "Verifique el campo Apellidos",
+			text: "Los Apellidos NO pueden estar vacíos",
+			icon: "success",
+			button: "Aceptar",
+		})
+		.then((value) => {			
+			document.getElementById('apellidos').focus();
+			event.preventDefault();
+		});
 	} 
 	else if (!patron_texto.test(apellidos)){
-		alert("Verifique el campo Apellidos\n" + 
-			"Los Apellidos NO pueden contener números o caracteres especiales");
-		document.getElementById('apellidos').focus();
-		event.preventDefault();
+		swal({
+			title: "Verifique el campo Apellidos",
+			text: "Los Apellidos NO pueden contener números o caracteres especiales",
+			icon: "success",
+			button: "Aceptar",
+		})
+		.then((value) => {			
+			document.getElementById('apellidos').focus();
+			event.preventDefault();
+		});
 	} 
 	else if (apellidos.length < 2 || apellidos.length > 50) {
-		alert("Verifique el campo Apelllidos\n" + 
-			"Los Apelllidos deben contener entre 2 y 50 caracteres");
-		document.getElementById('apellidos').focus();
-		event.preventDefault();
+		swal({
+			title: "Verifique el campo Apellidos",
+			text: "Los Apelllidos deben contener entre 2 y 50 caracteres",
+			icon: "success",
+			button: "Aceptar",
+		})
+		.then((value) => {			
+			document.getElementById('apellidos').focus();
+			event.preventDefault();
+		});
 	} 
 	// Validación de Correo
 	else if (correo === "") {
-		alert("Verifique el campo Correo\n" + 
-			"El Correo NO puede estar vacío");
-		document.getElementById('correo-cont').focus();
-		event.preventDefault();
+		swal({
+			title: "Verifique el campo Correo",
+			text: "El Correo NO puede estar vacío",
+			icon: "success",
+			button: "Aceptar",
+		})
+		.then((value) => {			
+			document.getElementById('correo-cont').focus();			
+			event.preventDefault();
+		});
 	} 
 	else if (!patron_correo.test(correo)) {
-		alert("Verifique el Correo\n" + 
-			"NO es un correo electrónico válido");
-		document.getElementById('correo-cont').focus();
-		event.preventDefault();	
+		swal({
+			title: "Verifique el campo Correo",
+			text: "El Correo NO es un correo electrónico válido",
+			icon: "success",
+			button: "Aceptar",
+		})
+		.then((value) => {			
+			document.getElementById('correo-cont').focus();			
+			event.preventDefault();
+		});
 	}	 	
 	// Validación Asunto
 	else if (asunto === "") {
-		alert("Verifique el campo Asunto\n" + 
-			"El Asunto NO puede estar vacío");
-		document.getElementById('asunto').focus();
-		event.preventDefault();
+		swal({
+			title: "Verifique el campo Asunto",
+			text: "El Asunto NO puede estar vacío",
+			icon: "success",
+			button: "Aceptar",
+		})
+		.then((value) => {			
+			document.getElementById('asunto').focus();
+			event.preventDefault();
+		});		
 	} 	
 	else if (!patron_texto.test(asunto)) {
-		alert("Verifique el Asunto\n" + 
-			"El Asunto NO puede contener números o caracteres especiales");
-		document.getElementById('asunto').focus();
-		event.preventDefault();	
+		swal({
+			title: "Verifique el campo Asunto",
+			text: "El Asunto NO puede contener números o caracteres especiales",
+			icon: "success",
+			button: "Aceptar",
+		})
+		.then((value) => {			
+			document.getElementById('asunto').focus();
+			event.preventDefault();
+		});
 	}
 	else if (asunto.length < 2 || asunto.length > 50) {
-		alert("Verifique el campo Asunto\n" + 
-			"El Asunto debe contener entre 2 y 50 caracteres");
-		document.getElementById('asunto').focus();
-		event.preventDefault();
+		swal({
+			title: "Verifique el campo Asunto",
+			text: "El Asunto debe contener entre 2 y 50 caracteres",
+			icon: "success",
+			button: "Aceptar",
+		})
+		.then((value) => {			
+			document.getElementById('asunto').focus();
+			event.preventDefault();
+		});		
 	}
 	// Validación Mensaje	
 	else if (mensaje === "") {
-		alert("Verifique el campo Mensaje\n" + 
-			"El Mensaje NO puede estar vacío");
-		document.getElementById('mensaje').focus();
-		event.preventDefault();
+		swal({
+			title: "Verifique el campo Mensaje",
+			text: "El Mensaje NO puede estar vacío",
+			icon: "success",
+			button: "Aceptar",
+		})
+		.then((value) => {			
+			document.getElementById('mensaje').focus();			
+			event.preventDefault();
+		});		
 	}
 	else if (mensaje.length < 50 || mensaje.length > 300) {
-		alert("Verifique el campo Mensaje\n" + 
-			"El Mensaje debe contener entre 50 y 300 caracteres");
-		document.getElementById('mensaje').focus();
-		event.preventDefault();
+		swal({
+			title: "Verifique el campo Mensaje",
+			text: "El Mensaje debe contener entre 50 y 300 caracteres",
+			icon: "success",
+			button: "Aceptar",
+		})
+		.then((value) => {			
+			document.getElementById('mensaje').focus();
+			event.preventDefault();
+		});		
 	}
 	else {
 		event.preventDefault();
 		swal({
 			title: "Mensaje Enviado!",
-			text: "El mensaje enviado correctamente, en 24 horas el Administrador se comunicará con Usted por medio de su Correo Electrónico",
+			text: "El mensaje se ha enviado correctamente. En menos de 24 horas el Administrador se comunicará con Usted por medio de su Correo Electrónico",
 			icon: "success",
 			button: "Aceptar",
 		})
