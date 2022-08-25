@@ -356,15 +356,6 @@ textarea:required:valid{
 	padding: 8px!important;
 	border-radius: 4px!important;		
 }
-.table-data-tables a::before{
-	display: flex;
-	flex-flow: column wrap;
-	justify-content: center;	
-	align-items: center;	
-	text-decoration: none;
-	padding: 8px!important;
-	border-radius: 4px!important;		
-}
 .table-data-tables .tabla-acciones .tabla-edit{
 	color: #EEE!important;
 	background: #2A5159!important;
@@ -836,6 +827,21 @@ Diseño Adaptativo */
 	#table-data-tables{
 		margin-top: 10px;
 	}	
+	.table-data-tables tbody td a{
+		display: initial;
+		padding: 6px;
+		border-radius: 4px;
+		margin-top: 5px;
+	}
+	.table-data-tables tbody td a.tabla-edit{
+		color: #EEE;
+		background: #2A5159;
+	}
+	.table-data-tables tbody td a.tabla-delete{
+		color: #EEE;
+		background: #D34826;
+		margin-left: 5px;
+	}
 	/* Alertas */
 	.sweet-alert{		
 		align-items: stretch;
