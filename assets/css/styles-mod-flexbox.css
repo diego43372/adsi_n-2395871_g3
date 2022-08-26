@@ -149,8 +149,7 @@ body{
 /* Migas de Pan */
 .migas{
 	display: flex;
-	flex-flow: row nowrap;
-	/*justify-content: flex-start;*/
+	flex-flow: row nowrap;	
 	align-items: center;
 	padding: 10px;
 }
@@ -260,7 +259,7 @@ textarea:required:valid{
 .form-register,
 .form-forgot{
 	flex: 0 0 100%;
-	width: 60%;	
+	width: 60%;
 }
 .form-login .form-subtitulo{
 	border-radius: 0;
@@ -405,9 +404,10 @@ textarea:required:valid{
 	background: #2A5159;
 	width: 180px;
 }
+.sweet-alert .mensajeAdvertencia{
+	display: flex;
+}
 .sweet-alert a i{
-	flex: 1;
-	display: flex;	
 	color: #EEE;
 }
 /* Contenedor */

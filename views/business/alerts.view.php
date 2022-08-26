@@ -17,7 +17,9 @@
 					<p class="parrafo">Mensaje: Incorrecto</p>
 				</div>
 				<div class="mensajeAdvertencia">
-					<a href="#" id="mensajeAdvertencia"><i class="fas fa-trash-alt"></i></a>
+					<a href="#" id="mensajeAdvertencia-nav">
+						<i id="mensajeAdvertencia-icon" class="fas fa-trash-alt"></i>
+					</a>
 					<p class="parrafo">Mensaje: Advertencia</p>
 				</div>
 			</div>

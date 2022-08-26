@@ -22,7 +22,7 @@ hacerClic.addEventListener('click', function (event){
 		})	
 	}
 	// Mensaje: Advertencia
-	else if (id === "mensajeAdvertencia") {
+	else if (id === "mensajeAdvertencia-nav" || id === "mensajeAdvertencia-icon") {
 		swal({
             title: "Está seguro de eliminar el registro",
             text: "Si elimina el registro, ya no podrá ser recuperado de la memoria!",
