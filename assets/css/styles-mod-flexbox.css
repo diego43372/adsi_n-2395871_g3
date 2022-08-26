@@ -410,6 +410,33 @@ textarea:required:valid{
 .sweet-alert a i{
 	color: #EEE;
 }
+/* Reportes Gráficos */
+.canvas-js{
+	flex: 1;
+	display: flex;
+	flex-flow: row wrap;
+	border: 1px solid #CCC;
+	border-radius: 0 0 4px 4px;
+	padding: 10px;
+}
+.canvas-js > div{
+	flex: 1;
+	display: flex;
+	flex-flow: column wrap;	
+	border: 1px solid #CCC;
+	padding: 10px;
+}
+.canvas-js .parrafo{
+	flex: 0 0 50px;
+	display: flex;
+	justify-content: center;	
+}
+.canvas-js .canvas-grap{
+	flex: 1;
+}
+.canvas-js .canvas-grap #chartContainer{
+	flex: 1;
+}
 /* Contenedor */
 .contenedor{
 	max-width: 1280px;

@@ -7,7 +7,6 @@
 			</div>
 		</footer>
 	</div>
-	<script src="assets/js/scripts.js"></script>
 	<script src="assets/js/sweetalert.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>	
 	<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>	
@@ -21,5 +20,8 @@
 	<script src="https://cdn.datatables.net/rowreorder/1.2.8/js/dataTables.rowReorder.min.js"></script>
 	<script src="https://cdn.datatables.net/responsive/2.3.0/js/dataTables.responsive.min.js"></script>
 	<script src="assets/js/scriptDataTables.js"></script>
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+	<script src="assets/js/scriptCanvas.js"></script>
+	<script src="assets/js/scripts.js"></script>
 </body>
 </html>

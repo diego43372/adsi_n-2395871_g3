@@ -5,6 +5,13 @@
 			<p> &nbsp / &nbsp</p>
 			<a href="?c=Landing&a=canvas">Reportes Gráficos</a>
 		</div>
-		<section class="paginas">			
-			<p class="parrafo">Plugin para Reportes Gráficos con JS: CanvasJS</p>
+		<section class="paginas">
+		<h3 class="subtitulo">Plugin para Reportes Gráficos con JS: CanvasJS</h3>
+			<div class="canvas-js">
+				<div class="canvas-grap">
+					<div id="chartContainer"></div>
+				</div>
+				<div></div>
+				<div></div>
+			</div>
 		</section>
