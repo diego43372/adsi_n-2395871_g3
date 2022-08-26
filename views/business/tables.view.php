@@ -10,14 +10,14 @@
 			<div class="table-scroll">				
 				<table class="table">
 					<tr>
-						<th>Id</th>
-						<th>Rol</th>
-						<th>Nombres</th>
-						<th>Apellidos</th>
-						<th>Nº Documento</th>
-						<th>Correo</th>					
-						<th>Estado</th>
-						<th>Acciones</th>
+						<th class="centrar">Id</th>
+						<th class="centrar">Rol</th>
+						<th class="centrar">Nombres</th>
+						<th class="centrar">Apellidos</th>
+						<th class="centrar">Nº Documento</th>
+						<th class="centrar">Correo</th>					
+						<th class="centrar">Estado</th>
+						<th class="centrar">Acciones</th>
 					</tr>
 					<tr>
 						<td>ADM-123</td>
