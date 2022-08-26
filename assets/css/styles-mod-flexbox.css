@@ -429,7 +429,7 @@ textarea:required:valid{
 .canvas-js .canvas-grap{
 	flex: 1;
 }
-.canvas-js .canvas-grap #chartContainer{
+.canvas-js .canvas-grap .chart-grap{
 	flex: 1;
 }
 /* Contenedor */
@@ -891,12 +891,12 @@ Diseño Adaptativo */
 		flex-flow: column wrap;			
 		border: 1px solid #CCC;
 		padding: 10px;
-		min-height: 49vh;
+		min-height: 45vh;
 	}
 	.canvas-js .canvas-grap{
 		flex: 1;
 	}
-	.canvas-js .canvas-grap #chartContainer{
+	.canvas-js .canvas-grap .chart-grap{
 		flex: 1;
 	}
 }

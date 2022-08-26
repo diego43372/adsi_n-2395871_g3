@@ -9,9 +9,13 @@
 		<h3 class="subtitulo">Plugin para Reportes Gráficos con JS: CanvasJS</h3>
 			<div class="canvas-js">
 				<div class="canvas-grap">
-					<div id="chartContainer"></div>
+					<div class="chart-grap" id="example1"></div>
 				</div>
-				<div></div>
-				<div></div>
+				<div>
+					<div class="chart-grap" id="example2"></div>
+				</div>
+				<div>
+					<div class="chart-grap" id="example3"></div>
+				</div>
 			</div>
-		</section>
+		<!-- </section> -->
