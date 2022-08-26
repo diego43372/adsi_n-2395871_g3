@@ -734,7 +734,7 @@ Diseño Adaptativo */
 	}
 }
 /* Celulares */
-@media (max-width: 768px) {		
+@media (max-width: 768px) {	
 	/* Navegador */
 	nav{
 		height: auto;
@@ -891,12 +891,12 @@ Diseño Adaptativo */
 		flex-flow: column wrap;			
 		border: 1px solid #CCC;
 		padding: 10px;
-		min-height: 45vh;
+		min-height: 45vh;		
 	}
 	.canvas-js .canvas-grap{
 		flex: 1;
 	}
 	.canvas-js .canvas-grap .chart-grap{
-		flex: 1;
-	}
+		flex: 1;		
+	}	
 }

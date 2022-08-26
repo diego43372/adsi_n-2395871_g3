@@ -11,11 +11,11 @@
 				<div class="canvas-grap">
 					<div class="chart-grap" id="example1"></div>
 				</div>
-				<div>
+				<div class="canvas-grap">
 					<div class="chart-grap" id="example2"></div>
 				</div>
-				<div>
+				<div class="canvas-grap">
 					<div class="chart-grap" id="example3"></div>
 				</div>
 			</div>
-		<!-- </section> -->
+		</section>
