@@ -6,7 +6,7 @@
 			<a href="?c=Landing&a=canvas">Reportes Gráficos</a>
 		</div>
 		<section class="paginas">
-		<h3 class="subtitulo">Plugin para Reportes Gráficos con JS: CanvasJS</h3>
+			<h3 class="subtitulo">Plugin para Reportes Gráficos con JS: CanvasJS</h3>
 			<div class="canvas-js">
 				<div class="canvas-grap">
 					<div class="chart-grap" id="example1"></div>

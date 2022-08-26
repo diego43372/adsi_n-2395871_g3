@@ -8,7 +8,7 @@
 		<section class="paginas forms color-gris-oscuro">
 			<form class="form form-register" id="formRegister" action="?c=Login" method="post" name="formRegister">
 				<h2 class="form-subtitulo">Registro</h2>
-				<div class="form-cuerpo color-blanco">					
+				<div class="form-cuerpo color-blanco">
 					<div class="form-control">
 						<label class="label" for="nombres-reg">Nombres</label>
 						<input class="input" type="text" id="nombres-reg" placeholder="Nombres" pattern="[ a-zA-ZáéíóúÁÉÍÓÚäëïöüÄËÏÖÜàèìòùÀÈÌÒÙñÑ]{2,50}" title="Ingrese Nombre(s) Válido(s)" required>

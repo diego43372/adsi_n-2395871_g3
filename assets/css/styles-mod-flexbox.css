@@ -248,7 +248,8 @@ textarea:required:valid{
 	background: #CCC;
 }
 .form input[type="submit"],
-.form input[type="reset"]{
+.form input[type="reset"],
+.form input[type="button"]{
 	flex: 1;
 	cursor: pointer;	
 	font-weight: bold;
@@ -431,6 +432,46 @@ textarea:required:valid{
 }
 .canvas-js .canvas-grap .chart-grap{
 	flex: 1;
+}
+/* Reportes Impresos */
+.js-pdf{
+	flex: 1;
+	display: flex;
+	flex-flow: row wrap;
+	border: 1px solid #CCC;
+	border-radius: 0 0 4px 4px;
+	padding: 10px;
+}
+.js-pdf > div{	
+	display: flex;
+	flex-flow: column wrap;
+	border: 1px solid #CCC;
+}
+.js-pdf .js-pdf-izq{
+	flex: 1;	
+}
+.js-pdf .js-pdf-izq .js-pdf-cont{
+	flex: 1;	
+}
+.js-pdf .js-pdf-izq .js-pdf-ctrl{
+	flex: 0 0 40px;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	/*align-items: center;*/
+	border: 1px solid #CCC;	
+}
+.js-pdf .js-pdf-izq input{
+	flex: 1;	
+}
+.js-pdf .js-pdf-der{
+	flex: 1.5;
+	display: flex;
+}
+.iframe{
+	width: 100%;
+	height: 100%;
+	border: 0;
 }
 /* Contenedor */
 .contenedor{

@@ -22,6 +22,8 @@
 	<script src="assets/js/scriptDataTables.js"></script>
 	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 	<script src="assets/js/scriptCanvas.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+	<script src="assets/js/scriptJsPdf.js"></script>
 	<script src="assets/js/scripts.js"></script>
 </body>
 </html>
