@@ -760,6 +760,13 @@ Diseño Adaptativo */
 	.table-data-tables td, th{
 	  text-align: left!important;	  
 	}
+	/* Reportes Impresos */		
+	.js-pdf .js-pdf-izq{
+		flex: 0 0 100%;	
+	}	
+	.js-pdf .js-pdf-der{		
+		height: 500px;
+	}
 }
 /* Celulares */
 @media (max-width: 768px) {	
@@ -926,5 +933,12 @@ Diseño Adaptativo */
 	}
 	.canvas-js .canvas-grap .chart-grap{
 		flex: 1;		
+	}
+	/* Reportes Impresos */		
+	.js-pdf .js-pdf-izq{
+		flex: 0 0 100%;	
+	}	
+	.js-pdf .js-pdf-der{		
+		height: auto;
 	}	
 }

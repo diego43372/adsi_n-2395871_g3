@@ -14,21 +14,19 @@
 						<div class="form-cuerpo">
 							<div class="form-control">
 								<label class="label" for="pdf-apellidos">Apellidos</label>
-								<input class="input" type="text" id="pdf-apellidos">
+								<input class="input" type="text" id="pdf-apellidos" placeholder="Apellidos">
 							</div>
 							<div class="form-control">
 								<label class="label" for="pdf-nombres">Nombres</label>
-								<input class="input" type="text" id="pdf-nombres">
+								<input class="input" type="text" id="pdf-nombres" placeholder="Nombres">
 							</div>
 							<div class="form-control">
 								<label class="label" for="pdf-documento">Documento</label>
-								<input class="input" type="text" id="pdf-documento">
+								<input class="input" type="text" id="pdf-documento" placeholder="Documento">
 							</div>							
 						</div>
-						<div class="form-pie">
-							<!-- <a href="?c=Landing&a=jsPdf" onclick="creaComprobante()">Hola</a> -->
-							<input type="submit" onclick="creaComprobante()" value="Vista Previa">
-							<!-- <input type="button" onclick="imprimirPdf()" value="Descargar"> -->
+						<div class="form-pie">							
+							<input type="submit" id="submit-pdf" value="Vista Previa">
 						</div>
 					</form>					
 				</div>				

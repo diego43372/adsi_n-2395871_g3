@@ -73,6 +73,10 @@ hacerClic.addEventListener('click', function (event){
 	else if (id === "cancelar-olvido") {
 		cancelarOlvido();
 	}
+	// Cargar pdf
+	else if (id === "submit-pdf") {
+		generarPdf();
+	}
 });
 // Formulario de Contacto: Validar Datos y Enviar
 function validarContac(){
@@ -635,4 +639,29 @@ function cancelarOlvido(){
 		document.formForgot.reset();
 		window.location = '?c=Login';
 	});
+}
+// Generar pdf
+function generarPdf() {
+    event.preventDefault();
+    let doc = new jsPDF();
+    doc.setProperties({
+        title: "Report",
+        orientation: 'p',
+        unit: 'mm',
+        format: 'letter'    
+    });
+    // Variables pdf    
+    cert_apellidos = document.getElementById('pdf-apellidos').value;
+    cert_nombres = document.getElementById('pdf-nombres').value;
+    cert_documento = document.getElementById('pdf-documento').value;
+    // Documento pdf
+    doc.text(80, 20, 'Datos Personales');
+    doc.text(45, 25, '_______________________________');    
+    doc.setFontSize(14);
+    doc.text(20, 50, '# de Usuario:          ' + cert_num);    
+    doc.text(20, 60, 'Apellidos:                ' + cert_apellidos);
+    doc.text(20, 70, 'Nombres:                ' + cert_nombres);
+    doc.text(20, 80, 'Documento:            ' + cert_documento);
+    // Salida pdf
+    $("#pdf_preview").attr("src", doc.output('datauristring'));    
 }
