@@ -65,7 +65,7 @@
 					<h2 class="borde subtitulo">Reportes Impresos</h2>
 					<p class="borde parrafo">Lorem ipsum, dolor sit amet consectetur adipisicing, elit. Eaque qui, incidunt eum modi voluptatum quae ducimus quo perferendis minus tempora fugit aperiam sequi commodi exercitationem doloremque a temporibus, reiciendis ipsam pariatur dolores molestias, distinctio! Modi dolorem deleniti ea vero numquam eius recusandae maiores eaque obcaecati dolore ipsam voluptatibus animi, odio?</p>					
 					<div class="borde ver">
-						<a href="?c=Landing&a=byteScout">Ver más...</a>
+						<a href="?c=Landing&a=jsPdf">Ver más...</a>
 					</div>					
 				</div>
 			</div>

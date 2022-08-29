@@ -21,9 +21,9 @@
 			require_once 'views/business/dataTables.view.php';
 			require_once 'views/roles/business/footer.php';	
 		}
-		public function byteScout(){
+		public function jsPdf(){
 			require_once 'views/roles/business/header.php';
-			require_once 'views/business/byteScout.view.php';
+			require_once 'views/business/jsPdf.view.php';
 			require_once 'views/roles/business/footer.php';	
 		}
 		public function canvas(){
