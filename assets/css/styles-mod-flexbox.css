@@ -639,16 +639,20 @@ header{
 .cont-fila-abj{
 	flex: 0 0 35%;
 	display: flex;
-	flex-flow: column nowrap;
+	flex-flow: column nowrap;	
 	font-size: 0.8em;
 }
-.contactenos .parrafo{		
-	flex: none;
-	height: 60%;	
+.contactenos .info-basica{
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+	height: 60%;
+	padding: 10px;
 }
-.contactenos .parrafo p{
-	flex: none;
+.contactenos .info-basica p{	
 	text-align: center;
+	font-size: 1.2em;
 }
 /* Pie de página */
 footer{
@@ -853,13 +857,14 @@ Diseño Adaptativo */
 		flex: auto;
 		height: 55%;
 	}
-	.form .form-cuerpo label{
-		display: none;
-	}	
 	.cont-col-der{
 		height: 45%;			
 		flex-flow: column nowrap;
 	}
+	/* Formularios */
+	.form .form-cuerpo label{
+		display: none;
+	}	
 	.form-login,
 	.form-register,
 	.form-forgot{

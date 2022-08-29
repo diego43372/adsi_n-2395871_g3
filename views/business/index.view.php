@@ -125,8 +125,10 @@
 					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.9878629548625!2d-74.11429368585394!3d4.596196543836134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f992f88e2ce0b%3A0x5f759f81a7557781!2sSENA%20-%20Complejo%20sur!5e0!3m2!1ses-419!2sco!4v1660858647712!5m2!1ses-419!2sco"></iframe>
 				</div>
 				<div class="cont-fila-abj color-gris-claro">
-					<div class="parrafo">
-						<p>SENA : CENTRO DE ELECTRICIDAD, ELECTRÓNICA Y TELECOMUNICACIONES-Regional Distrito Capital</p>
+					<div class="info-basica">
+						<p>Servicio Nacional de Aprendizaje - SENA</p>
+						<p>Regional - Distrito Capital</p>
+						<p>Centro de Electricidad, Electrónica y Telecomunicaciones - CEET</p>
 						<p>Dirección: Cra 30 No. 17-91 Sur</p>
 						<p>Teléfonos: 601 (3430111) /  018000 910270</p>
 						<p>Bogotá D.C.</p>
