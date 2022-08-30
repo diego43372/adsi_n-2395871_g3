@@ -6,6 +6,7 @@
 			<a href="?c=Login">Iniciar Sesión</a>
 		</div>
 		<section class="paginas forms color-gris-claro">			
+			<!-- <form class="form form-login" id="form-login" action="https://prueba-app-adsi.herokuapp.com/?c=Login" method="post" name="formLogin"> -->
 			<form class="form form-login" id="form-login" action="?c=Login&a=routeSesion" method="post" name="formLogin">
 				<a class="enlace-registro" href="?c=Login&a=register">Registro</a>
 				<h2 class="form-subtitulo">Iniciar Sesión</h2>
