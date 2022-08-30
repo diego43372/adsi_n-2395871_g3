@@ -1,7 +1,16 @@
-/* Fuentes: Roboto y Yanone*/
+/* ------------------------------------------------------------------------------------- */
+/* -------------------------- I. GENERALIDADES DEL CONTENIDO --------------------------- */
+/* ------------------------------------------------------------------------------------- */
+
+/* ------------------------------------------------------------------------------------- */
+/* FUENTES: ROBOTO Y YANONE ------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------- */
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap');
-/* Escritorio y Portatil */
+
+/* ------------------------------------------------------------------------------------- */
+/* CLASES ESPECIALES ------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------- */
 *{
 	margin: 0;
 	padding: 0;
@@ -22,21 +31,6 @@ body{
 .centrar{
 	text-align: center!important;
 }
-/* Otras Páginas */
-.paginas{
-	min-height: 72vh;
-	padding: 10px;
-	display: flex;
-	flex-flow: column wrap;
-}
-.paginas.forms{
-	align-items: center;
-	justify-content: center;
-}
-.paginas .subtitulo,
-.paginas .parrafo{
-	text-align: center;
-}
 /* Tope: Navegación */
 .tope{	
 	position: relative;
@@ -55,6 +49,30 @@ body{
 .color-blanco{
 	background: #fff;
 }
+
+/* ------------------------------------------------------------------------------------- */
+/* OTRAS PÁGINAS DEL LANDING ----------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------- */
+.paginas{
+	min-height: 72vh;
+	padding: 10px;
+	display: flex;
+	flex-flow: column wrap;
+}
+/* Páginas con Formularios */
+.paginas.forms{
+	align-items: center;
+	justify-content: center;
+}
+/* Páginas con Subtítulos y Párrafos */
+.paginas .subtitulo,
+.paginas .parrafo{
+	text-align: center;
+}
+
+/* ------------------------------------------------------------------------------------- */
+/* TEXTO: TÍTULOS, SUBTÍTULOS Y PÁRRAFOS ----------------------------------------------- */
+/* ------------------------------------------------------------------------------------- */
 /* Títulos */
 .titulo{
 	min-height: 70px;
@@ -76,7 +94,21 @@ body{
 	border-radius: 4px 4px 0 0;
 	background: #CCC;
 }
-/* Imágenes */
+/* Párrafos */
+.parrafo{
+	flex: 1;
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: flex-start;
+	text-align: justify;	
+	padding: 10px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 0.9em;
+}
+
+/* ------------------------------------------------------------------------------------- */
+/* IMÁGENES ---------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------- */
 .imagen{
 	flex: 1;
 	display: flex;
@@ -89,18 +121,10 @@ body{
 	max-width: 150px;	
 	min-width: 5px;	
 }
-/* Párrafos */
-.parrafo{
-	flex: 1;
-	display: flex;
-	flex-flow: column wrap;
-	justify-content: flex-start;
-	text-align: justify;	
-	padding: 10px;
-	font-family: 'Roboto', sans-serif;
-	font-size: 0.9em;
-}
-/* Social Media */
+
+/* ------------------------------------------------------------------------------------- */
+/* ICONOGRAFÍA ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------- */
 .social-media{
 	flex: 1;
 	display: flex;
@@ -122,7 +146,10 @@ body{
 .social-media div a:hover{	
 	color: #FFF;
 }
-/* Enlace Ver */
+
+/* ------------------------------------------------------------------------------------- */
+/* BOTONES DE ENLACE ------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------- */
 .ver{
 	flex: 0 0 50px;
 	display: flex;	
@@ -146,7 +173,10 @@ body{
 .ver a:hover{
 	background: rgba(30, 30, 30, 0.5);
 }
-/* Migas de Pan */
+
+/* ------------------------------------------------------------------------------------- */
+/* MIGAS DE PAN ------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------- */
 .migas{
 	display: flex;
 	flex-flow: row nowrap;	
@@ -159,7 +189,11 @@ body{
 	color: #EEE;
 	font-size: 1.2em;
 }
-/* Formularios */
+
+/* ------------------------------------------------------------------------------------- */
+/* FORMULARIOS ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------- */
+/* Validación de Formularios: Html y Css */
 form input:focus,
 form textarea:focus{
 	outline: none;
@@ -194,6 +228,7 @@ form input[type="password"]:required:valid,
 textarea:required:valid{
 	border: 2px solid green;
 }
+/* Formularios en General */
 .form{
 	flex: 1;
 	display: flex;
@@ -255,7 +290,7 @@ textarea:required:valid{
 	font-weight: bold;
 	font-family: 'Roboto', sans-serif;
 }
-/* Formulario de inicio */
+/* Formulario de Inicio de Sesión */
 .form-login,
 .form-register,
 .form-forgot{
@@ -282,7 +317,10 @@ textarea:required:valid{
 	background: #EEE;
 	color: #2A5159;
 }
-/* Tablas */
+
+/* ------------------------------------------------------------------------------------- */
+/* TABLAS ------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------- */
 .table{	
 	width: 100%;	
 	border-collapse: collapse;
@@ -324,7 +362,10 @@ textarea:required:valid{
 	background: #D34826;
 	margin-left: 5px;
 }
-/* Filtros */
+
+/* ------------------------------------------------------------------------------------- */
+/* DATATABLES.JS: FILTROS DE TABLA ----------------------------------------------------- */
+/* ------------------------------------------------------------------------------------- */
 .data-tables{
 	padding: 10px;
 }
@@ -369,7 +410,10 @@ textarea:required:valid{
 	background: #D34826!important;
 	margin-left: 5px!important;
 }
-/* Mensajes de Alerta: SweetAlert */
+
+/* ------------------------------------------------------------------------------------- */
+/* SWEETALERT.JS: MENSAJES DE ALERTA --------------------------------------------------- */
+/* ------------------------------------------------------------------------------------- */
 .sweet-alert{
 	flex: 1;
 	display: flex;
@@ -411,7 +455,10 @@ textarea:required:valid{
 .sweet-alert a i{
 	color: #EEE;
 }
-/* Reportes Gráficos */
+
+/* ------------------------------------------------------------------------------------- */
+/* CANVAS.JS: REPORTES GRÁFICOS -------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------- */
 .canvas-js{
 	flex: 1;
 	display: flex;
@@ -433,7 +480,10 @@ textarea:required:valid{
 .canvas-js .canvas-grap .chart-grap{
 	flex: 1;
 }
-/* Reportes Impresos */
+
+/* ------------------------------------------------------------------------------------- */
+/* JSPDF.JS: REPORTES IMPRESOS --------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------- */
 .js-pdf{
 	flex: 1;
 	display: flex;
@@ -460,6 +510,12 @@ textarea:required:valid{
 	flex: 1;
 	border: 0;
 }
+
+/* ------------------------------------------------------------------------------------- */
+/* ---------------------------- II. LAYOUT: MAQUETACIÓN WEB ---------------------------- */
+/* ------------------------------- ESCRITORIO Y PORTATIL ------------------------------- */
+/* ------------------------------------------------------------------------------------- */
+
 /* Contenedor */
 .contenedor{
 	max-width: 1280px;
@@ -474,7 +530,10 @@ nav, header, section, footer{
 	background: #FFF;
 	height: 100%;
 }
-/* Navegador */
+
+/* ------------------------------------------------------------------------------------- */
+/* NAVEGADOR --------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------- */
 nav{	
 	flex-flow: row wrap;	
 	height: 50px;
@@ -543,17 +602,26 @@ nav{
 .ingreso a{	
 	color: #DDD;	
 }
-/* Encabezado y Secciones */
+
+/* ------------------------------------------------------------------------------------- */
+/* ENCABEZADO Y SECCIONES -------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------- */
 header, section{	
 	min-height: 83.5vh;	
 }
-/* Encabezado */
+
+/* ------------------------------------------------------------------------------------- */
+/* ENCABEZADO -------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------- */
 header{
 	background-image: url('../../assets/img/header.jpg');
 	background-size: 100% 100%;
 	background-attachment: fixed;
 }
-/* Portafolio */
+
+/* ------------------------------------------------------------------------------------- */
+/* SECCIÓN: PORTAFOLIO ----------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------- */
 .portafolio{
 	flex-flow: row wrap;	
 }
@@ -568,7 +636,10 @@ header{
 .portafolio .imagen{
 	flex: 0 0 200px;
 }
-/* Nosotros */
+
+/* ------------------------------------------------------------------------------------- */
+/* SECCIÓN: NOSOTROS ------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------- */
 .nos-fila-arr,
 .nos-fila-cnt,
 .nos-fila-abj{
@@ -605,13 +676,17 @@ header{
 	justify-content: left;
 	text-align: left;
 }
+/* Botones de enlace */
 .nos-col-izq .ver{
 	justify-content: flex-end;
 }
 .nos-col-der .ver{
 	justify-content: flex-start;
 }
-/* Contáctenos */
+
+/* ------------------------------------------------------------------------------------- */
+/* SECCIÓN CONTÁCTENOS ----------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------- */
 .contactenos{
 	flex-flow: row wrap;
 }
@@ -654,7 +729,10 @@ header{
 	text-align: center;
 	font-size: 1.2em;
 }
-/* Pie de página */
+
+/* ------------------------------------------------------------------------------------- */
+/* PIE DE PÁGINA ----------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------- */
 footer{
 	min-height: 70px;
 	background: #000;	
@@ -669,16 +747,17 @@ footer .parrafo{
 	color: #DDD;
 }
 
-/* Responsive Design: 
-Diseño Adaptativo */
+/* ------------------------------------------------------------------------------------- */
+/* ------------------------------ III. RESPONSIVE DESIGN ------------------------------- */
+/* -------------------------------------- TABLETS -------------------------------------- */
+/* ------------------------------------------------------------------------------------- */
 
-/* Tabletas */
 @media (max-width: 992px) {
-	/* Tope: Navegación */
+	/* Tope */
 	.tope{
 		top: -149px;	
 	}
-	/* Otras Páginas */
+	/* Otras Páginas Landing */
 	.paginas{
 		min-height: 49vh;
 	}
@@ -710,7 +789,7 @@ Diseño Adaptativo */
 		min-height: 70vh;
 		background-attachment: initial;
 	}	
-	/* Portafolio */			
+	/* Sección: Portafolio */			
 	.port-col-izq{
 		flex: 100%;		
 	}
@@ -718,7 +797,7 @@ Diseño Adaptativo */
 	.port-col-der{
 		flex: 50%;
 	}
-	/* Nosotros */	
+	/* Sección: Nosotros */	
 	.nos-fila-arr .nos-col-der,
 	.nos-fila-cnt .nos-col-izq,
 	.nos-fila-abj .nos-col-der{
@@ -738,7 +817,7 @@ Diseño Adaptativo */
 	.nos-col-der .ver{
 		justify-content: center;
 	}
-	/* Contáctenos */
+	/* Sección: Contáctenos */
 	.contactenos{
 		height: 750px;
 		flex-flow: column wrap;
@@ -760,11 +839,11 @@ Diseño Adaptativo */
 	.cont-fila-abj{
 		flex: 1;
 	}
-	/* Filtros */		
+	/* DataTables.js */		
 	.table-data-tables td, th{
 	  text-align: left!important;	  
 	}
-	/* Reportes Impresos */		
+	/* jsPDF.js */		
 	.js-pdf .js-pdf-izq{
 		flex: 0 0 100%;	
 	}	
@@ -772,7 +851,12 @@ Diseño Adaptativo */
 		height: 500px;
 	}
 }
-/* Celulares */
+
+/* ------------------------------------------------------------------------------------- */
+/* ------------------------------- IV. RESPONSIVE DESIGN ------------------------------- */
+/* ------------------------------------- CELULARES ------------------------------------- */
+/* ------------------------------------------------------------------------------------- */
+
 @media (max-width: 768px) {	
 	/* Navegador */
 	nav{
@@ -796,7 +880,7 @@ Diseño Adaptativo */
 		min-height: 30vh;
 		max-height: auto;
 	}
-	/* Portafolio */
+	/* Sección: Portafolio */
 	.portafolio{
 		flex-flow: column wrap;
 	}
@@ -807,7 +891,7 @@ Diseño Adaptativo */
 		align-items: center;		
 		text-align: center;
 	}	
-	/* Nosotros */
+	/* Sección: Nosotros */
 	.nosotros{
 		min-height: 1500px;
 	}		
@@ -837,8 +921,7 @@ Diseño Adaptativo */
 	}	
 	.nos-fila-cnt .nos-col-der .subtitulo{
 		justify-content: center;
-	}
-	/* Párrafos */	
+	}	
 	.nos-col-izq .parrafo,
 	.nos-col-der .parrafo{
 		justify-content: center;	
@@ -848,7 +931,7 @@ Diseño Adaptativo */
 	.nosotros a{
 		flex: 0 0 100%;		
 	}
-	/* Contáctenos */
+	/* Sección: Contáctenos */
 	.contactenos{
 		height: 850px;
 	}
@@ -890,7 +973,8 @@ Diseño Adaptativo */
 		white-space: nowrap;
 		border-collapse: collapse;
 		text-align: center;
-	}	
+	}
+	/* DataTables.js */
 	#table-data-tables{
 		margin-top: 10px;
 	}
@@ -912,11 +996,11 @@ Diseño Adaptativo */
 		background: #D34826;
 		margin-left: 5px;
 	}
-	/* Alertas */
+	/* sweetalert.js */
 	.sweet-alert{		
 		align-items: stretch;
 	}
-	/* Reportes Gráficos */
+	/* canvas.js */
 	.canvas-js{		
 		flex: 1;
 		display: flex;
@@ -939,7 +1023,7 @@ Diseño Adaptativo */
 	.canvas-js .canvas-grap .chart-grap{
 		flex: 1;		
 	}
-	/* Reportes Impresos */		
+	/* jspdf.js */		
 	.js-pdf .js-pdf-izq{
 		flex: 0 0 100%;	
 	}	
