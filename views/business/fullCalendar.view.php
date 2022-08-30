@@ -7,7 +7,7 @@
 		</div>
 		<section class="paginas">
 			<h3 class="subtitulo">Plugin para incorporar un Calendario con JS: FullCalendar</h3>
-			<div class="full-callendar">
-				
+			<div class="full-calendar">
+				<div id='calendar'></div>
 			</div>
 		</section>		
