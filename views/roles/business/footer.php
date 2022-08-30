@@ -7,7 +7,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="assets/js/sweetalert.min.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>	
 	<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>	
 	<script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>	
@@ -18,12 +18,9 @@
 	<script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>	
 	<script src="https://cdn.datatables.net/select/1.4.0/js/dataTables.select.min.js"></script>
 	<script src="https://cdn.datatables.net/rowreorder/1.2.8/js/dataTables.rowReorder.min.js"></script>
-	<script src="https://cdn.datatables.net/responsive/2.3.0/js/dataTables.responsive.min.js"></script>
-	<script src="assets/js/scriptDataTables.js"></script>
-	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-	<script src="assets/js/scriptCanvas.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
-	<script src="assets/js/scriptJsPdf.js"></script>
+	<script src="https://cdn.datatables.net/responsive/2.3.0/js/dataTables.responsive.min.js"></script>	
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>	
 	<script src="assets/js/scripts.js"></script>
 </body>
 </html>

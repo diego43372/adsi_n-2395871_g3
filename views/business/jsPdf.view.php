@@ -3,7 +3,7 @@
 		<div class="migas color-gris-oscuro">
 			<a href="?c=Landing&#nosotros">Nosotros</a>
 			<p> &nbsp / &nbsp</p>
-			<a href="?c=Landing&a=entity">Reportes Impresos</a>
+			<a href="?c=Landing&a=jsPdf">Reportes Impresos</a>
 		</div>
 		<section class="paginas">			
 			<h3 class="subtitulo">Plugin para Reportes Impresos con JS: JsPDF</h3>
