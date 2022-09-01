@@ -18,12 +18,10 @@
 /* 13. Eliminar Columna: ................ ALTER TABLE __ DROP __                         */
 /* 14. Agregar ValorxDefecto Columna: ... ALTER TABLE __ ALTER __ SET DEFAULT __         */
 /* 15. Eliminar ValorxDefecto Columna: .. ALTER TABLE __ ALTER __ DROP DEFAULT           */
-
-
-/* 07. Eliminar Tabla: .................. DROP TABLE __                                  */
-/* 08. Crear Tabla: ..................... CREATE TABLE __ ( __ , __ )                    */
-/* 09. Renombrar Tabla: ................. RENAME TABLE __ TO __                          */
-/* 10. Crear LlavePrimaria: ............. CREATE TABLE __ ( __ , __ )                    */
+/* 16. Eliminar Tabla: .................. DROP TABLE __                                  */
+/* 17. Crear Tabla: ..................... CREATE TABLE __ ( __ , __ )                    */
+/* 18. Renombrar Tabla: ................. RENAME TABLE __ TO __                          */
+/* 19. Crear LlavePrimaria: ............. CREATE TABLE __ ( __ , __ )                    */
 /* ------------------------------------------------------------------------------------- */
 /* ************************************************************************************* */
 /* EN CONSOLA: XAMPP / SHELL / cd mysql/bin / mysql -h localhost -u root -p / ENTER		 */
@@ -79,8 +77,8 @@ ALTER TABLE USUARIOS ADD correo_usuario VARCHAR(100);
 -- ------------------------------------------------------------------------------------- --
 -- 12. ALTER TABLE __ CHANGE __ __ : --------------------------------------------------- --
 -- ------------------------------------------------------------------------------------- --
-ALTER TABLE MENSAJES CHANGE correo_usuario usuario_correo DATE;
-ALTER TABLE MENSAJES CHANGE usuario_correo correo_usuario VARCHAR(100);
+ALTER TABLE USUARIOS CHANGE correo_usuario usuario_correo DATE;
+ALTER TABLE USUARIOS CHANGE usuario_correo correo_usuario VARCHAR(100);
 -- ------------------------------------------------------------------------------------- --
 -- 13. ALTER TABLE __ DROP __ : -------------------------------------------------------- --
 -- ------------------------------------------------------------------------------------- --
@@ -94,38 +92,11 @@ ALTER TABLE USUARIOS ALTER codigo_rol SET DEFAULT 2;
 -- ------------------------------------------------------------------------------------- --
 ALTER TABLE USUARIOS ALTER codigo_rol DROP DEFAULT;
 -- ------------------------------------------------------------------------------------- --
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
--- ------------------------------------------------------------------------------------- --
--- 10. ALTER TABLE __ ADD PRIMARY KEY (__): -------------------------------------------- --
--- ------------------------------------------------------------------------------------- --
-ALTER TABLE USUARIOS ADD PRIMARY KEY (codigo_user);
-
-
-
-
-
-
--- ------------------------------------------------------------------------------------- --
--- 07. DROP TABLE __ : ----------------------------------------------------------------- --
+-- 16. DROP TABLE __ : ----------------------------------------------------------------- --
 -- ------------------------------------------------------------------------------------- --
 DROP TABLE USUARIOS;
-
 -- ------------------------------------------------------------------------------------- --
--- 08. CREATE TABLE __ ( __ , __ ) : --------------------------------------------------- --
+-- 17. CREATE TABLE __ ( __ , __ ) : --------------------------------------------------- --
 -- ------------------------------------------------------------------------------------- --
 CREATE TABLE USUARIOS (
   codigo_rol INT NOT NULL,
@@ -135,10 +106,20 @@ CREATE TABLE USUARIOS (
   apellidos_user VARCHAR(50) NOT NULL
 );
 -- ------------------------------------------------------------------------------------- --
--- 09. RENAME TABLE __ TO __ : --------------------------------------------------------- --
+-- 18. RENAME TABLE __ TO __ : --------------------------------------------------------- --
 -- ------------------------------------------------------------------------------------- --
 RENAME TABLE USUARIOS TO PERSONAS;
 RENAME TABLE PERSONAS TO USUARIOS;
+-- ------------------------------------------------------------------------------------- --
+-- 19. ALTER TABLE __ ADD PRIMARY KEY (__): -------------------------------------------- --
+-- ------------------------------------------------------------------------------------- --
+ALTER TABLE USUARIOS ADD PRIMARY KEY (codigo_user);
+
+
+
+
+
+
 
 
 
@@ -153,33 +134,6 @@ RENAME TABLE PERSONAS TO USUARIOS;
 -- ------------------------------------------------------------------------------------- --
 ALTER TABLE mybbdd.mitabla engine = InnoDB
 
--- ------------------------------------------------------------------------------------- --
--- 00. Eliminar restricción CONSTRAINT e índice KEY de productos_pedidos con pedidos
--- ------------------------------------------------------------------------------------- --
-ALTER TABLE USUARIOS DROP PRIMARY KEY codigo_user;
-
-
-
-## Eliminar restricción CONSTRAINT e índice KEY de productos_pedidos con productos
--- ------------------------------------------------------------------------------------- --
-ALTER TABLE productos_pedidos DROP CONSTRAINT fk_productos_pedidos_productos;
-ALTER TABLE productos_pedidos DROP KEY fk_productos_pedidos_productos;
--- ------------------------------------------------------------------------------------- --
-
-
-
-
--- ------------------------------------------------------------------------------------- --
--- 00. Eliminar Restricción: CONSTRAINT e índice KEY de pedidos con clientes
--- ------------------------------------------------------------------------------------- --
-ALTER TABLE CREDENCIALES CONSTRAINT fk_pedidos_clientes;
-ALTER TABLE pedidos DROP KEY fk_pedidos_clientes;
--- ------------------------------------------------------------------------------------- --
--- ------------------------------------------------------------------------------------- --
--- 00. Eliminar Indice: ALTER TABLE __ DROP INDEX __ ;
--- ------------------------------------------------------------------------------------- --
-ALTER TABLE PRODUCTOS DROP INDEX ind_productos_categorias;
--- ------------------------------------------------------------------------------------- --
 
 
 
