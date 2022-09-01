@@ -18,12 +18,12 @@
 /* 13. Eliminar Columna: ................ ALTER TABLE __ DROP __                         */
 
 
-/* 07. Eliminar Tabla: .................. DROP TABLE __									 */
-/* 08. Crear Tabla: ..................... CREATE TABLE __ ( __ , __ )					 */
-/* 09. Renombrar Tabla: ................. RENAME TABLE __ TO __							 */
-/* 10. Crear LlavePrimaria: ............. CREATE TABLE __ ( __ , __ )					 */
-/* 10. Agregar ValorxDefecto Columna: ... ALTER TABLE __ ALTER __ SET DEFAULT __		 */
-/* 11. Eliminar ValorxDefecto Columna: .. ALTER TABLE __ ALTER __ DROP DEFAULT			 */
+/* 07. Eliminar Tabla: .................. DROP TABLE __                                  */
+/* 08. Crear Tabla: ..................... CREATE TABLE __ ( __ , __ )                    */
+/* 09. Renombrar Tabla: ................. RENAME TABLE __ TO __                          */
+/* 10. Crear LlavePrimaria: ............. CREATE TABLE __ ( __ , __ )                    */
+/* 10. Agregar ValorxDefecto Columna: ... ALTER TABLE __ ALTER __ SET DEFAULT __         */
+/* 11. Eliminar ValorxDefecto Columna: .. ALTER TABLE __ ALTER __ DROP DEFAULT           */
 /* ------------------------------------------------------------------------------------- */
 /* ************************************************************************************* */
 /* EN CONSOLA: XAMPP / SHELL / cd mysql/bin / mysql -h localhost -u root -p / ENTER		 */
