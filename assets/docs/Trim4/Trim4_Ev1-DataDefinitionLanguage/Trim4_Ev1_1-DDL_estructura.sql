@@ -39,6 +39,7 @@ CREATE TABLE CREDENCIALES (
   codigo_user VARCHAR(10) NOT NULL,
   correo_user VARCHAR(100) NOT NULL,
   pass_user VARCHAR(150) NOT NULL,
+  PRIMARY KEY (codigo_user),
   UNIQUE INDEX uq_correo_user (correo_user ASC),
   INDEX ind_credenciales_usuarios (codigo_user ASC),
   CONSTRAINT fk_credenciales_usuarios

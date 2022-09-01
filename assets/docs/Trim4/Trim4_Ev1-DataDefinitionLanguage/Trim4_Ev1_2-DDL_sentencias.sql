@@ -2,26 +2,33 @@
 /* ---------------------------------------- DDL ---------------------------------------- */
 /* ----------------------------- DATA DEFINITION LANGUAGE ------------------------------ */
 /* -------------------------- LENGUAJE DE DEFINICIÓN DE DATOS -------------------------- */
+/* ------------------------------------------------------------------------------------- */
 /* ************************************************************************************* */
-/* 01. Mostrar BBDDs:.................... SHOW DATABASES __                              */
-/* 02. Usar BBDD: ....................... USE __                                         */
-/* 03. Eliminar BBDD: ................... DROP DATABASE __                               */
-/* 04. Mostrar Tablas: .................. SHOW TABLES __                                 */
-/* 05. Mostrar Creación Tabla: .......... SHOW CREATE TABLE __                           */
-/* 06. Eliminar Restricción: ............ ALTER TABLE __ DROP CONSTRAINT __              */
-/* 07. Limpiar Registros: ............... TRUNCATE __                                    */
-/* 08. Eliminar Índices: ................ ALTER TABLE __ DROP INDEX __                   */
-/* 09. Eliminar Llave Primaria: ......... ALTER TABLE __ DROP PRIMARY KEY                */
-/* 10. Mostar Columnas: ................. SHOW COLUMNS FROM __                           */
-/* 11. Agregar Columna: ................. ALTER TABLE __ ADD __ __                       */
-/* 12. Renombrar Columna: ............... ALTER TABLE __ CHANGE __ __                    */
-/* 13. Eliminar Columna: ................ ALTER TABLE __ DROP __                         */
-/* 14. Agregar ValorxDefecto Columna: ... ALTER TABLE __ ALTER __ SET DEFAULT __         */
-/* 15. Eliminar ValorxDefecto Columna: .. ALTER TABLE __ ALTER __ DROP DEFAULT           */
-/* 16. Eliminar Tabla: .................. DROP TABLE __                                  */
-/* 17. Crear Tabla: ..................... CREATE TABLE __ ( __ , __ )                    */
-/* 18. Renombrar Tabla: ................. RENAME TABLE __ TO __                          */
-/* 19. Crear LlavePrimaria: ............. CREATE TABLE __ ( __ , __ )                    */
+/* ------------------------------------------------------------------------------------- */
+/* 01. Mostrar BBDDs:...................... SHOW DATABASES __                            */
+/* 02. Usar BBDD: ......................... USE __                                       */
+/* 03. Eliminar BBDD: ..................... DROP DATABASE __                             */
+/* 04. Mostrar Tablas: .................... SHOW TABLES __                               */
+/* 05. Mostrar Creación Tabla: ............ SHOW CREATE TABLE __                         */
+/* 06. Eliminar Restricción: .............. ALTER TABLE __ DROP CONSTRAINT __            */
+/* 07. Limpiar Registros: ................. TRUNCATE __                                  */
+/* 08. Eliminar Índices: .................. ALTER TABLE __ DROP INDEX __                 */
+/* 09. Eliminar Llave Primaria: ........... ALTER TABLE __ DROP PRIMARY KEY              */
+/* 10. Mostar Columnas: ................... SHOW COLUMNS FROM __                         */
+/* 11. Agregar Columna: ................... ALTER TABLE __ ADD __ __                     */
+/* 12. Renombrar Columna: ................. ALTER TABLE __ CHANGE __ __                  */
+/* 13. Eliminar Columna: .................. ALTER TABLE __ DROP __                       */
+/* 14. Agregar Valor x Defecto Columna: ... ALTER TABLE __ ALTER __ SET DEFAULT __       */
+/* 15. Eliminar Valor x Defecto Columna: .. ALTER TABLE __ ALTER __ DROP DEFAULT         */
+/* 16. Eliminar Tabla: .................... DROP TABLE __                                */
+/* 17. Crear Tabla: ....................... CREATE TABLE __ ( __ , __ )                  */
+/* 18. Renombrar Tabla: ................... RENAME TABLE __ TO __                        */
+/* 19. Crear Llave Primaria: .............. ALTER TABLE __ ADD PRIMARY KEY ( __ )        */
+/* 20. Crear Índice Campo: ................ CREATE INDEX __ ON __ ( __ )                 */
+/* 21. Crear Índice Multicampo: ........... CREATE INDEX _ ON _ ( __ , __ )              */
+/* 22. Crear Índice Único: ................ CREATE UNIQUE INDEX __ ON __ ( __ )          */
+/* 23. Crear Restricciones: ............... ALTER TABLE __ ADD CONSTRAINT __             */
+/*     FOREIGN KEY ( __ ) REFERENCES __ ( __ ) ON DELETE CASCADE ON UPDATE CASCADE       */
 /* ------------------------------------------------------------------------------------- */
 /* ************************************************************************************* */
 /* EN CONSOLA: XAMPP / SHELL / cd mysql/bin / mysql -h localhost -u root -p / ENTER      */
@@ -58,12 +65,12 @@ ALTER TABLE MENSAJES DROP CONSTRAINT fk_mensajes_usuarios;
 -- ------------------------------------------------------------------------------------- --
 TRUNCATE USUARIOS;
 -- ------------------------------------------------------------------------------------- --
--- 08. Eliminar Índices: ALTER TABLE __ DROP INDEX __ ;
+-- 08. ALTER TABLE __ DROP INDEX __ : -------------------------------------------------- --
 -- ------------------------------------------------------------------------------------- --
 ALTER TABLE USUARIOS DROP INDEX ind_usuarios_roles;
 ALTER TABLE USUARIOS DROP INDEX uq_identificacion_user;
 -- ------------------------------------------------------------------------------------- --
--- 09. Eliminar Llave Primaria: ALTER TABLE __ DROP PRIMARY KEY;
+-- 09. ALTER TABLE __ DROP PRIMARY KEY : ----------------------------------------------- --
 -- ------------------------------------------------------------------------------------- --
 ALTER TABLE USUARIOS DROP PRIMARY KEY;
 -- ------------------------------------------------------------------------------------- --
@@ -111,89 +118,41 @@ CREATE TABLE USUARIOS (
 RENAME TABLE USUARIOS TO PERSONAS;
 RENAME TABLE PERSONAS TO USUARIOS;
 -- ------------------------------------------------------------------------------------- --
--- 19. ALTER TABLE __ ADD PRIMARY KEY (__): -------------------------------------------- --
+-- 19. ALTER TABLE __ ADD PRIMARY KEY ( __ ) : ----------------------------------------- --
 -- ------------------------------------------------------------------------------------- --
 ALTER TABLE USUARIOS ADD PRIMARY KEY (codigo_user);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ALTER TABLE CREDENCIALES ADD PRIMARY KEY (codigo_user);
 -- ------------------------------------------------------------------------------------- --
--- 00. Agregar ENGINE = InnoDB a una Tabla;
+-- 20. CREATE INDEX __ ON __ ( __ ) : -------------------------------------------------- --
 -- ------------------------------------------------------------------------------------- --
-ALTER TABLE mybbdd.mitabla engine = InnoDB
-
-
-
-
-
+CREATE INDEX ind_usuarios_roles ON USUARIOS (codigo_rol);
 -- ------------------------------------------------------------------------------------- --
--- CREAR UN ÍNDICE EN UNA TABLA (CREATE, INDEX, ON) (PERMITE DUPLICADOS)
+-- 21. CREATE INDEX _ ON _ ( __ , __ ) : ----------------------------------------------- -- 
 -- ------------------------------------------------------------------------------------- --
-CREATE INDEX indice_empresa ON clientes (empresa);
+CREATE INDEX ind_codigo_user_correo_user ON CREDENCIALES (codigo_user, correo_user);
 -- ------------------------------------------------------------------------------------- --
-
-
+-- 22. CREATE UNIQUE INDEX __ ON __ ( __ ) : ------------------------------------------- --
 -- ------------------------------------------------------------------------------------- --
--- CREAR UN ÍNDICE EN UNA TABLA (CREATE, INDEX, ON) (NO PERMITE DUPLICADOS)
+CREATE UNIQUE INDEX uq_identificacion_user ON USUARIOS (identificacion_user);
 -- ------------------------------------------------------------------------------------- --
-CREATE UNIQUE INDEX indice_empresa ON clientes (empresa);
+-- 23. ALTER TABLE __ ADD CONSTRAINT __ : ---------------------------------------------- --
+--     FOREIGN KEY ( __ ) REFERENCES __ ( __ ) ON DELETE CASCADE ON UPDATE CASCADE ----- --
 -- ------------------------------------------------------------------------------------- --
-
-
--- ------------------------------------------------------------------------------------- --
--- CREAR UN ÍNDICE EN UNA TABLA (CREATE, INDEX, ON) (MULTICAMPO)
--- ------------------------------------------------------------------------------------- --
-CREATE UNIQUE INDEX indice_empresa ON clientes (empresa, poblacion);
--- ------------------------------------------------------------------------------------- --
-
-
-
-
-
-
-
--- ------------------------------------------------------------------------------------- --
--- AGREGAR RESTRICCIONES E ÍNDICES (ALTER TABLE, ADD)
--- ------------------------------------------------------------------------------------- --
-## Agregar índice y restricción entre la tabla pedidos y clientes
--- ------------------------------------------------------------------------------------- --
-ALTER TABLE pedidos
-ADD KEY fk_pedidos_clientes (codigo_cliente),
-ADD CONSTRAINT fk_pedidos_clientes 
-FOREIGN KEY (codigo_cliente)
-REFERENCES clientes (codigo_cliente)
-ON DELETE CASCADE
-ON UPDATE CASCADE;
--- ------------------------------------------------------------------------------------- --
-## Agregar índice y restricción entre la tabla productos_pedidos y pedidos
--- ------------------------------------------------------------------------------------- --
-ALTER TABLE productos_pedidos
-ADD KEY fk_productos_pedidos_pedidos (numero_pedido),
-ADD CONSTRAINT fk_productos_pedidos_pedidos
-FOREIGN KEY (numero_pedido)
-REFERENCES pedidos (numero_pedido)
-ON DELETE CASCADE
-ON UPDATE CASCADE;
--- ------------------------------------------------------------------------------------- --
-## Agregar índice y restricción entre la tabla productos_pedidos y productos
--- ------------------------------------------------------------------------------------- --
-ALTER TABLE productos_pedidos
-ADD KEY fk_productos_pedidos_productos (codigo_articulo),
-ADD CONSTRAINT fk_productos_pedidos_productos
-FOREIGN KEY (codigo_articulo)
-REFERENCES productos (codigo_articulo)
-ON DELETE CASCADE
-ON UPDATE CASCADE;
--- ------------------------------------------------------------------------------------- --
+ALTER TABLE USUARIOS ADD 
+CONSTRAINT fk_usuarios_roles 
+	FOREIGN KEY (codigo_rol)
+	REFERENCES ROLES (codigo_rol)
+	ON DELETE CASCADE
+	ON UPDATE CASCADE;
+ALTER TABLE CREDENCIALES ADD 
+CONSTRAINT fk_credenciales_usuarios 
+	FOREIGN KEY (codigo_user)
+	REFERENCES USUARIOS (codigo_user)
+	ON DELETE CASCADE
+	ON UPDATE CASCADE;
+ALTER TABLE MENSAJES ADD 
+CONSTRAINT fk_mensajes_usuarios 
+	FOREIGN KEY (codigo_user)
+	REFERENCES USUARIOS (codigo_user)
+	ON DELETE CASCADE
+	ON UPDATE CASCADE;
