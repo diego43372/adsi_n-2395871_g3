@@ -3,19 +3,19 @@
 /* ----------------------------- DATA DEFINITION LANGUAGE ------------------------------ */
 /* -------------------------- LENGUAJE DE DEFINICIÓN DE DATOS -------------------------- */
 /* ************************************************************************************* */
-/* 01. Mostrar BBDDs:.................... SHOW DATABASES __								 */
-/* 02. Usar BBDD: ....................... USE __										 */
-/* 03. Eliminar BBDD: ................... DROP DATABASE __								 */
-/* 04. Mostrar Tablas: .................. SHOW TABLES __								 */
-/* 05. Mostrar Creación Tabla: .......... SHOW CREATE TABLE __							 */
-/* 06. Eliminar Restricción: ............ ALTER TABLE __ DROP CONSTRAINT __				 */
-/* 07. Limpiar Registros: ............... TRUNCATE __ 									 */
-/* 08. Eliminar Índices: ................ ALTER TABLE __ DROP INDEX __					 */
-/* 09. Eliminar Llave Primaria: ......... ALTER TABLE __ DROP PRIMARY KEY				 */
-/* 10. Mostar Columnas: ................. SHOW COLUMNS FROM __							 */
-/* 11. Agregar Columna: ................. ALTER TABLE __ ADD __ __						 */
-/* 12. Renombrar Columna: ............... ALTER TABLE __ CHANGE __ __					 */
-/* 13. Eliminar Columna: ................ ALTER TABLE __ DROP __	 					 */
+/* 01. Mostrar BBDDs:.................... SHOW DATABASES __                              */
+/* 02. Usar BBDD: ....................... USE __                                         */
+/* 03. Eliminar BBDD: ................... DROP DATABASE __                               */
+/* 04. Mostrar Tablas: .................. SHOW TABLES __                                 */
+/* 05. Mostrar Creación Tabla: .......... SHOW CREATE TABLE __                           */
+/* 06. Eliminar Restricción: ............ ALTER TABLE __ DROP CONSTRAINT __              */
+/* 07. Limpiar Registros: ............... TRUNCATE __                                    */
+/* 08. Eliminar Índices: ................ ALTER TABLE __ DROP INDEX __                   */
+/* 09. Eliminar Llave Primaria: ......... ALTER TABLE __ DROP PRIMARY KEY                */
+/* 10. Mostar Columnas: ................. SHOW COLUMNS FROM __                           */
+/* 11. Agregar Columna: ................. ALTER TABLE __ ADD __ __                       */
+/* 12. Renombrar Columna: ............... ALTER TABLE __ CHANGE __ __                    */
+/* 13. Eliminar Columna: ................ ALTER TABLE __ DROP __                         */
 
 
 /* 07. Eliminar Tabla: .................. DROP TABLE __									 */
