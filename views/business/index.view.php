@@ -141,10 +141,10 @@
 							<a href="https://es-la.facebook.com/" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
 						</div>
 						<div>
-							<a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
+							<a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-square-twitter"></i></a>
 						</div>
 						<div>
-							<a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-square-twitter"></i></a>
+							<a href="https://github.com/ProfeAlbeiro/adsi_n-2395871_g3" target="_blank"><i class="fa-brands fa-square-github"></i></a>
 						</div>
 						<div>
 							<a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-square-youtube"></i></a>
