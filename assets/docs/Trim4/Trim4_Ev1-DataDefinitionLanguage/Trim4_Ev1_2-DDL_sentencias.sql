@@ -10,7 +10,7 @@
 -- 05. Mostrar Creación Tabla: .......... SHOW CREATE TABLE __							 --
 -- 06. Eliminar Restricción: ............ ALTER TABLE __ DROP CONSTRAINT __				 --
 -- 07. Limpiar Registros: ............... TRUNCATE __ 									 --
--- 08. Eliminar Índice: ................. ALTER TABLE __ DROP CONSTRAINT __				 --
+-- 08. Eliminar Índices: ................ ALTER TABLE __ DROP CONSTRAINT __				 --
 
 
 -- 07. Eliminar Tabla: .................. DROP TABLE __									 --
@@ -52,14 +52,17 @@ SHOW CREATE TABLE USUARIOS;
 -- 06. ALTER TABLE __ DROP CONSTRAINT __ : --------------------------------------------- --
 -- ------------------------------------------------------------------------------------- --
 ALTER TABLE USUARIOS DROP CONSTRAINT fk_usuarios_roles;
+ALTER TABLE CREDENCIALES DROP CONSTRAINT fk_credenciales_usuarios;
 ALTER TABLE MENSAJES DROP CONSTRAINT fk_mensajes_usuarios;
-
--- ------------------------------------------------------------------------------------- --
--- ELIMINAR REGISTROS DE UNA TABLA (TRUNCATE)
 -- ------------------------------------------------------------------------------------- --
 -- 07. Limpiar Registros: TRUNCATE __ :
 -- ------------------------------------------------------------------------------------- --
 TRUNCATE USUARIOS;
+-- ------------------------------------------------------------------------------------- --
+-- 08. Eliminar Índices: ALTER TABLE __ DROP INDEX _;
+-- ------------------------------------------------------------------------------------- --
+ALTER TABLE USUARIOS DROP INDEX ind_usuarios_roles;
+ALTER TABLE USUARIOS DROP INDEX uq_identificacion_user;
 -- ------------------------------------------------------------------------------------- --
 
 
@@ -67,11 +70,7 @@ TRUNCATE USUARIOS;
 -- 07. DROP TABLE __ : ----------------------------------------------------------------- --
 -- ------------------------------------------------------------------------------------- --
 DROP TABLE USUARIOS;
--- ------------------------------------------------------------------------------------- --
--- 08. Eliminar Índices: ALTER TABLE __ DROP INDEX _;
--- ------------------------------------------------------------------------------------- --
-ALTER TABLE USUARIOS DROP INDEX ind_usuarios_roles;
-ALTER TABLE usuarios DROP INDEX uq_identificacion_user;
+
 
 
 
