@@ -158,3 +158,4 @@ CONSTRAINT fk_mensajes_usuarios
 	REFERENCES USUARIOS (codigo_user)
 	ON DELETE CASCADE
 	ON UPDATE CASCADE;
+-- ------------------------------------------------------------------------------------- --
