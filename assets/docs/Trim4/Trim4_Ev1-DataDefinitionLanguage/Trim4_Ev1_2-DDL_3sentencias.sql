@@ -63,7 +63,7 @@ ALTER TABLE USUARIOS DROP CONSTRAINT fk_usuarios_roles;
 ALTER TABLE CREDENCIALES DROP CONSTRAINT fk_credenciales_usuarios;
 ALTER TABLE MENSAJES DROP CONSTRAINT fk_mensajes_usuarios;
 -- ------------------------------------------------------------------------------------- --
--- 07. Limpiar Registros: TRUNCATE __ : Limpiar Registros ------------------------------ --
+-- 07. TRUNCATE __ : Limpiar Registros ------------------------------------------------- --
 -- ------------------------------------------------------------------------------------- --
 TRUNCATE USUARIOS;
 -- ------------------------------------------------------------------------------------- --
