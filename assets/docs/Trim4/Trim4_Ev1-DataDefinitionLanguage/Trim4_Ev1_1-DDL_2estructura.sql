@@ -1,5 +1,5 @@
 -- -----------------------------------------------------
--- ESTRUCTURA BBDD: bbdd_ventas
+-- ESTRUCTURA BBDD: BBDD_VENTAS
 -- -----------------------------------------------------
 CREATE SCHEMA IF NOT EXISTS bbdd_ventas DEFAULT CHARACTER SET utf8;
 USE bbdd_ventas;
@@ -145,3 +145,5 @@ CREATE TABLE CREDENCIALES_PEDIDOS (
     ON DELETE CASCADE
     ON UPDATE CASCADE
 ) ENGINE = InnoDB;
+
+-- -----------------------------------------------------
