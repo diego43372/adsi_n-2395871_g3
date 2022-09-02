@@ -5,29 +5,29 @@
 /* ------------------------------------------------------------------------------------- */
 /* ************************************************************************************* */
 /* ------------------------------------------------------------------------------------- */
-/* 01. Mostrar BBDDs:...................... SHOW DATABASES __                            */
-/* 02. Usar BBDD: ......................... USE __                                       */
-/* 03. Eliminar BBDD: ..................... DROP DATABASE __                             */
-/* 04. Mostrar Tablas: .................... SHOW TABLES __                               */
-/* 05. Mostrar Creación Tabla: ............ SHOW CREATE TABLE __                         */
-/* 06. Eliminar Restricción: .............. ALTER TABLE __ DROP CONSTRAINT __            */
-/* 07. Limpiar Registros: ................. TRUNCATE __                                  */
-/* 08. Eliminar Índice: ................... ALTER TABLE __ DROP INDEX __                 */
-/* 09. Eliminar Llave Primaria: ........... ALTER TABLE __ DROP PRIMARY KEY              */
-/* 10. Mostar Columnas: ................... SHOW COLUMNS FROM __                         */
-/* 11. Agregar Columna: ................... ALTER TABLE __ ADD __ __                     */
-/* 12. Renombrar Columna: ................. ALTER TABLE __ CHANGE __ __                  */
-/* 13. Eliminar Columna: .................. ALTER TABLE __ DROP __                       */
-/* 14. Agregar Valor x Defecto Columna: ... ALTER TABLE __ ALTER __ SET DEFAULT __       */
-/* 15. Eliminar Valor x Defecto Columna: .. ALTER TABLE __ ALTER __ DROP DEFAULT         */
-/* 16. Eliminar Tabla: .................... DROP TABLE __                                */
-/* 17. Crear Tabla: ....................... CREATE TABLE __ ( __ , __ )                  */
-/* 18. Renombrar Tabla: ................... RENAME TABLE __ TO __                        */
-/* 19. Crear Llave Primaria: .............. ALTER TABLE __ ADD PRIMARY KEY ( __ )        */
-/* 20. Crear Índice Campo: ................ CREATE INDEX __ ON __ ( __ )                 */
-/* 21. Crear Índice Multicampo: ........... CREATE INDEX _ ON _ ( __ , __ )              */
-/* 22. Crear Índice Único: ................ CREATE UNIQUE INDEX __ ON __ ( __ )          */
-/* 23. Crear Restricción: ................. ALTER TABLE __ ADD CONSTRAINT __             */
+/* 01. Mostrar BBDDs : .................... SHOW DATABASES __                            */
+/* 02. Usar BBDD : ........................ USE __                                       */
+/* 03. Eliminar BBDD : .................... DROP DATABASE __                             */
+/* 04. Mostrar Tablas : ................... SHOW TABLES __                               */
+/* 05. Mostrar Creación Tabla : ........... SHOW CREATE TABLE __                         */
+/* 06. Eliminar Restricción : ............. ALTER TABLE __ DROP CONSTRAINT __            */
+/* 07. Limpiar Registros : ................ TRUNCATE __                                  */
+/* 08. Eliminar Índice : .................. ALTER TABLE __ DROP INDEX __                 */
+/* 09. Eliminar Llave Primaria : .......... ALTER TABLE __ DROP PRIMARY KEY              */
+/* 10. Mostar Columnas : .................. SHOW COLUMNS FROM __                         */
+/* 11. Agregar Columna : .................. ALTER TABLE __ ADD __ __                     */
+/* 12. Renombrar Columna : ................ ALTER TABLE __ CHANGE __ __                  */
+/* 13. Eliminar Columna : ................. ALTER TABLE __ DROP __                       */
+/* 14. Agregar Valor x Defecto Columna : .. ALTER TABLE __ ALTER __ SET DEFAULT __       */
+/* 15. Eliminar Valor x Defecto Columna : . ALTER TABLE __ ALTER __ DROP DEFAULT         */
+/* 16. Eliminar Tabla : ................... DROP TABLE __                                */
+/* 17. Crear Tabla : ...................... CREATE TABLE __ ( __ , __ )                  */
+/* 18. Renombrar Tabla : .................. RENAME TABLE __ TO __                        */
+/* 19. Crear Llave Primaria : ............. ALTER TABLE __ ADD PRIMARY KEY ( __ )        */
+/* 20. Crear Índice Campo : ............... CREATE INDEX __ ON __ ( __ )                 */
+/* 21. Crear Índice Multicampo : .......... CREATE INDEX _ ON _ ( __ , __ )              */
+/* 22. Crear Índice Único : ............... CREATE UNIQUE INDEX __ ON __ ( __ )          */
+/* 23. Crear Restricción : ................ ALTER TABLE __ ADD CONSTRAINT __             */
 /*     FOREIGN KEY ( __ ) REFERENCES __ ( __ ) ON DELETE CASCADE ON UPDATE CASCADE       */
 /* ------------------------------------------------------------------------------------- */
 /* ************************************************************************************* */
@@ -67,6 +67,7 @@ SHOW CREATE TABLE MENSAJES;
 -- ------------------------------------------------------------------------------------- --
 ALTER TABLE USUARIOS DROP CONSTRAINT fk_usuarios_roles;
 ALTER TABLE CREDENCIALES DROP CONSTRAINT fk_credenciales_usuarios;
+ALTER TABLE CREDENCIALES DROP CONSTRAINT chk_evitarPersona;
 ALTER TABLE MENSAJES DROP CONSTRAINT fk_mensajes_usuarios;
 -- ------------------------------------------------------------------------------------- --
 -- 07. Limpiar Registros. -------------------------------------------------------------- --
@@ -164,6 +165,10 @@ CREATE UNIQUE INDEX uq_identificacion_user ON USUARIOS (identificacion_user);
 --     ALTER TABLE __ ADD CONSTRAINT __ FOREIGN KEY ( __ ) REFERENCES __ ( __ ) -------- --
 --     ON DELETE CASCADE ON UPDATE CASCADE : ------------------------------------------- --
 -- ------------------------------------------------------------------------------------- --
+ALTER TABLE CREDENCIALES
+ADD CONSTRAINT chk_evitarPersona 
+CHECK (codigo_user NOT LIKE '%person%');
+
 ALTER TABLE USUARIOS ADD 
 CONSTRAINT fk_usuarios_roles 
 	FOREIGN KEY (codigo_rol)

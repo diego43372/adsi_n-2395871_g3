@@ -18,12 +18,12 @@ CREATE TABLE ROLES (
 -- -----------------------------------------------------
 CREATE TABLE USUARIOS (
   codigo_rol INT NOT NULL,
-  codigo_user VARCHAR(10) NOT NULL,
-  identificacion_user INT NOT NULL,
+  codigo_user VARCHAR(10) NOT NULL,  
   nombres_user VARCHAR(50) NOT NULL,
   apellidos_user VARCHAR(50) NOT NULL,
-  PRIMARY KEY (codigo_user),
-  UNIQUE INDEX uq_identificacion_user (identificacion_user ASC),
+  correo_user VARCHAR(100) NOT NULL,
+  PRIMARY KEY (codigo_user),  
+  UNIQUE INDEX uq_correo_user (correo_user ASC),
   INDEX ind_usuarios_roles (codigo_rol ASC),
   CONSTRAINT fk_usuarios_roles
     FOREIGN KEY (codigo_rol)
@@ -37,11 +37,13 @@ CREATE TABLE USUARIOS (
 -- -----------------------------------------------------
 CREATE TABLE CREDENCIALES (
   codigo_user VARCHAR(10) NOT NULL,
-  correo_user VARCHAR(100) NOT NULL,
+  identificacion_user INT NOT NULL,  
   pass_user VARCHAR(150) NOT NULL,
   PRIMARY KEY (codigo_user),
-  UNIQUE INDEX uq_correo_user (correo_user ASC),
+  UNIQUE INDEX uq_identificacion_user (identificacion_user ASC),
   INDEX ind_credenciales_usuarios (codigo_user ASC),
+  CONSTRAINT chk_evitarPersona 
+  CHECK (codigo_user NOT LIKE '%person%'),
   CONSTRAINT fk_credenciales_usuarios
     FOREIGN KEY (codigo_user)
     REFERENCES USUARIOS (codigo_user)

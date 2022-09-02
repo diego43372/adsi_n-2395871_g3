@@ -7,130 +7,69 @@
 /* ------------------------------------------------------------------------------------- */
 /* ************************************************************************************* */
 /* ------------------------------------------------------------------------------------- */
-/* 01. Mostrar BBDDs:...................... SHOW DATABASES __                            */
-/* 02. Usar BBDD: ......................... USE __                                       */
-/* 03. Eliminar BBDD: ..................... DROP DATABASE __                             */
-/* 04. Mostrar Tablas: .................... SHOW TABLES __                               */
-/* 05. Mostrar Creación Tabla: ............ SHOW CREATE TABLE __                         */
-/* 06. Eliminar Restricción: .............. ALTER TABLE __ DROP CONSTRAINT __            */
-/* 07. Limpiar Registros: ................. TRUNCATE __                                  */
-/* 08. Eliminar Índices: .................. ALTER TABLE __ DROP INDEX __                 */
-/* 09. Eliminar Llave Primaria: ........... ALTER TABLE __ DROP PRIMARY KEY              */
-/* 10. Mostar Columnas: ................... SHOW COLUMNS FROM __                         */
-/* 11. Agregar Columna: ................... ALTER TABLE __ ADD __ __                     */
-/* 12. Renombrar Columna: ................. ALTER TABLE __ CHANGE __ __                  */
-/* 13. Eliminar Columna: .................. ALTER TABLE __ DROP __                       */
-/* 14. Agregar Valor x Defecto Columna: ... ALTER TABLE __ ALTER __ SET DEFAULT __       */
-/* 15. Eliminar Valor x Defecto Columna: .. ALTER TABLE __ ALTER __ DROP DEFAULT         */
-/* 16. Eliminar Tabla: .................... DROP TABLE __                                */
-/* 17. Crear Tabla: ....................... CREATE TABLE __ ( __ , __ )                  */
-/* 18. Renombrar Tabla: ................... RENAME TABLE __ TO __                        */
-/* 19. Crear Llave Primaria: .............. ALTER TABLE __ ADD PRIMARY KEY ( __ )        */
-/* 20. Crear Índice Campo: ................ CREATE INDEX __ ON __ ( __ )                 */
-/* 21. Crear Índice Multicampo: ........... CREATE INDEX _ ON _ ( __ , __ )              */
-/* 22. Crear Índice Único: ................ CREATE UNIQUE INDEX __ ON __ ( __ )          */
-/* 23. Crear Restricciones: ............... ALTER TABLE __ ADD CONSTRAINT __             */
-/*     FOREIGN KEY ( __ ) REFERENCES __ ( __ ) ON DELETE CASCADE ON UPDATE CASCADE       */
+/* 01. Crear o Registrar : ................ INSERT INTO __ VALUES ( __ , __ )            */
+/* 02. Actualizar : ....................... UPDATE __ SET __ = __ WHERE __ = __          */
+/* 03. Eliminar : ......................... UPDATE __ SET __ = __ WHERE __ = __          */
 /* ------------------------------------------------------------------------------------- */
 /* ************************************************************************************* */
 /* EN CONSOLA: XAMPP / SHELL / cd mysql/bin / mysql -h localhost -u root -p / ENTER      */
 /* ************************************************************************************* */
 
--- -------------------------------------------------------------------------------------
--- -------------------------------------------------------------------------------------
--- -------------------------------------------------------------------------------------
--- DDL: ACCIONES BÁSICAS CON TABLAS RELACIONADAS 
---      ELIMINAR Y CREAR ÍNDICES Y RESTRICCIONES:
---      SHOW, ALTER TABLE, ADD, DROP, KEY, INDEX, CONSTRAINT, FOREIGN KEY, TRUNCATE
--- -------------------------------------------------------------------------------------
--- -------------------------------------------------------------------------------------
--- -------------------------------------------------------------------------------------
--- ## - Eliminar bbdd_pedidos
--- -------------------------------------------------------------------------------------
-DROP DATABASE bbdd_pedidos;
--- -------------------------------------------------------------------------------------
--- ## - Mostar cómo se crearon las tablas de la bbdd_pedidos
--- -------------------------------------------------------------------------------------
-SHOW CREATE TABLE clientes;
-SHOW CREATE TABLE pedidos;
-SHOW CREATE TABLE productos_pedidos;
-SHOW CREATE TABLE productos;
--- -------------------------------------------------------------------------------------
--- ## - Eliminar restricción CONSTRAINT e índice KEY de pedidos con clientes
--- -------------------------------------------------------------------------------------
-ALTER TABLE pedidos DROP CONSTRAINT fk_pedidos_clientes;
-ALTER TABLE pedidos DROP KEY fk_pedidos_clientes;
--- -------------------------------------------------------------------------------------
--- ## - Eliminar restricción CONSTRAINT e índice KEY de productos_pedidos con pedidos
--- -------------------------------------------------------------------------------------
-ALTER TABLE productos_pedidos DROP CONSTRAINT fk_productos_pedidos_pedidos;
-ALTER TABLE productos_pedidos DROP KEY fk_productos_pedidos_pedidos;
--- -------------------------------------------------------------------------------------
--- ## - Eliminar restricción CONSTRAINT e índice KEY de productos_pedidos con productos
--- -------------------------------------------------------------------------------------
-ALTER TABLE productos_pedidos DROP CONSTRAINT fk_productos_pedidos_productos;
-ALTER TABLE productos_pedidos DROP KEY fk_productos_pedidos_productos;
--- -------------------------------------------------------------------------------------
--- ## - Eliminar todos los registros de la tabla pedidos y productos_pedidos
--- -------------------------------------------------------------------------------------
-TRUNCATE pedidos;
-TRUNCATE productos_pedidos;
--- -------------------------------------------------------------------------------------
--- ## - Agregar índice y restricción entre la tabla pedidos y clientes
--- -------------------------------------------------------------------------------------
-ALTER TABLE pedidos
-ADD KEY fk_pedidos_clientes (codigo_cliente),
-ADD CONSTRAINT fk_pedidos_clientes 
-FOREIGN KEY (codigo_cliente)
-REFERENCES clientes (codigo_cliente)
-ON DELETE CASCADE
-ON UPDATE CASCADE;
--- -------------------------------------------------------------------------------------
--- ## - Agregar índice y restricción entre la tabla productos_pedidos y pedidos
--- -------------------------------------------------------------------------------------
-ALTER TABLE productos_pedidos
-ADD KEY fk_productos_pedidos_pedidos (numero_pedido),
-ADD CONSTRAINT fk_productos_pedidos_pedidos
-FOREIGN KEY (numero_pedido)
-REFERENCES pedidos (numero_pedido)
-ON DELETE CASCADE
-ON UPDATE CASCADE;
--- -------------------------------------------------------------------------------------
--- ## - Agregar índice y restricción entre la tabla productos_pedidos y productos
--- -------------------------------------------------------------------------------------
-ALTER TABLE productos_pedidos
-ADD KEY fk_productos_pedidos_productos (codigo_articulo),
-ADD CONSTRAINT fk_productos_pedidos_productos
-FOREIGN KEY (codigo_articulo)
-REFERENCES productos (codigo_articulo)
-ON DELETE CASCADE
-ON UPDATE CASCADE;
--- -------------------------------------------------------------------------------------
--- -------------------------------------------------------------------------------------
--- -------------------------------------------------------------------------------------
--- -------------------------------------------------------------------------------------
+-- ------------------------------------------------------------------------------------- --
+-- 01. Crear o Registrar. -------------------------------------------------------------- --
+--     INSERT INTO __ VALUES ( __ , __ ) : --------------------------------------------- -- 
+-- ------------------------------------------------------------------------------------- --
 
+-- ------------------------------------------
+-- 01.1. Datos Válidos
+-- ------------------------------------------
+INSERT INTO ROLES VALUES 
+(null, 'admin'),
+(null, 'user'),
+(null, 'customer'),
+(null, 'seller');
 
+INSERT INTO USUARIOS VALUES 
+(1, 'admin-1', 'Albeiro', 'Ramos', 'profealbeiro2020@gmail.com'),
+(3, 'customer-1', 'Marinita', 'García', 'marinita@gmail.com'),
+(4, 'seller-1', 'Jesús', 'Briceño', 'jesus@gmail.com'),
+(2, 'person-1', 'Ezequiel', 'Pantoja', 'marcos@gmail.com'),
+(2, 'person-2', 'Camilo', 'Céspedes', 'juana@gmail.com'),
+(1, 'admin-2', 'Jorge', 'Campos', 'jorge@gmail.com');
 
+INSERT INTO CREDENCIALES VALUES
+('admin-1', 123456, sha1('12345')),
+('customer-1', 65431, sha1('12345')),
+('seller-1', 987654, sha1('12345')),
+('admin-2', 852369, sha1('12345'));
 
--- -------------------------------------------------------------------------------------
--- CRUD: CREAR (INSERT INTO), CONSULTAR (SELECT), ACTUALIZAR (UPDATE), ELIMINAR (DELETE)
--- -------------------------------------------------------------------------------------
--- -------------------------------------------------------------------------------------
--- -------------------------------------------------------------------------------------
--- ## - CREAR: INSERT INTO, VALUES
--- -------------------------------------------------------------------------------------
-INSERT INTO pedidos VALUES (null, 4, '2021-05-15', 'Contado', 3.5, 1);
+INSERT INTO MENSAJES VALUES
+('person-1', '2022-08-15', 'Solicitud de Información', 'Quisiera saber sobre los cursos que ofrecen');
+
+-- ------------------------------------------
+-- 01.2. Datos NO válidos
+-- ------------------------------------------
+INSERT INTO USUARIOS VALUES 
+(5, 'customer-3', 'Alejandra', 'Martínez', 'alejandra@gmail.com');
+
+INSERT INTO USUARIOS VALUES 
+(4, 'customer-1', 'Alejandra', 'Martínez', 'alejandra@gmail.com');
+
+INSERT INTO CREDENCIALES VALUES 
+('admin-2', 666555, sha1('45678'));
+
+INSERT INTO CREDENCIALES VALUES 
+('admin-3', 444777, sha1('45678'));
+
+INSERT INTO CREDENCIALES VALUES 
+('person-1', 888999, sha1('12345'));
+
 -- -------------------------------------------------------------------------------------
 -- ## - ACTUALIZAR: UPDATE, SET
 -- -------------------------------------------------------------------------------------
-UPDATE clientes SET 
-empresa = 'EMPANADAS S.A.',
-direccion = 'AVENIDA SIEMPRE VIVA',
-poblacion = 'BOGOTÁ',
-telefono = '123456789',
-responsable = 'PROFE ALBEIRO'
-WHERE codigo_cliente = 1; 
+UPDATE ROLES SET 
+nombre_rol = 'person'
+WHERE codigo_rol = 2;
 -- -------------------------------------------------------------------------------------
 -- ## - ELIMINAR: DELETE
 -- -------------------------------------------------------------------------------------
