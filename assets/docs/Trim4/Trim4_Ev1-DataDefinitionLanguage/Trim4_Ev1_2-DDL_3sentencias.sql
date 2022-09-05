@@ -8,8 +8,8 @@
 /* 01. Mostrar BBDDs : .................... SHOW DATABASES                               */
 /* 02. Usar BBDD : ........................ USE __                                       */
 /* 03. Eliminar BBDD : .................... DROP DATABASE __                             */
-/* 04. Mostrar Tablas : ................... SHOW TABLES __                               */
-/* 05. Mostar Columnas : .................. SHOW COLUMNS FROM __                         */
+/* 04. Mostrar Tablas : ................... SHOW TABLES __.                              */
+/* 05. Mostar Columnas : .................. SHOW COLUMNS FROM __ . DESCRIBE __           */
 /* 06. Agregar Columna : .................. ALTER TABLE __ ADD __ __                     */
 /* 07. Renombrar Columna : ................ ALTER TABLE __ CHANGE __ __                  */
 /* 08. Eliminar Columna : ................. ALTER TABLE __ DROP __                       */
@@ -60,9 +60,10 @@ SHOW TABLES;
 
 -- ------------------------------------------------------------------------------------- --
 -- 05. Mostar Columnas. ---------------------------------------------------------------- --
---     SHOW COLUMNS FROM __ : ---------------------------------------------------------- --
+--     SHOW COLUMNS FROM __ . DESCRIBE __ : -------------------------------------------- --
 -- ------------------------------------------------------------------------------------- --
 SHOW COLUMNS FROM USUARIOS;
+DESCRIBE USUARIOS;
 
 -- ------------------------------------------------------------------------------------- --
 -- 06. Agregar Columna. ---------------------------------------------------------------- --

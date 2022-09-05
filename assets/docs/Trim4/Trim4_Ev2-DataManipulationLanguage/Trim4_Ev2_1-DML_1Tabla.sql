@@ -7,35 +7,34 @@
 /* ------------------------------------------------------------------------------------- */
 /* ************************************************************************************* */
 /* ------------------------------------------------------------------------------------- */
-/* 1. CONSULTAS DE ACCIÓN : ........... INSERT INTO, UPDATE, DELETE                      */
-/* 1.1. Crear o Registrar : ........... INSERT INTO __ VALUES ( __ , __ )                */
-/* 1.1.1. Datos Correctos : ........... INSERT INTO __ VALUES ( __ , __ )                */
-/* 1.1.2. Datos Incorrectos : ......... INSERT INTO __ VALUES ( __ , __ )                */
-/* 1.2. Actualizar : .................. UPDATE __ SET __ = __ WHERE __ = __              */
-/* 1.3. Eliminar : .................... DELETE FROM __ WHERE __ = __                     */
-/* 2. CONSULTAS DE SELECCIÓN : ........ SELECT                                           */
-/* 2.1. Generales : ................... SELECT * FROM __                                 */
-/* 2.2. Específicas : ................. SELECT __ , __ FROM __                           */
-/* 2.3. Con Criterios : ............... SELECT __ , __ FROM __ WHERE __ = __             */
-/* 2.4. Con Operadores Lógicos : ...... OR, AND, NOT                                     */
-/* 2.4.1. OR (O) : .................... SELECT __ , __ FROM __ WHERE __ = __ OR __ = __  */                                */
-/* 2.4.2. AND (Y) : ................... SELECT __ , __ FROM __ WHERE __ = __ AND __ = __ */                                */
-/* 2.4.3. NOT (NO) : ...... ........... SELECT __ , __ FROM __ WHERE __ NOT IN ( __ )    */                                */
-/* 2.5. Con Operadores Comparación : .. <>, <, <=, >, >=, LIKE, BEETWEEN, IN, ANY, ALL   */
-/* 2.5.1. <> (Diferente) : ............ SELECT __ , __ FROM __ WHERE __ <> __            */
-/* 2.5.2. <  (Menor que) : ............ SELECT __ , __ FROM __ WHERE __ <  __            */
-/* 2.5.3. >  (Mayor que) : ............ SELECT __ , __ FROM __ WHERE __ >  __            */
-/* 2.5.4. <= (Menor o igual) : ........ SELECT __ , __ FROM __ WHERE __ <=  __           */
-/* 2.5.5. >= (Mayor o igual) : ........ SELECT __ , __ FROM __ WHERE __ >=  __           */
-/* 2.5.6. LIKE ( % , _ ) : ............ SELECT __ , __ FROM __ WHERE __ LIKE '_%'        */
-/* 2.5.7. BETWEEN () : ................                                                  */
-/* 2.5.8. IN () : .....................                                                  */
-/* 2.5.9. ANY () : ....................                                                  */
-/* 2.5.10. ALL () : ...................                                                  */
-/* 2.6. Ordenadas por un campo : ...... ORDER BY, ASC, DESC                              */
-/* 2.7. Ordenadas por varios campos : . ORDER BY, ASC, DESC                              */
-/* 2.8. Calculadas : .................. SUM(), AVG(), COUNT(), MAX(), MIN (),            */
-/*                                      GROUP BY, AS (ALIAS), HAVING (POR WHERE),        */
+/* 1. CONSULTAS DE ACCIÓN : .......... INSERT INTO, UPDATE, DELETE                       */
+/* 1.1. Crear o Registrar : .......... INSERT INTO __ VALUES ( __ , __ )                 */
+/* 1.1.1. Datos Correctos : .......... INSERT INTO __ VALUES ( __ , __ )                 */
+/* 1.1.2. Datos Incorrectos : ........ INSERT INTO __ VALUES ( __ , __ )                 */
+/* 1.2. Actualizar : ................. UPDATE __ SET __ = __ WHERE __ = __               */
+/* 1.3. Eliminar : ................... DELETE FROM __ WHERE __ = __                      */
+/* 2. CONSULTAS DE SELECCIÓN : ....... SELECT                                            */
+/* 2.1. Generales : .................. SELECT * FROM __                                  */
+/* 2.2. Específicas : ................ SELECT __ , __ FROM __                            */
+/* 2.3. Con Criterios: ............... SELECT __ , __ FROM __ WHERE __ = __              */
+/* 2.4. Con Operadores Lógicos : ..... OR, AND, NOT                                      */
+/* 2.4.1. OR (O) : ................... SELECT __ , __ FROM __ WHERE __ = __ OR __ = __   */                                
+/* 2.4.2. AND (Y) : .................. SELECT __ , __ FROM __ WHERE __ = __ AND __ = __  */                                
+/* 2.4.3. NOT (NO) : ...... .......... SELECT __ , __ FROM __ WHERE __ NOT IN ( __ )     */                                
+/* 2.5. Con Operadores Comparación : . <>, <, <=, >, >=                                  */
+/* 2.5.1. <> (Diferente) : ........... SELECT __ , __ FROM __ WHERE __ <> __             */
+/* 2.5.2. <  (Menor que) : ........... SELECT __ , __ FROM __ WHERE __ <  __             */
+/* 2.5.3. >  (Mayor que) : ........... SELECT __ , __ FROM __ WHERE __ >  __             */
+/* 2.5.4. <= (Menor o igual) : ....... SELECT __ , __ FROM __ WHERE __ <=  __            */
+/* 2.5.5. >= (Mayor o igual) : ....... SELECT __ , __ FROM __ WHERE __ >=  __            */
+/* 2.6. Otros Operadores : ........... LIKE, BETWEEN, IN                                 */
+/* 2.6.1. LIKE ( % , _ ) : ........... SELECT __ , __ FROM __ WHERE __ LIKE '_%'         */
+/* 2.6.2. BETWEEN (Entre) : .......... SELECT * FROM __ WHERE __ BETWEEN __ AND __       */
+/* 2.6.3. IN () : .................... SELECT __ , __ FROM __ WHERE __ IN( __ , __ )     */
+/* 2.7. Ordenadas Un Campo : ......... ORDER BY, ASC, DESC                               */
+/* 2.8. Ordenadas Varios campos : .... ORDER BY, ASC, DESC                               */
+/* 2.9. Calculadas : ................. SUM(), AVG(), COUNT(), MAX(), MIN (),             */
+/*                                     GROUP BY, AS (ALIAS), HAVING (POR WHERE),         */
 /*                   DATE_FORMAT(NOW(),'%Y-%m-%d') AS __ , DATEDIFF(NOW(), __ )          */
 /* ------------------------------------------------------------------------------------- */
 /* ************************************************************************************* */
@@ -206,7 +205,7 @@ WHERE ciudad_cred NOT IN ('Bogotá');
 
 -- ------------------------------------------------------------------------------------- --
 -- 2.5. Consultas con Operadores de Comparación. --------------------------------------- --
---      <>, <, <=, >, >=, LIKE, BEETWEEN, IN, ANY, ALL : ------------------------------- --
+--      <>, <, <=, >, >= : ------------------------------------------------------------- --
 -- ------------------------------------------------------------------------------------- --
 
 -- ------------------------------------------------------------------------------------- --
@@ -239,17 +238,22 @@ SELECT * FROM PRODUCTOS WHERE precio_producto <= 3500;
 -- ------------------------------------------------------------------------------------- --
 SELECT * FROM PRODUCTOS WHERE precio_producto >= 3500;
 
+
 -- ------------------------------------------------------------------------------------- --
--- 2.5.6. Consultas con el Operador de Comparación LIKE. ------------------------------- --
+-- 2.6. Otros Operadores. -------------------------------------------------------------- --
+--      <>, <, <=, >, >= : ------------------------------------------------------------- --
+-- ------------------------------------------------------------------------------------- --
+
+-- ------------------------------------------------------------------------------------- --
+-- 2.6.1. Consultas con el Operador LIKE ( % , __ ). ----------------------------------- --
 --        SELECT __ , __ FROM __ WHERE __ LIKE '_%' : ---------------------------------- --
 -- ------------------------------------------------------------------------------------- --
 SELECT * FROM PRODUCTOS WHERE nombre_producto LIKE 'j%';
 SELECT * FROM PRODUCTOS WHERE nombre_producto LIKE '_a%';
 
-
 -- ------------------------------------------------------------------------------------- --
--- 2.5.7. Consultas con el Operador de Comparación BETWEEN. ---------------------------- --
---        SELECT __ , __ FROM __ WHERE __ LIKE '_%' : ---------------------------------- --
+-- 2.6.2. Consultas con el Operador BETWEEN. ------------------------------------------- --
+--        SELECT __ , __ FROM __ WHERE __ BETWEEN __ AND __ : -------------------------- --
 -- ------------------------------------------------------------------------------------- --
 SELECT * FROM CREDENCIALES 
 WHERE fecha_ingreso_cred BETWEEN '2022-08-01' AND '2022-08-31';
@@ -257,15 +261,20 @@ WHERE fecha_ingreso_cred BETWEEN '2022-08-01' AND '2022-08-31';
 SELECT * FROM CREDENCIALES 
 WHERE fecha_ingreso_cred >= '2022-08-01' AND fecha <= '2022-08-31';
 
-/* 2.5.8. IN () : .....................                                                  */
-/* 2.5.9. ANY () : ....................                                                  */
-/* 2.5.10. ALL () : ...................                                                  */
+-- ------------------------------------------------------------------------------------- --
+-- 2.6.3. Consultas con el Operador IN . ----------------------------------------------- --
+--        SELECT __ , __ FROM __ WHERE __ IN( __ , __ ) : ------------------------------ --
+-- ------------------------------------------------------------------------------------- --
+SELECT * FROM PRODUCTOS 
+WHERE unidad_producto IN(1,500);
 
 
 
--- -------------------------------------------------------------------------------------
--- CONSULTAS ORDENADAS POR UNO O VARIOS CAMPOS: ORDER BY, ASC, DESC
--- -------------------------------------------------------------------------------------
+/* 2.6. Ordenadas Un Campo : ......... ORDER BY, ASC, DESC                               */
+/* 2.7. Ordenadas Varios campos : .... ORDER BY, ASC, DESC                               */
+
+
+
 -- ## - Seleccione todos los campos de la tabla productos donde la sección sea igual a 
 --      'CERÁMICA' y 'DEPORTES' y que lo ordene por la sección (Ascendente)
 -- -------------------------------------------------------------------------------------
