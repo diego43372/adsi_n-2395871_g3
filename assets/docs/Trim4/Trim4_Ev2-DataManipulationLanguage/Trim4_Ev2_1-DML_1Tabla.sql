@@ -7,20 +7,36 @@
 /* ------------------------------------------------------------------------------------- */
 /* ************************************************************************************* */
 /* ------------------------------------------------------------------------------------- */
-/* 1. CONSULTAS DE ACCIÓN : .......... INSERT INTO, UPDATE, DELETE                       */
-/* 1.1. Crear o Registrar : .......... INSERT INTO __ VALUES ( __ , __ )                 */
-/* 1.1.1. Datos Correctos : .......... INSERT INTO __ VALUES ( __ , __ )                 */
-/* 1.1.2. Datos Incorrectos : ........ INSERT INTO __ VALUES ( __ , __ )                 */
-/* 1.2. Actualizar : ................. UPDATE __ SET __ = __ WHERE __ = __               */
-/* 1.3. Eliminar : ................... DELETE FROM __ WHERE __ = __                      */
-/* 2. CONSULTAS DE SELECCIÓN : ....... SELECT                                            */
-/* 2.1. Generales : .................. SELECT * FROM __                                  */
-/* 2.2. Específicas : ................ SELECT __ , __ FROM __                            */
-/* 2.3. Con Criterios : .............. SELECT __ , __ FROM __ WHERE __ = __              */
-/* 2.4. Con Operadores Lógicos : ..... OR, AND, NOT                                      */
-/* 2.4.1. OR (O) : ................... SELECT __ , __ FROM __ WHERE __ = __ OR __ = __   */                                */
-/* 2.4.1. AND (Y) : .................. SELECT __ , __ FROM __ WHERE __ = __ AND __ = __  */                                */
-/* 2.4.1. NOT (NO) : ...... .......... SELECT __ , __ FROM __ WHERE __ = __ NOT __ = __  */                                */
+/* 1. CONSULTAS DE ACCIÓN : ........... INSERT INTO, UPDATE, DELETE                      */
+/* 1.1. Crear o Registrar : ........... INSERT INTO __ VALUES ( __ , __ )                */
+/* 1.1.1. Datos Correctos : ........... INSERT INTO __ VALUES ( __ , __ )                */
+/* 1.1.2. Datos Incorrectos : ......... INSERT INTO __ VALUES ( __ , __ )                */
+/* 1.2. Actualizar : .................. UPDATE __ SET __ = __ WHERE __ = __              */
+/* 1.3. Eliminar : .................... DELETE FROM __ WHERE __ = __                     */
+/* 2. CONSULTAS DE SELECCIÓN : ........ SELECT                                           */
+/* 2.1. Generales : ................... SELECT * FROM __                                 */
+/* 2.2. Específicas : ................. SELECT __ , __ FROM __                           */
+/* 2.3. Con Criterios : ............... SELECT __ , __ FROM __ WHERE __ = __             */
+/* 2.4. Con Operadores Lógicos : ...... OR, AND, NOT                                     */
+/* 2.4.1. OR (O) : .................... SELECT __ , __ FROM __ WHERE __ = __ OR __ = __  */                                */
+/* 2.4.2. AND (Y) : ................... SELECT __ , __ FROM __ WHERE __ = __ AND __ = __ */                                */
+/* 2.4.3. NOT (NO) : ...... ........... SELECT __ , __ FROM __ WHERE __ NOT IN ( __ )    */                                */
+/* 2.5. Con Operadores Comparación : .. <>, <, <=, >, >=, LIKE, BEETWEEN, IN, ANY, ALL   */
+/* 2.5.1. <> (Diferente) : ............ SELECT __ , __ FROM __ WHERE __ <> __            */
+/* 2.5.2. <  (Menor que) : ............ SELECT __ , __ FROM __ WHERE __ <  __            */
+/* 2.5.3. >  (Mayor que) : ............ SELECT __ , __ FROM __ WHERE __ >  __            */
+/* 2.5.4. <= (Menor o igual) : ........ SELECT __ , __ FROM __ WHERE __ <=  __           */
+/* 2.5.5. >= (Mayor o igual) : ........ SELECT __ , __ FROM __ WHERE __ >=  __           */
+/* 2.5.6. LIKE ( % , _ ) : ............                                                  */
+/* 2.5.7. BETWEEN () : ................                                                  */
+/* 2.5.8. IN () : .....................                                                  */
+/* 2.5.9. ANY () : ....................                                                  */
+/* 2.5.10. ALL () : ...................                                                  */
+/* 2.6. Ordenadas por un campo : ...... ORDER BY, ASC, DESC                              */
+/* 2.7. Ordenadas por varios campos : . ORDER BY, ASC, DESC                              */
+/* 2.8. Calculadas : .................. SUM(), AVG(), COUNT(), MAX(), MIN (),            */
+/*                                      GROUP BY, AS (ALIAS), HAVING (POR WHERE),        */
+/*                   DATE_FORMAT(NOW(),'%Y-%m-%d') AS __ , DATEDIFF(NOW(), __ )          */
 /* ------------------------------------------------------------------------------------- */
 /* ************************************************************************************* */
 /* EN CONSOLA: XAMPP / SHELL / cd mysql/bin / mysql -h localhost -u root -p / ENTER      */
@@ -168,15 +184,8 @@ WHERE codigo_rol = 3;
 -- ------------------------------------------------------------------------------------- --
 
 -- ------------------------------------------------------------------------------------- --
--- 2.4.1. Consultas con el Operador Lógico OR (O). -------------------------------------- --
+-- 2.4.1. Consultas con el Operador Lógico OR (O). ------------------------------------- --
 --        SELECT __ , __ FROM __ WHERE __ = __ OR __ = __ : ---------------------------- --
--- ------------------------------------------------------------------------------------- --
-SELECT codigo_rol, codigo_user, correo_user FROM USUARIOS 
-WHERE codigo_rol = 2 OR codigo_rol = 3;
-
--- ------------------------------------------------------------------------------------- --
--- 2.4.2. Consultas con el Operador Lógico AND (Y). ------------------------------------ --
---        SELECT __ , __ FROM __ WHERE __ = __ AND __ = __ : --------------------------- --
 -- ------------------------------------------------------------------------------------- --
 SELECT codigo_rol, codigo_user, correo_user FROM USUARIOS 
 WHERE codigo_rol = 2 OR codigo_rol = 3;
@@ -188,20 +197,52 @@ WHERE codigo_rol = 2 OR codigo_rol = 3;
 SELECT codigo_cred, ciudad_cred FROM CREDENCIALES 
 WHERE ciudad_cred = 'Bogotá' AND estado_cred = 1;
 
--- -------------------------------------------------------------------------------------
--- OPERADORES: 
--- COMPARACIÓN:  LIKE, <>, <=, >=, <, >, BEETWEEN, IN, ANY, ALL
+-- ------------------------------------------------------------------------------------- --
+-- 2.4.3. Consultas con el Operador Lógico NOT (NO). ----------------------------------- --
+--        SELECT __ , __ FROM __ WHERE __ = __ AND __ = __ : --------------------------- --
+-- ------------------------------------------------------------------------------------- --
+SELECT codigo_cred, ciudad_cred FROM CREDENCIALES 
+WHERE ciudad_cred NOT IN ('Bogotá');
 
--- -------------------------------------------------------------------------------------
--- ## - Seleccione todos los campos de la tabla productos donde precio sea mayor 300
--- -------------------------------------------------------------------------------------
-SELECT * FROM productos WHERE precio > 300;
+-- ------------------------------------------------------------------------------------- --
+-- 2.5. Consultas con Operadores de Comparación. --------------------------------------- --
+--      <>, <, <=, >, >=, LIKE, BEETWEEN, IN, ANY, ALL : ------------------------------- --
+-- ------------------------------------------------------------------------------------- --
+
+-- ------------------------------------------------------------------------------------- --
+-- 2.5.1. Consultas con el Operador de Comparación <> (Diferente). --------------------- --
+--        SELECT __ , __ FROM __ WHERE __ <> __ : -------------------------------------- --
+-- ------------------------------------------------------------------------------------- --
+SELECT * FROM PRODUCTOS WHERE precio_producto <> 3500;
+
+-- ------------------------------------------------------------------------------------- --
+-- 2.5.2. Consultas con el Operador de Comparación < (Menor que). ---------------------- --
+--        SELECT __ , __ FROM __ WHERE __ < __ : --------------------------------------- --
+-- ------------------------------------------------------------------------------------- --
+SELECT * FROM PRODUCTOS WHERE precio_producto < 3500;
+
+-- ------------------------------------------------------------------------------------- --
+-- 2.5.3. Consultas con el Operador de Comparación < (Mayor que). ---------------------- --
+--        SELECT __ , __ FROM __ WHERE __ > __ : --------------------------------------- --
+-- ------------------------------------------------------------------------------------- --
+SELECT * FROM PRODUCTOS WHERE precio_producto > 3500;
+
+
+
+
+
 -- -------------------------------------------------------------------------------------
 -- ## - Seleccione todos los campos de la tabla productos donde la fecha esté entre 
 --      '2000-03-01' y '2000-04-30'
 -- -------------------------------------------------------------------------------------
 SELECT * FROM productos WHERE fecha BETWEEN '2000-03-01' AND '2000-04-30';
 SELECT * FROM productos WHERE fecha >= '2000-03-01' AND fecha <= '2000-04-30';
+
+
+
+
+
+
 -- -------------------------------------------------------------------------------------
 -- CONSULTAS ORDENADAS POR UNO O VARIOS CAMPOS: ORDER BY, ASC, DESC
 -- -------------------------------------------------------------------------------------
@@ -225,6 +266,10 @@ ORDER BY seccion DESC;
 SELECT * FROM productos 
 WHERE seccion = 'CERÁMICA' OR seccion = 'DEPORTES' 
 ORDER BY precio;
+
+
+
+
 -- -------------------------------------------------------------------------------------
 -- ## - Seleccione todos los campos de la tabla productos donde la sección sea igual a 
 --      'CERÁMICA' y 'DEPORTES', después lo ordene por sección y luego por precio
@@ -239,6 +284,14 @@ ORDER BY seccion, precio;
 SELECT * FROM productos 
 WHERE seccion = 'CERÁMICA' OR seccion = 'DEPORTES' 
 ORDER BY seccion, pais_origen;
+
+
+
+
+
+
+
+
 -- -------------------------------------------------------------------------------------
 -- CONSULTAS CALCULADAS: SUM(), AVG(), COUNT(), MAX(), MIN (), 
 -- GROUP BY, AS (ALIAS), HAVING (POR WHERE), 
@@ -300,90 +353,4 @@ FROM productos
 -- -------------------------------------------------------------------------------------
 SELECT nombre_articulo, seccion, precio, fecha, 
 DATE_FORMAT(NOW(),'%Y-%m-%d') AS dia_de_hoy, DATEDIFF(NOW(),fecha) AS diferencia_dias 
-FROM productos WHERE seccion = 'DEPORTES'
-
--- ## - Seleccione todos los campos de la tabla productos, donde la sección sea 
---      igual a DEPORTES; una el resultado con la selección de todos los campos
---      de la tabla productosnuevos, donde la sección sea igual a DEPORTES DE 
---      RIESGO
--- ----------------------------------------------------------------------------
-SELECT * FROM productos WHERE seccion = 'DEPORTES' UNION 
-SELECT * FROM productos_nuevos WHERE seccion = 'DEPORTES DE RIESGO' 
--- ----------------------------------------------------------------------------
--- ## - Seleccione todos los campos de la tabla productos, donde el precio del
---      articulo sea superior a 500 euros y en la tabla productosnuevos, 
---      donde la sección sea igual a ALTA COSTURA
--- ----------------------------------------------------------------------------
-SELECT * FROM productos WHERE precio > 500 UNION 
-SELECT * FROM productos_nuevos WHERE seccion = 'ALTA COSTURA'
--- ----------------------------------------------------------------------------
--- ## - Seleccione todos los campos de la tabla productos, donde la sección sea
---      igual a DEPORTES y en la tabla productosnuevos, todos los productos
---      sin incluir repeticiones
--- ----------------------------------------------------------------------------
-SELECT * FROM productos WHERE seccion = 'DEPORTES' UNION
-SELECT * FROM productos_nuevos
--- ----------------------------------------------------------------------------
--- ## - Seleccione todos los campos de la tabla productos, donde la sección sea
---      igual a DEPORTES y en la tabla productosnuevos, todos los productos
---      incluyendo repeticiones
--- ----------------------------------------------------------------------------
-SELECT * FROM productos WHERE seccion = 'DEPORTES' UNION ALL
-SELECT * FROM productos_nuevos
--- ----------------------------------------------------------------------------
--- Inner Join, Outer Joins (Right Join, Left Join [Composiciones Externas])
--- ----------------------------------------------------------------------------
--- ----------------------------------------------------------------------------
--- ----------------------------------------------------------------------------
--- ## - Inner Join: Solo la información común entre las tablas: clientes y 
--- pedidos. Clientes de Madrid que SÍ han hecho pedidos
--- ----------------------------------------------------------------------------
-SELECT * FROM clientes INNER JOIN pedidos 
-ON clientes.codigo_cliente = pedidos.codigo_cliente
-WHERE poblacion = 'MADRID' ORDER BY clientes.codigo_cliente
--- ----------------------------------------------------------------------------
--- ## - Left Join: La información de la tabla de la izquierda (clientes) y 
--- y la información común entre las tablas: clientes y pedidos.
--- Todos los clientes de Madrid y que además hayan hecho pedidos
--- ----------------------------------------------------------------------------
-SELECT * FROM clientes LEFT JOIN pedidos 
-ON clientes.codigo_cliente = pedidos.codigo_cliente
-WHERE poblacion = 'MADRID' ORDER BY clientes.codigo_cliente
--- ----------------------------------------------------------------------------
--- ## - Left Join: Ver el codigo_cliente, poblacion, direccion, numero_pedido
--- de la tabla clientes y codigo_cliente, forma_pago de la tabla pedidos donde
--- clientes y pedidos estén relacionados
--- ----------------------------------------------------------------------------
-SELECT clientes.codigo_cliente, poblacion, direccion, numero_pedido, 
-pedidos.codigo_cliente, forma_pago FROM clientes INNER JOIN pedidos
-ON clientes.codigo_cliente = pedidos.codigo_cliente
--- ----------------------------------------------------------------------------
--- ## - Left Join: Ver el codigo_cliente, poblacion, direccion, numero_pedido
--- de la tabla clientes y codigo_cliente, forma_pago de la tabla pedidos donde
--- clientes y pedidos estén relacionados. Además, filtre solo los de Madrid y
--- los ordene de menor a mayor
--- ----------------------------------------------------------------------------
-SELECT clientes.codigo_cliente, poblacion, direccion, numero_pedido, 
-pedidos.codigo_cliente, forma_pago FROM clientes INNER JOIN pedidos
-ON clientes.codigo_cliente = pedidos.codigo_cliente
-WHERE poblacion = "MADRID" ORDER BY clientes.codigo_cliente
--- ----------------------------------------------------------------------------
--- ## - Todos los clientes de Madrid y que no hayan hecho pedidos
--- ----------------------------------------------------------------------------
-SELECT * FROM clientes LEFT JOIN pedidos 
-ON clientes.codigo_cliente = pedidos.codigo_cliente
-WHERE poblacion = 'MADRID' AND pedidos.codigo_cliente IS NULL
-ORDER BY clientes.codigo_cliente
--- ----------------------------------------------------------------------------
--- ## - Right Join: La información de la tabla de la derecha (pedidos) y 
--- y la información común entre las tablas: clientes y pedidos
--- Todos pedidos que se hayan hecho, así no tengan clientes asociados (OJO)
--- ----------------------------------------------------------------------------
-SELECT * FROM clientes RIGHT JOIN pedidos 
-ON clientes.codigo_cliente = pedidos.codigo_cliente
-ORDER BY clientes.codigo_cliente
--- ----------------------------------------------------------------------------
--- ## - Consultas multitabla: Escalonada, de lista, correlacionada
--- SELECT dentro de otro SELECT
--- ----------------------------------------------------------------------------
-
+FROM productos WHERE seccion = 'DEPORTES';

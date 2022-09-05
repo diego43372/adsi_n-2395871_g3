@@ -76,7 +76,6 @@ SELECT codigo_cliente, empresa, poblacion, telefono FROM clientes_madrid
 -- -------------------------------------------------------------------------------------
 
 
-
 -- -------------------------------------------------------------------------------------
 -- CONSULTAS DE SELECCIÓN:
 -- UNIÓN EXTERNA (UNION Y UNION ALL)
@@ -215,3 +214,89 @@ SELECT nombre_articulo, precio FROM productos WHERE codigo_articulo NOT IN
 SELECT empresa, poblacion FROM clientes WHERE codigo_cliente NOT IN
 (SELECT codigo_cliente FROM pedidos WHERE forma_pago = 'TARJETA')
 -- -------------------------------------------------------------------------------------
+
+
+-- ## - Seleccione todos los campos de la tabla productos, donde la sección sea 
+--      igual a DEPORTES; una el resultado con la selección de todos los campos
+--      de la tabla productosnuevos, donde la sección sea igual a DEPORTES DE 
+--      RIESGO
+-- ----------------------------------------------------------------------------
+SELECT * FROM productos WHERE seccion = 'DEPORTES' UNION 
+SELECT * FROM productos_nuevos WHERE seccion = 'DEPORTES DE RIESGO' 
+-- ----------------------------------------------------------------------------
+-- ## - Seleccione todos los campos de la tabla productos, donde el precio del
+--      articulo sea superior a 500 euros y en la tabla productosnuevos, 
+--      donde la sección sea igual a ALTA COSTURA
+-- ----------------------------------------------------------------------------
+SELECT * FROM productos WHERE precio > 500 UNION 
+SELECT * FROM productos_nuevos WHERE seccion = 'ALTA COSTURA'
+-- ----------------------------------------------------------------------------
+-- ## - Seleccione todos los campos de la tabla productos, donde la sección sea
+--      igual a DEPORTES y en la tabla productosnuevos, todos los productos
+--      sin incluir repeticiones
+-- ----------------------------------------------------------------------------
+SELECT * FROM productos WHERE seccion = 'DEPORTES' UNION
+SELECT * FROM productos_nuevos
+-- ----------------------------------------------------------------------------
+-- ## - Seleccione todos los campos de la tabla productos, donde la sección sea
+--      igual a DEPORTES y en la tabla productosnuevos, todos los productos
+--      incluyendo repeticiones
+-- ----------------------------------------------------------------------------
+SELECT * FROM productos WHERE seccion = 'DEPORTES' UNION ALL
+SELECT * FROM productos_nuevos
+-- ----------------------------------------------------------------------------
+-- Inner Join, Outer Joins (Right Join, Left Join [Composiciones Externas])
+-- ----------------------------------------------------------------------------
+-- ----------------------------------------------------------------------------
+-- ----------------------------------------------------------------------------
+-- ## - Inner Join: Solo la información común entre las tablas: clientes y 
+-- pedidos. Clientes de Madrid que SÍ han hecho pedidos
+-- ----------------------------------------------------------------------------
+SELECT * FROM clientes INNER JOIN pedidos 
+ON clientes.codigo_cliente = pedidos.codigo_cliente
+WHERE poblacion = 'MADRID' ORDER BY clientes.codigo_cliente
+-- ----------------------------------------------------------------------------
+-- ## - Left Join: La información de la tabla de la izquierda (clientes) y 
+-- y la información común entre las tablas: clientes y pedidos.
+-- Todos los clientes de Madrid y que además hayan hecho pedidos
+-- ----------------------------------------------------------------------------
+SELECT * FROM clientes LEFT JOIN pedidos 
+ON clientes.codigo_cliente = pedidos.codigo_cliente
+WHERE poblacion = 'MADRID' ORDER BY clientes.codigo_cliente
+-- ----------------------------------------------------------------------------
+-- ## - Left Join: Ver el codigo_cliente, poblacion, direccion, numero_pedido
+-- de la tabla clientes y codigo_cliente, forma_pago de la tabla pedidos donde
+-- clientes y pedidos estén relacionados
+-- ----------------------------------------------------------------------------
+SELECT clientes.codigo_cliente, poblacion, direccion, numero_pedido, 
+pedidos.codigo_cliente, forma_pago FROM clientes INNER JOIN pedidos
+ON clientes.codigo_cliente = pedidos.codigo_cliente
+-- ----------------------------------------------------------------------------
+-- ## - Left Join: Ver el codigo_cliente, poblacion, direccion, numero_pedido
+-- de la tabla clientes y codigo_cliente, forma_pago de la tabla pedidos donde
+-- clientes y pedidos estén relacionados. Además, filtre solo los de Madrid y
+-- los ordene de menor a mayor
+-- ----------------------------------------------------------------------------
+SELECT clientes.codigo_cliente, poblacion, direccion, numero_pedido, 
+pedidos.codigo_cliente, forma_pago FROM clientes INNER JOIN pedidos
+ON clientes.codigo_cliente = pedidos.codigo_cliente
+WHERE poblacion = "MADRID" ORDER BY clientes.codigo_cliente
+-- ----------------------------------------------------------------------------
+-- ## - Todos los clientes de Madrid y que no hayan hecho pedidos
+-- ----------------------------------------------------------------------------
+SELECT * FROM clientes LEFT JOIN pedidos 
+ON clientes.codigo_cliente = pedidos.codigo_cliente
+WHERE poblacion = 'MADRID' AND pedidos.codigo_cliente IS NULL
+ORDER BY clientes.codigo_cliente
+-- ----------------------------------------------------------------------------
+-- ## - Right Join: La información de la tabla de la derecha (pedidos) y 
+-- y la información común entre las tablas: clientes y pedidos
+-- Todos pedidos que se hayan hecho, así no tengan clientes asociados (OJO)
+-- ----------------------------------------------------------------------------
+SELECT * FROM clientes RIGHT JOIN pedidos 
+ON clientes.codigo_cliente = pedidos.codigo_cliente
+ORDER BY clientes.codigo_cliente
+-- ----------------------------------------------------------------------------
+-- ## - Consultas multitabla: Escalonada, de lista, correlacionada
+-- SELECT dentro de otro SELECT
+-- ----------------------------------------------------------------------------
