@@ -52,7 +52,7 @@ INSERT INTO USUARIOS VALUES
 (4, 'seller-1', 'Jesús', 'Briceño', 'jesus@gmail.com'),
 (2, 'person-1', 'Ezequiel', 'Pantoja', 'ezequiel@gmail.com'),
 (2, 'person-2', 'Camilo', 'Céspedes', 'camilo@gmail.com'),
-(3, 'customer-2', 'Jorge', 'Campos', 'jorge@gmail.com');
+(3, 'customer-2', 'Jorge', 'Campos', 'jorge@gmail.com'),
 (1, 'admin-2', 'Pepito', 'Perez', 'pepito@gmail.com');
 
 INSERT INTO MENSAJES VALUES
@@ -64,10 +64,30 @@ INSERT INTO MENSAJES VALUES
 ('customer-1', '2022-10-02', 'Devolución Dinero', 'Aun no llega el producto');
 
 INSERT INTO CREDENCIALES VALUES
-('admin-1', 123456, 'Av Siempre Viva', sha1('12345'), 1),
-('customer-1', 456789, 'Calle 3 con 4', sha1('12345'), 0),
-('seller-1', 987654, 'Carrera 5 con 7', sha1('12345'), 1),
-('customer-2', 654321, 'Tv 8 con 15', sha1('12345'), 0);
+('admin-1', 123456, "2022-06-11", 'Bogotá', 'Av Siempre Viva', sha1('12345'), 1),
+('customer-1', 456789, "2022-07-12", 'Cali', 'Calle 3 con 4', sha1('12345'), 0),
+('seller-1', 987654, "2022-08-13", 'Bogotá', 'Carrera 5 con 7', sha1('12345'), 1),
+('customer-2', 654321, "2022-08-28", 'Medellín', 'Tv 8 con 15', sha1('12345'), 0);
+
+INSERT INTO CATEGORIAS VALUES 
+(null, 'Mercado'),
+(null, 'Alimentos'),
+(null, 'Bebidas'),
+(null, 'Aseo');
+
+INSERT INTO PRODUCTOS VALUES 
+(1, 'prod-1', 'Papa', 950.03, 1, 'libra'),
+(1, 'prod-2', 'Zanahoria', 630.33, 1, 'libra'),
+(1, 'prod-3', 'Tomate', 750.55, 1, 'libra'),
+(2, 'prod-4', 'Arroz', 2500.00, 500, 'gramos'),
+(2, 'prod-5', 'aceite', 10500.00, 1, 'litro'),
+(2, 'prod-6', 'Lentejas', 3500.00, 1000, 'gramos'),
+(3, 'prod-7', 'Agua', 3000.00, 1.5, 'litro'),
+(3, 'prod-8', 'Gaseosa', 3500.00, 2.5, 'litro'),
+(3, 'prod-9', 'Cerveza', 2500.00, 1, 'botella'),
+(4, 'prod-10', 'Jabón Baño', 1200.00, 285, 'gramos'),
+(4, 'prod-11', 'Jabón Ropa', 12000.00, 1000, 'gramos'),
+(4, 'prod-12', 'Shampoo', 18500.00, 750, 'mililitros');
 
 -- ------------------------------------------------------------------------------------- --
 -- 1.1.2. Datos Incorrectos ------------------------------------------------------------ --
@@ -155,31 +175,22 @@ SELECT codigo_rol, codigo_user, correo_user FROM USUARIOS
 WHERE codigo_rol = 2 OR codigo_rol = 3;
 
 -- ------------------------------------------------------------------------------------- --
--- 2.4.1. Consultas con el Operador Lógico AND (Y). ------------------------------------ --
+-- 2.4.2. Consultas con el Operador Lógico AND (Y). ------------------------------------ --
 --        SELECT __ , __ FROM __ WHERE __ = __ AND __ = __ : --------------------------- --
 -- ------------------------------------------------------------------------------------- --
 SELECT codigo_rol, codigo_user, correo_user FROM USUARIOS 
 WHERE codigo_rol = 2 OR codigo_rol = 3;
 
-SELECT * FROM productos WHERE seccion = 'DEPORTES' AND pais_origen = 'USA';
+-- ------------------------------------------------------------------------------------- --
+-- 2.4.2. Consultas con el Operador Lógico AND (Y). ------------------------------------ --
+--        SELECT __ , __ FROM __ WHERE __ = __ AND __ = __ : --------------------------- --
+-- ------------------------------------------------------------------------------------- --
+SELECT codigo_cred, ciudad_cred FROM CREDENCIALES 
+WHERE ciudad_cred = 'Bogotá' AND estado_cred = 1;
 
 -- -------------------------------------------------------------------------------------
--- OPERADORES LÓGICOS Y DE COMPARACIÓN
--- LÓGICOS:      AND, OR, NOT
+-- OPERADORES: 
 -- COMPARACIÓN:  LIKE, <>, <=, >=, <, >, BEETWEEN, IN, ANY, ALL
--- -------------------------------------------------------------------------------------
--- ## - Seleccione los campos sección, nombre_articulo y precio de la tabla productos 
---      donde sección sea igual a 'CERÁMICA' y (realmente es 'OR') 'DEPORTES'
--- -------------------------------------------------------------------------------------
-SELECT seccion, nombre_articulo, precio FROM productos 
-WHERE seccion = 'CERÁMICA' OR seccion = 'DEPORTES';
--- -------------------------------------------------------------------------------------
--- ## - Seleccione todos los campos de la tabla productos donde sección sea igual a 
---      'DEPORTES' y su país de origen sea 'USA'
--- -------------------------------------------------------------------------------------
-SELECT * FROM productos WHERE seccion = 'DEPORTES' AND pais_origen = 'USA';
-
-
 
 -- -------------------------------------------------------------------------------------
 -- ## - Seleccione todos los campos de la tabla productos donde precio sea mayor 300

@@ -1,20 +1,20 @@
 -- -----------------------------------------------------
 -- ESTRUCTURA BBDD: BBDD_VENTAS
 -- -----------------------------------------------------
-CREATE SCHEMA BBDD_VENTAS DEFAULT CHARACTER SET utf8;
+CREATE SCHEMA BBDD_VENTAS DEFAULT CHARACTER SET utf8 ;
 USE BBDD_VENTAS;
 
 -- -----------------------------------------------------
--- TABLA: ROLES
+-- Table ROLES
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS ROLES (
+CREATE TABLE ROLES (
   codigo_rol INT NOT NULL AUTO_INCREMENT,
   nombre_rol VARCHAR(50) NOT NULL,
   PRIMARY KEY (codigo_rol)
 ) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
--- TABLA: USUARIOS
+-- Table USUARIOS
 -- -----------------------------------------------------
 CREATE TABLE USUARIOS (
   codigo_rol INT NOT NULL,
@@ -33,16 +33,19 @@ CREATE TABLE USUARIOS (
 ) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
--- TABLA: CREDENCIALES
+-- Table CREDENCIALES
 -- -----------------------------------------------------
 CREATE TABLE CREDENCIALES (
   codigo_cred VARCHAR(10) NOT NULL,
   identificacion_cred INT NOT NULL,
+  fecha_ingreso_cred DATE NOT NULL,
+  ciudad_cred VARCHAR(50) NOT NULL,
   direccion_cred VARCHAR(100) NOT NULL,
   pass_cred VARCHAR(150) NOT NULL,
   estado_cred TINYINT NOT NULL,
   PRIMARY KEY (codigo_cred),
   INDEX ind_credencial_usuario (codigo_cred ASC),
+  INDEX ind_codigo_cred_identificacion_cred (codigo_cred, identificacion_cred),
   UNIQUE INDEX uq_identificacion_cred (identificacion_cred ASC),
   CONSTRAINT chk_evitarPersona 
   CHECK (codigo_cred NOT LIKE '%person%'),
@@ -54,7 +57,7 @@ CREATE TABLE CREDENCIALES (
 ) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
--- TABLA: MENSAJES
+-- Table MENSAJES
 -- -----------------------------------------------------
 CREATE TABLE MENSAJES (
   codigo_user VARCHAR(10) NOT NULL,
@@ -70,7 +73,7 @@ CREATE TABLE MENSAJES (
 ) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
--- TABLA: CATEGORIAS
+-- Table CATEGORIAS
 -- -----------------------------------------------------
 CREATE TABLE CATEGORIAS (
   codigo_categoria INT NOT NULL AUTO_INCREMENT,
@@ -79,7 +82,7 @@ CREATE TABLE CATEGORIAS (
 ) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
--- TABLA: PRODUCTOS
+-- Table PRODUCTOS
 -- -----------------------------------------------------
 CREATE TABLE PRODUCTOS (
   codigo_categoria INT NOT NULL,
@@ -87,7 +90,7 @@ CREATE TABLE PRODUCTOS (
   nombre_producto VARCHAR(50) NOT NULL,
   precio_producto DECIMAL(10,2) NOT NULL,
   unidad_producto DECIMAL(5,2) NOT NULL,
-  medida_producto VARCHAR(20) NOT NULL,
+  medida_producto VARCHAR(20) NOT NULL,  
   PRIMARY KEY (codigo_producto),
   INDEX ind_producto_categoria (codigo_categoria ASC),
   CONSTRAINT fk_producto_categoria
@@ -98,7 +101,7 @@ CREATE TABLE PRODUCTOS (
 ) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
--- TABLA: PEDIDOS
+-- Table PEDIDOS
 -- -----------------------------------------------------
 CREATE TABLE PEDIDOS (
   codigo_pedido VARCHAR(10) NOT NULL,
@@ -112,7 +115,7 @@ CREATE TABLE PEDIDOS (
 ) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
--- TABLA: LISTA_PRODUCTOS
+-- Table LISTA_PRODUCTOS
 -- -----------------------------------------------------
 CREATE TABLE LISTA_PRODUCTOS (
   codigo_pedido VARCHAR(10) NOT NULL,
@@ -133,10 +136,11 @@ CREATE TABLE LISTA_PRODUCTOS (
 ) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
--- TABLA: CLIENTES
+-- Table CLIENTES
 -- -----------------------------------------------------
 CREATE TABLE CLIENTES (
   codigo_customer VARCHAR(10) NOT NULL,
+  edad_customer INT NOT NULL,
   PRIMARY KEY (codigo_customer),
   INDEX ind_cliente_credencial (codigo_customer ASC),
   CONSTRAINT fk_cliente_credencial
@@ -147,11 +151,10 @@ CREATE TABLE CLIENTES (
 ) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
--- TABLA: VENDEDORES
+-- Table VENDEDORES
 -- -----------------------------------------------------
 CREATE TABLE VENDEDORES (
   codigo_seller VARCHAR(10) NOT NULL,
-  fecha_ingreso_seller DATE NOT NULL,
   salario_seller DECIMAL(8,2) NOT NULL,
   PRIMARY KEY (codigo_seller),
   INDEX ind_vendedor_credencial (codigo_seller ASC),
@@ -163,7 +166,7 @@ CREATE TABLE VENDEDORES (
 ) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
--- TABLA: CREDENCIALES_PEDIDOS
+-- Table CREDENCIALES_PEDIDOS
 -- -----------------------------------------------------
 CREATE TABLE CREDENCIALES_PEDIDOS (
   codigo_cred VARCHAR(10) NOT NULL,
