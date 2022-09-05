@@ -1,13 +1,13 @@
 -- -----------------------------------------------------
 -- ESTRUCTURA BBDD: BBDD_VENTAS
 -- -----------------------------------------------------
-CREATE SCHEMA bbdd_ventas DEFAULT CHARACTER SET utf8 ;
-USE bbdd_ventas ;
+CREATE SCHEMA BBDD_VENTAS DEFAULT CHARACTER SET utf8;
+USE BBDD_VENTAS;
 
 -- -----------------------------------------------------
 -- TABLA: ROLES
 -- -----------------------------------------------------
-CREATE TABLE ROLES (
+CREATE TABLE IF NOT EXISTS ROLES (
   codigo_rol INT NOT NULL AUTO_INCREMENT,
   nombre_rol VARCHAR(50) NOT NULL,
   PRIMARY KEY (codigo_rol)
@@ -23,35 +23,35 @@ CREATE TABLE USUARIOS (
   apellidos_user VARCHAR(50) NOT NULL,
   correo_user VARCHAR(100) NOT NULL,
   PRIMARY KEY (codigo_user),
-  INDEX ind_usuarios_roles (codigo_rol ASC) ,
-  UNIQUE INDEX uq_correo_user (correo_user ASC) ,
-  CONSTRAINT fk_usuarios_roles
+  INDEX ind_usuario_rol (codigo_rol ASC),
+  UNIQUE INDEX uq_correo_user (correo_user ASC),
+  CONSTRAINT fk_usuario_rol
     FOREIGN KEY (codigo_rol)
     REFERENCES ROLES (codigo_rol)
     ON DELETE CASCADE
     ON UPDATE CASCADE
 ) ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
 -- TABLA: CREDENCIALES
 -- -----------------------------------------------------
 CREATE TABLE CREDENCIALES (
-  codigo_user VARCHAR(10) NOT NULL,
-  identificacion_user INT NOT NULL,
-  direccion_user VARCHAR(100) NOT NULL,
-  pass_user VARCHAR(150) NOT NULL,
-  estado_user TINYINT NOT NULL,
-  INDEX ind_credenciales_usuarios (codigo_user ASC) ,
-  PRIMARY KEY (codigo_user),
-  UNIQUE INDEX uq_identificacion_user (identificacion_user ASC) ,
-  CONSTRAINT fk_credenciales_usuarios
-    FOREIGN KEY (codigo_user)
+  codigo_cred VARCHAR(10) NOT NULL,
+  identificacion_cred INT NOT NULL,
+  direccion_cred VARCHAR(100) NOT NULL,
+  pass_cred VARCHAR(150) NOT NULL,
+  estado_cred TINYINT NOT NULL,
+  PRIMARY KEY (codigo_cred),
+  INDEX ind_credencial_usuario (codigo_cred ASC),
+  UNIQUE INDEX uq_identificacion_cred (identificacion_cred ASC),
+  CONSTRAINT chk_evitarPersona 
+  CHECK (codigo_cred NOT LIKE '%person%'),
+  CONSTRAINT fk_credencial_usuario
+    FOREIGN KEY (codigo_cred)
     REFERENCES USUARIOS (codigo_user)
     ON DELETE CASCADE
-    ON UPDATE CASCADE)
-ENGINE = InnoDB;
-
+    ON UPDATE CASCADE
+) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
 -- TABLA: MENSAJES
@@ -61,24 +61,22 @@ CREATE TABLE MENSAJES (
   fecha_mensaje DATE NOT NULL,
   asunto_mensaje VARCHAR(50) NOT NULL,
   descripcion_mensaje VARCHAR(300) NOT NULL,
-  INDEX ind_mensajes_usuarios (codigo_user ASC) ,
-  CONSTRAINT fk_mensajes_usuarios
+  INDEX ind_mensaje_usuario (codigo_user ASC),
+  CONSTRAINT fk_mensaje_usuario
     FOREIGN KEY (codigo_user)
     REFERENCES USUARIOS (codigo_user)
     ON DELETE CASCADE
     ON UPDATE CASCADE
 ) ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
--- TABLA: CATEGORÍAS
+-- TABLA: CATEGORIAS
 -- -----------------------------------------------------
 CREATE TABLE CATEGORIAS (
   codigo_categoria INT NOT NULL AUTO_INCREMENT,
   nombre_categoria VARCHAR(50) NOT NULL,
   PRIMARY KEY (codigo_categoria)
 ) ENGINE = InnoDB;
-
 
 -- -----------------------------------------------------
 -- TABLA: PRODUCTOS
@@ -91,14 +89,13 @@ CREATE TABLE PRODUCTOS (
   unidad_producto DECIMAL(5,2) NOT NULL,
   medida_producto VARCHAR(20) NOT NULL,
   PRIMARY KEY (codigo_producto),
-  INDEX ind_productos_categorias (codigo_categoria ASC) ,
-  CONSTRAINT fk_productos_categorias
+  INDEX ind_producto_categoria (codigo_categoria ASC),
+  CONSTRAINT fk_producto_categoria
     FOREIGN KEY (codigo_categoria)
     REFERENCES CATEGORIAS (codigo_categoria)
     ON DELETE CASCADE
     ON UPDATE CASCADE
 ) ENGINE = InnoDB;
-
 
 -- -----------------------------------------------------
 -- TABLA: PEDIDOS
@@ -114,7 +111,6 @@ CREATE TABLE PEDIDOS (
   PRIMARY KEY (codigo_pedido)
 ) ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
 -- TABLA: LISTA_PRODUCTOS
 -- -----------------------------------------------------
@@ -122,20 +118,33 @@ CREATE TABLE LISTA_PRODUCTOS (
   codigo_pedido VARCHAR(10) NOT NULL,
   codigo_producto VARCHAR(10) NOT NULL,
   cantidad_productos INT NOT NULL,
-  INDEX ind_lista_productos_pedidos (codigo_pedido ASC) ,
-  INDEX ind_lista_productos_productos (codigo_producto ASC) ,
-  CONSTRAINT fk_lista_productos_pedidos
+  INDEX ind_lista_productos_pedido (codigo_pedido ASC),
+  INDEX ind_lista_producto_producto (codigo_producto ASC),
+  CONSTRAINT fk_lista_productos_pedido
     FOREIGN KEY (codigo_pedido)
     REFERENCES PEDIDOS (codigo_pedido)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
-  CONSTRAINT fk_lista_productos_productos
+  CONSTRAINT fk_lista_productos_producto
     FOREIGN KEY (codigo_producto)
     REFERENCES PRODUCTOS (codigo_producto)
     ON DELETE CASCADE
     ON UPDATE CASCADE
 ) ENGINE = InnoDB;
 
+-- -----------------------------------------------------
+-- TABLA: CLIENTES
+-- -----------------------------------------------------
+CREATE TABLE CLIENTES (
+  codigo_customer VARCHAR(10) NOT NULL,
+  PRIMARY KEY (codigo_customer),
+  INDEX ind_cliente_credencial (codigo_customer ASC),
+  CONSTRAINT fk_cliente_credencial
+    FOREIGN KEY (codigo_customer)
+    REFERENCES CREDENCIALES (codigo_cred)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
 -- TABLA: VENDEDORES
@@ -145,52 +154,36 @@ CREATE TABLE VENDEDORES (
   fecha_ingreso_seller DATE NOT NULL,
   salario_seller DECIMAL(8,2) NOT NULL,
   PRIMARY KEY (codigo_seller),
-  INDEX ind_vendedores_credenciales (codigo_seller ASC) ,
-  CONSTRAINT fk_vendedores_credenciales
+  INDEX ind_vendedor_credencial (codigo_seller ASC),
+  CONSTRAINT fk_vendedor_credencial
     FOREIGN KEY (codigo_seller)
-    REFERENCES CREDENCIALES (codigo_user)
+    REFERENCES CREDENCIALES (codigo_cred)
     ON DELETE CASCADE
     ON UPDATE CASCADE
 ) ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- TABLA: CLIENTES
--- -----------------------------------------------------
-CREATE TABLE CLIENTES (
-  codigo_customer VARCHAR(10) NOT NULL,
-  PRIMARY KEY (codigo_customer),
-  INDEX ind_clientes_credenciales (codigo_customer ASC) ,
-  CONSTRAINT fk_clientes_credenciales
-    FOREIGN KEY (codigo_customer)
-    REFERENCES CREDENCIALES (codigo_user)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE
-) ENGINE = InnoDB;
-
 
 -- -----------------------------------------------------
 -- TABLA: CREDENCIALES_PEDIDOS
 -- -----------------------------------------------------
 CREATE TABLE CREDENCIALES_PEDIDOS (
-  codigo_user VARCHAR(10) NOT NULL,
+  codigo_cred VARCHAR(10) NOT NULL,
   codigo_pedido VARCHAR(10) NOT NULL,
-  INDEX ind_credenciales_pedidos_vendedor (codigo_user ASC) ,
-  INDEX ind_credenciales_pedidos_pedido (codigo_pedido ASC) ,
-  INDEX ind_usuarios_pedidos (codigo_user ASC) ,
-  CONSTRAINT fk_credenciales_pedidos_seller
-    FOREIGN KEY (codigo_user)
+  INDEX ind_credencial_pedido_cliente (codigo_cred ASC),
+  INDEX ind_credencial_pedido_vendedor (codigo_cred ASC),
+  INDEX ind_credencial_pedido_pedido (codigo_pedido ASC),
+  CONSTRAINT fk_credencial_pedido_cliente
+    FOREIGN KEY (codigo_cred)
+    REFERENCES CLIENTES (codigo_customer)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT fk_credencial_pedido_vendedor
+    FOREIGN KEY (codigo_cred)
     REFERENCES VENDEDORES (codigo_seller)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
-  CONSTRAINT fk_credenciales_pedidos_pedido
+  CONSTRAINT fk_credencial_pedido_pedido
     FOREIGN KEY (codigo_pedido)
     REFERENCES PEDIDOS (codigo_pedido)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE,
-  CONSTRAINT fk_credenciales_pedidos
-    FOREIGN KEY (codigo_user)
-    REFERENCES CLIENTES (codigo_customer)
     ON DELETE CASCADE
     ON UPDATE CASCADE
 ) ENGINE = InnoDB;

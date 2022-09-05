@@ -10,16 +10,16 @@
 /* 03. Eliminar BBDD : .................... DROP DATABASE __                             */
 /* 04. Mostrar Tablas : ................... SHOW TABLES __                               */
 /* 05. Mostrar Creación Tabla : ........... SHOW CREATE TABLE __                         */
-/* 06. Eliminar Restricción : ............. ALTER TABLE __ DROP CONSTRAINT __            */
-/* 07. Limpiar Registros : ................ TRUNCATE __                                  */
-/* 08. Eliminar Índice : .................. ALTER TABLE __ DROP INDEX __                 */
-/* 09. Eliminar Llave Primaria : .......... ALTER TABLE __ DROP PRIMARY KEY              */
-/* 10. Mostar Columnas : .................. SHOW COLUMNS FROM __                         */
-/* 11. Agregar Columna : .................. ALTER TABLE __ ADD __ __                     */
-/* 12. Renombrar Columna : ................ ALTER TABLE __ CHANGE __ __                  */
-/* 13. Eliminar Columna : ................. ALTER TABLE __ DROP __                       */
-/* 14. Agregar Valor x Defecto Columna : .. ALTER TABLE __ ALTER __ SET DEFAULT __       */
-/* 15. Eliminar Valor x Defecto Columna : . ALTER TABLE __ ALTER __ DROP DEFAULT         */
+/* 06. Mostar Columnas : .................. SHOW COLUMNS FROM __                         */
+/* 07. Agregar Columna : .................. ALTER TABLE __ ADD __ __                     */
+/* 08. Renombrar Columna : ................ ALTER TABLE __ CHANGE __ __                  */
+/* 09. Eliminar Columna : ................. ALTER TABLE __ DROP __                       */
+/* 10. Agregar Valor x Defecto Columna : .. ALTER TABLE __ ALTER __ SET DEFAULT __       */
+/* 11. Eliminar Valor x Defecto Columna : . ALTER TABLE __ ALTER __ DROP DEFAULT         */
+/* 12. Eliminar Restricción : ............. ALTER TABLE __ DROP CONSTRAINT __            */
+/* 13. Eliminar Índice : .................. ALTER TABLE __ DROP INDEX __                 */
+/* 14. Eliminar Llave Primaria : .......... ALTER TABLE __ DROP PRIMARY KEY              */
+/* 15. Limpiar Registros : ................ TRUNCATE __                                  */
 /* 16. Eliminar Tabla : ................... DROP TABLE __                                */
 /* 17. Crear Tabla : ...................... CREATE TABLE __ ( __ , __ )                  */
 /* 18. Renombrar Tabla : .................. RENAME TABLE __ TO __                        */
@@ -62,61 +62,61 @@ SHOW CREATE TABLE USUARIOS;
 SHOW CREATE TABLE CREDENCIALES;
 SHOW CREATE TABLE MENSAJES;
 -- ------------------------------------------------------------------------------------- --
--- 06. Eliminar Restricción. ----------------------------------------------------------- --
---     ALTER TABLE __ DROP CONSTRAINT __ : --------------------------------------------- --
--- ------------------------------------------------------------------------------------- --
-ALTER TABLE USUARIOS DROP CONSTRAINT fk_usuarios_roles;
-ALTER TABLE CREDENCIALES DROP CONSTRAINT fk_credenciales_usuarios;
-ALTER TABLE CREDENCIALES DROP CONSTRAINT chk_evitarPersona;
-ALTER TABLE MENSAJES DROP CONSTRAINT fk_mensajes_usuarios;
--- ------------------------------------------------------------------------------------- --
--- 07. Limpiar Registros. -------------------------------------------------------------- --
---     TRUNCATE __ : ------------------------------------------------------------------- --
--- ------------------------------------------------------------------------------------- --
-TRUNCATE USUARIOS;
--- ------------------------------------------------------------------------------------- --
--- 08. Eliminar Índice. ---------------------------------------------------------------- --
---     ALTER TABLE __ DROP INDEX __ : -------------------------------------------------- --
--- ------------------------------------------------------------------------------------- --
-ALTER TABLE USUARIOS DROP INDEX ind_usuarios_roles;
-ALTER TABLE USUARIOS DROP INDEX uq_identificacion_user;
--- ------------------------------------------------------------------------------------- --
--- 09. Eliminar Llave Primaria. -------------------------------------------------------- --
---     ALTER TABLE __ DROP PRIMARY KEY : ----------------------------------------------- --
--- ------------------------------------------------------------------------------------- --
-ALTER TABLE USUARIOS DROP PRIMARY KEY;
-ALTER TABLE CREDENCIALES DROP PRIMARY KEY;
--- ------------------------------------------------------------------------------------- --
--- 10. Mostar Columnas. ---------------------------------------------------------------- --
+-- 06. Mostar Columnas. ---------------------------------------------------------------- --
 --     SHOW COLUMNS FROM __ : ---------------------------------------------------------- --
 -- ------------------------------------------------------------------------------------- --
 SHOW COLUMNS FROM USUARIOS;
 -- ------------------------------------------------------------------------------------- --
--- 11. Agregar Columna. ---------------------------------------------------------------- --
+-- 07. Agregar Columna. ---------------------------------------------------------------- --
 --     ALTER TABLE __ ADD __ __ : ------------------------------------------------------ --
 -- ------------------------------------------------------------------------------------- --
 ALTER TABLE USUARIOS ADD correo_usuario VARCHAR(100);
 -- ------------------------------------------------------------------------------------- --
--- 12. Renombrar Columna. -------------------------------------------------------------- --
+-- 08. Renombrar Columna. -------------------------------------------------------------- --
 --     ALTER TABLE __ CHANGE __ __ : --------------------------------------------------- --
 -- ------------------------------------------------------------------------------------- --
 ALTER TABLE USUARIOS CHANGE correo_usuario usuario_correo DATE;
 ALTER TABLE USUARIOS CHANGE usuario_correo correo_usuario VARCHAR(100);
 -- ------------------------------------------------------------------------------------- --
--- 13. Eliminar Columna. --------------------------------------------------------------- --
+-- 09. Eliminar Columna. --------------------------------------------------------------- --
 --     ALTER TABLE __ DROP __ : -------------------------------------------------------- --
 -- ------------------------------------------------------------------------------------- --
 ALTER TABLE USUARIOS DROP correo_usuario;
 -- ------------------------------------------------------------------------------------- --
--- 14. Agregar Valor x Defecto Columna. ------------------------------------------------ --
+-- 10. Agregar Valor x Defecto Columna. ------------------------------------------------ --
 --     ALTER TABLE __ ALTER __ SET DEFAULT __ :	---------------------------------------- --
 -- ------------------------------------------------------------------------------------- --
 ALTER TABLE USUARIOS ALTER codigo_rol SET DEFAULT 2;
 -- ------------------------------------------------------------------------------------- --
--- 15. Eliminar Valor x Defecto Columna. ----------------------------------------------- --
+-- 11. Eliminar Valor x Defecto Columna. ----------------------------------------------- --
 --     ALTER TABLE __ ALTER __ DROP DEFAULT : ------------------------------------------ --
 -- ------------------------------------------------------------------------------------- --
 ALTER TABLE USUARIOS ALTER codigo_rol DROP DEFAULT;
+-- ------------------------------------------------------------------------------------- --
+-- 12. Eliminar Restricción. ----------------------------------------------------------- --
+--     ALTER TABLE __ DROP CONSTRAINT __ : --------------------------------------------- --
+-- ------------------------------------------------------------------------------------- --
+ALTER TABLE USUARIOS DROP CONSTRAINT fk_usuario_rol;
+ALTER TABLE CREDENCIALES DROP CONSTRAINT chk_evitarPersona;
+ALTER TABLE CREDENCIALES DROP CONSTRAINT fk_credencial_usuario;
+ALTER TABLE MENSAJES DROP CONSTRAINT fk_mensaje_usuario;
+-- ------------------------------------------------------------------------------------- --
+-- 13. Eliminar Índice. ---------------------------------------------------------------- --
+--     ALTER TABLE __ DROP INDEX __ : -------------------------------------------------- --
+-- ------------------------------------------------------------------------------------- --
+ALTER TABLE USUARIOS DROP INDEX ind_usuarios_roles;
+ALTER TABLE USUARIOS DROP INDEX uq_identificacion_user;
+-- ------------------------------------------------------------------------------------- --
+-- 14. Eliminar Llave Primaria. -------------------------------------------------------- --
+--     ALTER TABLE __ DROP PRIMARY KEY : ----------------------------------------------- --
+-- ------------------------------------------------------------------------------------- --
+ALTER TABLE USUARIOS DROP PRIMARY KEY;
+ALTER TABLE CREDENCIALES DROP PRIMARY KEY;
+-- ------------------------------------------------------------------------------------- --
+-- 15. Limpiar Registros. -------------------------------------------------------------- --
+--     TRUNCATE __ : ------------------------------------------------------------------- --
+-- ------------------------------------------------------------------------------------- --
+TRUNCATE USUARIOS;
 -- ------------------------------------------------------------------------------------- --
 -- 16. Eliminar Tabla. ----------------------------------------------------------------- --
 --     DROP TABLE __ : ----------------------------------------------------------------- --
@@ -167,7 +167,7 @@ CREATE UNIQUE INDEX uq_identificacion_user ON USUARIOS (identificacion_user);
 -- ------------------------------------------------------------------------------------- --
 ALTER TABLE CREDENCIALES
 ADD CONSTRAINT chk_evitarPersona 
-CHECK (codigo_user NOT LIKE '%person%');
+CHECK (codigo_cred NOT LIKE '%person%');
 
 ALTER TABLE USUARIOS ADD 
 CONSTRAINT fk_usuarios_roles 
