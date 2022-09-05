@@ -21,7 +21,7 @@
 -- ------------------------------------------------------------------------------------- --
 
 -- ------------------------------------------
--- 01.1. Datos Válidos
+-- 01.1. Datos Correctos
 -- ------------------------------------------
 INSERT INTO ROLES VALUES 
 (null, 'admin'),
@@ -33,36 +33,56 @@ INSERT INTO USUARIOS VALUES
 (1, 'admin-1', 'Albeiro', 'Ramos', 'profealbeiro2020@gmail.com'),
 (3, 'customer-1', 'Marinita', 'García', 'marinita@gmail.com'),
 (4, 'seller-1', 'Jesús', 'Briceño', 'jesus@gmail.com'),
-(2, 'person-1', 'Ezequiel', 'Pantoja', 'marcos@gmail.com'),
-(2, 'person-2', 'Camilo', 'Céspedes', 'juana@gmail.com'),
-(1, 'admin-2', 'Jorge', 'Campos', 'jorge@gmail.com');
-
-INSERT INTO CREDENCIALES VALUES
-('admin-1', 123456, sha1('12345')),
-('customer-1', 65431, sha1('12345')),
-('seller-1', 987654, sha1('12345')),
-('admin-2', 852369, sha1('12345'));
+(2, 'person-1', 'Ezequiel', 'Pantoja', 'ezequiel@gmail.com'),
+(2, 'person-2', 'Camilo', 'Céspedes', 'camilo@gmail.com'),
+(3, 'customer-2', 'Jorge', 'Campos', 'jorge@gmail.com');
 
 INSERT INTO MENSAJES VALUES
-('person-1', '2022-08-15', 'Solicitud de Información', 'Quisiera saber sobre los cursos que ofrecen');
+('person-1', '2022-08-15', 'Solicitud de Información', 'Quisiera saber sobre... '),
+('seller-1', '2022-08-27', 'Reunión Vendedores', 'El próximo fin de semana...'),
+('person-2', '2022-08-27', 'Productos a crédito', 'Qué papeles piden para...'),
+('admin-1', '2022-08-31', 'Mantenimiento Sistema', 'Se informa a los usuarios...'),
+('customer-1', '2022-09-01', 'No tengo el producto', 'Aun no llega el producto'),
+('customer-1', '2022-10-02', 'Devolución Dinero', 'Aun no llega el producto');
+
+INSERT INTO CREDENCIALES VALUES
+('admin-1', 123456, 'Av Siempre Viva', sha1('12345'), 1),
+('customer-1', 456789, 'Calle 3 con 4', sha1('12345'), 0),
+('seller-1', 987654, 'Carrera 5 con 7', sha1('12345'), 1),
+('customer-2', 654321, 'Tv 8 con 15', sha1('12345'), 0);
 
 -- ------------------------------------------
--- 01.2. Datos NO válidos
+-- 01.2. Datos Incorrectos
 -- ------------------------------------------
 INSERT INTO USUARIOS VALUES 
 (5, 'customer-3', 'Alejandra', 'Martínez', 'alejandra@gmail.com');
 
 INSERT INTO USUARIOS VALUES 
-(4, 'customer-1', 'Alejandra', 'Martínez', 'alejandra@gmail.com');
+(3, 'customer-1', 'Wilson', 'Cifuentes', 'wilson@gmail.com');
+
+INSERT INTO USUARIOS VALUES 
+(3, 'seller-1', 'Wilson', 'Cifuentes', 'wilson@gmail.com');
+
+INSERT INTO MENSAJES VALUES
+('person-3', '2022-08-15', 'Solicitud de Información', 'Quisiera saber sobre... ');
+
+INSERT INTO CREDENCIALES VALUES
+('admin-1', 123456, 'Av Siempre Viva', sha1('12345'), 1),
+('customer-1', 456789, 'Calle 3 con 4', sha1('12345'), 0),
+('seller-1', 987654, 'Carrera 5 con 7', sha1('12345'), 1),
+('customer-2', 654321, 'Tv 8 con 15', sha1('12345'), 0);
 
 INSERT INTO CREDENCIALES VALUES 
-('admin-2', 666555, sha1('45678'));
+('admin-1', 666555, 'Av Matamoros', sha1('45678'), 1);
 
 INSERT INTO CREDENCIALES VALUES 
-('admin-3', 444777, sha1('45678'));
+('admin-2', 666555, 'Av Matamoros', sha1('45678'), 1);
+
+INSERT INTO CREDENCIALES VALUES
+('admin-2', 123456, 'Carrera 2 con 15', sha1('12345'), 1);
 
 INSERT INTO CREDENCIALES VALUES 
-('person-1', 888999, sha1('12345'));
+('person-1', 444555, 'Calle 2 con 3', sha1('12345'), 1);
 
 -- -------------------------------------------------------------------------------------
 -- ## - ACTUALIZAR: UPDATE, SET

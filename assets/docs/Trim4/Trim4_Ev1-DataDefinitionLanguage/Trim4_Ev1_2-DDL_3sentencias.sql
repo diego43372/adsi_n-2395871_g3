@@ -9,13 +9,13 @@
 /* 02. Usar BBDD : ........................ USE __                                       */
 /* 03. Eliminar BBDD : .................... DROP DATABASE __                             */
 /* 04. Mostrar Tablas : ................... SHOW TABLES __                               */
-/* 05. Mostrar Creación Tabla : ........... SHOW CREATE TABLE __                         */
-/* 06. Mostar Columnas : .................. SHOW COLUMNS FROM __                         */
-/* 07. Agregar Columna : .................. ALTER TABLE __ ADD __ __                     */
-/* 08. Renombrar Columna : ................ ALTER TABLE __ CHANGE __ __                  */
-/* 09. Eliminar Columna : ................. ALTER TABLE __ DROP __                       */
-/* 10. Agregar Valor x Defecto Columna : .. ALTER TABLE __ ALTER __ SET DEFAULT __       */
-/* 11. Eliminar Valor x Defecto Columna : . ALTER TABLE __ ALTER __ DROP DEFAULT         */
+/* 05. Mostar Columnas : .................. SHOW COLUMNS FROM __                         */
+/* 06. Agregar Columna : .................. ALTER TABLE __ ADD __ __                     */
+/* 07. Renombrar Columna : ................ ALTER TABLE __ CHANGE __ __                  */
+/* 08. Eliminar Columna : ................. ALTER TABLE __ DROP __                       */
+/* 09. Agregar Valor x Defecto Columna : .. ALTER TABLE __ ALTER __ SET DEFAULT __       */
+/* 10. Eliminar Valor x Defecto Columna : . ALTER TABLE __ ALTER __ DROP DEFAULT         */
+/* 11. Mostrar Creación Tabla : ........... SHOW CREATE TABLE __                         */
 /* 12. Eliminar Restricción : ............. ALTER TABLE __ DROP CONSTRAINT __            */
 /* 13. Eliminar Índice : .................. ALTER TABLE __ DROP INDEX __                 */
 /* 14. Eliminar Llave Primaria : .......... ALTER TABLE __ DROP PRIMARY KEY              */
@@ -55,43 +55,42 @@ DROP DATABASE BBDD_VENTAS;
 -- ------------------------------------------------------------------------------------- --
 SHOW TABLES;
 -- ------------------------------------------------------------------------------------- --
--- 05. Mostrar Creación Tabla. --------------------------------------------------------- --
+-- 05. Mostar Columnas. ---------------------------------------------------------------- --
+--     SHOW COLUMNS FROM __ : ---------------------------------------------------------- --
+-- ------------------------------------------------------------------------------------- --
+SHOW COLUMNS FROM USUARIOS;
+-- ------------------------------------------------------------------------------------- --
+-- 06. Agregar Columna. ---------------------------------------------------------------- --
+--     ALTER TABLE __ ADD __ __ : ------------------------------------------------------ --
+-- ------------------------------------------------------------------------------------- --
+ALTER TABLE USUARIOS ADD direccion_user DATE;
+-- ------------------------------------------------------------------------------------- --
+-- 07. Renombrar Columna. -------------------------------------------------------------- --
+--     ALTER TABLE __ CHANGE __ __ : --------------------------------------------------- --
+-- ------------------------------------------------------------------------------------- --
+ALTER TABLE USUARIOS CHANGE direccion_user user_direccion VARCHAR(100);
+-- ------------------------------------------------------------------------------------- --
+-- 08. Eliminar Columna. --------------------------------------------------------------- --
+--     ALTER TABLE __ DROP __ : -------------------------------------------------------- --
+-- ------------------------------------------------------------------------------------- --
+ALTER TABLE USUARIOS DROP user_direccion;
+-- ------------------------------------------------------------------------------------- --
+-- 09. Agregar Valor x Defecto Columna. ------------------------------------------------ --
+--     ALTER TABLE __ ALTER __ SET DEFAULT __ :	---------------------------------------- --
+-- ------------------------------------------------------------------------------------- --
+ALTER TABLE USUARIOS ALTER codigo_rol SET DEFAULT 2;
+-- ------------------------------------------------------------------------------------- --
+-- 10. Eliminar Valor x Defecto Columna. ----------------------------------------------- --
+--     ALTER TABLE __ ALTER __ DROP DEFAULT : ------------------------------------------ --
+-- ------------------------------------------------------------------------------------- --
+ALTER TABLE USUARIOS ALTER codigo_rol DROP DEFAULT;
+-- ------------------------------------------------------------------------------------- --
+-- 11. Mostrar Creación Tabla. --------------------------------------------------------- --
 --     SHOW CREATE TABLE __ : ---------------------------------------------------------- --
 -- ------------------------------------------------------------------------------------- --
 SHOW CREATE TABLE USUARIOS;
 SHOW CREATE TABLE CREDENCIALES;
 SHOW CREATE TABLE MENSAJES;
--- ------------------------------------------------------------------------------------- --
--- 06. Mostar Columnas. ---------------------------------------------------------------- --
---     SHOW COLUMNS FROM __ : ---------------------------------------------------------- --
--- ------------------------------------------------------------------------------------- --
-SHOW COLUMNS FROM USUARIOS;
--- ------------------------------------------------------------------------------------- --
--- 07. Agregar Columna. ---------------------------------------------------------------- --
---     ALTER TABLE __ ADD __ __ : ------------------------------------------------------ --
--- ------------------------------------------------------------------------------------- --
-ALTER TABLE USUARIOS ADD correo_usuario VARCHAR(100);
--- ------------------------------------------------------------------------------------- --
--- 08. Renombrar Columna. -------------------------------------------------------------- --
---     ALTER TABLE __ CHANGE __ __ : --------------------------------------------------- --
--- ------------------------------------------------------------------------------------- --
-ALTER TABLE USUARIOS CHANGE correo_usuario usuario_correo DATE;
-ALTER TABLE USUARIOS CHANGE usuario_correo correo_usuario VARCHAR(100);
--- ------------------------------------------------------------------------------------- --
--- 09. Eliminar Columna. --------------------------------------------------------------- --
---     ALTER TABLE __ DROP __ : -------------------------------------------------------- --
--- ------------------------------------------------------------------------------------- --
-ALTER TABLE USUARIOS DROP correo_usuario;
--- ------------------------------------------------------------------------------------- --
--- 10. Agregar Valor x Defecto Columna. ------------------------------------------------ --
---     ALTER TABLE __ ALTER __ SET DEFAULT __ :	---------------------------------------- --
--- ------------------------------------------------------------------------------------- --
-ALTER TABLE USUARIOS ALTER codigo_rol SET DEFAULT 2;
--- ------------------------------------------------------------------------------------- --
--- 11. Eliminar Valor x Defecto Columna. ----------------------------------------------- --
---     ALTER TABLE __ ALTER __ DROP DEFAULT : ------------------------------------------ --
--- ------------------------------------------------------------------------------------- --
-ALTER TABLE USUARIOS ALTER codigo_rol DROP DEFAULT;
 -- ------------------------------------------------------------------------------------- --
 -- 12. Eliminar Restricción. ----------------------------------------------------------- --
 --     ALTER TABLE __ DROP CONSTRAINT __ : --------------------------------------------- --
@@ -104,8 +103,8 @@ ALTER TABLE MENSAJES DROP CONSTRAINT fk_mensaje_usuario;
 -- 13. Eliminar Índice. ---------------------------------------------------------------- --
 --     ALTER TABLE __ DROP INDEX __ : -------------------------------------------------- --
 -- ------------------------------------------------------------------------------------- --
-ALTER TABLE USUARIOS DROP INDEX ind_usuarios_roles;
-ALTER TABLE USUARIOS DROP INDEX uq_identificacion_user;
+ALTER TABLE USUARIOS DROP INDEX ind_usuario_rol;
+ALTER TABLE USUARIOS DROP INDEX uq_correo_user;
 -- ------------------------------------------------------------------------------------- --
 -- 14. Eliminar Llave Primaria. -------------------------------------------------------- --
 --     ALTER TABLE __ DROP PRIMARY KEY : ----------------------------------------------- --
@@ -126,12 +125,12 @@ DROP TABLE USUARIOS;
 -- 17. Crear Tabla. -------------------------------------------------------------------- --
 --     CREATE TABLE __ ( __ , __ ) : --------------------------------------------------- --
 -- ------------------------------------------------------------------------------------- --
-CREATE TABLE USUARIOS (
+CREATE TABLE USUARIOS (  
   codigo_rol INT NOT NULL,
   codigo_user VARCHAR(10) NOT NULL,
-  identificacion_user INT NOT NULL,
   nombres_user VARCHAR(50) NOT NULL,
-  apellidos_user VARCHAR(50) NOT NULL
+  apellidos_user VARCHAR(50) NOT NULL,
+  correo_user VARCHAR(100) NOT NULL
 );
 -- ------------------------------------------------------------------------------------- --
 -- 18. Renombrar Tabla. ---------------------------------------------------------------- --
@@ -144,45 +143,45 @@ RENAME TABLE PERSONAS TO USUARIOS;
 --     ALTER TABLE __ ADD PRIMARY KEY ( __ ) : ----------------------------------------- --
 -- ------------------------------------------------------------------------------------- --
 ALTER TABLE USUARIOS ADD PRIMARY KEY (codigo_user);
-ALTER TABLE CREDENCIALES ADD PRIMARY KEY (codigo_user);
+ALTER TABLE CREDENCIALES ADD PRIMARY KEY (codigo_cred);
 -- ------------------------------------------------------------------------------------- --
 -- 20. Crear Índice Campo. ------------------------------------------------------------- --
 --     CREATE INDEX __ ON __ ( __ ) :  ------------------------------------------------- --
 -- ------------------------------------------------------------------------------------- --
-CREATE INDEX ind_usuarios_roles ON USUARIOS (codigo_rol);
+CREATE INDEX ind_usuario_rol ON USUARIOS (codigo_rol);
 -- ------------------------------------------------------------------------------------- --
 -- 21. Crear Índice Multicampo. -------------------------------------------------------- --
 --     CREATE INDEX _ ON _ ( __ , __ ) : ----------------------------------------------- -- 
 -- ------------------------------------------------------------------------------------- --
-CREATE INDEX ind_codigo_user_correo_user ON CREDENCIALES (codigo_user, correo_user);
+CREATE INDEX ind_codigo_cred_identificacion_cred
+ON CREDENCIALES (codigo_cred, identificacion_cred);
 -- ------------------------------------------------------------------------------------- --
 -- 22. Crear Índice Único. ------------------------------------------------------------- --
 --     CREATE UNIQUE INDEX __ ON __ ( __ ) : ------------------------------------------- --
 -- ------------------------------------------------------------------------------------- --
-CREATE UNIQUE INDEX uq_identificacion_user ON USUARIOS (identificacion_user);
+CREATE UNIQUE INDEX uq_correo_user ON USUARIOS (correo_user);
 -- ------------------------------------------------------------------------------------- --
 -- 23. Crear Restricción. -------------------------------------------------------------- --
 --     ALTER TABLE __ ADD CONSTRAINT __ FOREIGN KEY ( __ ) REFERENCES __ ( __ ) -------- --
 --     ON DELETE CASCADE ON UPDATE CASCADE : ------------------------------------------- --
 -- ------------------------------------------------------------------------------------- --
-ALTER TABLE CREDENCIALES
-ADD CONSTRAINT chk_evitarPersona 
-CHECK (codigo_cred NOT LIKE '%person%');
-
 ALTER TABLE USUARIOS ADD 
-CONSTRAINT fk_usuarios_roles 
+CONSTRAINT fk_usuario_rol 
 	FOREIGN KEY (codigo_rol)
 	REFERENCES ROLES (codigo_rol)
 	ON DELETE CASCADE
 	ON UPDATE CASCADE;
+ALTER TABLE CREDENCIALES
+	ADD CONSTRAINT chk_evitarPersona 
+	CHECK (codigo_cred NOT LIKE '%person%');
 ALTER TABLE CREDENCIALES ADD 
-CONSTRAINT fk_credenciales_usuarios 
-	FOREIGN KEY (codigo_user)
+CONSTRAINT fk_credencial_usuario 
+	FOREIGN KEY (codigo_cred)
 	REFERENCES USUARIOS (codigo_user)
 	ON DELETE CASCADE
 	ON UPDATE CASCADE;
 ALTER TABLE MENSAJES ADD 
-CONSTRAINT fk_mensajes_usuarios 
+CONSTRAINT fk_mensaje_usuario 
 	FOREIGN KEY (codigo_user)
 	REFERENCES USUARIOS (codigo_user)
 	ON DELETE CASCADE
