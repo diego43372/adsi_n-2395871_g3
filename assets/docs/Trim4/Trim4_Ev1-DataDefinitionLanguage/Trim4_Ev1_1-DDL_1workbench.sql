@@ -37,8 +37,8 @@ CREATE TABLE IF NOT EXISTS `bbdd_ventas`.`USUARIOS` (
   `apellidos_user` VARCHAR(50) NOT NULL,
   `correo_user` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`codigo_user`),
-  INDEX `ind_usuario_rol` (`codigo_rol` ASC) INVISIBLE,
-  UNIQUE INDEX `uq_correo_user` (`correo_user` ASC) INVISIBLE,
+  INDEX `ind_usuario_rol` (`codigo_rol` ASC),
+  UNIQUE INDEX `uq_correo_user` (`correo_user` ASC),
   CONSTRAINT `fk_usuario_rol`
     FOREIGN KEY (`codigo_rol`)
     REFERENCES `bbdd_ventas`.`ROLES` (`codigo_rol`)
@@ -58,9 +58,9 @@ CREATE TABLE IF NOT EXISTS `bbdd_ventas`.`CREDENCIALES` (
   `direccion_cred` VARCHAR(100) NOT NULL,
   `pass_cred` VARCHAR(150) NOT NULL,
   `estado_cred` TINYINT NOT NULL,
-  INDEX `ind_credencial_usuario` (`codigo_cred` ASC) INVISIBLE,
+  INDEX `ind_credencial_usuario` (`codigo_cred` ASC),
   PRIMARY KEY (`codigo_cred`),
-  UNIQUE INDEX `uq_identificacion_cred` (`identificacion_cred` ASC) INVISIBLE,
+  UNIQUE INDEX `uq_identificacion_cred` (`identificacion_cred` ASC),
   CONSTRAINT `fk_credencial_usuario`
     FOREIGN KEY (`codigo_cred`)
     REFERENCES `bbdd_ventas`.`USUARIOS` (`codigo_user`)
@@ -77,7 +77,7 @@ CREATE TABLE IF NOT EXISTS `bbdd_ventas`.`MENSAJES` (
   `fecha_mensaje` DATE NOT NULL,
   `asunto_mensaje` VARCHAR(50) NOT NULL,
   `descripcion_mensaje` VARCHAR(300) NOT NULL,
-  INDEX `ind_mensaje_usuario` (`codigo_user` ASC) INVISIBLE,
+  INDEX `ind_mensaje_usuario` (`codigo_user` ASC),
   CONSTRAINT `fk_mensaje_usuario`
     FOREIGN KEY (`codigo_user`)
     REFERENCES `bbdd_ventas`.`USUARIOS` (`codigo_user`)
@@ -107,7 +107,7 @@ CREATE TABLE IF NOT EXISTS `bbdd_ventas`.`PRODUCTOS` (
   `unidad_producto` DECIMAL(5,2) NOT NULL,
   `medida_producto` VARCHAR(20) NOT NULL,
   PRIMARY KEY (`codigo_producto`),
-  INDEX `ind_producto_categoria` (`codigo_categoria` ASC) INVISIBLE,
+  INDEX `ind_producto_categoria` (`codigo_categoria` ASC),
   CONSTRAINT `fk_producto_categoria`
     FOREIGN KEY (`codigo_categoria`)
     REFERENCES `bbdd_ventas`.`CATEGORIAS` (`codigo_categoria`)
@@ -138,8 +138,8 @@ CREATE TABLE IF NOT EXISTS `bbdd_ventas`.`LISTA_PRODUCTOS` (
   `codigo_pedido` VARCHAR(10) NOT NULL,
   `codigo_producto` VARCHAR(10) NOT NULL,
   `cantidad_productos` INT NOT NULL,
-  INDEX `ind_lista_productos_pedido` (`codigo_pedido` ASC) INVISIBLE,
-  INDEX `ind_lista_producto_producto` (`codigo_producto` ASC) INVISIBLE,
+  INDEX `ind_lista_productos_pedido` (`codigo_pedido` ASC),
+  INDEX `ind_lista_producto_producto` (`codigo_producto` ASC),
   CONSTRAINT `fk_lista_productos_pedido`
     FOREIGN KEY (`codigo_pedido`)
     REFERENCES `bbdd_ventas`.`PEDIDOS` (`codigo_pedido`)
@@ -160,7 +160,7 @@ CREATE TABLE IF NOT EXISTS `bbdd_ventas`.`CLIENTES` (
   `codigo_customer` VARCHAR(10) NOT NULL,
   `edad_customer` INT NOT NULL,
   PRIMARY KEY (`codigo_customer`),
-  INDEX `ind_cliente_credencial` (`codigo_customer` ASC) VISIBLE,
+  INDEX `ind_cliente_credencial` (`codigo_customer` ASC),
   CONSTRAINT `fk_cliente_credencial`
     FOREIGN KEY (`codigo_customer`)
     REFERENCES `bbdd_ventas`.`CREDENCIALES` (`codigo_cred`)
@@ -176,7 +176,7 @@ CREATE TABLE IF NOT EXISTS `bbdd_ventas`.`VENDEDORES` (
   `codigo_seller` VARCHAR(10) NOT NULL,
   `salario_seller` DECIMAL(8,2) NOT NULL,
   PRIMARY KEY (`codigo_seller`),
-  INDEX `ind_vendedor_credencial` (`codigo_seller` ASC) INVISIBLE,
+  INDEX `ind_vendedor_credencial` (`codigo_seller` ASC),
   CONSTRAINT `fk_vendedor_credencial`
     FOREIGN KEY (`codigo_seller`)
     REFERENCES `bbdd_ventas`.`CREDENCIALES` (`codigo_cred`)
@@ -191,9 +191,9 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `bbdd_ventas`.`CREDENCIALES_PEDIDOS` (
   `codigo_cred` VARCHAR(10) NOT NULL,
   `codigo_pedido` VARCHAR(10) NOT NULL,
-  INDEX `ind_credencial_pedido_cliente` (`codigo_cred` ASC) INVISIBLE,
-  INDEX `ind_credencial_pedido_vendedor` (`codigo_cred` ASC) INVISIBLE,
-  INDEX `ind_credencial_pedido_pedido` (`codigo_pedido` ASC) VISIBLE,
+  INDEX `ind_credencial_pedido_cliente` (`codigo_cred` ASC),
+  INDEX `ind_credencial_pedido_vendedor` (`codigo_cred` ASC),
+  INDEX `ind_credencial_pedido_pedido` (`codigo_pedido` ASC),
   CONSTRAINT `fk_credencial_pedido_cliente`
     FOREIGN KEY (`codigo_cred`)
     REFERENCES `bbdd_ventas`.`CLIENTES` (`codigo_customer`)
