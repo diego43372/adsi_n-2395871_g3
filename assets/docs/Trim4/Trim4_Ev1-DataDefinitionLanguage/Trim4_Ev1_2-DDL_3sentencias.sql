@@ -108,9 +108,11 @@ SHOW CREATE TABLE MENSAJES;
 --     ALTER TABLE __ DROP CONSTRAINT __ : --------------------------------------------- --
 -- ------------------------------------------------------------------------------------- --
 ALTER TABLE USUARIOS DROP CONSTRAINT fk_usuario_rol;
+ALTER TABLE MENSAJES DROP CONSTRAINT fk_mensaje_usuario;
 ALTER TABLE CREDENCIALES DROP CONSTRAINT chk_evitarPersona;
 ALTER TABLE CREDENCIALES DROP CONSTRAINT fk_credencial_usuario;
-ALTER TABLE MENSAJES DROP CONSTRAINT fk_mensaje_usuario;
+ALTER TABLE CLIENTES DROP CONSTRAINT fk_cliente_credencial;
+ALTER TABLE VENDEDORES DROP CONSTRAINT fk_vendedor_credencial;
 
 -- ------------------------------------------------------------------------------------- --
 -- 13. Eliminar Índice. ---------------------------------------------------------------- --
@@ -118,6 +120,9 @@ ALTER TABLE MENSAJES DROP CONSTRAINT fk_mensaje_usuario;
 -- ------------------------------------------------------------------------------------- --
 ALTER TABLE USUARIOS DROP INDEX ind_usuario_rol;
 ALTER TABLE USUARIOS DROP INDEX uq_correo_user;
+ALTER TABLE CREDENCIALES DROP INDEX ind_codigo_cred_identificacion_cred;
+ALTER TABLE CREDENCIALES DROP INDEX ind_credencial_usuario;
+ALTER TABLE CREDENCIALES DROP INDEX uq_identificacion_cred;
 
 -- ------------------------------------------------------------------------------------- --
 -- 14. Eliminar Llave Primaria. -------------------------------------------------------- --
@@ -201,6 +206,18 @@ ALTER TABLE CREDENCIALES ADD
 CONSTRAINT fk_credencial_usuario 
 	FOREIGN KEY (codigo_cred)
 	REFERENCES USUARIOS (codigo_user)
+	ON DELETE CASCADE
+	ON UPDATE CASCADE;
+ALTER TABLE CLIENTES ADD 
+CONSTRAINT fk_cliente_credencial 
+	FOREIGN KEY (codigo_customer)
+	REFERENCES CREDENCIALES (codigo_cred)
+	ON DELETE CASCADE
+	ON UPDATE CASCADE;
+ALTER TABLE VENDEDORES ADD 
+CONSTRAINT fk_vendedor_credencial 
+	FOREIGN KEY (codigo_seller)
+	REFERENCES CREDENCIALES (codigo_cred)
 	ON DELETE CASCADE
 	ON UPDATE CASCADE;
 ALTER TABLE MENSAJES ADD 
