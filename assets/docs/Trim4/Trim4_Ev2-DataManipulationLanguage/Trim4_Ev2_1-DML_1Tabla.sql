@@ -266,7 +266,7 @@ WHERE fecha_ingreso_cred >= '2022-08-01' AND fecha <= '2022-08-31';
 --        SELECT __ , __ FROM __ WHERE __ IN( __ , __ ) : ------------------------------ --
 -- ------------------------------------------------------------------------------------- --
 SELECT * FROM PRODUCTOS 
-WHERE unidad_producto IN(1,500);
+WHERE unidad_producto IN (1,500);
 
 
 
