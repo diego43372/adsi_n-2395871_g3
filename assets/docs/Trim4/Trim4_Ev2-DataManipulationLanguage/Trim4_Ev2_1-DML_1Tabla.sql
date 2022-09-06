@@ -91,18 +91,18 @@ INSERT INTO CATEGORIAS VALUES
 (null, 'Aseo');
 
 INSERT INTO PRODUCTOS VALUES 
-(1, 'prod-1', 'Papa', 950.03, 1, 'libra'),
-(1, 'prod-2', 'Zanahoria', 630.33, 1, 'libra'),
-(1, 'prod-3', 'Tomate', 750.55, 1, 'libra'),
-(2, 'prod-4', 'Arroz', 2500.00, 500, 'gramos'),
-(2, 'prod-5', 'aceite', 10500.00, 1, 'litro'),
-(2, 'prod-6', 'Lentejas', 3500.00, 1000, 'gramos'),
-(3, 'prod-7', 'Agua', 3000.00, 1.5, 'litro'),
-(3, 'prod-8', 'Gaseosa', 3500.00, 2.5, 'litro'),
-(3, 'prod-9', 'Cerveza', 2500.00, 1, 'botella'),
-(4, 'prod-10', 'Jabón Baño', 1200.00, 285, 'gramos'),
-(4, 'prod-11', 'Jabón Ropa', 12000.00, 1000, 'gramos'),
-(4, 'prod-12', 'Shampoo', 18500.00, 750, 'mililitros');
+(1, 'prod-1', 'Papa', 950.03, 1.00, 'libra'),
+(1, 'prod-2', 'Zanahoria', 630.33, 1.00, 'libra'),
+(1, 'prod-3', 'Tomate', 750.55, 1.00, 'libra'),
+(2, 'prod-4', 'Arroz', 2500.00, 500.00, 'gramos'),
+(2, 'prod-5', 'aceite', 10500.00, 1.00, 'litro'),
+(2, 'prod-6', 'Lentejas', 3500.00, 1000.00, 'gramos'),
+(3, 'prod-7', 'Agua', 3000.00, 1.50, 'litro'),
+(3, 'prod-8', 'Gaseosa', 3500.00, 2.50, 'litro'),
+(3, 'prod-9', 'Cerveza', 2500.00, 1.00, 'botella'),
+(4, 'prod-10', 'Jabón Baño', 1200.00, 285.00, 'gramos'),
+(4, 'prod-11', 'Jabón Ropa', 12000.00, 1000.00, 'gramos'),
+(4, 'prod-12', 'Shampoo', 18500.00, 750.00, 'mililitros');
 
 -- ------------------------------------------------------------------------------------- --
 -- 1.1.2. Datos Incorrectos ------------------------------------------------------------ --
@@ -114,28 +114,23 @@ INSERT INTO USUARIOS VALUES
 (3, 'customer-1', 'Wilson', 'Cifuentes', 'wilson@gmail.com');
 
 INSERT INTO USUARIOS VALUES 
-(3, 'seller-1', 'Wilson', 'Cifuentes', 'wilson@gmail.com');
+(3, 'seller-2', 'Marina', 'Roncancio', 'marinita@gmail.com');
 
 INSERT INTO MENSAJES VALUES
 ('person-3', '2022-08-15', 'Solicitud de Información', 'Quisiera saber sobre... ');
 
 INSERT INTO CREDENCIALES VALUES
-('admin-1', 123456, 'Av Siempre Viva', sha1('12345'), 1),
-('customer-1', 456789, 'Calle 3 con 4', sha1('12345'), 0),
-('seller-1', 987654, 'Carrera 5 con 7', sha1('12345'), 1),
-('customer-2', 654321, 'Tv 8 con 15', sha1('12345'), 0);
-
-INSERT INTO CREDENCIALES VALUES 
-('admin-1', 666555, 'Av Matamoros', sha1('45678'), 1);
-
-INSERT INTO CREDENCIALES VALUES 
-('admin-2', 666555, 'Av Matamoros', sha1('45678'), 1);
+('admin-1', 666555, '2022-09-25', 'Bucaramanga', 'Av Matamoros', sha1('45678'), 1);
 
 INSERT INTO CREDENCIALES VALUES
-('admin-2', 123456, 'Carrera 2 con 15', sha1('12345'), 1);
+('admin-2', 987654, "2022-06-11", 'Bogotá', 'Av Siempre Viva', sha1('12345'), 1);
+
+-- Datos válidos para demostrar la actualización y eliminación en Cascada
+INSERT INTO CREDENCIALES VALUES
+('admin-2', 213456, "2022-06-11", 'Bogotá', 'Av Siempre Viva', sha1('12345'), 1);
 
 INSERT INTO CREDENCIALES VALUES 
-('person-1', 444555, 'Calle 2 con 3', sha1('12345'), 1);
+('person-1', 666555, '2022-09-25', 'Bucaramanga', 'Av Matamoros', sha1('45678'), 1);
 
 -- ------------------------------------------------------------------------------------- --
 -- 1.2. Actualizar. -------------------------------------------------------------------- --
@@ -145,12 +140,16 @@ UPDATE ROLES SET
 nombre_rol = 'person'
 WHERE codigo_rol = 2;
 
+UPDATE USUARIOS SET 
+codigo_user = 'admin-3'
+WHERE codigo_user = 'admin-2';
+
 -- ------------------------------------------------------------------------------------- --
 -- 1.3. Eliminar. ---------------------------------------------------------------------- --
 --      DELETE FROM __ WHERE __ = __ : ------------------------------------------------- --
 -- ------------------------------------------------------------------------------------- --
 DELETE FROM USUARIOS 
-WHERE codigo_user = 'admin-2';
+WHERE codigo_user = 'admin-3';
 
 
 /* ************************************************************************************* */
