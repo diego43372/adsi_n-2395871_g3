@@ -174,6 +174,7 @@ ALTER TABLE CREDENCIALES ADD PRIMARY KEY (codigo_cred);
 --     CREATE INDEX __ ON __ ( __ ) :  ------------------------------------------------- --
 -- ------------------------------------------------------------------------------------- --
 CREATE INDEX ind_usuario_rol ON USUARIOS (codigo_rol);
+CREATE INDEX ind_credencial_usuario ON CREDENCIALES (codigo_cred);
 
 -- ------------------------------------------------------------------------------------- --
 -- 21. Crear Índice Multicampo. -------------------------------------------------------- --
@@ -187,6 +188,7 @@ ON CREDENCIALES (codigo_cred, identificacion_cred);
 --     CREATE UNIQUE INDEX __ ON __ ( __ ) : ------------------------------------------- --
 -- ------------------------------------------------------------------------------------- --
 CREATE UNIQUE INDEX uq_correo_user ON USUARIOS (correo_user);
+CREATE UNIQUE INDEX uq_identificacion_cred ON CREDENCIALES (identificacion_cred);
 
 -- ------------------------------------------------------------------------------------- --
 -- 23. Crear Restricción. -------------------------------------------------------------- --
@@ -199,8 +201,14 @@ CONSTRAINT fk_usuario_rol
 	REFERENCES ROLES (codigo_rol)
 	ON DELETE CASCADE
 	ON UPDATE CASCADE;
-ALTER TABLE CREDENCIALES
-	ADD CONSTRAINT chk_evitarPersona 
+ALTER TABLE MENSAJES ADD 
+CONSTRAINT fk_mensaje_usuario 
+	FOREIGN KEY (codigo_user)
+	REFERENCES USUARIOS (codigo_user)
+	ON DELETE CASCADE
+	ON UPDATE CASCADE;
+ALTER TABLE CREDENCIALES ADD 
+CONSTRAINT chk_evitarPersona 
 	CHECK (codigo_cred NOT LIKE '%person%');
 ALTER TABLE CREDENCIALES ADD 
 CONSTRAINT fk_credencial_usuario 
@@ -218,12 +226,6 @@ ALTER TABLE VENDEDORES ADD
 CONSTRAINT fk_vendedor_credencial 
 	FOREIGN KEY (codigo_seller)
 	REFERENCES CREDENCIALES (codigo_cred)
-	ON DELETE CASCADE
-	ON UPDATE CASCADE;
-ALTER TABLE MENSAJES ADD 
-CONSTRAINT fk_mensaje_usuario 
-	FOREIGN KEY (codigo_user)
-	REFERENCES USUARIOS (codigo_user)
 	ON DELETE CASCADE
 	ON UPDATE CASCADE;
 	
