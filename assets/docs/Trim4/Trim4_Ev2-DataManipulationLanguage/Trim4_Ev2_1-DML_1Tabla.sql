@@ -16,22 +16,24 @@
 /* 2. CONSULTAS DE SELECCIÓN : ....... SELECT                                            */
 /* 2.1. Generales : .................. SELECT * FROM __                                  */
 /* 2.2. Específicas : ................ SELECT __ , __ FROM __                            */
-/* 2.3. Con Criterios: ............... SELECT __ , __ FROM __ WHERE __ = __              */
+/* 2.3. Con Criterios: ............... SELECT __ FROM __ WHERE __ = __                   */
 /* 2.4. Con Operadores Lógicos : ..... OR, AND, NOT                                      */
-/* 2.4.1. 0 : ........................ SELECT __ , __ FROM __ WHERE __ = __ OR __ = __   */
-/* 2.4.2. Y : ........................ SELECT __ , __ FROM __ WHERE __ = __ AND __ = __  */
-/* 2.4.3. No : ....................... SELECT __ , __ FROM __ WHERE __ NOT IN ( __ )     */
+/* 2.4.1. 0 [OR] : ................... SELECT __ FROM __ WHERE __ = __ OR __ = __        */
+/* 2.4.2. Y [AND] : .................. SELECT __ FROM __ WHERE __ = __ AND __ = __       */
+/* 2.4.3. No [NOT] : ................. SELECT __ FROM __ WHERE __ NOT IN ( __ )          */
 /* 2.5. Con Operadores Comparación : . <>, <, <=, >, >=                                  */
-/* 2.5.1. Diferente : ................ SELECT __ , __ FROM __ WHERE __ <> __             */
-/* 2.5.2. Menor que : ................ SELECT __ , __ FROM __ WHERE __ <  __             */
-/* 2.5.3. Mayor que : ................ SELECT __ , __ FROM __ WHERE __ >  __             */
-/* 2.5.4. Menor o igual : ............ SELECT __ , __ FROM __ WHERE __ <=  __            */
-/* 2.5.5. Mayor o igual : ............ SELECT __ , __ FROM __ WHERE __ >=  __            */
+/* 2.5.1. Diferente [<>] : ........... SELECT __ FROM __ WHERE __ <> __                  */
+/* 2.5.2. Menor que [<] : ............ SELECT __ FROM __ WHERE __ <  __                  */
+/* 2.5.3. Mayor que [>] : ............ SELECT __ FROM __ WHERE __ >  __                  */
+/* 2.5.4. Menor o igual [<=] : ....... SELECT __ FROM __ WHERE __ <=  __                 */
+/* 2.5.5. Mayor o igual [>=] : ....... SELECT __ FROM __ WHERE __ >=  __                 */
 /* 2.6. Con otros Operadores : ....... LIKE, BETWEEN, IN                                 */
-/* 2.6.1. Comodín : .................. SELECT __ , __ FROM __ WHERE __ LIKE '_%'         */
-/* 2.6.2. Entre : .................... SELECT * FROM __ WHERE __ BETWEEN __ AND __       */
-/* 2.6.3. Lista : .................... SELECT __ , __ FROM __ WHERE __ IN( __ , __ )     */
-/* 2.7. Ordenadas : .................. ORDER BY, ASC, DESC                               */
+/* 2.6.1. Comodín [LIKE '_%'] : ...... SELECT __ FROM __ WHERE __ LIKE '_%'              */
+/* 2.6.2. Entre [BETWEEN] : .......... SELECT __ FROM __ WHERE __ BETWEEN __ AND __      */
+/* 2.6.3. Lista [IN ( __ )] : ........ SELECT __ FROM __ WHERE __ IN( __ , __ )          */
+/* 2.7. Ordenadas : .................. ORDER BY                                          */
+/* 2.7.1. Ascendente : ............... SELECT __ FROM __ WHERE __ = __ ORDER BY __ ASC   */
+/* 2.7.2. Descendente : .............. SELECT __ FROM __ WHERE __ = __ ORDER BY __ DESC  */
 /* 2.8. Calculadas : ................. GROUP BY, AS ( __ ), HAVING ( __ )                */
 /* 2.8.1. Suma : ..................... SELECT __ , SUM( __ ) FROM __                     */
 /* 2.8.2. Promedio : ................. SELECT __ , AVG( __ ) FROM __                     */
@@ -276,6 +278,15 @@ WHERE unidad_producto IN (1,500);
 -- 2.7. Ordenadas. --------------------------------------------------------------------- --
 --      ORDER BY, ASC, DESC : ---------------------------------------------------------- --
 -- ------------------------------------------------------------------------------------- --
+
+-- ------------------------------------------------------------------------------------- --
+-- 2.7.1. Ascendente. ------------------------------------------------------------------ --
+--        SELECT __ , __ FROM __ WHERE __ = __ ORDER BY __ ASC; : ---------------------- --
+-- ------------------------------------------------------------------------------------- --
+SELECT * FROM PRODUCTOS 
+WHERE codigo_categoria = 2 
+ORDER BY codigo_categoria ASC;
+
 SELECT * FROM PRODUCTOS
 WHERE codigo_categoria = 2 OR codigo_categoria = 3 
 ORDER BY codigo_categoria ASC;
