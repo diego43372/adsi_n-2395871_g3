@@ -7,7 +7,7 @@
 /* ------------------------------------------------------------------------------------- */
 /* ************************************************************************************* */
 /* ------------------------------------------------------------------------------------- */
-/* 1. CONSULTAS DE ACCIÓN : .......... INSERT INTO, UPDATE, DELETE                       */
+/* 1. CONSULTAS DE ACCIÓN [Inicio] : . INSERT INTO, UPDATE, DELETE                       */
 /* 1.1. Crear o Registrar : .......... INSERT INTO __ VALUES ( __ , __ )                 */
 /* 1.1.1. Datos Correctos : .......... INSERT INTO __ VALUES ( __ , __ )                 */
 /* 1.1.2. Datos Incorrectos : ........ INSERT INTO __ VALUES ( __ , __ )                 */
@@ -32,17 +32,21 @@
 /* 2.6.2. Entre [BETWEEN] : .......... SELECT __ FROM __ WHERE __ BETWEEN __ AND __      */
 /* 2.6.3. Lista [IN ( __ )] : ........ SELECT __ FROM __ WHERE __ IN( __ , __ )          */
 /* 2.7. Ordenadas : .................. ORDER BY                                          */
-/* 2.7.1. Ascendente : ............... SELECT __ FROM __ WHERE __ = __ ORDER BY __ ASC   */
-/* 2.7.2. Descendente : .............. SELECT __ FROM __ WHERE __ = __ ORDER BY __ DESC  */
-/* 2.8. Calculadas : ................. GROUP BY, AS ( __ ), HAVING ( __ )                */
-/* 2.8.1. Suma : ..................... SELECT __ , SUM( __ ) FROM __                     */
-/* 2.8.2. Promedio : ................. SELECT __ , AVG( __ ) FROM __                     */
-/* 2.8.3. Conteo : ................... SELECT __ , COUNT( __ ) FROM __ GROUP BY __       */
-/* 2.8.4. Máximo : ................... MAX()                                             */
-/* 2.8.5. Mínimo : ................... MIN()                                             */
-/* 2.8.6. Fecha Actual : ............. NOW()                                             */
-/* 2.8.7. Formato Fecha : ............ DATE_FORMAT(NOW(), '%Y-%m-%d')                    */
-/* 2.8.8. Direfencia Fechas : ........ DATEDIFF(NOW(), __ )                              */
+/* 2.7.1. Ascendente [ASC] : ......... SELECT __ FROM __ WHERE __ = __ ORDER BY __ ASC   */
+/* 2.7.2. Descendente [DESC] : ....... SELECT __ FROM __ WHERE __ = __ ORDER BY __ DESC  */
+/* 2.7.3. Combinadas : ............... SELECT __ FROM __ WHERE __ = __ ORDER BY __       */
+/* 2.8. Calculadas : ................. GROUP BY                                          */
+/* 2.8.1. Suma [SUM()] : ............. SELECT __ , SUM( __ ) FROM __ GROUP BY __         */
+/* 2.8.2. Promedio [AVG()] : ......... SELECT __ , AVG( __ ) FROM __ GROUP BY __         */
+/* 2.8.3. Conteo [COUNT()] : ......... SELECT __ , COUNT( __ ) FROM __ GROUP BY __       */
+/* 2.8.4. Máximo [MAX()] : ........... SELECT __ , MAX( __ ) FROM __ GROUP BY __         */
+/* 2.8.5. Mínimo [MIN()] : ........... SELECT __ , MIN( __ ) FROM __ GROUP BY __         */
+/* 2.8.6. Con Alias : ................ AS ( __ )                                         */
+/* 2.8.7. Condicionantes : ........... HAVING ( __ )                                     */
+/* 2.8.8. Fecha Actual : ............. NOW()                                             */
+/* 2.8.9. Formato Fecha : ............ DATE_FORMAT(NOW(), '%Y-%m-%d')                    */
+/* 2.8.10. Direfencia Fechas : ....... DATEDIFF(NOW(), __ )                              */
+/* 3. CONSULTAS DE ACCIÓN [Final] : ..                                                   */
 /* ------------------------------------------------------------------------------------- */
 /* ************************************************************************************* */
 /* EN CONSOLA: XAMPP / SHELL / cd mysql/bin / mysql -h localhost -u root -p / ENTER      */
@@ -339,19 +343,19 @@ SELECT ciudad_cred, COUNT(codigo_cred) AS cant_clientes FROM CREDENCIALES
 GROUP BY ciudad_cred ORDER BY cant_clientes DESC;
 
 -- ------------------------------------------------------------------------------------- --
--- 2.8.4. COUNT() : Contar. ------------------------------------------------------------ --
+-- 2.8.4. MAX() : Contar. ------------------------------------------------------------ --
 --        SELECT __ , COUNT( __ ) FROM __ GROUP BY __ : -------------------------------- --
 -- ------------------------------------------------------------------------------------- --
-
--- -------------------------------------------------------------------------------------
--- ## - Seleccione la seccion (agrupación) y calcule el precio más alto (cálculo) de 
---      productos, donde la sección sea CONFECCIÓN y los ordene por sección
--- -------------------------------------------------------------------------------------
-SELECT ciudad_cred, COUNT(codigo_cred) AS cant_clientes FROM CREDENCIALES 
-GROUP BY ciudad_cred ORDER BY cant_clientes DESC;
-
 SELECT seccion, MAX(precio) AS precio_alto FROM productos 
 WHERE seccion = 'CONFECCIÓN' GROUP BY seccion
+
+-- ------------------------------------------------------------------------------------- --
+-- 2.8.4. MAX() : Contar. ------------------------------------------------------------ --
+--        SELECT __ , COUNT( __ ) FROM __ GROUP BY __ : -------------------------------- --
+-- ------------------------------------------------------------------------------------- --
+SELECT seccion, MIN(precio) AS precio_alto FROM productos 
+WHERE seccion = 'CONFECCIÓN' GROUP BY seccion
+
 -- -------------------------------------------------------------------------------------
 -- ## - Seleccione el articulo, seccion y precio de la tabla productos y cree un campo 
 --      calculado del precio más el IVA
