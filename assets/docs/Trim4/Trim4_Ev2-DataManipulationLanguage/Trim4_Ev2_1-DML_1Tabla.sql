@@ -114,7 +114,7 @@ INSERT INTO USUARIOS VALUES
 (3, 'customer-1', 'Wilson', 'Cifuentes', 'wilson@gmail.com');
 
 INSERT INTO USUARIOS VALUES 
-(3, 'seller-2', 'Marina', 'Roncancio', 'marinita@gmail.com');
+(4, 'seller-2', 'Marina', 'Roncancio', 'marinita@gmail.com');
 
 INSERT INTO MENSAJES VALUES
 ('person-3', '2022-08-15', 'Solicitud de Información', 'Quisiera saber sobre... ');
@@ -153,7 +153,7 @@ WHERE codigo_user = 'admin-3';
 
 
 /* ************************************************************************************* */
-/* ----------------------------- 1. CONSULTAS DE SELECCIÓN ----------------------------- */
+/* ----------------------------- 2. CONSULTAS DE SELECCIÓN ----------------------------- */
 /* --------------------------------------- SELECT -------------------------------------- */
 /* ************************************************************************************* */
 
