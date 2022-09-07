@@ -34,9 +34,9 @@
 /* 2.7. Ordenadas : .................. ORDER BY, ASC, DESC                               */
 /* 2.8. Calculadas : ................. GROUP BY, AS ( __ ), HAVING ( __ )                */
 /*                                     SUM(), AVG(), COUNT(), MAX(), MIN ()              */
-/* 2.8.1. SUM() : .................... SUM()                                             */
-/* 2.8.2. AVG() : .................... AVG()                                             */
-/* 2.8.3. COUNT() : .................. COUNT()                                           */
+/* 2.8.1. SUM() : .................... SELECT __ , SUM( __ ) FROM __                     */
+/* 2.8.2. AVG() : .................... SELECT __ , AVG( __ ) FROM __                     */
+/* 2.8.3. COUNT() : .................. SELECT __ , COUNT( __ ) FROM __ GROUP BY __       */
 /* 2.8.4. MAX() : .................... MAX()                                             */
 /* 2.8.5. MAX() : .................... MIN()                                             */
 /* 2.8.6. DATE_FORMAT() : ............ MIN()                                             */
@@ -253,6 +253,7 @@ SELECT * FROM PRODUCTOS WHERE precio_producto >= 3500;
 --        SELECT __ , __ FROM __ WHERE __ LIKE '_%' : ---------------------------------- --
 -- ------------------------------------------------------------------------------------- --
 SELECT * FROM PRODUCTOS WHERE nombre_producto LIKE 'j%';
+
 SELECT * FROM PRODUCTOS WHERE nombre_producto LIKE '_a%';
 
 -- ------------------------------------------------------------------------------------- --
@@ -297,31 +298,36 @@ ORDER BY codigo_categoria, precio_producto;
 --      GROUP BY, AS ( __ ), HAVING ( __ ). SUM(), AVG(), COUNT(), MAX(), MIN () : ----- --
 -- ------------------------------------------------------------------------------------- --
 
--- ## - Seleccione la sección (agrupación) y sume los precios (cálculo) de la tabla 
---      productos y lo agrupe por la sección
--- -------------------------------------------------------------------------------------
-SELECT seccion, SUM(precio) FROM productos GROUP BY seccion;
--- -------------------------------------------------------------------------------------
--- ## - Seleccione la sección (agrupación) y sume los precios (cálculo) de la tabla 
---      productos, lo agrupe por la sección y los ordene por precio
--- -------------------------------------------------------------------------------------
-SELECT seccion, SUM(precio) AS sum_articulos FROM productos 
-GROUP BY seccion ORDER BY sum_articulos;
--- -------------------------------------------------------------------------------------
--- ## - Seleccione la sección (agrupación) y calcule la media de los precios (cálculo) 
---      de la tabla productos, lo agrupe por la sección DEPORTES y CONFECCIÓN y los 
---      ordene por la media de los artículos
--- -------------------------------------------------------------------------------------
-SELECT seccion, AVG(precio) AS media_articulos FROM productos 
-GROUP BY seccion HAVING seccion = 'DEPORTES' OR seccion = 'CONFECCIÓN' 
-ORDER BY media_articulos;
--- -------------------------------------------------------------------------------------
--- ## - Seleccione la población (agrupación) y cuente de los clientes (cálculo) de la 
---      tabla clientes, lo agrupe por la población y los ordene descendentemente por 
---      la cantidad de clientes
--- -------------------------------------------------------------------------------------
-SELECT poblacion, COUNT(codigo_cliente) AS num_cliente FROM clientes 
-GROUP BY poblacion ORDER BY num_cliente DESC
+-- ------------------------------------------------------------------------------------- --
+-- 2.8.1. SUM() : Suma. ---------------------------------------------------------------- --
+--        SELECT __ , SUM( __ ) FROM __ : ---------------------------------------------- --
+-- ------------------------------------------------------------------------------------- --
+SELECT codigo_categoria, SUM(precio_producto) FROM PRODUCTOS;
+
+SELECT codigo_categoria, SUM(precio_producto) FROM PRODUCTOS GROUP BY codigo_categoria;
+
+SELECT codigo_categoria, SUM(precio_producto) AS suma_productos FROM PRODUCTOS 
+GROUP BY codigo_categoria ORDER BY suma_productos ASC;
+
+SELECT codigo_categoria, SUM(precio_producto) AS suma_productos FROM PRODUCTOS 
+GROUP BY codigo_categoria HAVING codigo_categoria = 2 OR codigo_categoria = 3 
+ORDER BY suma_productos DESC;
+
+-- ------------------------------------------------------------------------------------- --
+-- 2.8.2. AVG() : Promedio. ------------------------------------------------------------ --
+--        SELECT __ , AVG( __ ) FROM __ : ---------------------------------------------- --
+-- ------------------------------------------------------------------------------------- --
+SELECT codigo_categoria, AVG(precio_producto) AS promedio_productos FROM PRODUCTOS 
+GROUP BY codigo_categoria HAVING codigo_categoria = 2 OR codigo_categoria = 3 
+ORDER BY promedio_productos;
+
+-- ------------------------------------------------------------------------------------- --
+-- 2.8.3. COUNT() : Contar. ------------------------------------------------------------ --
+--        SELECT __ , COUNT( __ ) FROM __ GROUP BY __ : -------------------------------- --
+-- ------------------------------------------------------------------------------------- --
+SELECT ciudad_cred, COUNT(codigo_cred) AS cant_clientes FROM CREDENCIALES 
+GROUP BY ciudad_cred ORDER BY cant_clientes DESC;
+
 -- -------------------------------------------------------------------------------------
 -- ## - Seleccione la seccion (agrupación) y calcule el precio más alto (cálculo) de 
 --      productos, donde la sección sea CONFECCIÓN y los ordene por sección
