@@ -18,30 +18,29 @@
 /* 2.2. Específicas : ................ SELECT __ , __ FROM __                            */
 /* 2.3. Con Criterios: ............... SELECT __ , __ FROM __ WHERE __ = __              */
 /* 2.4. Con Operadores Lógicos : ..... OR, AND, NOT                                      */
-/* 2.4.1. OR (O) : ................... SELECT __ , __ FROM __ WHERE __ = __ OR __ = __   */
-/* 2.4.2. AND (Y) : .................. SELECT __ , __ FROM __ WHERE __ = __ AND __ = __  */
-/* 2.4.3. NOT (NO) : ...... .......... SELECT __ , __ FROM __ WHERE __ NOT IN ( __ )     */
+/* 2.4.1. 0 : ........................ SELECT __ , __ FROM __ WHERE __ = __ OR __ = __   */
+/* 2.4.2. Y : ........................ SELECT __ , __ FROM __ WHERE __ = __ AND __ = __  */
+/* 2.4.3. No : ....................... SELECT __ , __ FROM __ WHERE __ NOT IN ( __ )     */
 /* 2.5. Con Operadores Comparación : . <>, <, <=, >, >=                                  */
-/* 2.5.1. <> (Diferente) : ........... SELECT __ , __ FROM __ WHERE __ <> __             */
-/* 2.5.2. <  (Menor que) : ........... SELECT __ , __ FROM __ WHERE __ <  __             */
-/* 2.5.3. >  (Mayor que) : ........... SELECT __ , __ FROM __ WHERE __ >  __             */
-/* 2.5.4. <= (Menor o igual) : ....... SELECT __ , __ FROM __ WHERE __ <=  __            */
-/* 2.5.5. >= (Mayor o igual) : ....... SELECT __ , __ FROM __ WHERE __ >=  __            */
-/* 2.6. Otros Operadores : ........... LIKE, BETWEEN, IN                                 */
-/* 2.6.1. LIKE ( % , _ ) : ........... SELECT __ , __ FROM __ WHERE __ LIKE '_%'         */
-/* 2.6.2. BETWEEN (Entre) : .......... SELECT * FROM __ WHERE __ BETWEEN __ AND __       */
-/* 2.6.3. IN (Lista) : ............... SELECT __ , __ FROM __ WHERE __ IN( __ , __ )     */
+/* 2.5.1. Diferente : ................ SELECT __ , __ FROM __ WHERE __ <> __             */
+/* 2.5.2. Menor que : ................ SELECT __ , __ FROM __ WHERE __ <  __             */
+/* 2.5.3. Mayor que : ................ SELECT __ , __ FROM __ WHERE __ >  __             */
+/* 2.5.4. Menor o igual : ............ SELECT __ , __ FROM __ WHERE __ <=  __            */
+/* 2.5.5. Mayor o igual : ............ SELECT __ , __ FROM __ WHERE __ >=  __            */
+/* 2.6. Con otros Operadores : ....... LIKE, BETWEEN, IN                                 */
+/* 2.6.1. Comodín : .................. SELECT __ , __ FROM __ WHERE __ LIKE '_%'         */
+/* 2.6.2. Entre : .................... SELECT * FROM __ WHERE __ BETWEEN __ AND __       */
+/* 2.6.3. Lista : .................... SELECT __ , __ FROM __ WHERE __ IN( __ , __ )     */
 /* 2.7. Ordenadas : .................. ORDER BY, ASC, DESC                               */
 /* 2.8. Calculadas : ................. GROUP BY, AS ( __ ), HAVING ( __ )                */
-/*                                     SUM(), AVG(), COUNT(), MAX(), MIN ()              */
-/* 2.8.1. SUM() : .................... SELECT __ , SUM( __ ) FROM __                     */
-/* 2.8.2. AVG() : .................... SELECT __ , AVG( __ ) FROM __                     */
-/* 2.8.3. COUNT() : .................. SELECT __ , COUNT( __ ) FROM __ GROUP BY __       */
-/* 2.8.4. MAX() : .................... MAX()                                             */
-/* 2.8.5. MAX() : .................... MIN()                                             */
-/* 2.8.6. DATE_FORMAT() : ............ MIN()                                             */
-/* 2.10. Calculadas con Formato : .... DATE_FORMAT(NOW(),'%Y-%m-%d') AS __ ,             */
-/*                                     DATEDIFF(NOW(), __ )                              */
+/* 2.8.1. Suma : ..................... SELECT __ , SUM( __ ) FROM __                     */
+/* 2.8.2. Promedio : ................. SELECT __ , AVG( __ ) FROM __                     */
+/* 2.8.3. Conteo : ................... SELECT __ , COUNT( __ ) FROM __ GROUP BY __       */
+/* 2.8.4. Máximo : ................... MAX()                                             */
+/* 2.8.5. Mínimo : ................... MIN()                                             */
+/* 2.8.6. Fecha Actual : ............. NOW()                                             */
+/* 2.8.7. Formato Fecha : ............ DATE_FORMAT(NOW(), '%Y-%m-%d')                    */
+/* 2.8.8. Direfencia Fechas : ........ DATEDIFF(NOW(), __ )                              */
 /* ------------------------------------------------------------------------------------- */
 /* ************************************************************************************* */
 /* EN CONSOLA: XAMPP / SHELL / cd mysql/bin / mysql -h localhost -u root -p / ENTER      */
@@ -328,10 +327,18 @@ ORDER BY promedio_productos;
 SELECT ciudad_cred, COUNT(codigo_cred) AS cant_clientes FROM CREDENCIALES 
 GROUP BY ciudad_cred ORDER BY cant_clientes DESC;
 
+-- ------------------------------------------------------------------------------------- --
+-- 2.8.4. COUNT() : Contar. ------------------------------------------------------------ --
+--        SELECT __ , COUNT( __ ) FROM __ GROUP BY __ : -------------------------------- --
+-- ------------------------------------------------------------------------------------- --
+
 -- -------------------------------------------------------------------------------------
 -- ## - Seleccione la seccion (agrupación) y calcule el precio más alto (cálculo) de 
 --      productos, donde la sección sea CONFECCIÓN y los ordene por sección
 -- -------------------------------------------------------------------------------------
+SELECT ciudad_cred, COUNT(codigo_cred) AS cant_clientes FROM CREDENCIALES 
+GROUP BY ciudad_cred ORDER BY cant_clientes DESC;
+
 SELECT seccion, MAX(precio) AS precio_alto FROM productos 
 WHERE seccion = 'CONFECCIÓN' GROUP BY seccion
 -- -------------------------------------------------------------------------------------
