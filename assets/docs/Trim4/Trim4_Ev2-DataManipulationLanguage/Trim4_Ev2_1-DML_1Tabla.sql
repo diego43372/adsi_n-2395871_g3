@@ -18,9 +18,9 @@
 /* 2.2. Específicas : ................ SELECT __ , __ FROM __                            */
 /* 2.3. Con Criterios: ............... SELECT __ , __ FROM __ WHERE __ = __              */
 /* 2.4. Con Operadores Lógicos : ..... OR, AND, NOT                                      */
-/* 2.4.1. OR (O) : ................... SELECT __ , __ FROM __ WHERE __ = __ OR __ = __   */                                
-/* 2.4.2. AND (Y) : .................. SELECT __ , __ FROM __ WHERE __ = __ AND __ = __  */                                
-/* 2.4.3. NOT (NO) : ...... .......... SELECT __ , __ FROM __ WHERE __ NOT IN ( __ )     */                                
+/* 2.4.1. OR (O) : ................... SELECT __ , __ FROM __ WHERE __ = __ OR __ = __   */
+/* 2.4.2. AND (Y) : .................. SELECT __ , __ FROM __ WHERE __ = __ AND __ = __  */
+/* 2.4.3. NOT (NO) : ...... .......... SELECT __ , __ FROM __ WHERE __ NOT IN ( __ )     */
 /* 2.5. Con Operadores Comparación : . <>, <, <=, >, >=                                  */
 /* 2.5.1. <> (Diferente) : ........... SELECT __ , __ FROM __ WHERE __ <> __             */
 /* 2.5.2. <  (Menor que) : ........... SELECT __ , __ FROM __ WHERE __ <  __             */
@@ -30,12 +30,18 @@
 /* 2.6. Otros Operadores : ........... LIKE, BETWEEN, IN                                 */
 /* 2.6.1. LIKE ( % , _ ) : ........... SELECT __ , __ FROM __ WHERE __ LIKE '_%'         */
 /* 2.6.2. BETWEEN (Entre) : .......... SELECT * FROM __ WHERE __ BETWEEN __ AND __       */
-/* 2.6.3. IN () : .................... SELECT __ , __ FROM __ WHERE __ IN( __ , __ )     */
-/* 2.7. Ordenadas Un Campo : ......... ORDER BY, ASC, DESC                               */
-/* 2.8. Ordenadas Varios campos : .... ORDER BY, ASC, DESC                               */
-/* 2.9. Calculadas : ................. SUM(), AVG(), COUNT(), MAX(), MIN (),             */
-/*                                     GROUP BY, AS (ALIAS), HAVING (POR WHERE),         */
-/*                   DATE_FORMAT(NOW(),'%Y-%m-%d') AS __ , DATEDIFF(NOW(), __ )          */
+/* 2.6.3. IN (Lista) : ............... SELECT __ , __ FROM __ WHERE __ IN( __ , __ )     */
+/* 2.7. Ordenadas : .................. ORDER BY, ASC, DESC                               */
+/* 2.8. Calculadas : ................. GROUP BY, AS ( __ ), HAVING ( __ )                */
+/*                                     SUM(), AVG(), COUNT(), MAX(), MIN ()              */
+/* 2.8.1. SUM() : .................... SUM()                                             */
+/* 2.8.2. AVG() : .................... AVG()                                             */
+/* 2.8.3. COUNT() : .................. COUNT()                                           */
+/* 2.8.4. MAX() : .................... MAX()                                             */
+/* 2.8.5. MAX() : .................... MIN()                                             */
+/* 2.8.6. DATE_FORMAT() : ............ MIN()                                             */
+/* 2.10. Calculadas con Formato : .... DATE_FORMAT(NOW(),'%Y-%m-%d') AS __ ,             */
+/*                                     DATEDIFF(NOW(), __ )                              */
 /* ------------------------------------------------------------------------------------- */
 /* ************************************************************************************* */
 /* EN CONSOLA: XAMPP / SHELL / cd mysql/bin / mysql -h localhost -u root -p / ENTER      */
@@ -49,7 +55,7 @@
 
 -- ------------------------------------------------------------------------------------- --
 -- 1.1. Crear o Registrar. ------------------------------------------------------------- --
---      INSERT INTO __ VALUES ( __ , __ ) : -------------------------------------------- -- 
+--      INSERT INTO __ VALUES ( __ , __ ) : -------------------------------------------- --
 -- ------------------------------------------------------------------------------------- --
 
 -- ------------------------------------------------------------------------------------- --
@@ -237,10 +243,9 @@ SELECT * FROM PRODUCTOS WHERE precio_producto <= 3500;
 -- ------------------------------------------------------------------------------------- --
 SELECT * FROM PRODUCTOS WHERE precio_producto >= 3500;
 
-
 -- ------------------------------------------------------------------------------------- --
 -- 2.6. Otros Operadores. -------------------------------------------------------------- --
---      <>, <, <=, >, >= : ------------------------------------------------------------- --
+--      LIKE, BETWEEN, IN -------------------------------------------------------------- --
 -- ------------------------------------------------------------------------------------- --
 
 -- ------------------------------------------------------------------------------------- --
@@ -251,80 +256,47 @@ SELECT * FROM PRODUCTOS WHERE nombre_producto LIKE 'j%';
 SELECT * FROM PRODUCTOS WHERE nombre_producto LIKE '_a%';
 
 -- ------------------------------------------------------------------------------------- --
--- 2.6.2. Consultas con el Operador BETWEEN. ------------------------------------------- --
+-- 2.6.2. Consultas con el Operador BETWEEN (Entre). ----------------------------------- --
 --        SELECT __ , __ FROM __ WHERE __ BETWEEN __ AND __ : -------------------------- --
 -- ------------------------------------------------------------------------------------- --
 SELECT * FROM CREDENCIALES 
 WHERE fecha_ingreso_cred BETWEEN '2022-08-01' AND '2022-08-31';
 
 SELECT * FROM CREDENCIALES 
-WHERE fecha_ingreso_cred >= '2022-08-01' AND fecha <= '2022-08-31';
+WHERE fecha_ingreso_cred >= '2022-08-01' AND fecha_ingreso_cred <= '2022-08-31';
 
 -- ------------------------------------------------------------------------------------- --
--- 2.6.3. Consultas con el Operador IN . ----------------------------------------------- --
+-- 2.6.3. Consultas con el Operador IN (Lista). ---------------------------------------- --
 --        SELECT __ , __ FROM __ WHERE __ IN( __ , __ ) : ------------------------------ --
 -- ------------------------------------------------------------------------------------- --
 SELECT * FROM PRODUCTOS 
 WHERE unidad_producto IN (1,500);
 
+-- ------------------------------------------------------------------------------------- --
+-- 2.7. Ordenadas. --------------------------------------------------------------------- --
+--      ORDER BY, ASC, DESC : ---------------------------------------------------------- --
+-- ------------------------------------------------------------------------------------- --
+SELECT * FROM PRODUCTOS
+WHERE codigo_categoria = 2 OR codigo_categoria = 3 
+ORDER BY codigo_categoria ASC;
 
+SELECT * FROM PRODUCTOS
+WHERE codigo_categoria = 2 OR codigo_categoria = 3 
+ORDER BY codigo_categoria DESC;
 
-/* 2.6. Ordenadas Un Campo : ......... ORDER BY, ASC, DESC                               */
-/* 2.7. Ordenadas Varios campos : .... ORDER BY, ASC, DESC                               */
+SELECT * FROM PRODUCTOS
+WHERE codigo_categoria = 2 OR codigo_categoria = 3 
+ORDER BY precio_producto ASC;
 
+SELECT * FROM PRODUCTOS 
+WHERE codigo_categoria = 2 OR codigo_categoria = 3 
+ORDER BY codigo_categoria, precio_producto;
 
+-- ------------------------------------------------------------------------------------- --
+-- 2.8. Calculadas. -------------------------------------------------------------------- --
+--      GROUP BY, AS ( __ ), HAVING ( __ ). SUM(), AVG(), COUNT(), MAX(), MIN () : ----- --
+-- ------------------------------------------------------------------------------------- --
 
--- ## - Seleccione todos los campos de la tabla productos donde la sección sea igual a 
---      'CERÁMICA' y 'DEPORTES' y que lo ordene por la sección (Ascendente)
--- -------------------------------------------------------------------------------------
-SELECT * FROM productos 
-WHERE seccion = 'CERÁMICA' OR seccion = 'DEPORTES' 
-ORDER BY seccion ASC;
--- -------------------------------------------------------------------------------------
--- ## - Seleccione todos los campos de la tabla productos donde la sección sea igual a 
---      'CERÁMICA' y 'DEPORTES' y que lo ordene por la sección (Descendente)
--- -------------------------------------------------------------------------------------
-SELECT * FROM productos 
-WHERE seccion = 'CERÁMICA' OR seccion = 'DEPORTES' 
-ORDER BY seccion DESC;
--- -------------------------------------------------------------------------------------
--- ## - Seleccione todos los campos de la tabla productos donde la sección sea igual a 
---      'CERÁMICA' y 'DEPORTES' y que lo ordene por el precio
--- -------------------------------------------------------------------------------------
-SELECT * FROM productos 
-WHERE seccion = 'CERÁMICA' OR seccion = 'DEPORTES' 
-ORDER BY precio;
-
-
-
-
--- -------------------------------------------------------------------------------------
--- ## - Seleccione todos los campos de la tabla productos donde la sección sea igual a 
---      'CERÁMICA' y 'DEPORTES', después lo ordene por sección y luego por precio
--- -------------------------------------------------------------------------------------
-SELECT * FROM productos 
-WHERE seccion = 'CERÁMICA'OR seccion = 'DEPORTES' 
-ORDER BY seccion, precio;
--- -------------------------------------------------------------------------------------
--- ## - Seleccione todos los campos de la tabla productos donde la sección sea igual a 
---      'CERÁMICA' y 'DEPORTES', después lo ordene por sección y país de origen
--- -------------------------------------------------------------------------------------
-SELECT * FROM productos 
-WHERE seccion = 'CERÁMICA' OR seccion = 'DEPORTES' 
-ORDER BY seccion, pais_origen;
-
-
-
-
-
-
-
-
--- -------------------------------------------------------------------------------------
--- CONSULTAS CALCULADAS: SUM(), AVG(), COUNT(), MAX(), MIN (), 
--- GROUP BY, AS (ALIAS), HAVING (POR WHERE), 
--- DATE_FORMAT(NOW(),'%Y-%m-%d') AS alias, DATEDIFF(NOW(),fecha)
--- -------------------------------------------------------------------------------------
 -- ## - Seleccione la sección (agrupación) y sume los precios (cálculo) de la tabla 
 --      productos y lo agrupe por la sección
 -- -------------------------------------------------------------------------------------
