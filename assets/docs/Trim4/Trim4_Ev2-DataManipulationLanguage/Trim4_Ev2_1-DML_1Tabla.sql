@@ -35,17 +35,19 @@
 /* 2.7.1. Ascendente [ASC] : ......... SELECT __ FROM __ WHERE __ = __ ORDER BY __ ASC   */
 /* 2.7.2. Descendente [DESC] : ....... SELECT __ FROM __ WHERE __ = __ ORDER BY __ DESC  */
 /* 2.7.3. Combinadas : ............... SELECT __ FROM __ WHERE __ = __ ORDER BY __       */
-/* 2.8. Calculadas : ................. GROUP BY __                                       */
+/* 2.8. Calculadas con Funciones: .... GROUP BY __                                       */
 /* 2.8.1. Suma [SUM()] : ............. SELECT __ , SUM( __ ) FROM __ GROUP BY __         */
 /* 2.8.2. Promedio [AVG()] : ......... SELECT __ , AVG( __ ) FROM __ GROUP BY __         */
-/* 2.8.3. Conteo [COUNT()] : ......... SELECT __ , COUNT( __ ) FROM __ GROUP BY __       */
-/* 2.8.4. Máximo [MAX()] : ........... SELECT __ , MAX( __ ) FROM __ GROUP BY __         */
-/* 2.8.5. Mínimo [MIN()] : ........... SELECT __ , MIN( __ ) FROM __ GROUP BY __         */
-/* 2.9. Con Alias : .................. AS ( __ )                                         */
-/* 2.10. Condicionantes : ............ HAVING __ = __ OR __ = __                         */
-/* 2.8.8. Fecha Actual : ............. NOW()                                             */
-/* 2.8.9. Formato Fecha : ............ DATE_FORMAT(NOW(), '%Y-%m-%d')                    */
-/* 2.8.10. Direfencia Fechas : ....... DATEDIFF(NOW(), __ )                              */
+/* 2.8.3. Máximo [MAX()] : ........... SELECT __ , MAX( __ ) FROM __ GROUP BY __         */
+/* 2.8.4. Mínimo [MIN()] : ........... SELECT __ , MIN( __ ) FROM __ GROUP BY __         */
+/* 2.8.5. Conteo [COUNT()] : ......... SELECT __ , COUNT( __ ) FROM __ GROUP BY __       */
+/* 2.9. Calculadas con Alias : ....... SELECT __ , FUN( __ ) AS __ FROM __               */
+/* 2.10. Calculadas Condicionantes : . GROUP BY __ HAVING __ = __ OR __ = __             */
+/* 2.11. Calculadas con Operadores : . SELECT __ , __ , ROUND( __ * 0.19) AS __ FROM __  */
+/* 2.12. Calculadas con Fechas : ..... NOW(), DATE_FORMAT(), DATEDIFF()                  */
+/* 2.12.1. Fecha Actual : ............ NOW()                                             */
+/* 2.12.2. Formato Fecha : ........... DATE_FORMAT(NOW(), '%Y-%m-%d')                    */
+/* 2.12.3. Direfencia Fechas : ....... TIMESTAMPDIFF(DAY, __ , NOW())                    */
 /* 3. CONSULTAS DE ACCIÓN [Final] : ..                                                   */
 /* ------------------------------------------------------------------------------------- */
 /* ************************************************************************************* */
@@ -65,6 +67,7 @@
 
 -- ------------------------------------------------------------------------------------- --
 -- 1.1.1. Datos Correctos -------------------------------------------------------------- --
+--        INSERT INTO __ VALUES ( __ , __ ) : ------------------------------------------ --
 -- ------------------------------------------------------------------------------------- --
 INSERT INTO ROLES VALUES 
 (null, 'admin'),
@@ -117,6 +120,7 @@ INSERT INTO PRODUCTOS VALUES
 
 -- ------------------------------------------------------------------------------------- --
 -- 1.1.2. Datos Incorrectos ------------------------------------------------------------ --
+--        INSERT INTO __ VALUES ( __ , __ ) : ------------------------------------------ --
 -- ------------------------------------------------------------------------------------- --
 INSERT INTO USUARIOS VALUES 
 (5, 'customer-3', 'Alejandra', 'Martínez', 'alejandra@gmail.com');
@@ -297,10 +301,6 @@ ORDER BY codigo_categoria ASC;
 
 SELECT * FROM PRODUCTOS
 WHERE codigo_categoria = 2 OR codigo_categoria = 3 
-ORDER BY codigo_categoria ASC;
-
-SELECT * FROM PRODUCTOS
-WHERE codigo_categoria = 2 OR codigo_categoria = 3 
 ORDER BY precio_producto ASC;
 
 -- ------------------------------------------------------------------------------------- --
@@ -317,10 +317,6 @@ ORDER BY codigo_categoria DESC;
 
 SELECT * FROM PRODUCTOS
 WHERE codigo_categoria = 2 OR codigo_categoria = 3 
-ORDER BY codigo_categoria DESC;
-
-SELECT * FROM PRODUCTOS
-WHERE codigo_categoria = 2 OR codigo_categoria = 3 
 ORDER BY precio_producto DESC;
 
 -- ------------------------------------------------------------------------------------- --
@@ -329,10 +325,10 @@ ORDER BY precio_producto DESC;
 -- ------------------------------------------------------------------------------------- --
 SELECT * FROM PRODUCTOS 
 WHERE codigo_categoria = 2 OR codigo_categoria = 3 
-ORDER BY codigo_categoria, precio_producto;
+ORDER BY codigo_categoria ASC, precio_producto DESC;
 
 -- ------------------------------------------------------------------------------------- --
--- 2.8. Calculadas. -------------------------------------------------------------------- --
+-- 2.8. Calculadas con Funciones. ------------------------------------------------------ --
 --      GROUP BY : --------------------------------------------------------------------- --
 -- ------------------------------------------------------------------------------------- --
 
@@ -340,109 +336,155 @@ ORDER BY codigo_categoria, precio_producto;
 -- 2.8.1. Suma [SUM()] . --------------------------------------------------------------- --
 --        SELECT __ , SUM( __ ) FROM __ GROUP BY __ : ---------------------------------- --
 -- ------------------------------------------------------------------------------------- --
-SELECT codigo_categoria, SUM(precio_producto) FROM PRODUCTOS;
+SELECT codigo_categoria, SUM(precio_producto) FROM PRODUCTOS 
+WHERE codigo_categoria = 3;
 
 SELECT codigo_categoria, SUM(precio_producto) FROM PRODUCTOS 
 GROUP BY codigo_categoria;
-
-SELECT codigo_categoria, SUM(precio_producto) FROM PRODUCTOS 
-WHERE codigo_categoria = 3
-GROUP BY codigo_categoria;
-
 
 -- ------------------------------------------------------------------------------------- --
 -- 2.8.2. Promedio [AVG()] . ----------------------------------------------------------- --
 --        SELECT __ , AVG( __ ) FROM __ GROUP BY __ : ---------------------------------- --
 -- ------------------------------------------------------------------------------------- --
 SELECT codigo_categoria, AVG(precio_producto) FROM PRODUCTOS 
-GROUP BY codigo_categoria;
+WHERE codigo_categoria = 3;
 
 SELECT codigo_categoria, AVG(precio_producto) FROM PRODUCTOS 
-WHERE codigo_categoria = 3
 GROUP BY codigo_categoria;
 
 -- ------------------------------------------------------------------------------------- --
--- 2.8.3. Conteo [COUNT()] . ----------------------------------------------------------- --
+-- 2.8.3. Máximo [MAX()] . ------------------------------------------------------------- --
+--        SELECT __ , MAX( __ ) FROM __ GROUP BY __ : -------------------------------- --
+-- ------------------------------------------------------------------------------------- --
+SELECT codigo_categoria, MAX(precio_producto) FROM PRODUCTOS 
+WHERE codigo_categoria = 3;
+
+SELECT codigo_categoria, MAX(precio_producto) FROM PRODUCTOS 
+GROUP BY codigo_categoria;
+
+-- ------------------------------------------------------------------------------------- --
+-- 2.8.4. Mínimo [MIN()] . ------------------------------------------------------------- --
+--        SELECT __ , MIN( __ ) FROM __ GROUP BY __ : -------------------------------- --
+-- ------------------------------------------------------------------------------------- --
+SELECT codigo_categoria, MIN(precio_producto) FROM PRODUCTOS 
+WHERE codigo_categoria = 3;
+
+SELECT codigo_categoria, MIN(precio_producto) FROM PRODUCTOS 
+GROUP BY codigo_categoria;
+
+-- ------------------------------------------------------------------------------------- --
+-- 2.8.5. Conteo [COUNT()] . ----------------------------------------------------------- --
 --        SELECT __ , COUT( __ ) FROM __ GROUP BY __ : --------------------------------- --
 -- ------------------------------------------------------------------------------------- --
 SELECT ciudad_cred, COUNT(codigo_cred) FROM CREDENCIALES 
-GROUP BY ciudad_cred;
+WHERE ciudad_cred = 'Bogotá';
 
 SELECT ciudad_cred, COUNT(codigo_cred) FROM CREDENCIALES 
-WHERE ciudad_cred = 'Bogotá'
 GROUP BY ciudad_cred;
 
 -- ------------------------------------------------------------------------------------- --
--- 2.8.4. Máximo [MAX()] . ------------------------------------------------------------- --
---        SELECT __ , MAX( __ ) FROM __ GROUP BY __ : -------------------------------- --
+-- 2.9. Calculadas con Alias. ---------------------------------------------------------- --
+--      SELECT __ , FUN( __ ) AS __ : -------------------------------------------------- --
 -- ------------------------------------------------------------------------------------- --
-SELECT seccion, MAX(precio) FROM productos 
-WHERE seccion = 'CONFECCIÓN' GROUP BY seccion
+SELECT codigo_categoria, SUM(precio_producto) AS suma_productos 
+FROM PRODUCTOS 
+GROUP BY codigo_categoria 
+ORDER BY suma_productos ASC;
+
+SELECT codigo_categoria, AVG(precio_producto) AS promedio_productos 
+FROM PRODUCTOS 
+GROUP BY codigo_categoria 
+ORDER BY promedio_productos DESC;
+
+SELECT codigo_categoria, MAX(precio_producto) AS maximo_productos 
+FROM PRODUCTOS 
+GROUP BY codigo_categoria 
+ORDER BY maximo_productos ASC;
+
+SELECT codigo_categoria, MAX(precio_producto) AS minimo_productos 
+FROM PRODUCTOS 
+GROUP BY codigo_categoria 
+ORDER BY minimo_productos DESC;
+
+SELECT ciudad_cred, COUNT(codigo_cred) AS cant_clientes 
+FROM CREDENCIALES 
+GROUP BY ciudad_cred 
+ORDER BY cant_clientes ASC;
 
 -- ------------------------------------------------------------------------------------- --
--- 2.8.5. Mínimo [MIN()] . ------------------------------------------------------------- --
---        SELECT __ , MIN( __ ) FROM __ GROUP BY __ : -------------------------------- --
+-- 2.10. Calculadas Condicionantes. ---------------------------------------------------- --
+--      SELECT __ , FUN( __ ) AS __ FROM __ GROUP BY __ HAVING __ = __ OR __ = __ : ---- --
 -- ------------------------------------------------------------------------------------- --
-SELECT seccion, MIN(precio) AS precio_alto FROM productos 
-WHERE seccion = 'CONFECCIÓN' GROUP BY seccion
-
-
--- -------------------------------------------------------------------------------------
-SELECT codigo_categoria, SUM(precio_producto) AS suma_productos FROM PRODUCTOS 
-GROUP BY codigo_categoria ORDER BY suma_productos ASC;
-
-SELECT codigo_categoria, SUM(precio_producto) AS suma_productos FROM PRODUCTOS 
+SELECT codigo_categoria, SUM(precio_producto) AS suma_productos 
+FROM PRODUCTOS 
 GROUP BY codigo_categoria HAVING codigo_categoria = 2 OR codigo_categoria = 3 
 ORDER BY suma_productos DESC;
 
-SELECT codigo_categoria, AVG(precio_producto) AS promedio_productos FROM PRODUCTOS 
-GROUP BY codigo_categoria;
-
-SELECT codigo_categoria, AVG(precio_producto) AS promedio_productos FROM PRODUCTOS 
+SELECT codigo_categoria, AVG(precio_producto) AS promedio_productos 
+FROM PRODUCTOS 
 GROUP BY codigo_categoria HAVING codigo_categoria = 2 OR codigo_categoria = 3 
-ORDER BY promedio_productos;
+ORDER BY promedio_productos ASC;
 
-SELECT ciudad_cred, COUNT(codigo_cred) AS cant_clientes FROM CREDENCIALES 
-GROUP BY ciudad_cred ORDER BY cant_clientes DESC;
+SELECT codigo_categoria, MAX(precio_producto) AS maximo_productos 
+FROM PRODUCTOS 
+GROUP BY codigo_categoria HAVING codigo_categoria = 2 OR codigo_categoria = 3 
+ORDER BY maximo_productos DESC;
 
-SELECT seccion, MAX(precio) AS precio_alto FROM productos 
-WHERE seccion = 'CONFECCIÓN' GROUP BY seccion
+SELECT codigo_categoria, MIN(precio_producto) AS maximo_productos 
+FROM PRODUCTOS 
+GROUP BY codigo_categoria HAVING codigo_categoria = 2 OR codigo_categoria = 3 
+ORDER BY maximo_productos ASC;
 
-SELECT seccion, MIN(precio) AS precio_alto FROM productos 
-WHERE seccion = 'CONFECCIÓN' GROUP BY seccion
+SELECT ciudad_cred, COUNT(codigo_cred) AS cant_clientes 
+FROM CREDENCIALES 
+GROUP BY ciudad_cred HAVING ciudad_cred = "Bogotá" OR ciudad_cred = "Cali"
+ORDER BY cant_clientes DESC;
 
-SELECT seccion, MAX(precio) FROM productos 
-WHERE seccion = 'CONFECCIÓN' GROUP BY seccion
+-- ------------------------------------------------------------------------------------- --
+-- 2.11. Calculadas con Operadores. ---------------------------------------------------- --
+--        SELECT __ , __ , __*0.19 AS __ FROM __ : ------------------------------------- --
+-- ------------------------------------------------------------------------------------- --
+SELECT nombre_producto, precio_producto, precio_producto * 0.19 
+FROM PRODUCTOS;
 
-SELECT seccion, MIN(precio) AS precio_alto FROM productos 
-WHERE seccion = 'CONFECCIÓN' GROUP BY seccion
+SELECT nombre_producto, precio_producto, precio_producto * 0.19 AS iva_producto 
+FROM PRODUCTOS;
 
+SELECT nombre_producto, precio_producto, ROUND(precio_producto*0.19,2) AS iva_producto 
+FROM PRODUCTOS;
 
+-- ------------------------------------------------------------------------------------- --
+-- 2.12. Calculadas con Fechas. -------------------------------------------------------- --
+--       NOW(), DATE_FORMAT(), DATEDIFF() : -------------------------------------------- --
+-- ------------------------------------------------------------------------------------- --
 
+-- ------------------------------------------------------------------------------------- --
+-- 2.12.1. Fecha Actual. --------------------------------------------------------------- --
+--         SELECT __ , __ , NOW() AS __ FROM __ : -------------------------------------- --
+-- ------------------------------------------------------------------------------------- --
+SELECT nombre_producto, precio_producto, NOW() FROM PRODUCTOS;
 
--- -------------------------------------------------------------------------------------
--- ## - Seleccione el articulo, seccion y precio de la tabla productos y cree un campo 
---      calculado del precio más el IVA
--- -------------------------------------------------------------------------------------
-SELECT nombre_articulo, seccion, precio, precio*1.19 FROM productos
--- -------------------------------------------------------------------------------------
--- ## - Seleccione el articulo, seccion y precio de la tabla productos y cree un campo 
---      calculado del precio más el IVA, llame el nuevo campo como precio_con_iva
--- -------------------------------------------------------------------------------------
-SELECT nombre_articulo, seccion, precio, precio*1.19 AS precio_con_iva 
-FROM productos
--- -------------------------------------------------------------------------------------
--- ## - Seleccione el articulo, seccion y precio de la tabla productos y cree un campo 
---      calculado del precio más el IVA, redondee a dos decimales y llame el nuevo 
---      campo como precio_con_iva
--- -------------------------------------------------------------------------------------
-SELECT nombre_articulo, seccion, precio, ROUND(precio*1.19,2) AS precio_con_iva 
-FROM productos
--- -------------------------------------------------------------------------------------
--- ## - Seleccione el articulo, seccion, precio y fecha de la tabla productos, cree un
---      campo calculado de la diferencia de días entre la fecha almacenada y la fecha 
---      actual, agrupelo por la sección DEPORTES
--- -------------------------------------------------------------------------------------
-SELECT nombre_articulo, seccion, precio, fecha, 
-DATE_FORMAT(NOW(),'%Y-%m-%d') AS dia_de_hoy, DATEDIFF(NOW(),fecha) AS diferencia_dias 
-FROM productos WHERE seccion = 'DEPORTES';
+SELECT nombre_producto, precio_producto, NOW() AS fecha_actual FROM PRODUCTOS;
+
+-- ------------------------------------------------------------------------------------- --
+-- 2.12.2. Formato de Fecha. ----------------------------------------------------------- --
+--         SELECT __ , __ , DATE_FORMAT(NOW(), '%Y-%m-%d') AS __ FROM __ : ------------- --
+-- ------------------------------------------------------------------------------------- --
+SELECT nombre_producto, precio_producto, 
+DATE_FORMAT(NOW(),'%Y-%m-%d') AS fecha_actual 
+FROM PRODUCTOS;
+
+-- ------------------------------------------------------------------------------------- --
+-- 2.12.3. Diferencia Fechas. ---------------------------------------------------------- --
+--         SELECT __ , fecha , --------------------------------------------------------- --
+--         DATE_FORMAT(NOW(), '%Y-%m-%d') AS __ , -------------------------------------- --
+--         TIMESTAMPDIFF(DAY, __ , NOW()) AS __ , -------------------------------------- --
+--         FROM __ : ------------------------------------------------------------------- --
+-- ------------------------------------------------------------------------------------- --
+SELECT codigo_cred, estado_cred, fecha_ingreso_cred,
+DATE_FORMAT(NOW(),'%Y-%m-%d') AS fecha_actual,
+TIMESTAMPDIFF(YEAR, fecha_ingreso_cred, NOW()) AS años_transcurridos,
+TIMESTAMPDIFF(MONTH, fecha_ingreso_cred, NOW()) AS meses_transcurridos, 
+TIMESTAMPDIFF(DAY, fecha_ingreso_cred, NOW()) - 
+TIMESTAMPDIFF(MONTH, fecha_ingreso_cred, NOW()) * 30 AS dias_transcurridos
+FROM CREDENCIALES;
