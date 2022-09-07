@@ -338,12 +338,56 @@ ORDER BY codigo_categoria, precio_producto;
 
 -- ------------------------------------------------------------------------------------- --
 -- 2.8.1. Suma [SUM()] . --------------------------------------------------------------- --
---        SELECT __ , SUM( __ ) FROM __ : ---------------------------------------------- --
+--        SELECT __ , SUM( __ ) FROM __ GROUP BY __ : ---------------------------------- --
 -- ------------------------------------------------------------------------------------- --
 SELECT codigo_categoria, SUM(precio_producto) FROM PRODUCTOS;
 
-SELECT codigo_categoria, SUM(precio_producto) FROM PRODUCTOS GROUP BY codigo_categoria;
+SELECT codigo_categoria, SUM(precio_producto) FROM PRODUCTOS 
+GROUP BY codigo_categoria;
 
+SELECT codigo_categoria, SUM(precio_producto) FROM PRODUCTOS 
+WHERE codigo_categoria = 3
+GROUP BY codigo_categoria;
+
+
+-- ------------------------------------------------------------------------------------- --
+-- 2.8.2. Promedio [AVG()] . ----------------------------------------------------------- --
+--        SELECT __ , AVG( __ ) FROM __ GROUP BY __ : ---------------------------------- --
+-- ------------------------------------------------------------------------------------- --
+SELECT codigo_categoria, AVG(precio_producto) FROM PRODUCTOS 
+GROUP BY codigo_categoria;
+
+SELECT codigo_categoria, AVG(precio_producto) FROM PRODUCTOS 
+WHERE codigo_categoria = 3
+GROUP BY codigo_categoria;
+
+-- ------------------------------------------------------------------------------------- --
+-- 2.8.3. Conteo [COUNT()] . ----------------------------------------------------------- --
+--        SELECT __ , COUT( __ ) FROM __ GROUP BY __ : --------------------------------- --
+-- ------------------------------------------------------------------------------------- --
+SELECT ciudad_cred, COUNT(codigo_cred) FROM CREDENCIALES 
+GROUP BY ciudad_cred;
+
+SELECT ciudad_cred, COUNT(codigo_cred) FROM CREDENCIALES 
+WHERE ciudad_cred = 'Bogotá'
+GROUP BY ciudad_cred;
+
+-- ------------------------------------------------------------------------------------- --
+-- 2.8.4. Máximo [MAX()] . ------------------------------------------------------------- --
+--        SELECT __ , MAX( __ ) FROM __ GROUP BY __ : -------------------------------- --
+-- ------------------------------------------------------------------------------------- --
+SELECT seccion, MAX(precio) FROM productos 
+WHERE seccion = 'CONFECCIÓN' GROUP BY seccion
+
+-- ------------------------------------------------------------------------------------- --
+-- 2.8.5. Mínimo [MIN()] . ------------------------------------------------------------- --
+--        SELECT __ , MIN( __ ) FROM __ GROUP BY __ : -------------------------------- --
+-- ------------------------------------------------------------------------------------- --
+SELECT seccion, MIN(precio) AS precio_alto FROM productos 
+WHERE seccion = 'CONFECCIÓN' GROUP BY seccion
+
+
+-- -------------------------------------------------------------------------------------
 SELECT codigo_categoria, SUM(precio_producto) AS suma_productos FROM PRODUCTOS 
 GROUP BY codigo_categoria ORDER BY suma_productos ASC;
 
@@ -351,34 +395,30 @@ SELECT codigo_categoria, SUM(precio_producto) AS suma_productos FROM PRODUCTOS
 GROUP BY codigo_categoria HAVING codigo_categoria = 2 OR codigo_categoria = 3 
 ORDER BY suma_productos DESC;
 
--- ------------------------------------------------------------------------------------- --
--- 2.8.2. AVG() : Promedio. ------------------------------------------------------------ --
---        SELECT __ , AVG( __ ) FROM __ : ---------------------------------------------- --
--- ------------------------------------------------------------------------------------- --
+SELECT codigo_categoria, AVG(precio_producto) AS promedio_productos FROM PRODUCTOS 
+GROUP BY codigo_categoria;
+
 SELECT codigo_categoria, AVG(precio_producto) AS promedio_productos FROM PRODUCTOS 
 GROUP BY codigo_categoria HAVING codigo_categoria = 2 OR codigo_categoria = 3 
 ORDER BY promedio_productos;
 
--- ------------------------------------------------------------------------------------- --
--- 2.8.3. COUNT() : Contar. ------------------------------------------------------------ --
---        SELECT __ , COUNT( __ ) FROM __ GROUP BY __ : -------------------------------- --
--- ------------------------------------------------------------------------------------- --
 SELECT ciudad_cred, COUNT(codigo_cred) AS cant_clientes FROM CREDENCIALES 
 GROUP BY ciudad_cred ORDER BY cant_clientes DESC;
 
--- ------------------------------------------------------------------------------------- --
--- 2.8.4. MAX() : Contar. ------------------------------------------------------------ --
---        SELECT __ , COUNT( __ ) FROM __ GROUP BY __ : -------------------------------- --
--- ------------------------------------------------------------------------------------- --
 SELECT seccion, MAX(precio) AS precio_alto FROM productos 
 WHERE seccion = 'CONFECCIÓN' GROUP BY seccion
 
--- ------------------------------------------------------------------------------------- --
--- 2.8.4. MAX() : Contar. ------------------------------------------------------------ --
---        SELECT __ , COUNT( __ ) FROM __ GROUP BY __ : -------------------------------- --
--- ------------------------------------------------------------------------------------- --
 SELECT seccion, MIN(precio) AS precio_alto FROM productos 
 WHERE seccion = 'CONFECCIÓN' GROUP BY seccion
+
+SELECT seccion, MAX(precio) FROM productos 
+WHERE seccion = 'CONFECCIÓN' GROUP BY seccion
+
+SELECT seccion, MIN(precio) AS precio_alto FROM productos 
+WHERE seccion = 'CONFECCIÓN' GROUP BY seccion
+
+
+
 
 -- -------------------------------------------------------------------------------------
 -- ## - Seleccione el articulo, seccion y precio de la tabla productos y cree un campo 
