@@ -132,9 +132,9 @@ INSERT INTO CLIENTES VALUES
 INSERT INTO PEDIDOS VALUES
 ('customer-1','pedido-1','2022-10-13','Bogotá','Av Siempre Viva',23850.90,4531.67,28382.57,'entregado'),
 ('customer-2','pedido-2','2022-10-14','Cali','Calle 3 con 4',3500.00,665.00,4165.00,'enviado'),
-('customer-1','pedido-3','2022-10-14','Bogotá','Carrera 5 con 7',6952.85,1321.04,8273.89,'por_pagar'),
-('customer-2','pedido-4','2022-10-15','Cali','Calle 2 con 8',46100.00,8759.00,54859.00,'en_cotización'),
-('customer-1','pedido-5','2022-11-02','Medellín','Tv 8 con 15',74000.00,14060.00,88060.00,'enviado');
+('customer-1','pedido-3','2022-10-14','Bogotá','Carrera 5 con 7',6952.85,1321.04,8273.89,'debe'),
+('customer-2','pedido-4','2022-10-15','Cali','Calle 2 con 8',46100.00,8759.00,54859.00,'cotización'),
+('customer-1','pedido-5','2022-11-02','Medellín','Tv 8 con 15',74000.00,14060.00,88060.00,'entregado');
 
 INSERT INTO LISTA_PRODUCTOS VALUES
 ('pedido-1', 'prod-1', 3),
@@ -245,15 +245,15 @@ WHERE codigo_rol = 2 OR codigo_rol = 3;
 -- 2.4.2. Y [AND] . -------------------------------------------------------------------- --
 --        SELECT __ , __ FROM __ WHERE __ = __ AND __ = __ : --------------------------- --
 -- ------------------------------------------------------------------------------------- --
-SELECT codigo_cred, ciudad_cred FROM CREDENCIALES 
-WHERE ciudad_cred = 'Bogotá' AND estado_cred = 1;
+SELECT codigo_pedido, codigo_customer, ciudad_pedido FROM PEDIDOS 
+WHERE ciudad_pedido = 'Cali' AND estado_pedido = 'cotización';
 
 -- ------------------------------------------------------------------------------------- --
 -- 2.4.3. NO [NOT] . ------------------------------------------------------------------- --
 --        SELECT __ , __ FROM __ WHERE __ = __ AND __ = __ : --------------------------- --
 -- ------------------------------------------------------------------------------------- --
-SELECT codigo_cred, ciudad_cred FROM CREDENCIALES 
-WHERE ciudad_cred NOT IN ('Bogotá');
+SELECT codigo_pedido, codigo_customer, ciudad_pedido FROM PEDIDOS 
+WHERE ciudad_pedido NOT IN ('Bogotá');
 
 -- ------------------------------------------------------------------------------------- --
 -- 2.5. Con Operadores de Comparación. --------------------------------------- --
@@ -374,109 +374,109 @@ ORDER BY codigo_categoria ASC, precio_producto DESC;
 -- 2.8.1. Suma [SUM()] . --------------------------------------------------------------- --
 --        SELECT __ , SUM( __ ) FROM __ GROUP BY __ : ---------------------------------- --
 -- ------------------------------------------------------------------------------------- --
-SELECT codigo_categoria, SUM(precio_producto) FROM PRODUCTOS 
-WHERE codigo_categoria = 3;
+SELECT codigo_customer, SUM(total_pr_pedido) FROM PEDIDOS 
+WHERE codigo_customer = 'customer-1';
 
-SELECT codigo_categoria, SUM(precio_producto) FROM PRODUCTOS 
-GROUP BY codigo_categoria;
+SELECT codigo_customer, SUM(total_pr_pedido) FROM PEDIDOS 
+GROUP BY codigo_customer;
 
 -- ------------------------------------------------------------------------------------- --
 -- 2.8.2. Promedio [AVG()] . ----------------------------------------------------------- --
 --        SELECT __ , AVG( __ ) FROM __ GROUP BY __ : ---------------------------------- --
 -- ------------------------------------------------------------------------------------- --
-SELECT codigo_categoria, AVG(precio_producto) FROM PRODUCTOS 
-WHERE codigo_categoria = 3;
+SELECT codigo_customer, AVG(total_pr_pedido) FROM PEDIDOS 
+WHERE codigo_customer = 'customer-1';
 
-SELECT codigo_categoria, AVG(precio_producto) FROM PRODUCTOS 
-GROUP BY codigo_categoria;
+SELECT codigo_customer, AVG(total_pr_pedido) FROM PEDIDOS 
+GROUP BY codigo_customer;
 
 -- ------------------------------------------------------------------------------------- --
 -- 2.8.3. Máximo [MAX()] . ------------------------------------------------------------- --
 --        SELECT __ , MAX( __ ) FROM __ GROUP BY __ : -------------------------------- --
 -- ------------------------------------------------------------------------------------- --
-SELECT codigo_categoria, MAX(precio_producto) FROM PRODUCTOS 
-WHERE codigo_categoria = 3;
+SELECT codigo_customer, MAX(total_pr_pedido) FROM PEDIDOS 
+WHERE codigo_customer = 'customer-1';
 
-SELECT codigo_categoria, MAX(precio_producto) FROM PRODUCTOS 
-GROUP BY codigo_categoria;
+SELECT codigo_customer, MAX(total_pr_pedido) FROM PEDIDOS 
+GROUP BY codigo_customer;
 
 -- ------------------------------------------------------------------------------------- --
 -- 2.8.4. Mínimo [MIN()] . ------------------------------------------------------------- --
 --        SELECT __ , MIN( __ ) FROM __ GROUP BY __ : -------------------------------- --
 -- ------------------------------------------------------------------------------------- --
-SELECT codigo_categoria, MIN(precio_producto) FROM PRODUCTOS 
-WHERE codigo_categoria = 3;
+SELECT codigo_customer, MIN(total_pr_pedido) FROM PEDIDOS 
+WHERE codigo_customer = 'customer-1';
 
-SELECT codigo_categoria, MIN(precio_producto) FROM PRODUCTOS 
-GROUP BY codigo_categoria;
+SELECT codigo_customer, MIN(total_pr_pedido) FROM PEDIDOS 
+GROUP BY codigo_customer;
 
 -- ------------------------------------------------------------------------------------- --
 -- 2.8.5. Conteo [COUNT()] . ----------------------------------------------------------- --
 --        SELECT __ , COUT( __ ) FROM __ GROUP BY __ : --------------------------------- --
 -- ------------------------------------------------------------------------------------- --
-SELECT ciudad_cred, COUNT(codigo_cred) FROM CREDENCIALES 
-WHERE ciudad_cred = 'Bogotá';
+SELECT ciudad_pedido, COUNT(codigo_pedido) FROM PEDIDOS 
+WHERE ciudad_pedido = 'Bogotá';
 
-SELECT ciudad_cred, COUNT(codigo_cred) FROM CREDENCIALES 
-GROUP BY ciudad_cred;
+SELECT ciudad_pedido, COUNT(codigo_pedido) FROM PEDIDOS 
+GROUP BY ciudad_pedido;
 
 -- ------------------------------------------------------------------------------------- --
 -- 2.9. Calculadas con Alias. ---------------------------------------------------------- --
 --      SELECT __ , FUN( __ ) AS __ : -------------------------------------------------- --
 -- ------------------------------------------------------------------------------------- --
-SELECT codigo_categoria, SUM(precio_producto) AS suma_productos 
-FROM PRODUCTOS 
-GROUP BY codigo_categoria 
-ORDER BY suma_productos ASC;
+SELECT codigo_customer, SUM(total_pr_pedido) AS suma_pedidos
+FROM PEDIDOS 
+GROUP BY codigo_customer
+ORDER BY suma_pedidos ASC;
 
-SELECT codigo_categoria, AVG(precio_producto) AS promedio_productos 
-FROM PRODUCTOS 
-GROUP BY codigo_categoria 
-ORDER BY promedio_productos DESC;
+SELECT codigo_customer, AVG(total_pr_pedido) AS promedio_pedidos
+FROM PEDIDOS 
+GROUP BY codigo_customer
+ORDER BY promedio_pedidos DESC;
 
-SELECT codigo_categoria, MAX(precio_producto) AS maximo_productos 
-FROM PRODUCTOS 
-GROUP BY codigo_categoria 
-ORDER BY maximo_productos ASC;
+SELECT codigo_customer, MAX(total_pr_pedido) AS maximo_pedido
+FROM PEDIDOS 
+GROUP BY codigo_customer
+ORDER BY maximo_pedido DESC;
 
-SELECT codigo_categoria, MAX(precio_producto) AS minimo_productos 
-FROM PRODUCTOS 
-GROUP BY codigo_categoria 
-ORDER BY minimo_productos DESC;
+SELECT codigo_customer, MIN(total_pr_pedido) AS minimo_pedido
+FROM PEDIDOS 
+GROUP BY codigo_customer
+ORDER BY minimo_pedido ASC;
 
-SELECT ciudad_cred, COUNT(codigo_cred) AS cant_clientes 
-FROM CREDENCIALES 
-GROUP BY ciudad_cred 
-ORDER BY cant_clientes ASC;
+SELECT ciudad_pedido, COUNT(codigo_pedido) cant_pedidos
+FROM PEDIDOS 
+GROUP BY ciudad_pedido
+ORDER BY cant_pedidos DESC;
 
 -- ------------------------------------------------------------------------------------- --
 -- 2.10. Calculadas Condicionantes. ---------------------------------------------------- --
 --      SELECT __ , FUN( __ ) AS __ FROM __ GROUP BY __ HAVING __ = __ OR __ = __ : ---- --
 -- ------------------------------------------------------------------------------------- --
-SELECT codigo_categoria, SUM(precio_producto) AS suma_productos 
-FROM PRODUCTOS 
-GROUP BY codigo_categoria HAVING codigo_categoria = 2 OR codigo_categoria = 3 
-ORDER BY suma_productos DESC;
+SELECT codigo_customer, estado_pedido, SUM(total_pr_pedido) AS suma_pedidos
+FROM PEDIDOS 
+GROUP BY estado_pedido HAVING codigo_customer='customer-1' AND estado_pedido='entregado' 
+ORDER BY suma_pedidos ASC;
 
-SELECT codigo_categoria, AVG(precio_producto) AS promedio_productos 
-FROM PRODUCTOS 
-GROUP BY codigo_categoria HAVING codigo_categoria = 2 OR codigo_categoria = 3 
-ORDER BY promedio_productos ASC;
+SELECT codigo_customer, estado_pedido, AVG(total_pr_pedido) AS promedio_pedidos
+FROM PEDIDOS 
+GROUP BY estado_pedido HAVING codigo_customer='customer-1' AND estado_pedido='entregado' 
+ORDER BY promedio_pedidos ASC;
 
-SELECT codigo_categoria, MAX(precio_producto) AS maximo_productos 
-FROM PRODUCTOS 
-GROUP BY codigo_categoria HAVING codigo_categoria = 2 OR codigo_categoria = 3 
-ORDER BY maximo_productos DESC;
+SELECT codigo_customer, estado_pedido, MAX(total_pr_pedido) AS maximo_pedido
+FROM PEDIDOS 
+GROUP BY estado_pedido HAVING codigo_customer='customer-1' AND estado_pedido='entregado' 
+ORDER BY maximo_pedido ASC;
 
-SELECT codigo_categoria, MIN(precio_producto) AS maximo_productos 
-FROM PRODUCTOS 
-GROUP BY codigo_categoria HAVING codigo_categoria = 2 OR codigo_categoria = 3 
-ORDER BY maximo_productos ASC;
+SELECT codigo_customer, estado_pedido, MIN(total_pr_pedido) AS minimo_pedido
+FROM PEDIDOS 
+GROUP BY estado_pedido HAVING codigo_customer='customer-1' AND estado_pedido='entregado' 
+ORDER BY minimo_pedido ASC;
 
-SELECT ciudad_cred, COUNT(codigo_cred) AS cant_clientes 
-FROM CREDENCIALES 
-GROUP BY ciudad_cred HAVING ciudad_cred = "Bogotá" OR ciudad_cred = "Cali"
-ORDER BY cant_clientes DESC;
+SELECT ciudad_pedido, COUNT(codigo_pedido) cant_pedidos
+FROM PEDIDOS 
+GROUP BY ciudad_pedido HAVING ciudad_pedido = "Medellín" OR ciudad_pedido = "Cali"
+ORDER BY cant_pedidos DESC;
 
 -- ------------------------------------------------------------------------------------- --
 -- 2.11. Calculadas con Operadores. ---------------------------------------------------- --
@@ -531,8 +531,6 @@ FROM CREDENCIALES;
 /* -------------------------- 3. CONSULTAS DE ACCIÓN [Final] --------------------------- */
 /* ---------------------------- INSERT INTO, UPDATE, DELETE ---------------------------- */
 /* ************************************************************************************* */
-
-
 
 INSERT INTO MENSAJES VALUES
 ('admin-1',DATE_FORMAT(NOW(),'%Y-%m-%d'),'Mantenimiento Sistema','Se informa a los ...');
