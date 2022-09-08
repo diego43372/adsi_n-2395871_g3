@@ -38,9 +38,7 @@ CREATE TABLE USUARIOS (
 CREATE TABLE CREDENCIALES (
   codigo_cred VARCHAR(10) NOT NULL,
   identificacion_cred INT NOT NULL,
-  fecha_ingreso_cred DATE NOT NULL,
-  ciudad_cred VARCHAR(50) NOT NULL,
-  direccion_cred VARCHAR(100) NOT NULL,
+  fecha_ingreso_cred DATE NOT NULL,  
   pass_cred VARCHAR(150) NOT NULL,
   estado_cred TINYINT NOT NULL,
   PRIMARY KEY (codigo_cred),
@@ -106,11 +104,12 @@ CREATE TABLE PRODUCTOS (
 CREATE TABLE PEDIDOS (
   codigo_pedido VARCHAR(10) NOT NULL,
   fecha_pedido DATE NOT NULL,
+  ciudad_pedido VARCHAR(50) NOT NULL,
   direccion_pedido VARCHAR(100) NOT NULL,
   total_pl_pedido DECIMAL(10,2) NOT NULL,
   iva_pedido DECIMAL(10,2) NOT NULL,
   total_pr_pedido DECIMAL(10,2) NOT NULL,
-  estado_pedido TINYINT NOT NULL,
+  estado_pedido VARCHAR(30) NOT NULL,
   PRIMARY KEY (codigo_pedido)
 ) ENGINE = InnoDB;
 
@@ -140,7 +139,7 @@ CREATE TABLE LISTA_PRODUCTOS (
 -- -----------------------------------------------------
 CREATE TABLE CLIENTES (
   codigo_customer VARCHAR(10) NOT NULL,
-  edad_customer INT NOT NULL,
+  fecha_nac_customer DATE NOT NULL,  
   PRIMARY KEY (codigo_customer),
   INDEX ind_cliente_credencial (codigo_customer ASC),
   CONSTRAINT fk_cliente_credencial

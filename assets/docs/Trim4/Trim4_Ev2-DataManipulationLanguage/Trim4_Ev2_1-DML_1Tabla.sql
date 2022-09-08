@@ -48,7 +48,7 @@
 /* 2.12.1. Fecha Actual : ............ NOW()                                             */
 /* 2.12.2. Formato Fecha : ........... DATE_FORMAT(NOW(), '%Y-%m-%d')                    */
 /* 2.12.3. Direfencia Fechas : ....... TIMESTAMPDIFF(DAY, __ , NOW())                    */
-/* 3. CONSULTAS DE ACCIÓN [Final] : ..                                                   */
+/* 3. CONSULTAS DE ACCIÓN [Final] : .. INSERT INTO, UPDATE, DELETE                       */
 /* ------------------------------------------------------------------------------------- */
 /* ************************************************************************************* */
 /* EN CONSOLA: XAMPP / SHELL / cd mysql/bin / mysql -h localhost -u root -p / ENTER      */
@@ -82,21 +82,8 @@ INSERT INTO USUARIOS VALUES
 (2, 'person-1', 'Ezequiel', 'Pantoja', 'ezequiel@gmail.com'),
 (2, 'person-2', 'Camilo', 'Céspedes', 'camilo@gmail.com'),
 (3, 'customer-2', 'Jorge', 'Campos', 'jorge@gmail.com'),
-(1, 'admin-2', 'Pepito', 'Perez', 'pepito@gmail.com');
-
-INSERT INTO MENSAJES VALUES
-('person-1', '2022-08-15', 'Solicitud de Información', 'Quisiera saber sobre... '),
-('seller-1', '2022-08-27', 'Reunión Vendedores', 'El próximo fin de semana...'),
-('person-2', '2022-08-27', 'Productos a crédito', 'Qué papeles piden para...'),
-('admin-1', '2022-08-31', 'Mantenimiento Sistema', 'Se informa a los usuarios...'),
-('customer-1', '2022-09-01', 'No tengo el producto', 'Aun no llega el producto'),
-('customer-1', '2022-10-02', 'Devolución Dinero', 'Aun no llega el producto');
-
-INSERT INTO CREDENCIALES VALUES
-('admin-1', 123456, "2022-06-11", 'Bogotá', 'Av Siempre Viva', sha1('12345'), 1),
-('customer-1', 456789, "2022-07-12", 'Cali', 'Calle 3 con 4', sha1('12345'), 0),
-('seller-1', 987654, "2022-08-13", 'Bogotá', 'Carrera 5 con 7', sha1('12345'), 1),
-('customer-2', 654321, "2022-08-28", 'Medellín', 'Tv 8 con 15', sha1('12345'), 0);
+(1, 'admin-2', 'Pepito', 'Perez', 'pepito@gmail.com'),
+(4, 'seller-2', 'Alfonso', 'Camacho', 'alfonso@gmail.com');
 
 INSERT INTO CATEGORIAS VALUES 
 (null, 'Mercado'),
@@ -117,6 +104,59 @@ INSERT INTO PRODUCTOS VALUES
 (4, 'prod-10', 'Jabón Baño', 1200.00, 285.00, 'gramos'),
 (4, 'prod-11', 'Jabón Ropa', 12000.00, 1000.00, 'gramos'),
 (4, 'prod-12', 'Shampoo', 18500.00, 750.00, 'mililitros');
+
+INSERT INTO MENSAJES VALUES
+('person-1', '2022-08-15', 'Solicitud de Información', 'Quisiera saber sobre... '),
+('seller-1', '2022-08-27', 'Reunión Vendedores', 'El próximo fin de semana...'),
+('person-2', '2022-08-27', 'Productos a crédito', 'Qué papeles piden para...'),
+('admin-1', '2022-08-31', 'Mantenimiento Sistema', 'Se informa a los usuarios...'),
+('customer-1', '2022-09-01', 'No tengo el producto', 'Aun no llega el producto'),
+('customer-1', '2022-10-02', 'Devolución Dinero', 'Aun no llega el producto');
+('seller-2', '2022-10-02', 'Reunión por Cumpleaños', 'El próximo 6 de Octubre...');
+
+INSERT INTO CREDENCIALES VALUES
+('admin-1', 123456, "2022-06-11", sha1('12345'), 1),
+('customer-1', 456789, "2022-07-12", sha1('12345'), 0),
+('seller-1', 987654, "2022-08-13", sha1('12345'), 1),
+('seller-1', 852963, "2022-08-28", 'Bogotá', 'Carrera 5 con 7', sha1('12345'), 1),
+('customer-2', 654321, "2022-08-28", 'Medellín', 'Tv 8 con 15', sha1('12345'), 0);
+
+INSERT INTO VENDEDORES VALUES
+('seller-1', 1500000.00),
+('seller-2', 1800000.00);
+
+INSERT INTO CLIENTES VALUES
+('customer-1', '2005-05-05'),
+('customer-2', '1983-04-1');
+
+INSERT INTO PEDIDOS VALUES
+('pedido-1','2022-10-13','Bogotá','Av Siempre Viva',23850.90,4531.67,28382.57,'entregado'),
+('pedido-2','2022-10-14','Cali','Calle 3 con 4',3500.00,665.00,4165.00,'enviado'),
+('pedido-3','2022-10-14','Bogotá','Carrera 5 con 7',6952.85,1321.04,8273.89,'por_pagar'),
+('pedido-4','2022-10-15','Cali','Calle 2 con 8',46100.00,8759.00,54859.00,'en_cotización'),
+('pedido-5','2022-11-02','Medellín','Tv 8 con 15',74000.00,14060.00,88060.00,'enviado');
+
+INSERT INTO LISTA_PRODUCTOS VALUES
+('pedido-1', 'producto-1', 3),
+('pedido-1', 'producto-5', 2),
+('pedido-2', 'producto-6', 1),
+('pedido-3', 'producto-2', 5),
+('pedido-3', 'producto-1', 4),
+('pedido-4', 'producto-10', 3),
+('pedido-4', 'producto-11', 2),
+('pedido-4', 'producto-6', 1),
+('pedido-4', 'producto-7', 5),
+('pedido-5', 'producto-12', 4);
+
+INSERT INTO LISTA_PRODUCTOS VALUES
+('customer-1', 'pedido-1'),
+('seller-1', 'pedido-1'),
+('customer-2', 'pedido-2'),
+('customer-1', 'pedido-3'),
+('customer-2', 'pedido-4'),
+('seller-2', 'pedido-4'),
+('customer-1', 'pedido-5');
+
 
 -- ------------------------------------------------------------------------------------- --
 -- 1.1.2. Datos Incorrectos ------------------------------------------------------------ --
@@ -142,7 +182,7 @@ INSERT INTO CREDENCIALES VALUES
 
 -- Datos válidos para demostrar la actualización y eliminación en Cascada
 INSERT INTO CREDENCIALES VALUES
-('admin-2', 213456, "2022-06-11", 'Bogotá', 'Av Siempre Viva', sha1('12345'), 1);
+('admin-2', 213456, "2022-06-11", 'Medellín', 'Calle 1 con 2', sha1('12345'), 0);
 
 INSERT INTO CREDENCIALES VALUES 
 ('person-1', 666555, '2022-09-25', 'Bucaramanga', 'Av Matamoros', sha1('45678'), 1);
@@ -488,3 +528,25 @@ TIMESTAMPDIFF(MONTH, fecha_ingreso_cred, NOW()) AS meses_transcurridos,
 TIMESTAMPDIFF(DAY, fecha_ingreso_cred, NOW()) - 
 TIMESTAMPDIFF(MONTH, fecha_ingreso_cred, NOW()) * 30 AS dias_transcurridos
 FROM CREDENCIALES;
+
+/* ************************************************************************************* */
+/* -------------------------- 3. CONSULTAS DE ACCIÓN [Final] --------------------------- */
+/* ---------------------------- INSERT INTO, UPDATE, DELETE ---------------------------- */
+/* ************************************************************************************* */
+
+
+
+INSERT INTO MENSAJES VALUES
+('admin-1',DATE_FORMAT(NOW(),'%Y-%m-%d'),'Mantenimiento Sistema','Se informa a los ...');
+
+INSERT INTO USUARIOS VALUES 
+(1, 'admin-2', 'Pepito', 'Perez', 'pepito@gmail.com');
+
+INSERT INTO CREDENCIALES VALUES
+('admin-2',
+213456,
+DATE_FORMAT(NOW(),'%Y-%m-%d'),
+'Medellín',
+'Calle 1 con 2',
+sha1('12345'),
+0);
