@@ -38,13 +38,13 @@ CREATE TABLE USUARIOS (
 CREATE TABLE CREDENCIALES (
   codigo_cred VARCHAR(10) NOT NULL,
   identificacion_cred INT NOT NULL,
-  fecha_ingreso_cred DATE NOT NULL,  
+  fecha_ingreso_cred DATE NOT NULL,
   pass_cred VARCHAR(150) NOT NULL,
   estado_cred TINYINT NOT NULL,
-  PRIMARY KEY (codigo_cred),
   INDEX ind_credencial_usuario (codigo_cred ASC),
-  INDEX ind_codigo_cred_identificacion_cred (codigo_cred, identificacion_cred),
+  PRIMARY KEY (codigo_cred),
   UNIQUE INDEX uq_identificacion_cred (identificacion_cred ASC),
+  INDEX ind_codigo_cred_identificacion_cred (codigo_cred, identificacion_cred),
   CONSTRAINT chk_evitarPersona 
   CHECK (codigo_cred NOT LIKE '%person%'),
   CONSTRAINT fk_credencial_usuario
@@ -76,8 +76,8 @@ CREATE TABLE MENSAJES (
 CREATE TABLE CATEGORIAS (
   codigo_categoria INT NOT NULL AUTO_INCREMENT,
   nombre_categoria VARCHAR(50) NOT NULL,
-  PRIMARY KEY (codigo_categoria)
-) ENGINE = InnoDB;
+  PRIMARY KEY (codigo_categoria))
+ENGINE = InnoDB;
 
 -- -----------------------------------------------------
 -- Table PRODUCTOS
@@ -88,7 +88,7 @@ CREATE TABLE PRODUCTOS (
   nombre_producto VARCHAR(50) NOT NULL,
   precio_producto DECIMAL(10,2) NOT NULL,
   unidad_producto DECIMAL(5,2) NOT NULL,
-  medida_producto VARCHAR(20) NOT NULL,  
+  medida_producto VARCHAR(20) NOT NULL,
   PRIMARY KEY (codigo_producto),
   INDEX ind_producto_categoria (codigo_categoria ASC),
   CONSTRAINT fk_producto_categoria
@@ -99,9 +99,27 @@ CREATE TABLE PRODUCTOS (
 ) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
+-- Table CLIENTES
+-- -----------------------------------------------------
+CREATE TABLE CLIENTES (
+  codigo_customer VARCHAR(10) NOT NULL,
+  fecha_nac_customer DATE NOT NULL,
+  PRIMARY KEY (codigo_customer),
+  INDEX ind_cliente_credencial (codigo_customer ASC),
+  CONSTRAINT chk_soloCliente 
+  CHECK (codigo_customer LIKE '%customer%'),
+  CONSTRAINT fk_cliente_credencial
+    FOREIGN KEY (codigo_customer)
+    REFERENCES CREDENCIALES (codigo_cred)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+) ENGINE = InnoDB;
+
+-- -----------------------------------------------------
 -- Table PEDIDOS
 -- -----------------------------------------------------
 CREATE TABLE PEDIDOS (
+  codigo_customer VARCHAR(10) NOT NULL,
   codigo_pedido VARCHAR(10) NOT NULL,
   fecha_pedido DATE NOT NULL,
   ciudad_pedido VARCHAR(50) NOT NULL,
@@ -110,7 +128,13 @@ CREATE TABLE PEDIDOS (
   iva_pedido DECIMAL(10,2) NOT NULL,
   total_pr_pedido DECIMAL(10,2) NOT NULL,
   estado_pedido VARCHAR(30) NOT NULL,
-  PRIMARY KEY (codigo_pedido)
+  PRIMARY KEY (codigo_pedido),
+  INDEX ind_pedido_cliente (codigo_customer ASC),
+  CONSTRAINT fk_pedido_cliente
+    FOREIGN KEY (codigo_customer)
+    REFERENCES CLIENTES (codigo_customer)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
 ) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
@@ -135,21 +159,6 @@ CREATE TABLE LISTA_PRODUCTOS (
 ) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
--- Table CLIENTES
--- -----------------------------------------------------
-CREATE TABLE CLIENTES (
-  codigo_customer VARCHAR(10) NOT NULL,
-  fecha_nac_customer DATE NOT NULL,  
-  PRIMARY KEY (codigo_customer),
-  INDEX ind_cliente_credencial (codigo_customer ASC),
-  CONSTRAINT fk_cliente_credencial
-    FOREIGN KEY (codigo_customer)
-    REFERENCES CREDENCIALES (codigo_cred)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE
-) ENGINE = InnoDB;
-
--- -----------------------------------------------------
 -- Table VENDEDORES
 -- -----------------------------------------------------
 CREATE TABLE VENDEDORES (
@@ -157,6 +166,8 @@ CREATE TABLE VENDEDORES (
   salario_seller DECIMAL(8,2) NOT NULL,
   PRIMARY KEY (codigo_seller),
   INDEX ind_vendedor_credencial (codigo_seller ASC),
+  CONSTRAINT chk_soloVendedor 
+  CHECK (codigo_seller LIKE '%seller%'),
   CONSTRAINT fk_vendedor_credencial
     FOREIGN KEY (codigo_seller)
     REFERENCES CREDENCIALES (codigo_cred)
@@ -165,21 +176,16 @@ CREATE TABLE VENDEDORES (
 ) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
--- Table CREDENCIALES_PEDIDOS
+-- Table VENDEDORES_PEDIDOS
 -- -----------------------------------------------------
-CREATE TABLE CREDENCIALES_PEDIDOS (
-  codigo_cred VARCHAR(10) NOT NULL,
+CREATE TABLE VENDEDORES_PEDIDOS (
+  codigo_seller VARCHAR(10) NOT NULL,
   codigo_pedido VARCHAR(10) NOT NULL,
-  INDEX ind_credencial_pedido_cliente (codigo_cred ASC),
-  INDEX ind_credencial_pedido_vendedor (codigo_cred ASC),
+  INDEX ind_credencial_pedido_vendedor (codigo_seller ASC),
   INDEX ind_credencial_pedido_pedido (codigo_pedido ASC),
-  CONSTRAINT fk_credencial_pedido_cliente
-    FOREIGN KEY (codigo_cred)
-    REFERENCES CLIENTES (codigo_customer)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE,
+  PRIMARY KEY (codigo_pedido),
   CONSTRAINT fk_credencial_pedido_vendedor
-    FOREIGN KEY (codigo_cred)
+    FOREIGN KEY (codigo_seller)
     REFERENCES VENDEDORES (codigo_seller)
     ON DELETE CASCADE
     ON UPDATE CASCADE,

@@ -111,7 +111,9 @@ ALTER TABLE USUARIOS DROP CONSTRAINT fk_usuario_rol;
 ALTER TABLE MENSAJES DROP CONSTRAINT fk_mensaje_usuario;
 ALTER TABLE CREDENCIALES DROP CONSTRAINT chk_evitarPersona;
 ALTER TABLE CREDENCIALES DROP CONSTRAINT fk_credencial_usuario;
+ALTER TABLE CLIENTES DROP CONSTRAINT chk_soloCliente;
 ALTER TABLE CLIENTES DROP CONSTRAINT fk_cliente_credencial;
+ALTER TABLE VENDEDORES DROP CONSTRAINT chk_soloVendedor;
 ALTER TABLE VENDEDORES DROP CONSTRAINT fk_vendedor_credencial;
 
 -- ------------------------------------------------------------------------------------- --
@@ -216,12 +218,18 @@ CONSTRAINT fk_credencial_usuario
 	REFERENCES USUARIOS (codigo_user)
 	ON DELETE CASCADE
 	ON UPDATE CASCADE;
+ALTER TABLE CLIENTES ADD
+CONSTRAINT chk_soloCliente 
+  CHECK (codigo_customer LIKE '%customer%'),
 ALTER TABLE CLIENTES ADD 
 CONSTRAINT fk_cliente_credencial 
 	FOREIGN KEY (codigo_customer)
 	REFERENCES CREDENCIALES (codigo_cred)
 	ON DELETE CASCADE
 	ON UPDATE CASCADE;
+ALTER TABLE VENDEDORES ADD
+CONSTRAINT chk_soloVendedor 
+  CHECK (codigo_seller LIKE '%seller%'),
 ALTER TABLE VENDEDORES ADD 
 CONSTRAINT fk_vendedor_credencial 
 	FOREIGN KEY (codigo_seller)
