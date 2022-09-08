@@ -536,6 +536,7 @@ TIMESTAMPDIFF(DAY, fecha_ingreso_cred, NOW()) -
 TIMESTAMPDIFF(MONTH, fecha_ingreso_cred, NOW()) * 30 AS dias_transcurridos
 FROM CREDENCIALES;
 
+
 /* ************************************************************************************* */
 /* -------------------------- 3. CONSULTAS DE ACCIÓN [Final] --------------------------- */
 /* ---------------------------- INSERT INTO, UPDATE, DELETE ---------------------------- */
@@ -548,10 +549,8 @@ INSERT INTO USUARIOS VALUES
 (1, 'admin-2', 'Pepito', 'Perez', 'pepito@gmail.com');
 
 INSERT INTO CREDENCIALES VALUES
-('admin-2',
-213456,
-DATE_FORMAT(NOW(),'%Y-%m-%d'),
-'Medellín',
-'Calle 1 con 2',
-sha1('12345'),
-0);
+('admin-2', 213456, DATE_FORMAT(NOW(),'%Y-%m-%d'), sha1('12345'), 1);
+
+INSERT INTO PEDIDOS VALUES
+('customer-2','pedido-6',DATE_FORMAT(NOW(),'%Y-%m-%d'),'Medellín','Av Rogeles',
+	10000.00, total_pl_pedido * 0.19, iva_pedido + total_pl_pedido, 'entregado');
