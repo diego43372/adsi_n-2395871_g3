@@ -44,7 +44,7 @@
 /* 2.9. Calculadas con Alias : ....... SELECT __ , FUN( __ ) AS __ FROM __               */
 /* 2.10. Calculadas Condicionantes : . GROUP BY __ HAVING __ = __ OR __ = __             */
 /* 2.11. Calculadas con Operadores : . SELECT __ , __ , ROUND( __ * 0.19) AS __ FROM __  */
-/* 2.12. Calculadas con Fechas : ..... NOW(), DATE_FORMAT(), DATEDIFF()                  */
+/* 2.12. Calculadas con Fechas : ..... NOW(), DATE_FORMAT(), TIMESTAMPDIFF()             */
 /* 2.12.1. Fecha Actual : ............ NOW()                                             */
 /* 2.12.2. Formato Fecha : ........... DATE_FORMAT(NOW(), '%Y-%m-%d')                    */
 /* 2.12.3. Direfencia Fechas : ....... TIMESTAMPDIFF(DAY, __ , NOW())                    */
@@ -502,7 +502,7 @@ FROM PRODUCTOS;
 
 -- ------------------------------------------------------------------------------------- --
 -- 2.12. Calculadas con Fechas. -------------------------------------------------------- --
---       NOW(), DATE_FORMAT(), DATEDIFF() : -------------------------------------------- --
+--       NOW(), DATE_FORMAT(), TIMESTAMPDIFF() : --------------------------------------- --
 -- ------------------------------------------------------------------------------------- --
 
 -- ------------------------------------------------------------------------------------- --
