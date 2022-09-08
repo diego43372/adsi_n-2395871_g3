@@ -130,11 +130,16 @@ INSERT INTO CLIENTES VALUES
 ('customer-2', '1983-04-1');
 
 INSERT INTO PEDIDOS VALUES
-('customer-1','pedido-1','2022-10-13','Bogotá','Av Siempre Viva',23850.90,4531.67,28382.57,'entregado'),
-('customer-2','pedido-2','2022-10-14','Cali','Calle 3 con 4',3500.00,665.00,4165.00,'enviado'),
-('customer-1','pedido-3','2022-10-14','Bogotá','Carrera 5 con 7',6952.85,1321.04,8273.89,'debe'),
-('customer-2','pedido-4','2022-10-15','Cali','Calle 2 con 8',46100.00,8759.00,54859.00,'cotización'),
-('customer-1','pedido-5','2022-11-02','Medellín','Tv 8 con 15',74000.00,14060.00,88060.00,'entregado');
+('customer-1','pedido-1','2022-10-13','Bogotá','Av Siempre Viva',
+	23850.90,4531.67,28382.57,'entregado'),
+('customer-2','pedido-2','2022-10-14','Cali','Calle 3 con 4',
+	3500.00,665.00,4165.00,'enviado'),
+('customer-1','pedido-3','2022-10-14','Bogotá','Carrera 5 con 7',
+	6952.85,1321.04,8273.89,'debe'),
+('customer-2','pedido-4','2022-10-15','Cali','Calle 2 con 8',
+	46100.00,8759.00,54859.00,'cotización'),
+('customer-1','pedido-5','2022-11-02','Medellín','Tv 8 con 15',
+	74000.00,14060.00,88060.00,'entregado');
 
 INSERT INTO LISTA_PRODUCTOS VALUES
 ('pedido-1', 'prod-1', 3),
