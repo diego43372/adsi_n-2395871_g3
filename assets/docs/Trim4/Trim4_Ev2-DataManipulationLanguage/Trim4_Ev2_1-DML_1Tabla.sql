@@ -542,11 +542,11 @@ FROM CREDENCIALES;
 /* ---------------------------- INSERT INTO, UPDATE, DELETE ---------------------------- */
 /* ************************************************************************************* */
 
-INSERT INTO MENSAJES VALUES
-('admin-1',DATE_FORMAT(NOW(),'%Y-%m-%d'),'Mantenimiento Sistema','Se informa a los ...');
-
 INSERT INTO USUARIOS VALUES 
 (1, 'admin-2', 'Pepito', 'Perez', 'pepito@gmail.com');
+
+INSERT INTO MENSAJES VALUES
+('admin-2',DATE_FORMAT(NOW(),'%Y-%m-%d'),'Mantenimiento Sistema','Se informa a los ...');
 
 INSERT INTO CREDENCIALES VALUES
 ('admin-2', 213456, DATE_FORMAT(NOW(),'%Y-%m-%d'), sha1('12345'), 1);
