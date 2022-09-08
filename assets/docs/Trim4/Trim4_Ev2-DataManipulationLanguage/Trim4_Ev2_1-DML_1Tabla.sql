@@ -374,6 +374,8 @@ ORDER BY codigo_categoria ASC, precio_producto DESC;
 -- 2.8.1. Suma [SUM()] . --------------------------------------------------------------- --
 --        SELECT __ , SUM( __ ) FROM __ GROUP BY __ : ---------------------------------- --
 -- ------------------------------------------------------------------------------------- --
+SELECT SUM(total_pr_pedido) FROM PEDIDOS;
+
 SELECT codigo_customer, SUM(total_pr_pedido) FROM PEDIDOS 
 WHERE codigo_customer = 'customer-1';
 
@@ -424,6 +426,8 @@ GROUP BY ciudad_pedido;
 -- 2.9. Calculadas con Alias. ---------------------------------------------------------- --
 --      SELECT __ , FUN( __ ) AS __ : -------------------------------------------------- --
 -- ------------------------------------------------------------------------------------- --
+SELECT SUM(total_pr_pedido) AS suma_pedidos FROM PEDIDOS;
+
 SELECT codigo_customer, SUM(total_pr_pedido) AS suma_pedidos
 FROM PEDIDOS 
 GROUP BY codigo_customer
