@@ -20,7 +20,7 @@
 /* 2.2.1.3. Condicionada : ........... WHERE, OPERADORES, ORDER BY                       */
 /* 2.2.2. LEFT JOIN : ................ SELECT __ FROM __ LEFT JOIN __ ON __.__ = __.__   */
 /* 2.2.2. RIGHT JOIN : ............... SELECT __ FROM __ RIGHT JOIN __ ON __.__ = __.__  */
-/* 2.3. Subconsultas : ............... IN, NOT IN                                        */
+/* 2.3. Subconsultas : ............... IN, NOT IN, ANY, ALL                              */
 /* 2.3.1. Escalonada : ............... IN, NOT IN                                        */
 /* 2.3.2. Lista : .................... IN, NOT IN                                        */
 /* 2.3.2. Correlacionada : ........... IN, NOT IN                                        */
@@ -53,6 +53,7 @@ WHERE ciudad_pedido = 'Bogotá';
 --      INSERT INTO __ SELECT __ FROM __ : --------------------------------------------- --
 -- ------------------------------------------------------------------------------------- --
 INSERT INTO PEDIDOS SELECT * FROM PEDIDOS_BOGOTA;
+DROP TABLE PEDIDOS_BOGOTA;
 
 
 /* ************************************************************************************* */
@@ -224,21 +225,27 @@ ON clientes.codigo_customer = pedidos.codigo_customer;
 -- ------------------------------------------------------------------------------------- --
 
 -- ------------------------------------------------------------------------------------- --
--- 2.3. Subconsulta Correlacionada. ---------------------------------------------------- --
---      IN, NOT IN : ------------------------------------------------------------------- --
+-- 2.3. Subconsultas. ------------------------------------------------------------------ --
+--      IN, NOT IN, ANY, ALL : --------------------------------------------------------- --
 -- ------------------------------------------------------------------------------------- --
+
+-- ------------------------------------------------------------------------------------- --
+-- 2.3.1. Escalonada. ------------------------------------------------------------------ --
+--         : --------------------------------------------------------------------------- --
+-- ------------------------------------------------------------------------------------- --
+
 ## Nombre y precio de aquellos artículos de los que se han pedido más de 20 unidades
 -- -------------------------------------------------------------------------------------
 SELECT nombre_articulo, precio FROM productos WHERE codigo_articulo IN 
 (SELECT codigo_articulo FROM productos_pedidos WHERE unidades > 20)
--- -------------------------------------------------------------------------------------
-## Nombre y precio de aquellos artículos de los que se han pedido más de 20 unidades con
--- INNER JOIN
+
 -- -------------------------------------------------------------------------------------
 SELECT nombre_articulo, precio FROM productos INNER JOIN productos_pedidos 
 ON productos.codigo_articulo = productos_pedidos.codigo_articulo
 WHERE unidades > 20
 -- -------------------------------------------------------------------------------------
+
+
 ## Nombre y precio de aquellos artículos de los que no se han pedido más de 20 unidades
 -- -------------------------------------------------------------------------------------
 SELECT nombre_articulo, precio FROM productos WHERE codigo_articulo NOT IN 
