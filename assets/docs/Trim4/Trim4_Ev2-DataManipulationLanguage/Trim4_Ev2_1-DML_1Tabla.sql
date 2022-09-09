@@ -81,6 +81,8 @@ INSERT INTO USUARIOS VALUES
 (2, 'person-1', 'Ezequiel', 'Pantoja', 'ezequiel@gmail.com'),
 (2, 'person-2', 'Camilo', 'Céspedes', 'camilo@gmail.com'),
 (3, 'customer-2', 'Jorge', 'Campos', 'jorge@gmail.com'),
+(3, 'customer-3', 'Ricardo', 'Quevedo', 'ricardo@gmail.com'),
+(3, 'customer-4', 'José Miguel', 'Ríos', 'jose@gmail.com'),
 (1, 'admin-2', 'Pepito', 'Perez', 'pepito@gmail.com'),
 (4, 'seller-2', 'Alfonso', 'Camacho', 'alfonso@gmail.com');
 
@@ -106,10 +108,12 @@ INSERT INTO PRODUCTOS VALUES
 
 INSERT INTO CREDENCIALES VALUES
 ('admin-1', 123456, "2022-06-11", sha1('12345'), 1),
-('customer-1', 456789, "2022-07-12", sha1('12345'), 0),
+('customer-1', 456789, "2022-07-12", sha1('12345'), 1),
 ('seller-1', 987654, "2022-08-13", sha1('12345'), 1),
-('seller-2', 852963, "2022-08-28", sha1('12345'), 1),
-('customer-2', 654321, "2022-08-28", sha1('12345'), 0);
+('seller-2', 852963, "2022-08-28", sha1('12345'), 0),
+('customer-2', 654321, "2022-08-28", sha1('12345'), 1),
+('customer-3', 333333, "2022-09-15", sha1('12345'), 0),
+('customer-4', 444444, "2022-09-16", sha1('12345'), 0);
 
 INSERT INTO MENSAJES VALUES
 ('person-1', '2022-08-15', 'Solicitud de Información', 'Quisiera saber sobre... '),
@@ -126,7 +130,9 @@ INSERT INTO VENDEDORES VALUES
 
 INSERT INTO CLIENTES VALUES
 ('customer-1', '2005-05-05'),
-('customer-2', '1983-04-1');
+('customer-2', '1983-04-1'),
+('customer-3', '1981-05-16'),
+('customer-4', '2007-08-20');
 
 INSERT INTO PEDIDOS VALUES
 ('customer-1','pedido-1','2022-10-13','Bogotá','Av Siempre Viva',

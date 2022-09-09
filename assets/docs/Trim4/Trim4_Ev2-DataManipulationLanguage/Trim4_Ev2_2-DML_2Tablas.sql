@@ -14,9 +14,12 @@
 /* 2.1.1. UNION : .................... SELECT __ FROM __ UNION SELECT __ FROM __         */
 /* 2.1.2. UNION ALL : ................ SELECT __ FROM __ UNION ALL SELECT __ FROM __     */
 /* 2.2. Unión Interna : .............. INNER JOIN, LEFT JOIN, RIGHT JOIN                 */
-/* 2.2.1. INNER JOIN : ............... INNER JOIN                                        */
-/* 2.2.2. LEFT JOIN : ................ LEFT JOIN                                         */
-/* 2.2.2. RIGHT JOIN : ............... RIGHT JOIN                                        */
+/* 2.2.1. INNER JOIN : ............... SELECT __ FROM __ INNER JOIN __ ON __.__ = __.__  */
+/* 2.2.1.1. Con Repeticiones : ....... INNER JOIN                                        */
+/* 2.2.1.2. Sin Repeticiones : ....... DISTINCT                                          */
+/* 2.2.1.3. Condicionada : ........... WHERE, OPERADORES, ORDER BY                       */
+/* 2.2.2. LEFT JOIN : ................ SELECT __ FROM __ LEFT JOIN __ ON __.__ = __.__   */
+/* 2.2.2. RIGHT JOIN : ............... SELECT __ FROM __ RIGHT JOIN __ ON __.__ = __.__  */
 /* 2.3. Subconsultas : ............... IN, NOT IN                                        */
 /* 2.3.1. Escalonada : ............... IN, NOT IN                                        */
 /* 2.3.2. Lista : .................... IN, NOT IN                                        */
@@ -87,6 +90,7 @@ FROM PRODUCTOS_NUEVOS WHERE codCat = 4 AND artPrec > 5000;
 SELECT * FROM PRODUCTOS UNION ALL
 SELECT * FROM PRODUCTOS_NUEVOS;
 
+
 -- ------------------------------------------------------------------------------------- --
 -- 2.2. Unión Interna. ----------------------------------------------------------------- --
 --      INNER JOIN, LEFT JOIN, RIGHT JOIN : -------------------------------------------- --
@@ -94,130 +98,130 @@ SELECT * FROM PRODUCTOS_NUEVOS;
 
 -- ------------------------------------------------------------------------------------- --
 -- 2.2.1. INNER JOIN. ------------------------------------------------------------------ --
---         : --------------------------------------------------------------------------- --
+--        SELECT __ FROM __ INNER JOIN __ ON __.__ = __.__ : --------------------------- --
 -- ------------------------------------------------------------------------------------- --
--- ----------------------------------------------------------------------------
--- ## - Inner Join: Solo la información común entre las tablas: clientes y 
--- pedidos. Clientes de Madrid que SÍ han hecho pedidos
--- ----------------------------------------------------------------------------
-SELECT * FROM clientes INNER JOIN pedidos 
-ON clientes.codigo_cliente = pedidos.codigo_cliente
-WHERE poblacion = 'MADRID' ORDER BY clientes.codigo_cliente
+SELECT * FROM CLIENTES INNER JOIN PEDIDOS
+ON clientes.codigo_customer = pedidos.codigo_customer;
 
-## Empresas que han hecho pedidos
--- -------------------------------------------------------------------------------------
-SELECT empresa FROM clientes INNER JOIN pedidos
-ON clientes.codigo_cliente = pedidos.codigo_cliente
--- -------------------------------------------------------------------------------------
-## Empresas que han hecho pedidos sin repeticiones
--- -------------------------------------------------------------------------------------
-SELECT DISTINCT empresa FROM clientes INNER JOIN pedidos
-ON clientes.codigo_cliente = pedidos.codigo_cliente
--- -------------------------------------------------------------------------------------
-## Clientes de Madrid que han hecho pedidos
--- -------------------------------------------------------------------------------------
-SELECT * FROM clientes INNER JOIN pedidos 
-ON clientes.codigo_cliente = pedidos.codigo_cliente
-WHERE poblacion = 'ÁVILA' ORDER BY clientes.codigo_cliente
--- -------------------------------------------------------------------------------------
-## Campos comunes de clientes y pedidos codigo_cliente, empresa, pobalción, fecha_pedido 
--- de la tabla clientes que sean de Madrid y que han hecho pedidos
--- -------------------------------------------------------------------------------------
-SELECT clientes.codigo_cliente, empresa, poblacion, fecha_pedido  
-FROM clientes INNER JOIN pedidos 
-ON clientes.codigo_cliente = pedidos.codigo_cliente
-WHERE poblacion = 'MADRID' ORDER BY clientes.codigo_cliente
--- -------------------------------------------------------------------------------------
-## Campos comunes codigo_cliente, poblacion, direccion, numero_pedido y forma_pago de 
--- pedidos donde clientes y pedidos estén relacionados
--- -------------------------------------------------------------------------------------
-SELECT clientes.codigo_cliente, poblacion, direccion, numero_pedido, 
-pedidos.codigo_cliente, forma_pago FROM clientes INNER JOIN pedidos
-ON clientes.codigo_cliente = pedidos.codigo_cliente
--- -------------------------------------------------------------------------------------
-## Campos comunes codigo_cliente, poblacion, direccion, numero_pedido y forma_pago de 
--- pedidos donde clientes y pedidos estén relacionados; además, filtre por la población
--- de Madrid y los ordene de menor a mayor
--- -------------------------------------------------------------------------------------
-SELECT clientes.codigo_cliente, poblacion, direccion, 
-numero_pedido, forma_pago FROM clientes INNER JOIN pedidos
-ON clientes.codigo_cliente = pedidos.codigo_cliente
-WHERE poblacion = "MADRID" ORDER BY clientes.codigo_cliente
+SELECT * FROM CREDENCIALES 
+INNER JOIN CLIENTES
+ON credenciales.codigo_cred = clientes.codigo_customer
+INNER JOIN PEDIDOS
+ON clientes.codigo_customer = pedidos.codigo_customer;
 
--- ----------------------------------------------------------------------------
--- ## - Inner Join: Ver el codigo_cliente, poblacion, direccion, numero_pedido
--- de la tabla clientes y codigo_cliente, forma_pago de la tabla pedidos donde
--- clientes y pedidos estén relacionados
--- ----------------------------------------------------------------------------
-SELECT clientes.codigo_cliente, poblacion, direccion, numero_pedido, 
-pedidos.codigo_cliente, forma_pago FROM clientes INNER JOIN pedidos
-ON clientes.codigo_cliente = pedidos.codigo_cliente
--- ----------------------------------------------------------------------------
--- ## - Left Join: Ver el codigo_cliente, poblacion, direccion, numero_pedido
--- de la tabla clientes y codigo_cliente, forma_pago de la tabla pedidos donde
--- clientes y pedidos estén relacionados. Además, filtre solo los de Madrid y
--- los ordene de menor a mayor
--- ----------------------------------------------------------------------------
-SELECT clientes.codigo_cliente, poblacion, direccion, numero_pedido, 
-pedidos.codigo_cliente, forma_pago FROM clientes INNER JOIN pedidos
-ON clientes.codigo_cliente = pedidos.codigo_cliente
-WHERE poblacion = "MADRID" ORDER BY clientes.codigo_cliente
+SELECT * FROM USUARIOS
+INNER JOIN CREDENCIALES
+ON usuarios.codigo_user = credenciales.codigo_cred 
+INNER JOIN CLIENTES
+ON credenciales.codigo_cred = clientes.codigo_customer
+INNER JOIN PEDIDOS
+ON clientes.codigo_customer = pedidos.codigo_customer;
+
+SELECT * FROM USUARIOS 
+INNER JOIN CREDENCIALES
+ON usuarios.codigo_user = credenciales.codigo_cred
+INNER JOIN PEDIDOS
+ON credenciales.codigo_cred = pedidos.codigo_customer;
 
 -- ------------------------------------------------------------------------------------- --
--- 2.2.2. Unión Interna. --------------------------------------------------------------- --
---        LEFT JOIN : ------------------------------------------------------------------ --
+-- 2.2.1.1. Con repeticiones. ---------------------------------------------------------- --
+--          SELECT __ FROM __ INNER JOIN __ ON __.__ = __.__ : ------------------------- --
 -- ------------------------------------------------------------------------------------- --
+SELECT codigo_pedido, codigo_user, nombres_user, apellidos_user, correo_user,
+identificacion_cred, fecha_pedido, ciudad_pedido, total_pr_pedido, estado_pedido
+FROM USUARIOS 
+INNER JOIN CREDENCIALES
+ON usuarios.codigo_user = credenciales.codigo_cred
+INNER JOIN PEDIDOS
+ON credenciales.codigo_cred = pedidos.codigo_customer;
 
--- ----------------------------------------------------------------------------
--- ## - Left Join: La información de la tabla de la izquierda (clientes) y 
--- y la información común entre las tablas: clientes y pedidos.
--- Todos los clientes de Madrid y que además hayan hecho pedidos
--- ----------------------------------------------------------------------------
-SELECT * FROM clientes LEFT JOIN pedidos 
-ON clientes.codigo_cliente = pedidos.codigo_cliente
-WHERE poblacion = 'MADRID' ORDER BY clientes.codigo_cliente
-
-## Todos los clientes de Madrid y que además hayan hecho pedidos
--- -------------------------------------------------------------------------------------
-SELECT * FROM clientes LEFT JOIN pedidos 
-ON clientes.codigo_cliente = pedidos.codigo_cliente
-WHERE poblacion = 'MADRID' ORDER BY clientes.codigo_cliente
--- -------------------------------------------------------------------------------------
-## Todos los clientes de Madrid y que no hayan hecho pedidos
--- -------------------------------------------------------------------------------------
-SELECT * FROM clientes LEFT JOIN pedidos 
-ON clientes.codigo_cliente = pedidos.codigo_cliente
-WHERE poblacion = 'MADRID' AND pedidos.codigo_cliente IS NULL
-ORDER BY clientes.codigo_cliente
-
--- ----------------------------------------------------------------------------
--- ## - Todos los clientes de Madrid y que no hayan hecho pedidos
--- ----------------------------------------------------------------------------
-SELECT * FROM clientes LEFT JOIN pedidos 
-ON clientes.codigo_cliente = pedidos.codigo_cliente
-WHERE poblacion = 'MADRID' AND pedidos.codigo_cliente IS NULL
-ORDER BY clientes.codigo_cliente
+-- ------------------------------------------------------------------------------------- --
+-- 2.2.1.2. Sin repeticiones. ---------------------------------------------------------- --
+--          SELECT DISTINCT __ FROM __ INNER JOIN __ ON __.__ = __.__ : ---------------- --
+-- ------------------------------------------------------------------------------------- --
+SELECT DISTINCT codigo_user
+FROM USUARIOS 
+INNER JOIN CREDENCIALES
+ON usuarios.codigo_user = credenciales.codigo_cred
+INNER JOIN PEDIDOS
+ON credenciales.codigo_cred = pedidos.codigo_customer;
 
 
 -- ------------------------------------------------------------------------------------- --
--- 2.2.3. Unión Interna. --------------------------------------------------------------- --
---        RIGHT JOIN : ----------------------------------------------------------------- --
+-- 2.2.1.2. Condicionada. -------------------------------------------------------------- --
+--          WHERE, OPERADORES, ORDER BY : ---------------------------------------------- --
 -- ------------------------------------------------------------------------------------- --
-## Todos pedidos que se hayan hecho, así no tengan clientes asociados (OJO)
--- -------------------------------------------------------------------------------------
-SELECT * FROM clientes RIGHT JOIN pedidos 
-ON clientes.codigo_cliente = pedidos.codigo_cliente
-ORDER BY clientes.codigo_cliente
+SELECT codigo_pedido, codigo_user, nombres_user, apellidos_user, correo_user,
+identificacion_cred, fecha_pedido, ciudad_pedido, total_pr_pedido, estado_pedido
+FROM USUARIOS 
+INNER JOIN CREDENCIALES
+ON usuarios.codigo_user = credenciales.codigo_cred
+INNER JOIN PEDIDOS
+ON credenciales.codigo_cred = pedidos.codigo_customer
+WHERE estado_pedido = "entregado" OR estado_pedido = "enviado"
+ORDER BY total_pr_pedido DESC;
 
--- ----------------------------------------------------------------------------
--- ## - Right Join: La información de la tabla de la derecha (pedidos) y 
--- y la información común entre las tablas: clientes y pedidos
--- Todos pedidos que se hayan hecho, así no tengan clientes asociados (OJO)
--- ----------------------------------------------------------------------------
-SELECT * FROM clientes RIGHT JOIN pedidos 
-ON clientes.codigo_cliente = pedidos.codigo_cliente
-ORDER BY clientes.codigo_cliente
+SELECT codigo_pedido, codigo_user, nombres_user, apellidos_user, correo_user,
+identificacion_cred, fecha_pedido, ciudad_pedido, total_pr_pedido, estado_pedido
+FROM USUARIOS 
+INNER JOIN CREDENCIALES
+ON usuarios.codigo_user = credenciales.codigo_cred
+INNER JOIN PEDIDOS
+ON credenciales.codigo_cred = pedidos.codigo_customer
+WHERE ciudad_pedido = "Medellín" AND estado_pedido = "entregado"
+ORDER BY total_pr_pedido DESC;
 
+SELECT pedidos.codigo_pedido, codigo_customer, productos.codigo_producto, 
+nombre_producto, precio_producto, cantidad_productos, 
+(precio_producto * cantidad_productos) AS total_parcial,
+ROUND((precio_producto * cantidad_productos) * 0.19, 2) AS iva,
+(precio_producto * cantidad_productos) + 
+ROUND((precio_producto * cantidad_productos) * 0.19, 2) AS total,
+total_pr_pedido AS total_pagar
+FROM PEDIDOS
+INNER JOIN LISTA_PRODUCTOS
+ON pedidos.codigo_pedido = lista_productos.codigo_pedido
+INNER JOIN PRODUCTOS
+ON lista_productos.codigo_producto = productos.codigo_producto
+WHERE pedidos.codigo_pedido = 'pedido-4';
+
+-- ------------------------------------------------------------------------------------- --
+-- 2.2.2. LEFT JOIN. ------------------------------------------------------------------- --
+--        SELECT __ FROM __ LEFT JOIN __ ON __.__ = __.__ : ---------------------------- --
+-- ------------------------------------------------------------------------------------- --
+
+SELECT codigo_pedido, codigo_user, nombres_user, apellidos_user, correo_user,
+identificacion_cred, fecha_pedido, ciudad_pedido, total_pr_pedido, estado_pedido
+FROM USUARIOS
+INNER JOIN CREDENCIALES
+ON usuarios.codigo_user = credenciales.codigo_cred 
+INNER JOIN CLIENTES
+ON credenciales.codigo_cred = clientes.codigo_customer
+LEFT JOIN PEDIDOS
+ON clientes.codigo_customer = pedidos.codigo_customer;
+
+SELECT codigo_pedido, codigo_user, nombres_user, 
+apellidos_user, correo_user, identificacion_cred
+FROM USUARIOS
+INNER JOIN CREDENCIALES
+ON usuarios.codigo_user = credenciales.codigo_cred 
+INNER JOIN CLIENTES
+ON credenciales.codigo_cred = clientes.codigo_customer
+LEFT JOIN PEDIDOS
+ON clientes.codigo_customer = pedidos.codigo_customer
+WHERE codigo_pedido IS NULL;
+
+-- ------------------------------------------------------------------------------------- --
+-- 2.2.3. RIGHT JOIN. ------------------------------------------------------------------ --
+--        SELECT __ FROM __ RIGHT JOIN __ ON __.__ = __.__ : --------------------------- --
+-- ------------------------------------------------------------------------------------- --
+SELECT * FROM CLIENTES
+RIGHT JOIN PEDIDOS
+ON clientes.codigo_customer = pedidos.codigo_customer;
+
+-- NOTA: Esta consulta no Funciona, ya que cada pedido tiene asociado un cliente. No 
+--       puede existir pedidos sin clientes
+-- ------------------------------------------------------------------------------------- --
 
 -- ------------------------------------------------------------------------------------- --
 -- 2.3. Subconsulta Correlacionada. ---------------------------------------------------- --
