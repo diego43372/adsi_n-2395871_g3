@@ -2,22 +2,26 @@
 /* ---------------------------------------- DML ---------------------------------------- */
 /* ---------------------------- DATA MANIPULATION LANGUAGE ----------------------------- */
 /* ------------------------- LENGUAJE DE MANIPULACIÓN DE DATOS ------------------------- */
-/* ------------------------------------ MULTITABLA ------------------------------------- */
+/* -------------------------------- MULTITABLA / UNIÓN --------------------------------- */
 /* ------------------------------------------------------------------------------------- */
 /* ************************************************************************************* */
 /* ------------------------------------------------------------------------------------- */
-/* 1. CONSULTAS DE ACCIÓN                                                                */
-/* 1.1. Crear una Tabla con otra : ... CREATE TABLE __ SELECT __ FROM __ WHERE __ = __   */
+/* 1. CONSULTAS DE ACCIÓN [Inicio]                                                       */
+/* 1.1. Crear una Tabla con Otra : ... CREATE TABLE __ SELECT __ FROM __ WHERE __ = __   */
 /* 1.2. Insertar Datos Anexados : .... INSERT INTO __ SELECT __ FROM __                  */
 /* 2. CONSULTAS DE SELECCIÓN                                                             */
 /* 2.1. Unión Externa : .............. UNION, UNION ALL                                  */
-/* 2.1.1. UNION : .................... UNION                                             */
-/* 2.1.2. UNION ALL : ................ UNION ALL                                         */
+/* 2.1.1. UNION : .................... SELECT __ FROM __ UNION SELECT __ FROM __         */
+/* 2.1.2. UNION ALL : ................ SELECT __ FROM __ UNION ALL SELECT __ FROM __     */
 /* 2.2. Unión Interna : .............. INNER JOIN, LEFT JOIN, RIGHT JOIN                 */
 /* 2.2.1. INNER JOIN : ............... INNER JOIN                                        */
 /* 2.2.2. LEFT JOIN : ................ LEFT JOIN                                         */
 /* 2.2.2. RIGHT JOIN : ............... RIGHT JOIN                                        */
-/* 2.3. Subconsulta Correlacionada : . IN, NOT IN                                        */
+/* 2.3. Subconsultas : ............... IN, NOT IN                                        */
+/* 2.3.1. Escalonada : ............... IN, NOT IN                                        */
+/* 2.3.2. Lista : .................... IN, NOT IN                                        */
+/* 2.3.2. Correlacionada : ........... IN, NOT IN                                        */
+/* 3. CONSULTAS DE ACCIÓN [Final]                                                        */
 /* ------------------------------------------------------------------------------------- */
 /* ************************************************************************************* */
 /* EN CONSOLA: XAMPP / SHELL / cd mysql/bin / mysql -h localhost -u root -p / ENTER      */
@@ -27,7 +31,7 @@
 
 /* ************************************************************************************* */
 /* ------------------------------ 1. CONSULTAS DE ACCIÓN ------------------------------- */
-/* ------------------------------------------------------------------------------------- */
+/* -------------------------------------- INICIO --------------------------------------- */
 /* ************************************************************************************* */
 
 -- ------------------------------------------------------------------------------------- --
@@ -37,27 +41,20 @@
 CREATE TABLE PEDIDOS_BOGOTA SELECT * FROM PEDIDOS
 WHERE ciudad_pedido = 'Bogotá';
 
-DELETE FROM PEDIDOS WHERE ciudad_pedido = 'Bogotá';
+-- -------------------------------------------
+DELETE FROM PEDIDOS 
+WHERE ciudad_pedido = 'Bogotá';
+
 -- ------------------------------------------------------------------------------------- --
 -- 1.2. Datos Anexados. ---------------------------------------------------------------- --
 --      INSERT INTO __ SELECT __ FROM __ : --------------------------------------------- --
 -- ------------------------------------------------------------------------------------- --
-INSERT INTO PEDIDOS SELECT * FROM PEDIDOS_BOGOTA
+INSERT INTO PEDIDOS SELECT * FROM PEDIDOS_BOGOTA;
 
-/*
--- ------------------------------------------------------------------------------------- --
--- 1.3. Eliminar Datos de una Tabla Relacionada. --------------------------------------- --
---       : ----------------------------------------------------------------------------- --
--- ------------------------------------------------------------------------------------- --
-DELETE clientes FROM clientes LEFT JOIN pedidos 
-ON clientes.codigo_cliente = pedidos.codigo_cliente
-WHERE pedidos.codigo_cliente IS NULL;
-
-*/
 
 /* ************************************************************************************* */
 /* ----------------------------- 2. CONSULTAS DE SELECCIÓN ----------------------------- */
-/* ------------------------------------------------------------------------------------- */
+/* -------------------------- EXTERNA, INTERNA Y SUBCONSULTAS -------------------------- */
 /* ************************************************************************************* */
 
 -- ------------------------------------------------------------------------------------- --
@@ -66,37 +63,29 @@ WHERE pedidos.codigo_cliente IS NULL;
 -- ------------------------------------------------------------------------------------- --
 
 -- ------------------------------------------------------------------------------------- --
--- 2.1.1. Unión Externa. --------------------------------------------------------------- --
---        UNION : ---------------------------------------------------------------------- --
+-- 2.1.1. UNION. ----------------------------------------------------------------------- --
+--        SELECT __ FROM __ UNION SELECT __ FROM __ : ---------------------------------- --
 -- ------------------------------------------------------------------------------------- --
-## Seleccione todos los campos de la tabla productos, donde la sección sea igual a
--- DEPORTES; una el resultado con la selección de todos los campos de productosnuevos,  
--- donde la sección sea igual a DEPORTES DE RIESGO
--- -------------------------------------------------------------------------------------
-SELECT * FROM productos WHERE seccion = 'DEPORTES' UNION 
-SELECT * FROM productos_nuevos WHERE seccion = 'DEPORTES DE RIESGO' 
--- -------------------------------------------------------------------------------------
-## Seleccione todos los campos de productos, donde el precio del artículo sea superior a
--- 500 euros y en productosnuevos la sección sea igual a ALTA COSTURA
--- -------------------------------------------------------------------------------------
-SELECT * FROM productos WHERE precio > 500 UNION 
-SELECT * FROM productos_nuevos WHERE seccion = 'ALTA COSTURA'
--- -------------------------------------------------------------------------------------
-## Seleccione todos los campos de productos, donde la sección sea igual a DEPORTES y en
--- la tabla productosnuevos, todos los campos de productos
--- -------------------------------------------------------------------------------------
-SELECT * FROM productos WHERE seccion = 'DEPORTES' UNION
-SELECT * FROM productos_nuevos
+SELECT * FROM PRODUCTOS UNION 
+SELECT * FROM PRODUCTOS_NUEVOS;
+
+SELECT * FROM PRODUCTOS WHERE codigo_categoria = 2 UNION 
+SELECT * FROM PRODUCTOS_NUEVOS WHERE codCat = 2;
+
+SELECT * FROM PRODUCTOS WHERE precio_producto > 5000 UNION 
+SELECT * FROM PRODUCTOS_NUEVOS WHERE codCat = 4 AND artPrec > 5000;
+
+SELECT codigo_categoria, nombre_producto, precio_producto 
+FROM PRODUCTOS WHERE precio_producto > 5000 UNION 
+SELECT codCat, artNom, artPrec 
+FROM PRODUCTOS_NUEVOS WHERE codCat = 4 AND artPrec > 5000;
 
 -- ------------------------------------------------------------------------------------- --
--- 2.1.2. Unión Externa. --------------------------------------------------------------- --
---        UNION ALL : ------------------------------------------------------------------ --
+-- 2.1.2. UNION ALL. ------------------------------------------------------------------- --
+--        SELECT __ FROM __ UNION ALL SELECT __ FROM __ : ------------------------------ --
 -- ------------------------------------------------------------------------------------- --
-## Seleccione todos los campos productos, donde la sección sea igual a DEPORTES y en 
--- productosnuevos, todos los productos incluyendo repeticiones
--- -------------------------------------------------------------------------------------
-SELECT * FROM productos WHERE seccion = 'DEPORTES' UNION ALL
-SELECT * FROM productos_nuevos
+SELECT * FROM PRODUCTOS UNION ALL
+SELECT * FROM PRODUCTOS_NUEVOS;
 
 -- ------------------------------------------------------------------------------------- --
 -- 2.2. Unión Interna. ----------------------------------------------------------------- --
@@ -104,9 +93,17 @@ SELECT * FROM productos_nuevos
 -- ------------------------------------------------------------------------------------- --
 
 -- ------------------------------------------------------------------------------------- --
--- 2.2.1. Unión Interna. --------------------------------------------------------------- --
---        INNER JOIN : ----------------------------------------------------------------- --
+-- 2.2.1. INNER JOIN. ------------------------------------------------------------------ --
+--         : --------------------------------------------------------------------------- --
 -- ------------------------------------------------------------------------------------- --
+-- ----------------------------------------------------------------------------
+-- ## - Inner Join: Solo la información común entre las tablas: clientes y 
+-- pedidos. Clientes de Madrid que SÍ han hecho pedidos
+-- ----------------------------------------------------------------------------
+SELECT * FROM clientes INNER JOIN pedidos 
+ON clientes.codigo_cliente = pedidos.codigo_cliente
+WHERE poblacion = 'MADRID' ORDER BY clientes.codigo_cliente
+
 ## Empresas que han hecho pedidos
 -- -------------------------------------------------------------------------------------
 SELECT empresa FROM clientes INNER JOIN pedidos
@@ -147,10 +144,39 @@ numero_pedido, forma_pago FROM clientes INNER JOIN pedidos
 ON clientes.codigo_cliente = pedidos.codigo_cliente
 WHERE poblacion = "MADRID" ORDER BY clientes.codigo_cliente
 
+-- ----------------------------------------------------------------------------
+-- ## - Inner Join: Ver el codigo_cliente, poblacion, direccion, numero_pedido
+-- de la tabla clientes y codigo_cliente, forma_pago de la tabla pedidos donde
+-- clientes y pedidos estén relacionados
+-- ----------------------------------------------------------------------------
+SELECT clientes.codigo_cliente, poblacion, direccion, numero_pedido, 
+pedidos.codigo_cliente, forma_pago FROM clientes INNER JOIN pedidos
+ON clientes.codigo_cliente = pedidos.codigo_cliente
+-- ----------------------------------------------------------------------------
+-- ## - Left Join: Ver el codigo_cliente, poblacion, direccion, numero_pedido
+-- de la tabla clientes y codigo_cliente, forma_pago de la tabla pedidos donde
+-- clientes y pedidos estén relacionados. Además, filtre solo los de Madrid y
+-- los ordene de menor a mayor
+-- ----------------------------------------------------------------------------
+SELECT clientes.codigo_cliente, poblacion, direccion, numero_pedido, 
+pedidos.codigo_cliente, forma_pago FROM clientes INNER JOIN pedidos
+ON clientes.codigo_cliente = pedidos.codigo_cliente
+WHERE poblacion = "MADRID" ORDER BY clientes.codigo_cliente
+
 -- ------------------------------------------------------------------------------------- --
 -- 2.2.2. Unión Interna. --------------------------------------------------------------- --
 --        LEFT JOIN : ------------------------------------------------------------------ --
 -- ------------------------------------------------------------------------------------- --
+
+-- ----------------------------------------------------------------------------
+-- ## - Left Join: La información de la tabla de la izquierda (clientes) y 
+-- y la información común entre las tablas: clientes y pedidos.
+-- Todos los clientes de Madrid y que además hayan hecho pedidos
+-- ----------------------------------------------------------------------------
+SELECT * FROM clientes LEFT JOIN pedidos 
+ON clientes.codigo_cliente = pedidos.codigo_cliente
+WHERE poblacion = 'MADRID' ORDER BY clientes.codigo_cliente
+
 ## Todos los clientes de Madrid y que además hayan hecho pedidos
 -- -------------------------------------------------------------------------------------
 SELECT * FROM clientes LEFT JOIN pedidos 
@@ -164,16 +190,34 @@ ON clientes.codigo_cliente = pedidos.codigo_cliente
 WHERE poblacion = 'MADRID' AND pedidos.codigo_cliente IS NULL
 ORDER BY clientes.codigo_cliente
 
+-- ----------------------------------------------------------------------------
+-- ## - Todos los clientes de Madrid y que no hayan hecho pedidos
+-- ----------------------------------------------------------------------------
+SELECT * FROM clientes LEFT JOIN pedidos 
+ON clientes.codigo_cliente = pedidos.codigo_cliente
+WHERE poblacion = 'MADRID' AND pedidos.codigo_cliente IS NULL
+ORDER BY clientes.codigo_cliente
+
 
 -- ------------------------------------------------------------------------------------- --
 -- 2.2.3. Unión Interna. --------------------------------------------------------------- --
---        ROGHT JOIN : ----------------------------------------------------------------- --
+--        RIGHT JOIN : ----------------------------------------------------------------- --
 -- ------------------------------------------------------------------------------------- --
 ## Todos pedidos que se hayan hecho, así no tengan clientes asociados (OJO)
 -- -------------------------------------------------------------------------------------
 SELECT * FROM clientes RIGHT JOIN pedidos 
 ON clientes.codigo_cliente = pedidos.codigo_cliente
 ORDER BY clientes.codigo_cliente
+
+-- ----------------------------------------------------------------------------
+-- ## - Right Join: La información de la tabla de la derecha (pedidos) y 
+-- y la información común entre las tablas: clientes y pedidos
+-- Todos pedidos que se hayan hecho, así no tengan clientes asociados (OJO)
+-- ----------------------------------------------------------------------------
+SELECT * FROM clientes RIGHT JOIN pedidos 
+ON clientes.codigo_cliente = pedidos.codigo_cliente
+ORDER BY clientes.codigo_cliente
+
 
 -- ------------------------------------------------------------------------------------- --
 -- 2.3. Subconsulta Correlacionada. ---------------------------------------------------- --
@@ -203,89 +247,15 @@ SELECT empresa, poblacion FROM clientes WHERE codigo_cliente NOT IN
 -- -------------------------------------------------------------------------------------
 
 
--- ## - Seleccione todos los campos de la tabla productos, donde la sección sea 
---      igual a DEPORTES; una el resultado con la selección de todos los campos
---      de la tabla productosnuevos, donde la sección sea igual a DEPORTES DE 
---      RIESGO
--- ----------------------------------------------------------------------------
-SELECT * FROM productos WHERE seccion = 'DEPORTES' UNION 
-SELECT * FROM productos_nuevos WHERE seccion = 'DEPORTES DE RIESGO' 
--- ----------------------------------------------------------------------------
--- ## - Seleccione todos los campos de la tabla productos, donde el precio del
---      articulo sea superior a 500 euros y en la tabla productosnuevos, 
---      donde la sección sea igual a ALTA COSTURA
--- ----------------------------------------------------------------------------
-SELECT * FROM productos WHERE precio > 500 UNION 
-SELECT * FROM productos_nuevos WHERE seccion = 'ALTA COSTURA'
--- ----------------------------------------------------------------------------
--- ## - Seleccione todos los campos de la tabla productos, donde la sección sea
---      igual a DEPORTES y en la tabla productosnuevos, todos los productos
---      sin incluir repeticiones
--- ----------------------------------------------------------------------------
-SELECT * FROM productos WHERE seccion = 'DEPORTES' UNION
-SELECT * FROM productos_nuevos
--- ----------------------------------------------------------------------------
--- ## - Seleccione todos los campos de la tabla productos, donde la sección sea
---      igual a DEPORTES y en la tabla productosnuevos, todos los productos
---      incluyendo repeticiones
--- ----------------------------------------------------------------------------
-SELECT * FROM productos WHERE seccion = 'DEPORTES' UNION ALL
-SELECT * FROM productos_nuevos
--- ----------------------------------------------------------------------------
--- Inner Join, Outer Joins (Right Join, Left Join [Composiciones Externas])
--- ----------------------------------------------------------------------------
--- ----------------------------------------------------------------------------
--- ----------------------------------------------------------------------------
--- ## - Inner Join: Solo la información común entre las tablas: clientes y 
--- pedidos. Clientes de Madrid que SÍ han hecho pedidos
--- ----------------------------------------------------------------------------
-SELECT * FROM clientes INNER JOIN pedidos 
-ON clientes.codigo_cliente = pedidos.codigo_cliente
-WHERE poblacion = 'MADRID' ORDER BY clientes.codigo_cliente
--- ----------------------------------------------------------------------------
--- ## - Left Join: La información de la tabla de la izquierda (clientes) y 
--- y la información común entre las tablas: clientes y pedidos.
--- Todos los clientes de Madrid y que además hayan hecho pedidos
--- ----------------------------------------------------------------------------
-SELECT * FROM clientes LEFT JOIN pedidos 
-ON clientes.codigo_cliente = pedidos.codigo_cliente
-WHERE poblacion = 'MADRID' ORDER BY clientes.codigo_cliente
--- ----------------------------------------------------------------------------
--- ## - Left Join: Ver el codigo_cliente, poblacion, direccion, numero_pedido
--- de la tabla clientes y codigo_cliente, forma_pago de la tabla pedidos donde
--- clientes y pedidos estén relacionados
--- ----------------------------------------------------------------------------
-SELECT clientes.codigo_cliente, poblacion, direccion, numero_pedido, 
-pedidos.codigo_cliente, forma_pago FROM clientes INNER JOIN pedidos
-ON clientes.codigo_cliente = pedidos.codigo_cliente
--- ----------------------------------------------------------------------------
--- ## - Left Join: Ver el codigo_cliente, poblacion, direccion, numero_pedido
--- de la tabla clientes y codigo_cliente, forma_pago de la tabla pedidos donde
--- clientes y pedidos estén relacionados. Además, filtre solo los de Madrid y
--- los ordene de menor a mayor
--- ----------------------------------------------------------------------------
-SELECT clientes.codigo_cliente, poblacion, direccion, numero_pedido, 
-pedidos.codigo_cliente, forma_pago FROM clientes INNER JOIN pedidos
-ON clientes.codigo_cliente = pedidos.codigo_cliente
-WHERE poblacion = "MADRID" ORDER BY clientes.codigo_cliente
--- ----------------------------------------------------------------------------
--- ## - Todos los clientes de Madrid y que no hayan hecho pedidos
--- ----------------------------------------------------------------------------
-SELECT * FROM clientes LEFT JOIN pedidos 
-ON clientes.codigo_cliente = pedidos.codigo_cliente
-WHERE poblacion = 'MADRID' AND pedidos.codigo_cliente IS NULL
-ORDER BY clientes.codigo_cliente
--- ----------------------------------------------------------------------------
--- ## - Right Join: La información de la tabla de la derecha (pedidos) y 
--- y la información común entre las tablas: clientes y pedidos
--- Todos pedidos que se hayan hecho, así no tengan clientes asociados (OJO)
--- ----------------------------------------------------------------------------
-SELECT * FROM clientes RIGHT JOIN pedidos 
-ON clientes.codigo_cliente = pedidos.codigo_cliente
-ORDER BY clientes.codigo_cliente
--- ----------------------------------------------------------------------------
--- ## - Consultas multitabla: Escalonada, de lista, correlacionada
--- SELECT dentro de otro SELECT
--- ----------------------------------------------------------------------------
+/* ************************************************************************************* */
+/* ------------------------------ 3. CONSULTAS DE ACCIÓN ------------------------------- */
+/* --------------------------------------- FINAL --------------------------------------- */
+/* ************************************************************************************* */
 
-
+-- ------------------------------------------------------------------------------------- --
+-- 3.1. Eliminar Datos de una Tabla Relacionada. --------------------------------------- --
+--       : ----------------------------------------------------------------------------- --
+-- ------------------------------------------------------------------------------------- --
+DELETE clientes FROM clientes LEFT JOIN pedidos 
+ON clientes.codigo_cliente = pedidos.codigo_cliente
+WHERE pedidos.codigo_cliente IS NULL;
