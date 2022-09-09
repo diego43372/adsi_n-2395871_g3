@@ -480,7 +480,7 @@ FROM PEDIDOS
 GROUP BY estado_pedido HAVING codigo_customer='customer-1' AND estado_pedido='entregado' 
 ORDER BY minimo_pedido ASC;
 
-SELECT ciudad_pedido, COUNT(codigo_pedido) cant_pedidos
+SELECT ciudad_pedido, COUNT(codigo_pedido) AS cant_pedidos
 FROM PEDIDOS 
 GROUP BY ciudad_pedido HAVING ciudad_pedido = "Medellín" OR ciudad_pedido = "Cali"
 ORDER BY cant_pedidos DESC;
